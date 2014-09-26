@@ -1,0 +1,6 @@
+# Proxy Requirements File for Development
+# Include all the libraries we're using in development.
+# (Which is literally all of them.)
+-r requirements/development.txt
+-r requirements/production.txt
+-r requirements/testing.txt

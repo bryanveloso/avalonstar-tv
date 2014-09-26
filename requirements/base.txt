@@ -1,0 +1,3 @@
+# Base Project Requirements
+
+Django == 1.7

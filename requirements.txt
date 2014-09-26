@@ -1,0 +1,3 @@
+# Proxy Requirements File for Production
+# Include all the libraries we're using in production.
+-r requirements/production.txt
