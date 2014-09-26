@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
 
-# Register your models here.
+from .models import Game
+
+
+class GameAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(Game, GameAdmin)
