@@ -78,3 +78,7 @@ class Base(Configuration):
     # --------------------------------------------------------------------------
     ROOT_URLCONF = '%s.urls' % SITE_NAME
     WSGI_APPLICATION = 'wsgi.application'
+
+    # django-rest-framework.
+    # --------------------------------------------------------------------------
+    INSTALLED_APPS += ['rest_framework']

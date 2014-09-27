@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import patterns, url, include
 
-from .views import BroadcastList, BroadcastDetail
+from rest_framework import routers
+
+from .views import BroadcastViewSet
 
 
-broadcast_urls = patterns('',
-    url(r'^/(?P<number>\d+)$', name='broadcast-detail', view=BroadcastDetail.as_view()),
-    url(r'^$', name='broadcast-list', view=BroadcastList.as_view()),
-)
+router = routers.DefaultRouter()
+router.register(r'broadcasts', BroadcastViewSet)
 
 urlpatterns = patterns('',
-    url(r'^broadcasts', include(broadcast_urls)),
+    url(r'^', include(router.urls)),
 )
