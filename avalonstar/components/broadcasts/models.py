@@ -18,12 +18,12 @@ class Broadcast(models.Model):
     # Metadata.
     number = models.IntegerField(blank=True, null=True)
     airdate = models.DateField()
-    status = models.CharField(max_length=200)
+    status = models.CharField(blank=True, max_length=200)
     notes = models.TextField(blank=True)
 
     # Connections.
     games = models.ManyToManyField(Game, related_name='appears_on')
-    series = models.ForeignKey(Series, related_name='broadcasts')
+    series = models.ForeignKey(Series, blank=True, null=True, related_name='broadcasts')
 
     # Statuses.
     is_charity = models.BooleanField(default=False)
