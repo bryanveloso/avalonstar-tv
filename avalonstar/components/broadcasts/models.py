@@ -7,11 +7,15 @@ from components.games.models import Game
 class Series(models.Model):
     name = models.CharField(max_length=200)
 
+    class Meta:
+        verbose_name_plural = u'series'
+
     def __unicode__(self):
-        return '%s' % self.name
+        return u'%s' % self.name
 
 
 class Broadcast(models.Model):
+    # Metadata.
     number = models.IntegerField(blank=True, null=True)
     airdate = models.DateField()
     status = models.CharField(max_length=200)
@@ -30,4 +34,4 @@ class Broadcast(models.Model):
         ordering = ['-number']
 
     def __unicode__(self):
-        return 'Episode %s' % self.number
+        return u'Episode %s' % self.number

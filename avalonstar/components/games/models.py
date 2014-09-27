@@ -11,4 +11,4 @@ class Game(models.Model):
     is_completed = models.BooleanField(default=False)
 
     def __unicode__(self):
-        return '%s' % self.name
+        return u'%s' % self.name
