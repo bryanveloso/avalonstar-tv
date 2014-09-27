@@ -10,7 +10,7 @@ class BroadcastSerializer(serializers.ModelSerializer):
         model = Broadcast
 
 
-class SeriesSerialzer(serializers.ModelSerializer):
+class SeriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Series
 
