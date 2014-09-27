@@ -26,7 +26,10 @@ class Base(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
     ]
-    COMPONENTS = []
+    COMPONENTS = [
+        'components.broadcasts',
+        'components.games',
+    ]
     PLUGINS = []
     ADMINISTRATION = [
         'grappelli',
