@@ -5,7 +5,14 @@ from .models import Broadcast, Series
 
 
 class BroadcastAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['number', 'airdate', 'status', 'series']
+    list_display_links = ['number', 'airdate']
+
+    raw_id_fields = ['games', 'series']
+    autocomplete_lookup_fields = {
+        'fk': ['series'],
+        'm2m': ['games']
+    }
 admin.site.register(Broadcast, BroadcastAdmin)
 
 
