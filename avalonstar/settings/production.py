@@ -17,6 +17,13 @@ class Production(Settings):
     # --------------------------------------------------------------------------
     SECRET_KEY = os.environ.get('SECURE_KEY', '').split(',')[0]
 
+    # Site Configuration.
+    # --------------------------------------------------------------------------
+    ALLOWED_HOSTS = [
+        '.avalonstar.tv', '.avalonstar.tv.',
+        '.avalonstar-api.herokuapp.com', '.avalonstar-api.herokuapp.com.',
+    ]
+
     # Database Configuration.
     # --------------------------------------------------------------------------
     DATABASES = postgresify()
