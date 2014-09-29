@@ -72,7 +72,13 @@ class Base(Configuration):
 
     # Static File Configuration.
     # --------------------------------------------------------------------------
+    STATIC_ROOT = 'staticfiles'
     STATIC_URL = '/static/'
+
+    # Media Configuration.
+    # --------------------------------------------------------------------------
+    MEDIA_ROOT = 'media'
+    MEDIA_URL = '/media/'
 
     # URL Configuration
     # --------------------------------------------------------------------------
