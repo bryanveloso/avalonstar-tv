@@ -8,7 +8,7 @@ class GameAdmin(admin.ModelAdmin):
     list_display = ['name', 'platform', 'gbid']
 
     raw_id_fields = ['platform']
-    autocomplete_lookup_fields = { 'fk': ['series'] }
+    autocomplete_lookup_fields = { 'fk': ['platform'] }
 admin.site.register(Game, GameAdmin)
 
 
