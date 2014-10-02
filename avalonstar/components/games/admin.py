@@ -5,7 +5,7 @@ from .models import Game, Platform
 
 
 class GameAdmin(admin.ModelAdmin):
-    list_display = ['name', 'platform', 'gbid']
+    list_display = ['name', 'platform', 'gbid', 'is_abandoned', 'is_completed']
 
     raw_id_fields = ['platform']
     autocomplete_lookup_fields = { 'fk': ['platform'] }
