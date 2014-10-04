@@ -8,6 +8,7 @@ class Series(models.Model):
     name = models.CharField(max_length=200)
 
     class Meta:
+        ordering = ['name']
         verbose_name_plural = u'series'
 
     def __unicode__(self):
