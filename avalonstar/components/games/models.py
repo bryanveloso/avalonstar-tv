@@ -11,6 +11,10 @@ class Platform(models.Model):
     def __unicode__(self):
         return u'%s' % self.name
 
+    @staticmethod
+        def autocomplete_search_fields():
+            return ('name__exact', 'name__icontains')
+
 
 class Game(models.Model):
     # Metadata.
@@ -37,3 +41,6 @@ class Game(models.Model):
     def __unicode__(self):
         return u'%s' % self.name
 
+    @staticmethod
+        def autocomplete_search_fields():
+            return ('name__exact', 'name__icontains')
