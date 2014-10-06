@@ -14,6 +14,10 @@ class Series(models.Model):
     def __unicode__(self):
         return u'%s' % self.name
 
+    @staticmethod
+        def autocomplete_search_fields():
+            return ('name__exact', 'name__icontains')
+
 
 class Broadcast(models.Model):
     # Metadata.
