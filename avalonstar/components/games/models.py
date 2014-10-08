@@ -12,8 +12,8 @@ class Platform(models.Model):
         return u'%s' % self.name
 
     @staticmethod
-        def autocomplete_search_fields():
-            return ('name__exact', 'name__icontains')
+    def autocomplete_search_fields():
+        return ('name__exact', 'name__icontains')
 
 
 class Game(models.Model):
@@ -42,5 +42,5 @@ class Game(models.Model):
         return u'%s' % self.name
 
     @staticmethod
-        def autocomplete_search_fields():
-            return ('name__exact', 'name__icontains')
+    def autocomplete_search_fields():
+        return ('name__exact', 'name__icontains')

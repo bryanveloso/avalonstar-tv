@@ -15,8 +15,8 @@ class Series(models.Model):
         return u'%s' % self.name
 
     @staticmethod
-        def autocomplete_search_fields():
-            return ('name__exact', 'name__icontains')
+    def autocomplete_search_fields():
+        return ('name__exact', 'name__icontains')
 
 
 class Broadcast(models.Model):
