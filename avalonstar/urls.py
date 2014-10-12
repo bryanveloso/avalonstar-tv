@@ -7,7 +7,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     # Core Modules.
-    url(r'^api/', include('components.api.urls', namespace='api')),
+    url(r'^api/', include('apps.api.urls', namespace='api')),
 
     # Administration Modules.
     url(r'^grappelli/', include('grappelli.urls')),

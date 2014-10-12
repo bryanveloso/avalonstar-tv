@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from rest_framework import viewsets
 
-from components.broadcasts.models import Broadcast, Series
-from components.games.models import Game
+from apps.broadcasts.models import Broadcast, Series
+from apps.games.models import Game
 
 from .serializers import BroadcastSerializer, GameSerializer, SeriesSerializer
 

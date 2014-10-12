@@ -27,8 +27,8 @@ class Base(Configuration):
         'django.contrib.staticfiles',
     ]
     COMPONENTS = [
-        'components.broadcasts',
-        'components.games',
+        'apps.broadcasts',
+        'apps.games',
     ]
     PLUGINS = []
     ADMINISTRATION = [

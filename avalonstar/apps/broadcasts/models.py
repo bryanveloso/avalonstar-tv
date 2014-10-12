@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
-from components.games.models import Game
+from apps.games.models import Game
 
 
 class Series(models.Model):
