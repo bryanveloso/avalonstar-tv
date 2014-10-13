@@ -8,6 +8,7 @@ from django.contrib import admin
 urlpatterns = patterns('',
     # Core Modules.
     url(r'^api/', include('apps.api.urls', namespace='api')),
+    url(r'^live/', include('apps.live.urls', namespace='live')),
 
     # Administration Modules.
     url(r'^grappelli/', include('grappelli.urls')),
