@@ -7,7 +7,7 @@ from .models import Broadcast, Series
 class BroadcastAdmin(admin.ModelAdmin):
     list_display = ['number', 'airdate', 'status', 'series']
     list_editable = ['airdate', 'status', 'series']
-    list_display_links = ['number', 'airdate']
+    list_display_links = ['number']
 
     raw_id_fields = ['games', 'series']
     autocomplete_lookup_fields = {
