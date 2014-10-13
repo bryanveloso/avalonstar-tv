@@ -40,7 +40,7 @@ class Broadcast(models.Model):
 
     class Meta:
         get_latest_by = 'airdate'
-        ordering = ['-number']
+        ordering = ['-airdate']
 
     def __unicode__(self):
         return u'Episode %s' % self.number
