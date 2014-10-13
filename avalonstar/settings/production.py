@@ -21,7 +21,7 @@ class Production(Settings):
     # --------------------------------------------------------------------------
     ALLOWED_HOSTS = [
         '.avalonstar.tv', '.avalonstar.tv.',
-        '.avalonstar-api.herokuapp.com', '.avalonstar-api.herokuapp.com.',
+        '.avalonstar-tv.herokuapp.com', '.avalonstar-tv.herokuapp.com.',
     ]
 
     # Database Configuration.
