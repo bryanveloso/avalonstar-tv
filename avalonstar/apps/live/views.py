@@ -15,4 +15,4 @@ class GameView(TemplateView):
 
 
 class PrologueView(TemplateView):
-    template_name = 'live/prologue.view'
+    template_name = 'live/prologue.html'
