@@ -70,6 +70,14 @@ class Base(Configuration):
     USE_L10N = True
     USE_TZ = True
 
+    # Template Configuration.
+    # --------------------------------------------------------------------------
+    TEMPLATE_DIRS = (normpath(join(DJANGO_ROOT, 'templates')),)
+    TEMPLATE_LOADERS = (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    )
+
     # Static File Configuration.
     # --------------------------------------------------------------------------
     STATIC_ROOT = 'staticfiles'
