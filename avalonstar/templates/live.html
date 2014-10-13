@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE|slice:"2" }}">
+<head>
+<title></title>
+<meta charset="utf-8">
+</head>
+<body class="{% firstof request.path|slugify "root" %}" data-path="{{ request.path }}">
+</body>
+</html>
