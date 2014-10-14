@@ -1,1 +1,13 @@
 {% extends "live.html" %}
+
+{% block overlay %}
+<div class="overlay overlay-prologue">
+  {{ broadcast.number }}
+  {{ broadcast.airdate }}
+  {{ broadcast.status }}
+
+  {% for game in broadcast.games.all %}
+    {{ game.name }}
+  {% endfor %}
+</div>
+{% endblock overlay %}
