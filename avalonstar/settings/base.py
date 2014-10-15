@@ -82,6 +82,12 @@ class Base(Configuration):
     # --------------------------------------------------------------------------
     STATIC_ROOT = 'staticfiles'
     STATIC_URL = '/static/'
+    STATICFILES_DIRS = [normpath(join(DJANGO_ROOT, 'static'))]
+    STATICFILES_FINDERS = (
+        'staticbuilder.finders.BuiltFileFinder',
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    )
 
     # Media Configuration.
     # --------------------------------------------------------------------------
