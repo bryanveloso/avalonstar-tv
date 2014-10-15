@@ -1,0 +1,17 @@
+// .overlay-container
+.overlay-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 64px;
+  position: relative;
+  width: 1280px; height: 720px;
+}
+
+// Placeholders.
+%animated {
+  animation-fill-mode: both;
+  position: relative;
+  transform-type: preserve-3d;
+  transform: translate3d(0, 0, 0);
+}
