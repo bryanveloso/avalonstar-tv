@@ -14,3 +14,7 @@ class Development(Settings):
     # Debug Settings.
     # --------------------------------------------------------------------------
     DEBUG = values.BooleanValue(True)
+
+    # django-staticbuilder.
+    # --------------------------------------------------------------------------
+    MIDDLEWARE_CLASSES += ('staticbuilder.middleware.BuildOnRequest',)

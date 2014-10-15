@@ -29,3 +29,7 @@ class Production(Settings):
     DATABASES = postgresify()
     if 'default' in DATABASES:  # pragma: no branch
         DATABASES['default']['CONN_MAX_AGE'] = 600
+
+    # django-staticbuilder.
+    # --------------------------------------------------------------------------
+    STATICBUILDER_BUILD_COMMANDS = ['inv compile']
