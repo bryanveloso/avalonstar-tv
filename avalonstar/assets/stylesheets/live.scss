@@ -1,1 +1,9 @@
+@import "components/normalize";
+
 @import "live/base";
+
+// Force the box model to use the saner border-box calculation.
+*, *:before, *:after {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
