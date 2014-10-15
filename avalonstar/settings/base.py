@@ -88,10 +88,17 @@ class Base(Configuration):
     MEDIA_ROOT = 'media'
     MEDIA_URL = '/media/'
 
-    # URL Configuration
+    # URL Configuration.
     # --------------------------------------------------------------------------
     ROOT_URLCONF = '%s.urls' % SITE_NAME
     WSGI_APPLICATION = 'wsgi.application'
+
+    # django-staticbuilder.
+    # --------------------------------------------------------------------------
+    INSTALLED_APPS += [
+        'staticbuilder',
+    ]
+    STATICBUILDER_BUILD_ROOT = join(DJANGO_ROOT, 'build')
 
     # django-rest-framework.
     # --------------------------------------------------------------------------
