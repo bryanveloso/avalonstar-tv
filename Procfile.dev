@@ -1,1 +1,2 @@
-web:       python ./manage.py runserver
+sass:   sass --watch avalonstar/assets/stylesheets:avalonstar/static/stylesheets
+web:    python ./manage.py runserver
