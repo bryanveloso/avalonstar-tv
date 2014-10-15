@@ -43,11 +43,11 @@ nosetests.xml
 
 *.sublime-*
 
+avalonstar/build
+avalonstar/javascripts
+avalonstar/media
+avalonstar/static
 backups
-base/build
-base/javascripts
-base/media
-base/static
 htmlcov
 
 latest.dump
