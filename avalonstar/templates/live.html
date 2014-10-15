@@ -1,8 +1,12 @@
+{% load static from staticfiles %}
+
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE|slice:"2" }}">
 <head>
 <title></title>
 <meta charset="utf-8">
+<link rel="stylesheet" href="//cloud.typography.com/7547452/693684/css/fonts.css">
+<link rel="stylesheet" href="{% static 'stylesheets/live.css' %}">
 </head>
 <body class="{% firstof request.path|slugify "root" %}" data-path="{{ request.path }}">
   <div class="overlay-container">
