@@ -9,6 +9,10 @@ from .base import Base as Settings
 
 
 class Production(Settings):
+    # Installed Applications (featuring Production).
+    # --------------------------------------------------------------------------
+    INSTALLED_APPS = Settings.INSTALLED_APPS + []
+
     # Debug Settings.
     # --------------------------------------------------------------------------
     DEBUG = values.BooleanValue(False)
@@ -23,6 +27,30 @@ class Production(Settings):
         '.avalonstar.tv', '.avalonstar.tv.',
         '.avalonstar-tv.herokuapp.com', '.avalonstar-tv.herokuapp.com.',
     ]
+
+    # Media Storage Configuration.
+    # --------------------------------------------------------------------------
+    INSTALLED_APPS += ['storages']
+    DEFAULT_FILE_STORAGE = 'avalonstar.apps.storage.ManifestStaticS3Storage'
+    STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
+
+    # Amazon Web Services.
+    AWS_ACCESS_KEY_ID = values.SecretValue(environ_prefix='')
+    AWS_SECRET_ACCESS_KEY = values.SecretValue(environ_prefix='')
+    AWS_STORAGE_BUCKET_NAME = values.SecretValue(environ_prefix='')
+    AWS_AUTO_CREATE_BUCKET = True
+    AWS_PRELOAD_METADATA = True
+    AWS_QUERYSTRING_AUTH = False
+    AWS_IS_GZIPPED = False
+
+    # AWS Caching Settings.
+    AWS_EXPIRY = 60 * 60 * 24 * 7
+    AWS_HEADERS = {'Cache-Control': 'max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIRY, AWS_EXPIRY)}
+
+    # ...
+    CDN_DOMAIN = 'http://%s.s3.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME)
+    MEDIA_URL = '%s/media/' % (CDN_DOMAIN)
+    STATIC_URL = '%s/static/' % (CDN_DOMAIN)
 
     # Database Configuration.
     # --------------------------------------------------------------------------
