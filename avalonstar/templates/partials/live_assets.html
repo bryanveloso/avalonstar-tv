@@ -1,0 +1,12 @@
+{% load static from staticfiles %}
+
+{# Common Assets #}
+<link rel="stylesheet" href="//cloud.typography.com/7547452/693684/css/fonts.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+{% if debug %}
+<link rel="stylesheet" href="{% static 'stylesheets/live.css' %}">
+<script src="{% static 'javascripts/components/rgbaster.min.js' %}"></script>
+{% else %}
+<link rel="stylesheet" href="{% static 'stylesheets/live.min.css' %}">
+<script src="{% static 'javascripts/components.min.js' %}"></script>
+{% endif %}
