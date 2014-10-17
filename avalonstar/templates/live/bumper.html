@@ -14,7 +14,7 @@
         <ul class="game-list">
         {% for game in broadcast.games.all %}
           <li class="game">
-            <div class="game-image"><img src="{% get_media_prefix %}{{ game.image_art }}"></div>
+            <div class="game-image"><img src="{{ MEDIA_URL }}{{ game.image_art }}"></div>
             <div class="game-metadata">
               <span class="game-name">{{ game.name }}</span>
               <span class="game-platform">{{ game.platform }}</span>

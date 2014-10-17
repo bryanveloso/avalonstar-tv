@@ -1,3 +1,13 @@
+// Resets and basic styles.
+body {
+  color: #fff;
+  font-family: $gotham;
+}
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
 // .overlay-container
 .overlay-container {
   display: flex;
@@ -7,27 +17,55 @@
   position: relative;
   width: 1280px; height: 720px;
 }
-
-.overlay {
-  background-color: #12161b;
-
-  &.transparent { background-color: transparent; }
-}
+.overlay { background-color: #12161b; }
+.overlay.transparent { background-color: transparent; }
 
 // Placeholders.
 %animated {
-  animation-fill-mode: both;
+  // animation-fill-mode: both;
   position: relative;
   transform-type: preserve-3d;
   transform: translate3d(0, 0, 0);
 }
 
+// ...
 .section-chat {
   width: 320px; height: 720px;
   background-color: #090d12;
 }
-
 .phoenix {
   position: absolute;
   top: 300px; right: 0;
+}
+
+// .spinner
+// Base styles for a "material design"-inspired spinner.
+$offset: 187;
+$duration: 1500ms;
+
+.spinner { animation: rotator $duration linear infinite; }
+.path {
+  stroke: #fff;
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+
+  animation: dash $duration ease-in-out infinite,
+}
+
+// .spinner Animations
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+@keyframes dash {
+  0% { stroke-dashoffset: $offset; }
+  50% {
+    stroke-dashoffset: $offset / 4;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
+  }
 }

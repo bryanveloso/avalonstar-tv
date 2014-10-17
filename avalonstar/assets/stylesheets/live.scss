@@ -11,11 +11,6 @@ $tungsten: 'Tungsten A', 'Tungsten B';
   text-rendering: optimizeLegibility;
 }
 
-// Some of my own resets.
-ul {
-  padding-left: 0;
-  list-style: none;
-}
-
 @import "live/base";
-@import "live/prologue";
+.overlay-prologue { @import "live/prologue"; }
+.overlay-bumper { @import "live/bumper"; }
