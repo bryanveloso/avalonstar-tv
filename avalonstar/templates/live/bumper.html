@@ -1,1 +1,30 @@
 {% extends "live.html" %}
+{% load static %}
+
+{% block overlay %}
+<div class="overlay overlay-prologue">
+  <div class="section section-chat"></div>
+  <div class="section section-main">
+    <span class="episode-number"><span class="episode-text">Episode</span> {{ broadcast.number }}</span>
+    <div class="episode-metadata">
+      <span class="episode-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
+      <span class="episode-status">{{ broadcast.status }}</span>
+
+      <div class="games">
+        <ul class="game-list">
+        {% for game in broadcast.games.all %}
+          <li class="game">
+            <div class="game-image"><img src="{% get_media_prefix %}{{ game.image_art }}"></div>
+            <div class="game-metadata">
+              <span class="game-name">{{ game.name }}</span>
+              <span class="game-platform">{{ game.platform }}</span>
+            </div>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock overlay %}
