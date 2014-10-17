@@ -44,11 +44,11 @@ def compile(verbose=False, **kwargs):
     # Compile and minify the stylesheets.
     run('yuglify {input} --type css --combine {output}'.format(
         input=os.path.join(STATIC_ROOT, 'stylesheets', 'live.css'),
-        output=os.path.join(STATIC_ROOT, 'stylesheets', 'live.min')), hide=hide)
+        output=os.path.join(STATIC_ROOT, 'stylesheets', 'live')), hide=hide)
     out('stylesheets/live.min.css created and minified.')
     run('yuglify {input} --type css --combine {output}'.format(
         input=os.path.join(STATIC_ROOT, 'stylesheets', 'site.css'),
-        output=os.path.join(STATIC_ROOT, 'stylesheets', 'site.min')), hide=hide)
+        output=os.path.join(STATIC_ROOT, 'stylesheets', 'site')), hide=hide)
     out('stylesheets/site.min.css created and minified.')
 
 
