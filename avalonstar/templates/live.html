@@ -3,7 +3,7 @@
 <head>
 <title>Live</title>
 <meta charset="utf-8">
-{% include "partials/assets.html" %}
+{% include "partials/live_assets.html" %}
 </head>
 <body class="{% firstof request.path|slugify "root" %}" data-path="{{ request.path }}">
   <div class="overlay-container">
