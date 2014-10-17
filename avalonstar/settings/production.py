@@ -48,7 +48,7 @@ class Production(Settings):
     AWS_HEADERS = {'Cache-Control': 'max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIRY, AWS_EXPIRY)}
 
     # ...
-    CDN_DOMAIN = 'http://%s.s3.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME)
+    CDN_DOMAIN = 'http://avalonstar-tv.s3.amazonaws.com'
     MEDIA_URL = '%s/media/' % (CDN_DOMAIN)
     STATIC_URL = '%s/static/' % (CDN_DOMAIN)
 
