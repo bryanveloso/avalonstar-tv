@@ -10,6 +10,18 @@ def _out(name, message):
 
 
 @task
+def collect(verbose=False, **kwargs):
+    out = functools.partial(_out, 'project.collect')
+    hide = 'out' if not verbose else None
+
+    # Build and send it off.
+    out('Using `buildstatic` to concatenate assets.')
+    run('python manage.py buildstatic --configuration=Production', hide=hide)
+    out('Uploading and post-processing all of the assets.')
+    run('python manage.py collectstatic --configuration=Production --noinput', hide=hide)
+
+
+@task
 def compile(verbose=False, **kwargs):
     out = functools.partial(_out, 'development.compile')
     hide = 'out' if not verbose else None
