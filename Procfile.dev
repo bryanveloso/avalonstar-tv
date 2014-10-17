@@ -1,2 +1,3 @@
+coffee: coffee -o avalonstar/static/javascripts/application -cw avalonstar/assets/javascripts
 sass:   sass --watch avalonstar/assets/stylesheets:avalonstar/static/stylesheets
 web:    python ./manage.py runserver
