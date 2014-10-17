@@ -28,7 +28,7 @@ def compile(verbose=False, **kwargs):
     STATIC_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'avalonstar', 'static')
 
     # Compile the 3rd-party Javascript base.apps.
-    invoke.run('yuglify {input} --type js --combine {output}'.format(
+    run('yuglify {input} --type js --combine {output}'.format(
         input=os.path.join(STATIC_ROOT, 'javascripts', 'components', '*.js'),
         output=os.path.join(STATIC_ROOT, 'javascripts', 'components')), hide=hide)
     out('javascripts/components.min.js created and minified.')
