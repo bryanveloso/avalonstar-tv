@@ -1,9 +1,21 @@
 @import "components/normalize";
 
-@import "live/base";
+// Shared variables. (Temporary placement.)
+$gotham: 'Gotham SSm A', 'Gotham SSm B';
+$idlewild: 'Idlewild SSm A', 'Idlewild SSm B';
+$tungsten: 'Tungsten A', 'Tungsten B';
 
 // Force the box model to use the saner border-box calculation.
 *, *:before, *:after {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
 }
+
+// Some of my own resets.
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+@import "live/base";
+@import "live/prologue";

@@ -1,0 +1,87 @@
+.overlay-prologue {
+  font-family: $gotham;
+
+  .section-main {
+    display: flex; align-items: center;
+    padding: 60px;
+    position: absolute; top: 0; right: 0;
+    width: 960px; height: 720px;
+
+    color: #fff;
+  }
+
+  .game-image {
+
+  }
+
+  .episode-metadata {
+    flex: 1;
+    width: 100%;
+  }
+
+  .episode-number {
+    display: block;
+    margin-right: 42px;
+    padding-left: 30px;
+    position: relative;
+
+    font-family: $tungsten;
+    font-size: 128px;
+    font-weight: 300;
+    line-height: 128px;
+  }
+  .episode-text {
+    display: block;
+    font-family: $gotham;
+    font-size: 19px;
+    letter-spacing: 0.01em;
+    line-height: 128px;
+    font-weight: 800;
+    text-transform: uppercase;
+    content: 'Episode';
+
+    position: absolute; top: 1px; left: -28px;
+
+    -webkit-transform: rotate(90deg);
+  }
+
+  .episode-airdate {
+    font-family: $idlewild;
+  }
+  .episode-status {
+    font-family: $idlewild;
+  }
+
+  .game-list { display: flex; }
+  .game {
+    display: flex;
+    position: relative;
+
+    &:nth-of-type(1) { opacity: 1.00; }
+    &:nth-of-type(2) { opacity: 0.75; }
+    &:nth-of-type(3) { opacity: 0.50; }
+  }
+  .game-image {
+    margin-right: 12px;
+    width: 164px; height: 92px;
+    background-color: #fff;
+
+    img { width: 100%; }
+  }
+  .game-name {
+    display: block;
+    margin-top: -2px;
+    position: absolute; left: 0; top: 102px;
+
+    color: rgba(#fff, 0.1);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .game-platform {
+    display: block;
+    font-size: 14px;
+  }
+
+}
+

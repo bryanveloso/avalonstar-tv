@@ -3,9 +3,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 32px 64px;
+  overflow: hidden;
   position: relative;
   width: 1280px; height: 720px;
+}
+
+.overlay {
+  background-color: #12161b;
+
+  &.transparent { background-color: transparent; }
 }
 
 // Placeholders.
@@ -14,4 +20,14 @@
   position: relative;
   transform-type: preserve-3d;
   transform: translate3d(0, 0, 0);
+}
+
+.section-chat {
+  width: 320px; height: 720px;
+  background-color: #090d12;
+}
+
+.phoenix {
+  position: absolute;
+  top: 300px; right: 0;
 }
