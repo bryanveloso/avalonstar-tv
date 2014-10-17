@@ -35,9 +35,6 @@ class Game(models.Model):
     is_completed = models.BooleanField('is completed?', default=False,
         help_text=u'Has this game been completed (if applicable).' )
 
-    class Meta:
-        ordering = ['name']
-
     def __unicode__(self):
         return u'%s' % self.name
 
