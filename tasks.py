@@ -27,6 +27,12 @@ def compile(verbose=False, **kwargs):
     hide = 'out' if not verbose else None
     STATIC_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'avalonstar', 'static')
 
+    # Compile the 3rd-party Javascript base.apps.
+    invoke.run('yuglify {input} --type js --combine {output}'.format(
+        input=os.path.join(STATIC_ROOT, 'javascripts', 'components', '*.js'),
+        output=os.path.join(STATIC_ROOT, 'javascripts', 'components')), hide=hide)
+    out('javascripts/components.min.js created and minified.')
+
     # Autoprefix the stylesheets.
     run('autoprefixer -b "> 1%, last 3 versions, ff 17, opera 12.1" {input}'.format(
         input=os.path.join(STATIC_ROOT, 'stylesheets', 'site.css')), hide=hide)
