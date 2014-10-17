@@ -31,8 +31,8 @@ class Production(Settings):
     # Media Storage Configuration.
     # --------------------------------------------------------------------------
     INSTALLED_APPS += ['storages']
-    DEFAULT_FILE_STORAGE = 'avalonstar.apps.storage.ManifestStaticS3Storage'
-    STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    STATICFILES_STORAGE = 'avalonstar.apps.storage.ManifestStaticS3Storage'
 
     # Amazon Web Services.
     AWS_ACCESS_KEY_ID = values.SecretValue(environ_prefix='')
