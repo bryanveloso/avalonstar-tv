@@ -86,17 +86,30 @@
   100% { box-shadow: 0 0 0 1px #12161b, 0 0 0 2px rgba(#fff, 0.5); }
 }
 
-
-
-.game-name {
-  display: block;
-  margin-top: -2px;
-  position: absolute; left: 0; top: 102px;
-
-  color: rgba(#fff, 0.1);
+.game-metadata {
+  color: rgba(#fff, 0.2);
   font-weight: 500;
   font-size: 12px;
   text-transform: uppercase;
+  position: absolute; left: 0; top: 102px;
+  height: 64px;
+  width: 100%;
+}
+.game-name {
+  display: block;
+  margin-top: -2px;
+}
+.game-appearances {
+  display: block;
+  position: absolute; left: 0; bottom: 0; right: 0;
+  font-size: 11px;
+
+  &:before {
+    content: '';
+    width: 20%; height: 1px;
+    background-color: rgba(#fff, 0.1);
+    position: absolute; bottom: 18px; left: 0;
+  }
 }
 .game-platform {
   display: block;

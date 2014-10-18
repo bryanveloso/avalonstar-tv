@@ -1,4 +1,5 @@
 {% extends "live.html" %}
+{% load humanize %}
 {% load static from staticfiles %}
 
 {% block overlay %}
@@ -17,7 +18,10 @@
             </svg>
             {% endif %}
             <div class="game-image"><img src="{{ MEDIA_URL }}{{ game.image_art }}"></div>
-            <span class="game-name">{{ game.name }}</span>
+            <div class="game-metadata">
+              <span class="game-name">{{ game.name }}</span>
+              <span class="game-appearances"><b>{{ game.appears_on.count|ordinal }}</b> appearance</span>
+            </div>
           </li>
         {% endfor %}
         </ul>
