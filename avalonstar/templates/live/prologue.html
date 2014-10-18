@@ -19,7 +19,7 @@
             {% endif %}
             <div class="game-image"><img src="{{ MEDIA_URL }}{{ game.image_art }}"></div>
             <div class="game-metadata">
-              <span class="game-name">{{ game.name }}</span>
+              <span class="game-name">{{ game.name }} ({{ game.platform }})</span>
               <span class="game-appearances"><b>{{ game.appears_on.count|ordinal }}</b> appearance</span>
             </div>
           </li>
