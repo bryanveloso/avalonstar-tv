@@ -41,6 +41,7 @@ nosetests.xml
 .sass-cache
 .venv
 
+*.codekit
 *.sublime-*
 
 avalonstar/build

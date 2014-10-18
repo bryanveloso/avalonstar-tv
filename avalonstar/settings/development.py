@@ -15,6 +15,9 @@ class Development(Settings):
     # --------------------------------------------------------------------------
     DEBUG = values.BooleanValue(True)
 
-    # django-staticbuilder.
+    # Static File Configuration.
     # --------------------------------------------------------------------------
-    MIDDLEWARE_CLASSES += ('staticbuilder.middleware.BuildOnRequest',)
+    STATICFILES_FINDERS = (
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    )
