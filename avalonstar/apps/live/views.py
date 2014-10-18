@@ -4,27 +4,24 @@ from django.views.generic import TemplateView
 from apps.broadcasts.models import Broadcast
 
 
+class BroadcastContextMixin(object):
+    def get_context_data(self, **kwargs):
+        context = super(BroadcastContextMixin, self).get_context_data(**kwargs)
+        context['broadcast'] = Broadcast.objects.latest()
+        return context
+
+
 class AwayView(TemplateView):
     template_name = 'live/away.html'
 
 
-class BumperView(TemplateView):
+class BumperView(BroadcastContextMixin, TemplateView):
     template_name = 'live/bumper.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(BumperView, self).get_context_data(**kwargs)
-        context['broadcast'] = Broadcast.objects.latest()
-        return context
 
 
 class GameView(TemplateView):
     template_name = 'live/game.html'
 
 
-class PrologueView(TemplateView):
+class PrologueView(BroadcastContextMixin, TemplateView):
     template_name = 'live/prologue.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(PrologueView, self).get_context_data(**kwargs)
-        context['broadcast'] = Broadcast.objects.latest()
-        return context
