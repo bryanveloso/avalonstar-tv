@@ -52,6 +52,19 @@ def compile(verbose=False, **kwargs):
     out('stylesheets/site.min.css created and minified.')
 
 
+@task(collect)
+def deploy(verbose=False, migrate=False, **kwargs):
+    out = functools.partial(_out, 'project.deploy')
+    hide = 'out' if not verbose else None
+
+    # Ready? Let's go.
+    out('Pushing project to GitHub, deploying to Heroku.')
+    run('git push origin,heroku')
+
+    # Done!
+    out('All done~!')
+
+
 @task
 def server(**kwargs):
     # Use Foreman to start all the development processes.
