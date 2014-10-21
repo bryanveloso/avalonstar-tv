@@ -1,2 +1,2 @@
 coffee: coffee -o avalonstar/static/javascripts/application -cw avalonstar/assets/javascripts
-web:    python ./manage.py runserver
+web:    python ./manage.py runserver 4200
