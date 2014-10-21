@@ -13,4 +13,5 @@ $tungsten: 'Tungsten A', 'Tungsten B';
 
 @import "live/base";
 .overlay-bumper { @import "live/bumper"; }
+.overlay-game { @import "live/game"; }
 .overlay-prologue { @import "live/prologue"; }

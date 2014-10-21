@@ -1,1 +1,22 @@
 {% extends "live.html" %}
+{% load static from staticfiles %}
+
+{% block overlay %}
+<div class="overlay overlay-game">
+  <div class="section section-chat">
+    <div class="element element-webcam">
+      <div class="element-tv">
+          <div class="placeholder-webcam"></div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-main">
+    <div class="placeholder-16x9">Avalonstar.tv</div>
+  </div>
+
+  <img class="phoenix" src="{% static 'images/phoenix_large_right.png' %}">
+  <div class="embelish embelish-two"></div>
+  <div class="embelish embelish-three"></div>
+  <div class="embelish embelish-four"></div>
+</div>
+{% endblock overlay %}
