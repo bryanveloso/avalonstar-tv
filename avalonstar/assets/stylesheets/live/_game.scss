@@ -54,8 +54,8 @@
   width: 960px; height: 540px;
   text-transform: uppercase;
 
-  background: #060606;
-  color: #0a0a0a;
+  background: #080808;
+  color: #101010;
   font-weight: 800;
   font-size: 32px;
   line-height: 32px;
@@ -69,7 +69,11 @@
 }
 
 .embelish { position: absolute; }
-.embelish-one { left: -320px; }
+.embelish-one {
+  top: 480px; left: -240px;
+  width: 480px; height: 480px;
+  background-color: #12161b;
+}
 .embelish-two { left: -180px; }
 .embelish-three { left: -160px; }
 .embelish-four { left: -120px; }
