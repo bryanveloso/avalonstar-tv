@@ -8,20 +8,40 @@
 
 .element-webcam {
   width: 320px; height: 240px;
-  padding: 30px;
+  padding: 50px 20px;
   position: absolute; bottom: 0;
   z-index: 1000;
 }
 .element-tv {
-  width: 260px; height: 160px;
+  width: 280px; height: 172px;
   position: relative;
-
   background: #fff;
   border-radius: 4px;
+  box-shadow: 0 2px 0 rgba(#000, 0.05);
+
+  &:before {
+    display: block;
+    position: absolute; bottom: 4px; right: 8px;
+    width: 7px; height: 7px;
+
+    background-color: #b8e986;
+    border-radius: 7px;
+    content: '';
+  }
+}
+.element-tv-stand {
+  margin-left: -35px;
+  position: absolute; bottom: 0px; left: 50%;
+  width: 70px; height: 0;
+  z-index: -1;
+
+  border-bottom: 100px solid #eee;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
 }
 .placeholder-webcam {
   position: absolute; top: 8px; right: 8px; left: 8px;
-  width: 244px; height: 137px;
+  width: 264px; height: 149px;
   background-color: #000;
 }
 
@@ -44,7 +64,7 @@
 // .phoenix / .embelish (-one through -four).
 // All are overridden since the phoenix goes on the left of the in-game screen.
 .phoenix {
-  top: 440px; left: 0;
+  top: 420px; left: 0;
   height: 75%;
 }
 
