@@ -5,37 +5,6 @@
   width: 960px; height: 720px;
 }
 
-// .episode-metadata
-.episode-metadata {
-  flex: 1;
-  width: 100%;
-}
-.episode-number {
-  display: block;
-  margin-right: 24px;
-  padding-left: 40px;
-  position: relative;
-
-  font-family: $tungsten;
-  font-size: 156px;
-  font-weight: 300;
-  letter-spacing: -4px;
-  line-height: 156px;
-}
-.episode-text {
-  display: block;
-  position: absolute; top: 1px; left: -28px;
-
-  content: 'Episode';
-  font-family: $gotham;
-  font-size: 23px;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  line-height: 156px;
-  text-transform: uppercase;
-  -webkit-transform: rotate(90deg);
-}
-
 // .games / .game-list / .game
 .game-list { display: flex; }
 .game {
