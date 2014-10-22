@@ -11,7 +11,7 @@ class BroadcastContextMixin(object):
         return context
 
 
-class AwayView(TemplateView):
+class AwayView(BroadcastContextMixin, TemplateView):
     template_name = 'live/away.html'
 
 

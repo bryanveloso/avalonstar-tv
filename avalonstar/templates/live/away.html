@@ -1,2 +1,17 @@
 {% extends "live.html" %}
+{% load humanize %}
+{% load static from staticfiles %}
+
 {% block title %}Away{% endblock %}
+{% block overlay %}
+<div class="overlay transparent overlay-away">
+  <div class="section section-chat"></div>
+  <div class="section section-main">
+    <span class="episode-number"><span class="episode-text">Episode</span> {{ broadcast.number }}</span>
+    <div class="overlay-message">
+      <div class="message-primary">Be back in a few!</div>
+      <div class="message-secondary">You're watching Avalonstar.tv</div>
+    </div>
+  </div>
+</div>
+{% endblock overlay %}
