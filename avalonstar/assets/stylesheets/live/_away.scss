@@ -1,32 +1,275 @@
+// .section-main
 .section-main {
   display: flex; align-items: center;
   padding: 60px;
   position: absolute; top: 0; right: 0;
   width: 960px; height: 720px;
 
-  background-color: rgba(#000, 0.25);
+  @extend %animated;
+  animation-name: section-background-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 
-.overlay-message {
-  flex: 1;
+// .section-main Animations
+@keyframes section-background-appear {
+  0% { background-color: rgba(#000, 0); }
+  100% { background-color: rgba(#000, 0.75); }
 }
+
+// .episode-number Overrides.
+.episode-text {
+  @extend %animated;
+  position: absolute;
+  animation-name: episode-text-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+.episode-number {
+  @extend %animated;
+  position: relative;
+  animation-name: episode-number-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+// .episode-number Animations
+@keyframes episode-text-appear {
+    0% { opacity: 0; transform: translate3d(0, 24px, 0) rotate(90deg); }
+  100% { opacity: 0.99; transform: translate3d(0, 0, 0) rotate(90deg); }
+}
+@keyframes episode-number-appear {
+    0% { opacity: 0; transform: translate3d(0, 24px, 0); }
+  100% { opacity: 0.99; transform: translate3d(0, 0, 0); }
+}
+
+// .overlay-message
+// .message-primary / .message-secondary
+.overlay-message { flex: 1; }
 .message-primary {
   display: block;
-  padding: 16px 24px;
+  height: 68px;
+  overflow: hidden;
+  padding: 18px 24px;
+  position: relative;
 
   background: #fff;
   color: #090d12;
   font-family: $idlewild;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
   letter-spacing: -2px;
+
+  @extend %animated;
+  animation-name: message-primary-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 .message-secondary {
+  height: 40px;
+  overflow: hidden;
   padding: 12px 24px;
+  position: relative;
+
   background: #090d12;
   color: #fff;
-  font-weight: bold;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
+
+  @extend %animated;
+  animation-name: message-secondary-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+// .message-primary / .message-secondary Animations
+@keyframes message-primary-appear {
+  0% {
+    transform: translateX(256px) rotateY(270deg);
+    width: 0; height: 0;
+    background: rgba(#fff, 0);
+  }
+  40% {
+    transform: translateX(0) rotateY(0deg);
+    width: 68px; height: 68px;
+  }
+  100% {
+    width: 674px;
+    background: #fff;
+  }
+}
+@keyframes message-secondary-appear {
+  0% {
+    transform: translateX(256px) rotateY(270deg);
+    width: 0; height: 0;
+    background: rgba(#090d12, 0);
+  }
+  40% {
+    transform: translateX(0) rotateY(0deg);
+    width: 40px; height: 40px;
+  }
+  100% {
+    width: 674px;
+    background: #090d12;
+  }
+}
+
+// .primary-messages / .secondary-messages
+//
+.primary-messages {
+  margin: 0;
+  position: relative;
+}
+.primary-message {
+  position: absolute;
+  top: 0;
+
+  &.message-1 {
+    @extend %animated;
+    position: absolute;
+    animation-name: primary-message-appear;
+    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  }
+}
+
+.secondary-messages {
+  margin: 0;
+  position: relative;
+}
+.secondary-message {
+  position: absolute;
+  top: 0;
+
+  &.message-1 {
+    @extend %animated;
+    position: absolute;
+    animation-iteration-count: 1, infinite;
+    animation-name: secondary-message-appear, secondary-message-cycle-one;
+    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  }
+  &.message-2 {
+    @extend %animated;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-name: secondary-message-cycle-two;
+    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  }
+  &.message-3 {
+    @extend %animated;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-name: secondary-message-cycle-three;
+    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  }
+  &.message-4 {
+    @extend %animated;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-name: secondary-message-cycle-four;
+    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  }
+  &.message-5 {
+    @extend %animated;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-name: secondary-message-cycle-five;
+    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  }
+}
+
+// .primary-message Animations
+@keyframes primary-message-appear {
+    0% { transform: translateX(-128px); color: rgba(#090d12, 0); }
+  100% { transform: translateX(0px); opacity: #090d12; }
+}
+
+// .secondary-message Animations
+@keyframes secondary-message-appear {
+    0% { transform: translateX(-128px); color: rgba(#fff, 0); }
+  100% { transform: translateX(0px); color: #fff; }
+}
+@keyframes secondary-message-cycle-one {
+    0% { top: 0px; }  /* When you start the slide, the first image is already visible */
+    4% { top: 0px; }  /* Original Position */
+   16% { top: 0px; opacity: 1; z-index:0; }  /* From 4% to 16 % = for 3 seconds the image is visible */
+   20% { top: 40px; opacity: 0; z-index: 0; }  /* From 16% to 20% = for 1 second exit image */
+   21% { top: -40px; opacity: 0; z-index: -1; } /* Return to Original Position */
+   92% { top: -40px; opacity: 0; z-index: 0; }
+   96% { top: -40px; opacity: 0; }  /* From 96% to 100% = for 1 second enter image*/
+  100% { top: 0px; opacity: 1; }
+}
+@keyframes secondary-message-cycle-two {
+    0% { top: -40px; opacity: 0; }  /* Original Position */
+   16% { top: -40px; opacity: 0; }  /* Starts moving after 16% to this position */
+   20% { top: 0px; opacity: 1; }
+   24% { top: 0px; opacity: 1; }
+   36% { top: 0px; opacity: 1; z-index: 0; }  /* From 24% to 36 % = for 3 seconds the image is visible */
+   40% { top: 40px; opacity: 0; z-index: 0; }  /* From 36% to 40% = for 1 second exit image */
+   41% { top: -40px; opacity: 0; z-index: -1; }  /* Return to Original Position */
+  100% { top: -40px; opacity: 0; z-index: -1; }
+}
+@keyframes secondary-message-cycle-three {
+    0% { top: -40px; opacity: 0; }
+   36% { top: -40px; opacity: 0; }
+   40% { top: 0px; opacity: 1; }
+   44% { top: 0px; opacity: 1; }
+   56% { top: 0px; opacity: 1; }
+   60% { top: 40px; opacity: 0; z-index: 0; }
+   61% { top: -40px; opacity: 0; z-index: -1; }
+  100% { top: -40px; opacity: 0; z-index: -1; }
+}
+@keyframes secondary-message-cycle-four {
+    0% { top: -40px; opacity: 0; }
+   56% { top: -40px; opacity: 0; }
+   60% { top: 0px; opacity: 1; }
+   64% { top: 0px; opacity: 1; }
+   76% { top: 0px; opacity: 1; z-index: 0; }
+   80% { top: 40px; opacity: 0; z-index: 0; }
+   81% { top: -40px; opacity: 0; z-index: -1; }
+  100% { top: -40px; opacity: 0; z-index: -1; }
+}
+@keyframes secondary-message-cycle-five {
+    0% { top: -40px; opacity: 0; }
+   76% { top: -40px; opacity: 0; }
+   80% { top: 0px; opacity: 1; }
+   84% { top: 0px; opacity: 1; }
+   96% { top: 0px; opacity: 1; z-index: 0; }
+  100% { top: 40px; opacity: 0; z-index: 0; }
+}
+
+// Animation Delays and Durations.
+// (In order of appearance.)
+.section-main {
+  animation-delay: 250ms;               // start:   250ms
+  animation-duration: 500ms;            // end:     750ms
+}
+.episode-number {
+  animation-delay: 500ms;               // start:   500ms
+  animation-duration: 600ms;            // end:    1100ms
+}
+.episode-text {
+  animation-delay: 600ms;               // start:   600ms
+  animation-duration: 500ms;            // end:    1100ms
+}
+
+.message-primary {
+  animation-delay: 900ms;               // start:   900ms
+  animation-duration: 1000ms;           // end:    1900ms
+}
+.message-secondary {
+  animation-delay: 1000ms;              // start:  1000ms
+  animation-duration: 1000ms;           // end:    2000ms
+}
+
+.primary-message {
+  &.message-1 {
+    animation-delay: 1500ms;
+    animation-duration: 1000ms;
+  }
+}
+.secondary-message {
+  &.message-1 {
+    animation-delay: 1600ms, 2000ms;
+    animation-duration: 1000ms, 25000ms;
+  }
+  &.message-2, &.message-3, &.message-4, &.message-5 {
+    animation-delay: 2000ms;
+    animation-duration: 25000ms;
+  }
 }

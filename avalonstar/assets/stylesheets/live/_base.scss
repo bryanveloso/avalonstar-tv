@@ -22,10 +22,9 @@ ul {
 
 // Placeholders.
 %animated {
-  // animation-fill-mode: both;
+  animation-fill-mode: both;
   position: relative;
   transform-type: preserve-3d;
-  transform: translate3d(0, 0, 0);
 }
 
 // ...
