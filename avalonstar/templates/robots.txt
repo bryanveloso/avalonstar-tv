@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /live/away/
+Disallow: /live/bumper/
+Disallow: /live/game/
+Disallow: /live/prologue/
