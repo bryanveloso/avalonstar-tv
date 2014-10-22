@@ -52,7 +52,7 @@ def compile(verbose=False, **kwargs):
     out('stylesheets/site.min.css created and minified.')
 
 
-@task(collect)
+@task
 def deploy(verbose=False, migrate=False, **kwargs):
     out = functools.partial(_out, 'project.deploy')
     hide = 'out' if not verbose else None
