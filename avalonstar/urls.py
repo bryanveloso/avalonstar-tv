@@ -9,6 +9,9 @@ from avalonstar.apps.views import PlainTextView
 
 
 urlpatterns = patterns('',
+    # Temporary redirect to Twitch channel.
+    url(r'^', name='twitch', view=RedirectView.as_view(url='http://twitch.tv/avalonstar')),
+
     # Core Modules.
     url(r'^api/', include('apps.api.urls', namespace='api')),
     url(r'^live/', include('apps.live.urls', namespace='live')),
