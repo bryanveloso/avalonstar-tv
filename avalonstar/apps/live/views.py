@@ -19,6 +19,10 @@ class BumperView(BroadcastContextMixin, TemplateView):
     template_name = 'live/bumper.html'
 
 
+class DiscussionView(BroadcastContextMixin, TemplateView):
+    template_name = 'live/discussion.html'
+
+
 class GameView(TemplateView):
     template_name = 'live/game.html'
 
