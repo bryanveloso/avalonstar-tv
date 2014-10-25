@@ -9,12 +9,12 @@
 
 .element-webcam {
   width: 676px; height: 538px;
-  padding: 52px 0;
+  padding: 70px 0;
   position: absolute; bottom: 0;
   z-index: 1000;
 }
 .element-tv {
-  width: 674px; height: 426px;
+  width: 674px; height: 408px;
   position: relative;
   background: #fff;
   border-radius: 4px;
@@ -41,14 +41,13 @@
   border-right: 25px solid transparent;
 }
 .placeholder-webcam {
-  padding-top: 56.25%;
   position: absolute; top: 14px; right: 14px; left: 14px;
-  width: 646px; height: 0;
+  width: 646px; height: 363px;
   background-color: #000;
 }
 
 .games {
-  position: absolute; bottom: 498px; left: 226px;
+  position: absolute; bottom: 480px; left: 226px;
 }
 .game-menu {
   display: block;
