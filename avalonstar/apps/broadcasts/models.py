@@ -53,6 +53,10 @@ class Raid(models.Model):
     timestamp = models.DateTimeField(default=timezone.now,
         help_text=u'Entered as a weird ass UNIX timestamp for legacy Firebase reasons.')
 
+    # Silly metadata.
+    game = models.CharField(blank=True, max_length=200,
+        help_text=u'The game the raider was playing at the time of raiding.')
+
     class Meta:
         order_with_respect_to = u'broadcast'
 
