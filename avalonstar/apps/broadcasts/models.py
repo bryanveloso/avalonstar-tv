@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.utils import timezone
 
 from apps.games.models import Game
 
@@ -49,8 +50,11 @@ class Broadcast(models.Model):
 class Raid(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='raids')
     raider = models.CharField(blank=True, max_length=200)
-    timestamp = models.CharField(blank=True, max_length=13,
+    timestamp = models.DateTimeField(default=timezone.now,
         help_text=u'Entered as a weird ass UNIX timestamp for legacy Firebase reasons.')
 
     class Meta:
         order_with_respect_to = u'broadcast'
+
+    def __unicode__(self):
+        return u'%s' % self.raider
