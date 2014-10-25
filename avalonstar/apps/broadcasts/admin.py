@@ -18,7 +18,7 @@ admin.site.register(Broadcast, BroadcastAdmin)
 
 
 class RaidAdmin(admin.ModelAdmin):
-    list_display = ['timestamp', 'episode', 'raider']
+    list_display = ['timestamp', 'broadcast', 'raider']
 admin.site.register(Raid, RaidAdmin)
 
 
