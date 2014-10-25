@@ -44,3 +44,13 @@ class Broadcast(models.Model):
 
     def __unicode__(self):
         return u'Episode %s' % self.number
+
+
+class Raid(models.Model):
+    broadcast = models.ForeignKey(Broadcast, related_name='raids')
+    raider = models.CharField(blank=True, max_length=200)
+    timestamp = models.CharField(blank=True, max_length=13,
+        help_text=u'Entered as a weird ass UNIX timestamp for legacy Firebase reasons.')
+
+    class Meta:
+        order_with_respect_to = u'broadcast'
