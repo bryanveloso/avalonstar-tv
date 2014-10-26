@@ -4,7 +4,13 @@ from django.contrib import admin
 from .models import Broadcast, Raid, Series
 
 
+class RaidInline(admin.TabularInline):
+    extra = 1
+    model = Raid
+
+
 class BroadcastAdmin(admin.ModelAdmin):
+    inlines = [RaidInline]
     list_display = ['number', 'airdate', 'status', 'series']
     list_editable = ['airdate', 'status', 'series']
     list_display_links = ['number']

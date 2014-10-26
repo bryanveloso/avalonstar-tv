@@ -49,9 +49,9 @@ class Broadcast(models.Model):
 
 class Raid(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='raids')
-    raider = models.CharField(blank=True, max_length=200)
     timestamp = models.DateTimeField(default=timezone.now,
-        help_text=u'Entered as a weird ass UNIX timestamp for legacy Firebase reasons.')
+        help_text=u'When did it happen?')
+    raider = models.CharField(blank=True, max_length=200)
 
     # Silly metadata.
     game = models.CharField(blank=True, max_length=200,
