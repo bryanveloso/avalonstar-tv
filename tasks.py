@@ -69,3 +69,8 @@ def deploy(verbose=False, migrate=False, **kwargs):
 def server(**kwargs):
     # Use Foreman to start all the development processes.
     run('foreman start -f Procfile.dev', pty=True)
+
+
+@task(name='migrate')
+def migrate(app='', **kwargs):
+    run('heroku run python manage.py migrate %s' % app)

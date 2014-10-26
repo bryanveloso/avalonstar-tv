@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
-from .models import Broadcast, Series
+from .models import Broadcast, Raid, Series
 
 
 class BroadcastAdmin(admin.ModelAdmin):
@@ -15,6 +15,11 @@ class BroadcastAdmin(admin.ModelAdmin):
         'm2m': ['games']
     }
 admin.site.register(Broadcast, BroadcastAdmin)
+
+
+class RaidAdmin(admin.ModelAdmin):
+    list_display = ['timestamp', 'broadcast', 'raider', 'game']
+admin.site.register(Raid, RaidAdmin)
 
 
 class SeriesAdmin(admin.ModelAdmin):
