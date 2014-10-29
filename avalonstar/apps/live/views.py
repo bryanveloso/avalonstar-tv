@@ -23,6 +23,10 @@ class DiscussionView(BroadcastContextMixin, TemplateView):
     template_name = 'live/discussion.html'
 
 
+class EpilogueView(BroadcastContextMixin, TemplateView):
+    template_name = 'live/epilogue.html'
+
+
 class GameView(TemplateView):
     template_name = 'live/game.html'
 

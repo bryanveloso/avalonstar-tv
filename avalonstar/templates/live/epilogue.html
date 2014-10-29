@@ -1,0 +1,18 @@
+{% extends "live.html" %}
+{% load humanize %}
+{% load static from staticfiles %}
+
+{% block title %}Epilogue{% endblock %}
+{% block overlay %}
+<div class="overlay overlay-epilogue">
+  <div class="section section-chat"></div>
+  <div class="section section-main">
+  </div>
+
+  <img class="phoenix" src="{% static 'images/phoenix_large.png' %}">
+  <div class="embelish embelish-one"></div>
+  <div class="embelish embelish-two"></div>
+  <div class="embelish embelish-three"></div>
+  <div class="embelish embelish-four"></div>
+</div>
+{% endblock overlay %}
