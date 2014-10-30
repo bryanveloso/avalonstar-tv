@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
-from .models import Broadcast, Raid, Series
+from .models import Broadcast, Highlight, Raid, Series
+
+
+class HighlightInline(admin.TabularInline):
+    extra = 1
+    model = Highlight
 
 
 class RaidInline(admin.TabularInline):
@@ -10,7 +15,7 @@ class RaidInline(admin.TabularInline):
 
 
 class BroadcastAdmin(admin.ModelAdmin):
-    inlines = [RaidInline]
+    inlines = [RaidInline, HighlightInline]
     list_display = ['number', 'airdate', 'status', 'series']
     list_editable = ['airdate', 'status', 'series']
     list_display_links = ['number']

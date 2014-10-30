@@ -47,6 +47,23 @@ class Broadcast(models.Model):
         return u'Episode %s' % self.number
 
 
+class Highlight(models.Model):
+    broadcast = models.ForeignKey(Broadcast, related_name='highlights')
+    game = models.ForeignKey(Game, related_name='highlited_on')
+
+    url = models.URLField()
+    title = models.CharField(blank=True, max_length=200)
+    description = models.TextField(blank=True)
+
+    class Meta:
+        order_with_respect_to = 'broadcast'
+
+    def __unicode__(self):
+        if not self.title:
+            return u'Highlight for %s' % self.broadcast
+        return self.title
+
+
 class Raid(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='raids')
     timestamp = models.DateTimeField(default=timezone.now,
