@@ -14,6 +14,12 @@
   </div>
   <div class="section section-main">
     <div class="placeholder-16x9">Avalonstar.tv</div>
+    <div class="placeholder-special">
+    {% if broadcast.series %}
+      <span class="series-type">{{ broadcast.series }}</span>
+      <span class="indicator">Series</span>
+    {% endif %}
+    </div>
   </div>
 
   <img class="phoenix" src="{% static 'images/phoenix_large_right.png' %}">

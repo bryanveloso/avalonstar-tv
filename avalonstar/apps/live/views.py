@@ -27,7 +27,7 @@ class EpilogueView(BroadcastContextMixin, TemplateView):
     template_name = 'live/epilogue.html'
 
 
-class GameView(TemplateView):
+class GameView(BroadcastContextMixin, TemplateView):
     template_name = 'live/game.html'
 
 
