@@ -16,8 +16,13 @@
     <div class="placeholder-16x9">Avalonstar.tv</div>
     <div class="placeholder-special">
     {% if broadcast.series %}
-      <span class="series-type">{{ broadcast.series }}</span>
+      <span class="special-type">{{ broadcast.series }}</span>
       <span class="indicator">Series</span>
+    {% endif %}
+    {% if broadcast.is_marathon %}
+      {# This is hacky until I specify a special display field. #}
+      <span class="special-type">{{ broadcast.status }}</span>
+      <span class="indicator">Marathon</span>
     {% endif %}
     </div>
   </div>
