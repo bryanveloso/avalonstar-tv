@@ -1,3 +1,13 @@
+// .overlay-webcam
+.overlay-webcam {
+  position: absolute; top: 538px; left: 28px;
+  width: 264px; height: 149px;
+
+  @extend %animated;
+  animation-name: section-background-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
 // .section-main
 .section-main {
   display: flex; align-items: center;
@@ -13,7 +23,7 @@
 // .section-main Animations
 @keyframes section-background-appear {
   0% { background-color: rgba(#000, 0); }
-  100% { background-color: rgba(#000, 0.75); }
+  100% { background-color: rgba(#000, 0.8); }
 }
 
 // .episode-number Overrides.
@@ -235,7 +245,7 @@
 
 // Animation Delays and Durations.
 // (In order of appearance.)
-.section-main {
+.section-main, .overlay-webcam {
   animation-delay: 250ms;               // start:   250ms
   animation-duration: 500ms;            // end:     750ms
 }
