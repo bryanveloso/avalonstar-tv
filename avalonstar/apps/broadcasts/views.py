@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
+from django.views.generic import ListView, DetalView, TemplateView
 
-# Create your views here.
+from .models import Broadcast
+
+
+class BroadcastList(ListView):
+    model = Broadcast
