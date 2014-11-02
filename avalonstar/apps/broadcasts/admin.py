@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import Broadcast, Highlight, Raid, Series
 
 
-class HighlightInline(admin.TabularInline):
+class HighlightInline(admin.StackedInline):
     extra = 1
     model = Highlight
 
