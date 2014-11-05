@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^$', name='site-home', view=RedirectView.as_view(url='http://twitch.tv/avalonstar')),
 
     # Core Modules.
+    url(r'^', include('apps.broadcasts.urls')),
     url(r'^api/', include('apps.api.urls', namespace='api')),
     url(r'^live/', include('apps.live.urls', namespace='live')),
 
