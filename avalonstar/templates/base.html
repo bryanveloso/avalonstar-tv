@@ -1,0 +1,12 @@
+<!doctype html>
+{% load static %}
+<html lang="{{ LANGUAGE_CODE|slice:"2" }}">
+<head>
+<title>{% block title %}{% endblock %}</title>
+<meta charset="utf-8">
+<link rel="icon" href="{% static 'images/favicon.ico' %}">
+</head>
+<body class="{% firstof request.path|slugify "root" %}" data-path="{{ request.path }}">
+{% block body %}{% endblock body %}
+</body>
+</html>
