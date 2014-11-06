@@ -110,18 +110,21 @@ $duration: 1500ms;
   width: 640px; height: 640px;
   transform: rotate(315deg);
   background: #090D12;
+  z-index: 5;
 }
 .embelish-two {
   top: 540px; right: -180px;
   width: 360px; height: 360px;
   transform: rotate(315deg);
   background: #29384D;
+  z-index: 6;
 }
 .embelish-three {
   top: 560px; right: -160px;
   width: 320px; height: 320px;
   transform: rotate(315deg);
   background: #3B5577;
+  z-index: 7;
 }
 .embelish-four {
   top: 600px; right: -120px;
