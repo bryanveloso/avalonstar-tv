@@ -53,6 +53,21 @@ def compile(verbose=False, **kwargs):
 
 
 @task
+def dbsync(verbose=False, database='avalonstar-tv', **kwargs):
+    out = functools.partial(_out, 'heroku.pull')
+    hide = 'out' if not verbose else None
+
+    # Fetch the latest database dump.
+    run('curl -o latest.dump `heroku pgbackups:url`', hide=hide)
+    out('Latest database dump (latest.dump) grabbed via curl.')
+
+    # Restore it.
+    run('pg_restore --verbose --clean --no-acl --no-owner -h localhost -d %s latest.dump' % database, hide=hide)
+    run('rm latest.dump', hide=hide)
+    out('Restored latest production dump to local database.')
+
+
+@task
 def deploy(verbose=False, migrate=False, **kwargs):
     out = functools.partial(_out, 'project.deploy')
     hide = 'out' if not verbose else None
@@ -71,6 +86,6 @@ def server(**kwargs):
     run('foreman start -f Procfile.dev', pty=True)
 
 
-@task(name='migrate')
+@task
 def migrate(app='', **kwargs):
     run('heroku run python manage.py migrate %s' % app)
