@@ -18,9 +18,10 @@
              <circle class="path" fill="none" stroke-width="4" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
             </svg>
             {% endif %}
-            <div class="game-image"><img src="{{ MEDIA_URL }}{{ game.image_art }}"></div>
+            <div class="game-image"><img src="{{ MEDIA_URL }}{{ game.image_art }}" cross-origin="anonymous" data-adaptive-background="1"></div>
             <div class="game-metadata">
-              <span class="game-name">{{ game.name }} ({{ game.platform }})</span>
+              <div class="game-metadata-marker"></div>
+              <span class="game-name">{{ game.name }} <span class="game-platform">({{ game.platform }})</span></span>
               <span class="game-appearances"><b>{{ game.appears_on.count|ordinal }}</b> appearance</span>
             </div>
           </li>
