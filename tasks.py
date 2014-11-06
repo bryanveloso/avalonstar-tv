@@ -57,6 +57,10 @@ def dbsync(verbose=False, database='avalonstar-tv', **kwargs):
     out = functools.partial(_out, 'heroku.pull')
     hide = 'out' if not verbose else None
 
+    # Take a snapshot.
+    out('Snapshotting the production database.')
+    run('heroku pgbackups:capture --expire', hide=hide)
+
     # Fetch the latest database dump.
     run('curl -o latest.dump `heroku pgbackups:url`', hide=hide)
     out('Latest database dump (latest.dump) grabbed via curl.')
