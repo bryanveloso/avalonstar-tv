@@ -2,8 +2,7 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
 
-from .views import (AwayView, BumperView, DiscussionView, GameView,
-    PrologueView)
+from .views import AwayView, DiscussionView, GameView, PrologueView
 
 
 urlpatterns = patterns('',
