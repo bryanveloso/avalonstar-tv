@@ -45,6 +45,32 @@
   }
 }
 
+// .status
+.status {
+  position: absolute;
+  width: 45%;
+  bottom: 64px;
+}
+.episode-airdate {
+  padding: 4px 8px;
+
+  background: #3B5577;
+  color: #12161b;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.episode-status {
+  display: block;
+  padding: 12px 0;
+
+  color: #768EA4;
+  font-family: $idlewild;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
 // .games / .game-list / .game Animations
 @keyframes prologue-game-overlay-pulse {
   0% { background-color: rgba(#000, 0.4); }

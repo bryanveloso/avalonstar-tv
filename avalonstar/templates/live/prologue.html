@@ -28,6 +28,10 @@
         {% endfor %}
         </ul>
       </div>
+      <div class="status">
+        <span class="episode-status">{{ broadcast.status }}</span>
+        <span class="episode-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
+      </div>
     </div>
   </div>
 
