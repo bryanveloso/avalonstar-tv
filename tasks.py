@@ -27,6 +27,10 @@ def compile(verbose=False, **kwargs):
     hide = 'out' if not verbose else None
     STATIC_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'avalonstar', 'static')
 
+    # Pre-compile all of our assets.
+    out('Compiling stylesheets using production environment settings.')
+    run('compass compile -e production --force', hide=hide)
+
     # Compile the 3rd-party Javascript base.apps.
     run('yuglify {input} --type js --combine {output}'.format(
         input=os.path.join(STATIC_ROOT, 'javascripts', 'components', '*.js'),
