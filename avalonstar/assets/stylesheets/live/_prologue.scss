@@ -9,6 +9,7 @@
 .game-list {
   display: flex;
   flex-direction: column;
+  position: relative; top: 2px;
 }
 .game {
   position: relative;
@@ -33,7 +34,7 @@
 }
 
 .game-image {
-  height: 108px;
+  height: 114px;
   overflow: hidden;
   position: relative;
 
