@@ -8,7 +8,6 @@ from .views import (AwayView, BumperView, DiscussionView, GameView,
 
 urlpatterns = patterns('',
     url(r'^away/$', name='live-away', view=AwayView.as_view()),
-    url(r'^bumper/$', name='live-bumper', view=BumperView.as_view()),
     url(r'^discussion/$', name='live-discussion', view=DiscussionView.as_view()),
     url(r'^game/$', name='live-game', view=GameView.as_view()),
     url(r'^prologue/$', name='live-prologue', view=PrologueView.as_view()),
