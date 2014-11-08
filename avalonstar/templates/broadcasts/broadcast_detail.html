@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
-{% block body %}
-{{ object }}
-{% endblock body %}
+{% block container %}
+{% if object.status %}
+<h2 class="episode-status">{{ object.status }}</h2>
+<span class="episode-number">Episode <b>{{ object.number }}</b></span>
+{% endif %}
+<span class="episode-airdate">{{ object.airdate }}</span>
+{% for game in object.games.all %}
+  {{ game }}
+{% endfor %}
+{% endblock container %}
