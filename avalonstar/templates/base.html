@@ -1,10 +1,12 @@
-<!doctype html>
 {% load static %}
+
+<!doctype html>
 <html lang="{{ LANGUAGE_CODE|slice:"2" }}">
 <head>
 <title>{% block title %}{% endblock %}</title>
 <meta charset="utf-8">
 <link rel="icon" href="{% static 'images/favicon.ico' %}">
+{% include "partials/site_assets.html" %}
 </head>
 <body class="{% firstof request.path|slugify "root" %}" data-path="{{ request.path }}">
 {% block body %}
