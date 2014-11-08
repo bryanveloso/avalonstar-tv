@@ -10,6 +10,15 @@
 </head>
 <body class="{% firstof request.path|slugify "root" %}" data-path="{{ request.path }}">
 {% block body %}
+  <header>
+    <h1>avalonstar.tv</h1>
+  </header>
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-item"><a href="{% url 'broadcast-list' %}">Broadcasts</a></li>
+      <li class="nav-item"><a href="{% url 'game-list' %}">Games</a></li>
+    </ul>
+  </nav>
   <div class="container">
     {% block container %}{% endblock %}
   </div>
