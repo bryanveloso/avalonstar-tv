@@ -5,6 +5,6 @@ from .views import BroadcastDetailView, BroadcastListView
 
 
 urlpatterns = patterns('',
-    url(r'^episode/(?P<slug>[-\w]+)/$', name='episode-detail', view=BroadcastDetailView.as_view()),
+    url(r'^episode/(?P<slug>[-\w]+)/$', name='broadcast-detail', view=BroadcastDetailView.as_view()),
     url(r'^broadcasts/$', name='broadcast-list', view=BroadcastListView.as_view()),
 )
