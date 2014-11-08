@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="games">
+  <ul class="game-list">
+  {% for game in object_list reversed %}
+    {% if game.appears_on.count > 0 %}
+    <li class="game">
+      {{ game }}
+      ({{ game.platform }})
+      {{ game.appears_on.count }}
+      {% for broadcast in game.appears_on.all reversed %}
+        <a href="{{ broadcast.get_absolute_url }}">{{ broadcast.number }}</a>
+      {% endfor %}
+      {% if game.is_abandoned %}Abandoned{% endif %}
+      {% if game.is_completed %}Completed{% endif %}
+    </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+{% endblock container %}

@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 
     # Core Modules.
     url(r'^', include('apps.broadcasts.urls')),
+    url(r'^', include('apps.games.urls')),
     url(r'^api/', include('apps.api.urls', namespace='api')),
     url(r'^live/', include('apps.live.urls', namespace='live')),
 
