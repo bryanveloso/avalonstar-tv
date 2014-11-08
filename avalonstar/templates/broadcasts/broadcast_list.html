@@ -6,7 +6,7 @@
   {% for broadcast in object_list %}
     <li class="broadcast">
       <span class="broadcast-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
-      <span class="broadcast-number">Episode <b>{{ broadcast.number }}</b></span>
+      <span class="broadcast-number"><b>{{ broadcast.number }}</b></span>
       {% if broadcast.status %}<h2 class="broadcast-status">{{ broadcast.status }}</h2>{% endif %}
       {% if broadcast.series %}<span class="broadcast-series">{{ broadcast.series }}{% endif %}
       <div class="games">
@@ -17,6 +17,7 @@
           </li>
         {% endfor %}
         </ul>
+        {% if broadcast.raids.count %}<span class="broadcast-raid-count">{{ broadcast.raids.count }}</span>{% endif %}
       </div>
     </li>
   {% endfor %}
