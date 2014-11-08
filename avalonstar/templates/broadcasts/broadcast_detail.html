@@ -6,7 +6,28 @@
 <span class="episode-number">Episode <b>{{ object.number }}</b></span>
 {% endif %}
 <span class="episode-airdate">{{ object.airdate }}</span>
-{% for game in object.games.all %}
-  {{ game }}
-{% endfor %}
+
+<div class="games">
+  <h3>Game{{ object.games.count|pluralize }} Played</h3>
+  <ul class="game-list">
+  {% for game in object.games.all %}
+    <li class="game">
+      {{ game }}
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="raids">
+  <h3>Raid{{ object.raids.count|pluralize }}</h3>
+  <ul class="raid-list">
+  {% for raid in object.raids.all %}
+    <li class="raid">
+      <a href="http://twitch.tv/{{ raid.raider }}">{{ raid.raider }}</a>
+      {{ raid.game }}
+      {{ raid.timestamp }}
+    </li>
+  {% endfor %}
+  </ul>
+</div>
 {% endblock container %}
