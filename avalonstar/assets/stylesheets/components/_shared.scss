@@ -1,0 +1,12 @@
+// Shared variables.
+// The final few entries of each font declaration are thrown in for
+// use during offline development.
+$gotham: 'Gotham SSm A', 'Gotham SSm B', 'Gotham HTF', sans-serif;
+$idlewild: 'Idlewild SSm A', 'Idlewild SSm B', 'Halogen', sans-serif;
+$tungsten: 'Tungsten A', 'Tungsten B', sans-serif;
+
+// Force the box model to use the saner border-box calculation.
+*, *:before, *:after {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
