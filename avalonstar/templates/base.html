@@ -7,6 +7,10 @@
 <link rel="icon" href="{% static 'images/favicon.ico' %}">
 </head>
 <body class="{% firstof request.path|slugify "root" %}" data-path="{{ request.path }}">
-{% block body %}{% endblock body %}
+{% block body %}
+  <div class="container">
+    {% block container %}{% endblock %}
+  </div>
+{% endblock body %}
 </body>
 </html>
