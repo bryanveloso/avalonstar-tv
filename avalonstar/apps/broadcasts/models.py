@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils import timezone
 
@@ -45,6 +46,9 @@ class Broadcast(models.Model):
 
     def __unicode__(self):
         return u'Episode %s' % self.number
+
+    def get_absolute_url(self):
+        return reverse('broadcast-detail', kwargs={'slug': self.number})
 
 
 class Highlight(models.Model):
