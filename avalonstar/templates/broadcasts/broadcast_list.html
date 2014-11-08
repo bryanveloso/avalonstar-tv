@@ -1,7 +1,24 @@
 {% extends "base.html" %}
 
-{% block body %}
-{% for episode in object_list %}
-    {{ episode }}
-{% endfor %}
-{% endblock body %}
+{% block container %}
+<div class="broadcasts">
+  <ul class="broadcast-list">
+  {% for episode in object_list %}
+    <li class="broadcast">
+      {{ episode.airdate | date:"F j, Y" }}
+      Episode {{ episode.number }}
+      {{ episode.status }}
+      <div class="games">
+        <ul class="game-list">
+        {% for game in episode.games.all %}
+          <li class="game">
+            {{ game }}
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock container %}
