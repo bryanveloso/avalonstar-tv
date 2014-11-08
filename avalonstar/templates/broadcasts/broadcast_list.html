@@ -3,14 +3,15 @@
 {% block container %}
 <div class="broadcasts">
   <ul class="broadcast-list">
-  {% for episode in object_list %}
+  {% for broadcast in object_list %}
     <li class="broadcast">
-      {{ episode.airdate | date:"F j, Y" }}
-      Episode {{ episode.number }}
-      {{ episode.status }}
+      <span class="broadcast-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
+      <span class="broadcast-number">Episode <b>{{ broadcast.number }}</b></span>
+      {% if broadcast.status %}<h2 class="broadcast-status">{{ broadcast.status }}</h2>{% endif %}
+      {% if broadcast.series %}<span class="broadcast-series">{{ broadcast.series }}{% endif %}
       <div class="games">
         <ul class="game-list">
-        {% for game in episode.games.all %}
+        {% for game in broadcast.games.all %}
           <li class="game">
             {{ game }}
           </li>
