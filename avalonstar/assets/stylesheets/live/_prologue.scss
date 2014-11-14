@@ -49,7 +49,7 @@
 // .status
 .status {
   position: absolute;
-  width: 45%;
+  width: 40%;
   bottom: 64px;
 }
 .episode-airdate {
@@ -96,6 +96,7 @@
 }
 .game-name {
   display: block;
+  min-width: 200px;
   padding: 10px 12px;
 
   background: rgba(#000, 0.75);
