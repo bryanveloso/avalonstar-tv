@@ -53,7 +53,7 @@ class Broadcast(models.Model):
 
 class Highlight(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='highlights')
-    game = models.ForeignKey(Game, related_name='highlited_on')
+    game = models.ForeignKey(Game, blank=True, related_name='highlited_on')
 
     url = models.URLField()
     title = models.CharField(blank=True, max_length=200)
