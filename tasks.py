@@ -81,8 +81,10 @@ def deploy(verbose=False, migrate=False, **kwargs):
     hide = 'out' if not verbose else None
 
     # Ready? Let's go.
-    out('Pushing project to GitHub, deploying to Heroku.')
-    run('git push origin,heroku')
+    out('Pushing project to GitHub.')
+    run('git push origin')
+    out('Deploying to Heroku.')
+    run('git push heroku')
 
     # Done!
     out('All done~!')
