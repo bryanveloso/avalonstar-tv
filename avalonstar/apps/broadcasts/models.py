@@ -63,6 +63,7 @@ class Highlight(models.Model):
     description = models.TextField(blank=True)
 
     class Meta:
+        ordering = ['twid']
         order_with_respect_to = 'broadcast'
 
     def __unicode__(self):
