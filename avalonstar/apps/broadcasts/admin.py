@@ -29,8 +29,8 @@ admin.site.register(Broadcast, BroadcastAdmin)
 
 
 class HighlightAdmin(admin.ModelAdmin):
-    list_display = ['broadcast', 'twid', 'game', 'url', 'title']
-    list_editable = list_display
+    list_display = ['title', 'broadcast', 'game', 'twid', 'url']
+    list_display_links = ['title', 'broadcast']
 
     raw_id_fields = ['broadcast', 'game']
     autocomplete_lookup_fields = {'fk': ['game']}
