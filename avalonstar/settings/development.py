@@ -21,3 +21,9 @@ class Development(Settings):
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     )
+
+    # Media Storage Configuration.
+    # --------------------------------------------------------------------------
+    CDN_DOMAIN = 'http://avalonstar-tv.s3.amazonaws.com'
+    MEDIA_URL = '%s/' % (CDN_DOMAIN)
+    STATIC_URL = '%s/static/' % (CDN_DOMAIN)
