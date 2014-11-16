@@ -7,7 +7,6 @@ from apps.games.models import Game
 
 class BroadcastSerializer(serializers.ModelSerializer):
     class Meta:
-        depth = 1
         model = Broadcast
 
 
