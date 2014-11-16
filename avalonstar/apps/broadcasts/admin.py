@@ -28,6 +28,15 @@ class BroadcastAdmin(admin.ModelAdmin):
 admin.site.register(Broadcast, BroadcastAdmin)
 
 
+class HighlightAdmin(admin.ModelAdmin):
+    list_display = ['broadcast', 'twid', 'game', 'url', 'title']
+    list_editable = list_display
+
+    raw_id_fields = ['broadcast', 'game']
+    autocomplete_lookup_fields = {'fk': ['game']}
+admin.site.register(Highlight, HighlightAdmin)
+
+
 class RaidAdmin(admin.ModelAdmin):
     list_display = ['timestamp', 'broadcast', 'raider', 'game']
 admin.site.register(Raid, RaidAdmin)

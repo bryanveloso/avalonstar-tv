@@ -53,9 +53,9 @@ class Broadcast(models.Model):
 
 class Highlight(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='highlights')
-    game = models.ForeignKey(Game, blank=True, related_name='highlited_on')
     twid = models.CharField(blank=True, max_length=200,
         help_text=u'The highlight\'s ID on Twitch; used for API calls, etc.')
+    game = models.ForeignKey(Game, blank=True, related_name='highlited_on')
 
     # Silly metadata.
     url = models.URLField('URL')
