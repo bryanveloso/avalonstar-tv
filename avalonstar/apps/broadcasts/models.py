@@ -78,7 +78,7 @@ class Highlight(models.Model):
 
         # Take the response and save it to the instance.
         # But first, find the game, so we can save that.
-        game = Game.objects.get(name__icontains=json['game'])
+        game = Game.objects.get(name=json['game'])
         self.game = game
         self.description = json['description']
         self.title = json['title']
