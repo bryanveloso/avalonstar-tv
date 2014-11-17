@@ -57,13 +57,13 @@ class Broadcast(models.Model):
 
 class Highlight(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='highlights')
-    url = models.URLField('URL')
+    twid = models.CharField('Twitch ID', blank=True, max_length=200,
+        help_text=u'The highlight\'s ID on Twitch; used for API calls, etc.')
 
     # Silly metadata (filled out by an API call).
     title = models.CharField(blank=True, max_length=200)
     description = models.TextField(blank=True)
-    twid = models.CharField('Twitch ID', blank=True, max_length=200,
-        help_text=u'The highlight\'s ID on Twitch; used for API calls, etc.')
+    url = models.URLField('URL')
     game = models.ForeignKey(Game, blank=True, related_name='highlited_on')
 
     class Meta:
@@ -71,13 +71,9 @@ class Highlight(models.Model):
         order_with_respect_to = 'broadcast'
 
     def save(self, *args, **kwargs):
-        # Take the inputted highlight URL and hack it until have the final two
-        # path components in a single string. It's kinda ugly, but it works.
-        twid = ''.join(urlparse(self.url).path.split('/')[2:4])
-        endpoint = 'https://api.twitch.tv/kraken/videos/%s' % twid
-
         # Grab our new highlight ID and run an API call.
         import requests
+        endpoint = 'https://api.twitch.tv/kraken/videos/%s' % self.twid
         json = requests.get(endpoint).json()
 
         # Take the response and save it to the instance.
@@ -86,6 +82,7 @@ class Highlight(models.Model):
         self.game = game
         self.description = json['description']
         self.title = json['title']
+        self.url = json['url']
         super(Highlight, self).save(*args, **kwargs)
 
     def __unicode__(self):
