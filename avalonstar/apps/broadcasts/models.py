@@ -57,14 +57,14 @@ class Broadcast(models.Model):
 
 class Highlight(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='highlights')
-    twid = models.CharField('Twitch ID', blank=True, max_length=200,
+    twid = models.CharField('Twitch ID', max_length=200,
         help_text=u'The highlight\'s ID on Twitch; used for API calls, etc.')
 
     # Silly metadata (filled out by an API call).
     title = models.CharField(blank=True, max_length=200)
     description = models.TextField(blank=True)
-    url = models.URLField('URL')
-    game = models.ForeignKey(Game, blank=True, related_name='highlited_on')
+    url = models.URLField('URL', blank=True)
+    game = models.ForeignKey(Game, blank=True, null=True, related_name='highlited_on')
 
     class Meta:
         ordering = ['twid']
