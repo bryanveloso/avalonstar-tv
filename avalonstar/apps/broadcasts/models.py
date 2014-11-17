@@ -56,7 +56,7 @@ class Broadcast(models.Model):
 
 
 class Highlight(models.Model):
-    broadcast = models.ForeignKey(Broadcast, related_name='highlights')
+    broadcast = models.ForeignKey(Broadcast, blank=True, null=True, related_name='highlights')
     twid = models.CharField('Twitch ID', max_length=200,
         help_text=u'The highlight\'s ID on Twitch; used for API calls, etc.')
 
