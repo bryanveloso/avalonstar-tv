@@ -70,7 +70,7 @@ def dbsync(verbose=False, database='avalonstar-tv', **kwargs):
     out('Latest database dump (latest.dump) grabbed via curl.')
 
     # Restore it.
-    run('pg_restore --verbose --clean --no-acl --no-owner -h localhost -d %s latest.dump' % database, hide=hide)
+    run('pg_restore --verbose --clean --no-acl --no-owner -h localhost -d %s latest.dump' % database, hide=True)
     run('rm latest.dump', hide=hide)
     out('Restored latest production dump to local database.')
 
@@ -81,7 +81,7 @@ def deploy(verbose=False, migrate=False, **kwargs):
     hide = 'out' if not verbose else None
 
     # Ready? Let's go.
-    out('Pushing project to GitHub.')
+    out('Pushing project to GitHub.', hide=hide)
     run('git push origin')
     out('Deploying to Heroku.')
     run('git push heroku')
@@ -98,4 +98,7 @@ def server(**kwargs):
 
 @task
 def migrate(app='', **kwargs):
-    run('heroku run python manage.py migrate %s' % app)
+    out = functools.partial(_out, 'project.deploy')
+    hide = 'out' if not verbose else None
+
+    run('heroku run python manage.py migrate %s' % app, hide=hide)
