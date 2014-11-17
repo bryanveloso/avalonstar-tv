@@ -29,6 +29,10 @@ admin.site.register(Broadcast, BroadcastAdmin)
 
 
 class HighlightAdmin(admin.ModelAdmin):
+    fieldsets = (
+        (None, {'fields': (('broadcast', 'url'),)}),
+        ('Details', {'fields': ('title', 'description', 'twid', 'game')})
+    )
     list_display = ['title', 'broadcast', 'game', 'twid', 'url']
     list_display_links = ['title', 'broadcast']
 

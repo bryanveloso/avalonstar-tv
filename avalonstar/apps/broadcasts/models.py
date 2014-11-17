@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
+from urlparse import urlparse
+
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils import timezone
 
 from apps.games.models import Game
@@ -53,14 +57,14 @@ class Broadcast(models.Model):
 
 class Highlight(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='highlights')
+    url = models.URLField('URL')
+
+    # Silly metadata (filled out by an API call).
+    title = models.CharField(blank=True, max_length=200)
+    description = models.TextField(blank=True)
     twid = models.CharField('Twitch ID', blank=True, max_length=200,
         help_text=u'The highlight\'s ID on Twitch; used for API calls, etc.')
     game = models.ForeignKey(Game, blank=True, related_name='highlited_on')
-
-    # Silly metadata.
-    url = models.URLField('URL')
-    title = models.CharField(blank=True, max_length=200)
-    description = models.TextField(blank=True)
 
     class Meta:
         ordering = ['twid']
@@ -87,3 +91,24 @@ class Raid(models.Model):
 
     def __unicode__(self):
         return u'%s' % self.raider
+
+
+@receiver(post_save, sender=Highlight)
+def fill_highlight_from_api(sender, instance, **kwargs):
+    # Take the inputted highlight URL and hack it until have the final two path
+    # components in a single string. It's kinda ugly, but it works.
+    twid = ''.join(urlparse(instance.url).path.split('/')[2:4])
+    endpoint = 'https://api.twitch.tv/kraken/videos/%s' % twid
+
+    # Grab our new highlight ID and run an API call.
+    import requests
+    json = requests.get(endpoint).json()
+
+    # Take the response and save it to the instance.
+    # But first, find the game, so we can save that.
+    game = Game.objects.get(name__icontains=json.game)
+    instance.game = game
+    instance.description = json.description
+    instance.title = json.title
+    instance.save()
+    return
