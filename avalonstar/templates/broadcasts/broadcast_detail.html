@@ -30,4 +30,16 @@
   {% endfor %}
   </ul>
 </div>
+
+<div class="highlights">
+  <h3>Highlights</h3>
+  <ul class="highlight-list">
+  {% for highlight in object.highlights.all %}
+    <li class="highlight">
+      <a href="{{ highlight.url }}">{{ highlight.title }}</a>
+      <p>{{ highlight.description }}</p>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
 {% endblock container %}
