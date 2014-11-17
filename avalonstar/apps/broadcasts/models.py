@@ -67,8 +67,8 @@ class Highlight(models.Model):
     game = models.ForeignKey(Game, blank=True, null=True, related_name='highlited_on')
 
     class Meta:
-        ordering = ['twid']
-        order_with_respect_to = 'broadcast'
+        ordering = ['-twid']
+        order_with_respect_to = u'broadcast'
 
     def save(self, *args, **kwargs):
         # Grab our new highlight ID and run an API call.
