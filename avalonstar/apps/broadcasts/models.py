@@ -106,9 +106,9 @@ def fill_highlight_from_api(sender, instance, **kwargs):
 
     # Take the response and save it to the instance.
     # But first, find the game, so we can save that.
-    game = Game.objects.get(name__icontains=json.game)
+    game = Game.objects.get(name__icontains=json['game'])
     instance.game = game
-    instance.description = json.description
-    instance.title = json.title
+    instance.description = json['description']
+    instance.title = json['title']
     instance.save()
     return
