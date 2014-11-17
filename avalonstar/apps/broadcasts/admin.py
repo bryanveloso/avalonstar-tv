@@ -16,7 +16,7 @@ class RaidInline(admin.TabularInline):
 
 class BroadcastAdmin(admin.ModelAdmin):
     inlines = [RaidInline, HighlightInline]
-    list_display = ['number', 'airdate', 'status', 'series']
+    list_display = ['number', 'airdate', 'status', 'series', 'game_list']
     list_editable = ['airdate', 'status', 'series']
     list_display_links = ['number']
 
@@ -25,6 +25,9 @@ class BroadcastAdmin(admin.ModelAdmin):
         'fk': ['series'],
         'm2m': ['games']
     }
+
+    def game_list(self, obj):
+        return ", ".join([g.name for g in obj.games.all()])
 admin.site.register(Broadcast, BroadcastAdmin)
 
 
