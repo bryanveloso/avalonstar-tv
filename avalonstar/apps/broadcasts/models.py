@@ -70,6 +70,24 @@ class Highlight(models.Model):
         ordering = ['twid']
         order_with_respect_to = 'broadcast'
 
+    def save(self, *args, **kwargs):
+        # Take the inputted highlight URL and hack it until have the final two
+        # path components in a single string. It's kinda ugly, but it works.
+        twid = ''.join(urlparse(self.url).path.split('/')[2:4])
+        endpoint = 'https://api.twitch.tv/kraken/videos/%s' % twid
+
+        # Grab our new highlight ID and run an API call.
+        import requests
+        json = requests.get(endpoint).json()
+
+        # Take the response and save it to the instance.
+        # But first, find the game, so we can save that.
+        game = Game.objects.get(name__icontains=json['game'])
+        self.game = game
+        self.description = json['description']
+        self.title = json['title']
+        super(Highlight, self).save(*args, **kwargs)
+
     def __unicode__(self):
         if not self.title:
             return u'Highlight for %s' % self.broadcast
@@ -91,24 +109,3 @@ class Raid(models.Model):
 
     def __unicode__(self):
         return u'%s' % self.raider
-
-
-@receiver(post_save, sender=Highlight)
-def fill_highlight_from_api(sender, instance, **kwargs):
-    # Take the inputted highlight URL and hack it until have the final two path
-    # components in a single string. It's kinda ugly, but it works.
-    twid = ''.join(urlparse(instance.url).path.split('/')[2:4])
-    endpoint = 'https://api.twitch.tv/kraken/videos/%s' % twid
-
-    # Grab our new highlight ID and run an API call.
-    import requests
-    json = requests.get(endpoint).json()
-
-    # Take the response and save it to the instance.
-    # But first, find the game, so we can save that.
-    game = Game.objects.get(name__icontains=json['game'])
-    instance.game = game
-    instance.description = json['description']
-    instance.title = json['title']
-    instance.save()
-    return
