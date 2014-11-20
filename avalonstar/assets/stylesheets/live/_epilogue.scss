@@ -4,3 +4,54 @@
   position: absolute; top: 0; right: 0;
   width: 960px; height: 720px;
 }
+
+.message-container {
+  align-items: center;
+  display: flex;
+  height: 114px;
+  overflow: hidden;
+  position: relative;
+
+  background-color: rgba(black, 0.5);
+  font-size: 16px;
+  text-transform: uppercase;
+
+  img {
+    position: absolute; left: 0; top: -100%;
+    width: 100%;
+  }
+}
+.message {
+  position: relative;
+  z-index: 1;
+
+  margin-left: 12px;
+  padding: 10px 12px;
+  background-color: rgba(black, 0.5);
+}
+
+// .status
+.status {
+  position: absolute;
+  width: 40%;
+  bottom: 64px;
+}
+.episode-pill {
+  padding: 4px 8px;
+
+  background: #3B5577;
+  color: #12161b;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.episode-status {
+  display: block;
+  padding: 12px 0;
+
+  color: #768EA4;
+  font-family: $idlewild;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -2px;
+}

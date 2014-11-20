@@ -9,7 +9,15 @@
   <div class="section section-main">
     <span class="episode-number"><span class="episode-text">Episode</span> {{ broadcast.number }}</span>
     <div class="episode-metadata">
-      Thanks for watching!
+      <div class="message-container">
+        <span class="message"><strong>Thanks for watching!</strong> (It was great seeing you! &lt;3)</span>
+        <img src="http://photos-b.ak.instagram.com/hphotos-ak-xap1/10616811_1470501676538233_2053648740_n.jpg" cross-origin="anonymous" data-adaptive-background="1">
+      </div>
+      <div class="status">
+        <span class="episode-status">{{ broadcast.status }}</span>
+        <span class="episode-pill episode-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
+        {% if broadcast.series %}<span class="episode-pill episode-series">{{ broadcast.series }}{% endif %}
+      </div>
     </div>
   </div>
 
