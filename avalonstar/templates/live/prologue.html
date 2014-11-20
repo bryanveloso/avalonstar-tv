@@ -30,7 +30,8 @@
       </div>
       <div class="status">
         <span class="episode-status">{{ broadcast.status }}</span>
-        <span class="episode-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
+        <span class="episode-pill episode-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
+        {% if broadcast.series %}<span class="episode-pill episode-series">{{ broadcast.series }}{% endif %}
       </div>
     </div>
   </div>
