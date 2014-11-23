@@ -6,9 +6,9 @@ django-configurations == 0.8
 django-dotenv == 1.2
 django-grappelli == 2.6.1
 django-heroku-postgresify == 0.3
-django-model-utils == 2.0.3
+django-model-utils == 2.2
 django-staticbuilder == 0.6.1
-djangorestframework == 2.4.3
+djangorestframework == 2.4.4
 requests == 2.4.3
 Pillow == 2.4.0
 psycopg2 == 2.5.2
