@@ -40,9 +40,33 @@
   border-right: 25px solid transparent;
 }
 .placeholder-webcam {
+  display: flex; align-items: center; justify-content: center;
   position: absolute; top: 8px; right: 8px; left: 8px;
   width: 264px; height: 149px;
+
   background-color: #000;
+}
+
+.empty-webcam {
+  padding: 6px 0;
+
+  border: 1px solid rgba(#fff, 0.25);
+  border-width: 1px 0;
+  text-align: center;
+}
+.empty-webcam-message {
+  display: block;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.empty-webcam-message-one,
+.empty-webcam-message-two {
+  color: rgba(#fff, 0.5);
+}
+.empty-webcam-message-three {
+  color: rgba(#fff, 0.75);
+  font-size: 19px;
+  line-height: 19px;
 }
 
 
