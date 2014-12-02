@@ -46,9 +46,20 @@
 
   background-color: #000;
 }
+.placeholder-image {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  opacity: 0.3;
+  z-index: 1;
+
+  background-image: url('https://scontent-a-lhr.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10433088_10101611272783645_8875673993172060583_n.jpg?oh=4eb45c22550fc8c87db65842b55c0b35&oe=5514CFDC');
+  background-position: center center;
+  background-size: 100%;
+}
 
 .empty-webcam {
   padding: 6px 0;
+  position: relative;
+  z-index: 2;
 
   border: 1px solid rgba(#fff, 0.25);
   border-width: 1px 0;
