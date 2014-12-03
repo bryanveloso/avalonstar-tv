@@ -1,0 +1,96 @@
+body {
+  background-color: #0C0F15;
+  color: #FFF;
+  font-family: $gotham;
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0; padding: 0;
+}
+
+header {
+  display: flex;
+  padding: 12px 0;
+
+  background-color: #F4FCFD;
+  color: #000;
+
+  a { color: #000; }
+  h1 {
+    margin: 0;
+    font-family: $idlewild;
+    font-weight: 800;
+    font-size: 16px;
+  }
+}
+
+nav { flex: 1; }
+nav ul {
+  display: inline-flex;
+  margin: 0;
+  list-style: none;
+}
+
+.broadcast-number {
+  font-family: $tungsten;
+  font-size: 48px;
+  font-weight: 100;
+}
+.broadcast {
+  padding: 24px;
+  position: relative;
+
+  .game-list {
+    display: inline-flex;
+  }
+  .game {
+    position: relative;
+  }
+  // .game-name {
+  //   padding: 6px 10px;
+  //   position: absolute;
+
+  //   background-color: rgba(#000, 0.5);
+  //   font-weight: 700;
+  //   font-size: 13px;
+  // }
+  .game-image {
+    width: 100%;
+  }
+}
+
+.game-images {
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+  filter: saturate(0%);
+  opacity: 0.1;
+  z-index: -1;
+  transition: all 250ms ease-in-out;
+
+  &:after {
+    position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+    background: rgba(#000, 0.5);
+    content: '';
+    transition: all 250ms ease-in-out;
+  }
+
+  .broadcast:hover & {
+    filter: saturate(100%);
+    opacity: 0.5;
+
+    // &:after { background: rgba(#000, 0.5); }
+  }
+  .game-image {
+    flex: 1;
+    width: 100px;
+
+    background-position: center center;
+    background-size: 100%;
+  }
+}

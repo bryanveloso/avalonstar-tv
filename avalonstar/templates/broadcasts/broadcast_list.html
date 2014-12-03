@@ -13,12 +13,18 @@
         <ul class="game-list">
         {% for game in broadcast.games.all %}
           <li class="game">
-            {{ game }}
+            <span class="game-name">{{ game }}</span>
+            <span class="game-platform">{{ game.platform }}</span>
           </li>
         {% endfor %}
         </ul>
         {% if broadcast.raids.count %}<span class="broadcast-raid-count">{{ broadcast.raids.count }}</span>{% endif %}
       </div>
+      <ul class="game-images">
+      {% for game in broadcast.games.all %}
+        <li class="game-image" style="background-image: url('{{ MEDIA_URL }}{{ game.image_art }}');"></li>
+      {% endfor %}
+      </ul>
     </li>
   {% endfor %}
   </ul>
