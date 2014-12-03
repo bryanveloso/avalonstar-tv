@@ -5,20 +5,39 @@
   <ul class="broadcast-list">
   {% for broadcast in object_list %}
     <li class="broadcast">
-      <a class="broadcast-link broadcast-number" href="{{ broadcast.url }}">{{ broadcast.number }}</a>
-      <span class="broadcast-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
-      <h2 class="broadcast-status"><a class="broadcast-link" href="{{ broadcast.url }}">{% firstof broadcast.status 'Untitled Broadcast.' %}</a></h2>
-      {% if broadcast.series %}<span class="broadcast-series">{{ broadcast.series }}</span>{% endif %}
-      <div class="games">
-        <ul class="game-list">
-        {% for game in broadcast.games.all %}
-          <li class="game">
-            <span class="game-name">{{ game }}</span>
-            <span class="game-platform">{{ game.platform }}</span>
-          </li>
-        {% endfor %}
-        </ul>
-        {% if broadcast.raids.count %}<span class="broadcast-raid-count">{{ broadcast.raids.count }}</span>{% endif %}
+      <a class="broadcast-link" href="{{ broadcast.url }}">
+        <span class="broadcast-number">{{ broadcast.number }}</span>
+      </a>
+      <div class="broadcast-metadata">
+        <span class="broadcast-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
+        <h2 class="broadcast-status"><a href="{{ broadcast.url }}">{% firstof broadcast.status 'Untitled broadcast.' %}</a></h2>
+        {% if broadcast.series %}<span class="broadcast-series">{{ broadcast.series }}</span>{% endif %}
+      </div>
+      <div class="broadcast-statistics">
+        <div class="games">
+          <ul class="game-list">
+          {% for game in broadcast.games.all %}
+            <li class="game">
+              <span class="game-name">{{ game.name }}</span>
+              <span class="game-platform">{{ game.platform }}</span>
+            </li>
+          {% endfor %}
+          </ul>
+          <ul class="counts">
+            {% if broadcast.raids.count %}
+            <li class="count">
+              <span class="count-number broadcast-raid-count">{{ broadcast.raids.count }}</span>
+              <span class="count-label">raid{{ broadcast.raids.count|pluralize }}</span>
+            </li>
+            {% endif %}
+            {% if broadcast.highlights.count %}
+            <li class="count">
+              <span class="count-number broadcast-highlight-count">{{ broadcast.highlights.count }}</span>
+              <span class="count-label">highlight{{ broadcast.highlights.count|pluralize }}</span>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
       </div>
       <ul class="game-images">
       {% for game in broadcast.games.all %}

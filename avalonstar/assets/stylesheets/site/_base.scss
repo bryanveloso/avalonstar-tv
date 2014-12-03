@@ -42,6 +42,7 @@ nav ul {
 }
 
 .broadcast {
+  display: flex;
   padding: 24px 24px 24px 64px;
   overflow: hidden;
   position: relative;
@@ -79,14 +80,43 @@ nav ul {
   }
 }
 
+.broadcast-metadata {
+  width: 50%;
+}
+.broadcast-statistics {
+}
 .broadcast-status {
   font-weight: 100;
-  font-size: 36px;
-  line-height: 36px;
+  font-size: 24px;
+  line-height: 24px;
   margin: 0;
 }
-.broadcast-raid-count {
+
+.broadcast-series {
+  font-weight: 700;
+  border: 1px solid #fff;
+  padding: 4px;
+}
+
+.counts {
+  display: inline-flex;
+}
+.count {
+  text-align: center;
+}
+.count-number {
   display: block;
+  width: 36px; height: 36px;
+  padding-top: 9px;
+
+  background-color: #FFF;
+  border-radius: 50%;
+  color: #000;
+  font-weight: bold;
+}
+.count-label {
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .game-images {
