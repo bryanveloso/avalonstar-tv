@@ -5,9 +5,9 @@
   <ul class="broadcast-list">
   {% for broadcast in object_list %}
     <li class="broadcast">
+      <a class="broadcast-link broadcast-number" href="{{ broadcast.url }}">{{ broadcast.number }}</a>
       <span class="broadcast-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
-      <a class="broadcast-link broadcast-number" href="{{ broadcast.url }}"><b>{{ broadcast.number }}</b></a>
-      {% if broadcast.status %}<h2 class="broadcast-status"><a class="broadcast-link" href="{{ broadcast.url }}">{{ broadcast.status }}</a></h2>{% endif %}
+      <h2 class="broadcast-status"><a class="broadcast-link" href="{{ broadcast.url }}">{% firstof broadcast.status 'Untitled Broadcast.' %}</a></h2>
       {% if broadcast.series %}<span class="broadcast-series">{{ broadcast.series }}</span>{% endif %}
       <div class="games">
         <ul class="game-list">
