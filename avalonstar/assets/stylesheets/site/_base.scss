@@ -32,36 +32,61 @@ header {
 nav { flex: 1; }
 nav ul {
   display: inline-flex;
-  margin: 0;
+  margin-left: 12px;
+
+  font-size: 13px;
   list-style: none;
+  text-transform: uppercase;
+
+  li { margin-left: 24px; }
 }
 
-.broadcast-number {
+.broadcast {
+  padding: 24px 24px 24px 64px;
+  overflow: hidden;
+  position: relative;
+}
+
+.broadcast-link {
+  position: absolute; left: 0px; top: 0px;
+  width: 100px; height: 100px;
+
+  // background: #768EA4;
   font-family: $tungsten;
   font-size: 48px;
   font-weight: 300;
-}
-.broadcast {
-  padding: 24px;
-  position: relative;
 
+}
+.broadcast-number {
+  display: block;
+}
+
+
+.broadcast {
   .game-list {
-    display: inline-flex;
+    font-size: 14px;
   }
   .game {
     position: relative;
   }
-  // .game-name {
-  //   padding: 6px 10px;
-  //   position: absolute;
-
-  //   background-color: rgba(#000, 0.5);
-  //   font-weight: 700;
-  //   font-size: 13px;
-  // }
-  .game-image {
-    width: 100%;
+  .game-name {
+    font-weight: 700;
   }
+  .game-platform {
+  }
+  .game-image {
+    width: 100vw;
+  }
+}
+
+.broadcast-status {
+  font-weight: 100;
+  font-size: 36px;
+  line-height: 36px;
+  margin: 0;
+}
+.broadcast-raid-count {
+  display: block;
 }
 
 .game-images {
@@ -91,6 +116,6 @@ nav ul {
     width: 100px;
 
     background-position: center center;
-    background-size: 100%;
+    background-size: cover;
   }
 }
