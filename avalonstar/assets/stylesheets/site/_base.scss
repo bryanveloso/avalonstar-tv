@@ -1,11 +1,16 @@
+$color-alizarin: #e74c3c;
+$color-river: #3498db;
+$color-emerald: #2ecc71;
+$color-asphalt: #34495e;
+
+
 body {
   background-color: #0C0F15;
   color: #FFF;
-  font-family: $gotham;
+  // font-family: $gotham;
 }
 
 a {
-  color: #FFF;
   text-decoration: none;
 }
 ul {
@@ -42,16 +47,16 @@ nav ul {
 }
 
 .broadcast {
-  display: flex;
-  padding: 24px 24px 24px 64px;
+  // display: flex;
+  margin-bottom: 12px;
   overflow: hidden;
   position: relative;
+  width: 32%;
+  background-color: #fff;
+  color: #000;
 }
 
 .broadcast-link {
-  position: absolute; left: 0px; top: 0px;
-  width: 100px; height: 100px;
-
   // background: #768EA4;
   font-family: $tungsten;
   font-size: 48px;
@@ -62,7 +67,10 @@ nav ul {
   display: block;
 }
 
-
+.broadcast-listing {
+  width: 960px;
+  margin: 0 auto;
+}
 .broadcast {
   .game-list {
     font-size: 14px;
@@ -81,43 +89,64 @@ nav ul {
 }
 
 .broadcast-metadata {
-  width: 50%;
 }
 .broadcast-statistics {
 }
+
+.broadcast-airdate {
+  font-size: 12px;
+}
 .broadcast-status {
+  color: #000;
   font-weight: 100;
   font-size: 24px;
   line-height: 24px;
   margin: 0;
+  padding: 12px;
 }
 
 .broadcast-series {
-  font-weight: 700;
-  border: 1px solid #fff;
-  padding: 4px;
-}
-
-.counts {
-  display: inline-flex;
-}
-.count {
-  text-align: center;
-}
-.count-number {
   display: block;
-  width: 36px; height: 36px;
-  padding-top: 9px;
+  padding: 8px 12px;
 
-  background-color: #FFF;
-  border-radius: 50%;
-  color: #000;
-  font-weight: bold;
-}
-.count-label {
-  font-size: 12px;
+  border-top: 4px solid transparent;
+  font-family: $gotham;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: right;
   text-transform: uppercase;
+
+  &[data-series="all-in-the-family"] {
+    border-color: $color-alizarin;
+    color: $color-alizarin; }
+  &[data-series="avalonstar-after-dark"] {
+    border-color: $color-asphalt;
+    color: $color-asphalt; }
+  &[data-series="whatever-wednesdays"] {
+    border-color: $color-emerald;
+    color: $color-emerald; }
 }
+
+// .counts {
+//   display: inline-flex;
+// }
+// .count {
+//   text-align: center;
+// }
+// .count-number {
+//   display: block;
+//   width: 36px; height: 36px;
+//   padding-top: 9px;
+
+//   background-color: #FFF;
+//   border-radius: 50%;
+//   color: #000;
+//   font-weight: bold;
+// }
+// .count-label {
+//   font-size: 12px;
+//   text-transform: uppercase;
+// }
 
 .game-images {
   display: flex;
@@ -148,4 +177,10 @@ nav ul {
     background-position: center center;
     background-size: cover;
   }
+}
+
+.game-image {
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
 }
