@@ -46,12 +46,67 @@ nav ul {
   li { margin-left: 24px; }
 }
 
+
+.broadcast-header {
+  height: 160px;
+  position: relative;
+  background-color: #000;
+
+  .broadcast-link {
+    display: flex; align-items: center; justify-content: center;
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 5;
+  }
+  .broadcast-number {
+    color: #fff;
+    font-size: 120px;
+  }
+}
+
+.broadcast-game-images {
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+  // filter: saturate(0%);
+  opacity: 0.5;
+  transition: all 250ms ease-in-out;
+
+  &:after {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+    transition: all 250ms ease-in-out;
+  }
+
+  .game-image {
+    flex: 1;
+    width: 100%; height: 100%;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+.broadcast-status {
+  color: #000;
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
 .broadcast {
   // display: flex;
   margin-bottom: 12px;
   overflow: hidden;
   position: relative;
-  width: 32%;
+  width: 100vw;
   background-color: #fff;
   color: #000;
 }
@@ -67,10 +122,6 @@ nav ul {
   display: block;
 }
 
-.broadcast-listing {
-  width: 960px;
-  margin: 0 auto;
-}
 .broadcast {
   .game-list {
     font-size: 14px;
@@ -95,14 +146,6 @@ nav ul {
 
 .broadcast-airdate {
   font-size: 12px;
-}
-.broadcast-status {
-  color: #000;
-  font-weight: 100;
-  font-size: 24px;
-  line-height: 24px;
-  margin: 0;
-  padding: 12px;
 }
 
 .broadcast-series {
@@ -147,40 +190,3 @@ nav ul {
 //   font-size: 12px;
 //   text-transform: uppercase;
 // }
-
-.game-images {
-  display: flex;
-  flex-wrap: nowrap;
-  position: absolute; top: 0; left: 0; bottom: 0; right: 0;
-  filter: saturate(0%);
-  opacity: 0.1;
-  z-index: -1;
-  transition: all 250ms ease-in-out;
-
-  &:after {
-    position: absolute; top: 0; left: 0; bottom: 0; right: 0;
-    background: rgba(#000, 0.5);
-    content: '';
-    transition: all 250ms ease-in-out;
-  }
-
-  .broadcast:hover & {
-    filter: saturate(100%);
-    opacity: 0.5;
-
-    // &:after { background: rgba(#000, 0.5); }
-  }
-  .game-image {
-    flex: 1;
-    width: 100px;
-
-    background-position: center center;
-    background-size: cover;
-  }
-}
-
-.game-image {
-  background-position: center center;
-  background-size: cover;
-  width: 100%;
-}

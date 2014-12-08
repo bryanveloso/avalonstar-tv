@@ -5,13 +5,24 @@
   <ul class="broadcast-list">
   {% for broadcast in object_list %}
     <li class="broadcast">
-      <a class="broadcast-link" href="{{ broadcast.url }}">
-        <span class="broadcast-number">{{ broadcast.number }}</span>
-      </a>
-      <span class="broadcast-series" data-series="{{ broadcast.series|slugify }}">{% firstof broadcast.series '' %}</span>
+      <header class="broadcast-header">
+        <a class="broadcast-link" href="{{ broadcast.url }}">
+          <span class="broadcast-number">{{ broadcast.number }}</span>
+        </a>
+        <ul class="broadcast-game-images">
+        {% for game in broadcast.games.all %}
+          <li class="game-image" style="background-image: url('{{ MEDIA_URL }}{{ game.image_art }}');"></li>
+        {% endfor %}
+        </ul>
+      </header>
       <div class="broadcast-metadata">
         <span class="broadcast-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
         <h2 class="broadcast-status"><a href="{{ broadcast.url }}">{% firstof broadcast.status 'Untitled broadcast.' %}</a></h2>
+      </div>
+
+      {% comment %}
+      <span class="broadcast-series" data-series="{{ broadcast.series|slugify }}">{% firstof broadcast.series '' %}</span>
+      <div class="broadcast-metadata">
       </div>
       <div class="broadcast-statistics">
         <div class="games">
@@ -40,6 +51,7 @@
           </ul>
         </div>
       </div>
+      {% endcomment %}
       {% comment %}
       <ul class="game-images">
       {% for game in broadcast.games.all %}
