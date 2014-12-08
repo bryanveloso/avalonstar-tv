@@ -12,11 +12,11 @@
         <ul class="broadcast-counts">
           <li class="broadcast-count broadcast-raid-count">
             <span class="count-number">{{ broadcast.raids.count }}</span>
-            {# <span class="count-label">raid{{ broadcast.raids.count|pluralize }}</span> #}
+            <span class="count-label">raid{{ broadcast.raids.count|pluralize }}</span>
           </li>
           <li class="broadcast-count broadcast-highlight-count">
             <span class="count-number">{{ broadcast.highlights.count }}</span>
-            {# <span class="count-label">highlight{{ broadcast.highlights.count|pluralize }}</span> #}
+            <span class="count-label">vod{{ broadcast.highlights.count|pluralize }}</span>
           </li>
         </ul>
         <ul class="broadcast-game-images">
@@ -26,13 +26,13 @@
         </ul>
       </header>
       <div class="broadcast-metadata">
+        <span class="broadcast-series" data-series="{{ broadcast.series|slugify }}">{% firstof broadcast.series '' %}</span>
         <span class="broadcast-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
         <h2 class="broadcast-status"><a href="{{ broadcast.url }}">{% firstof broadcast.status 'Untitled broadcast.' %}</a></h2>
       </div>
       <aside class="broadcast-aside">
       </aside>
       {% comment %}
-      <span class="broadcast-series" data-series="{{ broadcast.series|slugify }}">{% firstof broadcast.series '' %}</span>
       <div class="broadcast-metadata">
       </div>
       <div class="broadcast-statistics">
