@@ -9,6 +9,16 @@
         <a class="broadcast-link" href="{{ broadcast.url }}">
           <span class="broadcast-number">{{ broadcast.number }}</span>
         </a>
+        <ul class="broadcast-counts">
+          <li class="broadcast-count broadcast-raid-count">
+            <span class="count-number">{{ broadcast.raids.count }}</span>
+            {# <span class="count-label">raid{{ broadcast.raids.count|pluralize }}</span> #}
+          </li>
+          <li class="broadcast-count broadcast-highlight-count">
+            <span class="count-number">{{ broadcast.highlights.count }}</span>
+            {# <span class="count-label">highlight{{ broadcast.highlights.count|pluralize }}</span> #}
+          </li>
+        </ul>
         <ul class="broadcast-game-images">
         {% for game in broadcast.games.all %}
           <li class="game-image" style="background-image: url('{{ MEDIA_URL }}{{ game.image_art }}');"></li>
@@ -19,7 +29,8 @@
         <span class="broadcast-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
         <h2 class="broadcast-status"><a href="{{ broadcast.url }}">{% firstof broadcast.status 'Untitled broadcast.' %}</a></h2>
       </div>
-
+      <aside class="broadcast-aside">
+      </aside>
       {% comment %}
       <span class="broadcast-series" data-series="{{ broadcast.series|slugify }}">{% firstof broadcast.series '' %}</span>
       <div class="broadcast-metadata">
@@ -35,29 +46,8 @@
             </li>
           {% endfor %}
           </ul>
-          <ul class="counts">
-            {% if broadcast.raids.count %}
-            <li class="count">
-              <span class="count-number broadcast-raid-count">{{ broadcast.raids.count }}</span>
-              <span class="count-label">raid{{ broadcast.raids.count|pluralize }}</span>
-            </li>
-            {% endif %}
-            {% if broadcast.highlights.count %}
-            <li class="count">
-              <span class="count-number broadcast-highlight-count">{{ broadcast.highlights.count }}</span>
-              <span class="count-label">highlight{{ broadcast.highlights.count|pluralize }}</span>
-            </li>
-            {% endif %}
-          </ul>
         </div>
       </div>
-      {% endcomment %}
-      {% comment %}
-      <ul class="game-images">
-      {% for game in broadcast.games.all %}
-        <li class="game-image" style="background-image: url('{{ MEDIA_URL }}{{ game.image_art }}');"></li>
-      {% endfor %}
-      </ul>
       {% endcomment %}
     </li>
   {% endfor %}

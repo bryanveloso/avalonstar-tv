@@ -85,12 +85,38 @@ nav ul {
   }
 }
 
+.broadcast-counts {
+  display: inline-flex; align-items: center;
+  width: 100%;
+  z-index: 5;
+
+  color: #fff;
+}
+.broadcast-count {
+  flex: 1;
+  font-family: $gotham;
+  font-weight: 700;
+  text-align: center;
+
+  &.broadcast-raid-count { padding-right: 24px; }
+  &.broadcast-highlight-count { padding-left: 24px; }
+}
+
+// .broadcast-airdate {
+//   display: block;
+//   padding: 6px;
+//   background-color: #111;
+//   color: #ddd;
+//   font-weight: 700;
+//   font-family: $gotham;
+// }
 .broadcast-status {
-  color: #000;
   font-weight: 100;
   font-size: 24px;
   line-height: 24px;
   margin: 0;
+
+  a { color: #444; }
 }
 
 
