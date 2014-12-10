@@ -12,11 +12,11 @@
 
 @font-face {
   font-family: "SSAir";
-  src: url('/static/fonts/ss-air.eot');
-  src: url('/static/fonts/ss-air.eot?#iefix') format('embedded-opentype'),
-       url('/static/fonts/ss-air.woff') format('woff'),
-       url('/static/fonts/ss-air.ttf')  format('truetype'),
-       url('/static/fonts/ss-air.svg#SSAir') format('svg');
+  src: url('../fonts/ss-air.eot');
+  src: url('../fonts/ss-air.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ss-air.woff') format('woff'),
+       url('../fonts/ss-air.ttf')  format('truetype'),
+       url('../fonts/ss-air.svg#SSAir') format('svg');
   font-weight: 400;
   font-style: normal;
 }
