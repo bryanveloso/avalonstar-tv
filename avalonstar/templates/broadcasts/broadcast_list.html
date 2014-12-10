@@ -32,8 +32,8 @@
         </ul>
       </header>
       <div class="broadcast-metadata">
-        <span class="broadcast-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
-        <span class="broadcast-series" data-series="{{ broadcast.series|slugify }}">{% firstof broadcast.series '' %}</span>
+        <span class="broadcast-airdate">Aired <strong>{{ broadcast.airdate | date:"F j, Y" }}</strong></span>
+        {# <span class="broadcast-series" data-series="{{ broadcast.series|slugify }}">{% firstof broadcast.series '' %}</span> #}
         <h2 class="broadcast-status"><a href="{{ broadcast.url }}">{% firstof broadcast.status 'Untitled broadcast.' %}</a></h2>
       </div>
       <aside class="broadcast-aside">

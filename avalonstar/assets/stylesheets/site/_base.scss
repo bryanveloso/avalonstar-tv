@@ -20,7 +20,8 @@ ul {
 
 header {
   display: flex;
-  padding: 12px 0;
+  flex-direction: column;
+  padding: 12px;
 
   background-color: #F4FCFD;
   color: #000;
@@ -47,7 +48,8 @@ nav ul {
 
 
 .broadcast-header {
-  height: 160px;
+  height: 0;
+  padding-top: 56.25%;
   position: relative;
   background-color: #000;
 
@@ -86,7 +88,8 @@ nav ul {
 
 .broadcast-counts {
   display: inline-flex; align-items: center;
-  width: 100%;
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  padding: 18px 0;
   z-index: 5;
 
   color: #fff;
@@ -95,32 +98,36 @@ nav ul {
   flex: 1;
 
   font-family: $gotham;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 28px;
   text-align: center;
 
-  &.broadcast-raid-count { padding-right: 36px; }
-  &.broadcast-highlight-count { padding-left: 36px; }
-  .ss-icon { display: block; }
+  // &.broadcast-raid-count { padding-right: 36px; }
+  // &.broadcast-highlight-count { padding-left: 36px; }
+  .ss-icon { position: relative; top: 2px; }
 }
 
+.broadcast-metadata {
+}
 .broadcast-airdate {
   display: block;
-  padding: 12px;
-  background-color: #111;
-  color: #ddd;
+  padding: 18px 0;
+
+  border-bottom: 1px solid #eee;
+  color: #444;
+  font-family: $gotham;
   font-weight: 100;
   text-align: center;
-  font-family: $gotham;
+  text-transform: uppercase;
 }
 .broadcast-status {
   font-family: $gotham;
   font-size: 24px;
   font-weight: 100;
-  line-height: 24px;
+  line-height: 28px;
   letter-spacing: -1px;
-  margin: 0;
+  margin: 24px;
 
   a { color: #444; }
 }
@@ -184,7 +191,7 @@ nav ul {
   display: block;
   padding: 8px 12px;
 
-  border-top: 4px solid transparent;
+  border-top: 2px solid transparent;
   font-family: $gotham;
   font-size: 11px;
   font-weight: 700;
