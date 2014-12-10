@@ -2,6 +2,12 @@
 
 {% block container %}
 <div class="broadcast-listing">
+  <div class="listing-header">
+    <h1>Broadcasts</h1>
+    {{ object_list.count }} episodes
+    {{ highlights.count }} highlights
+    {{ raids.count }} raids since episode 51.
+  </div>
   <ul class="broadcast-list">
   {% for broadcast in object_list %}
     <li class="broadcast">
@@ -14,14 +20,14 @@
             <div class="broadcast-count-border">
               <span class="ss-icon ss-heart"></span>
               <span class="count-number">{{ broadcast.raids.count }}</span>
-              {# <span class="count-label">raid{{ broadcast.raids.count|pluralize }}</span> #}
+              <span class="count-label">raid{{ broadcast.raids.count|pluralize }}</span>
             </div>
           </li>
           <li class="broadcast-count broadcast-highlight-count">
             <div class="broadcast-count-border">
               <span class="ss-icon ss-airplay"></span>
               <span class="count-number">{{ broadcast.highlights.count }}</span>
-              {# <span class="count-label">vod{{ broadcast.highlights.count|pluralize }}</span> #}
+              <span class="count-label">vod{{ broadcast.highlights.count|pluralize }}</span>
             </div>
           </li>
         </ul>

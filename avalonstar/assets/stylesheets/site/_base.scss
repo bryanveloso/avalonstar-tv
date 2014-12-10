@@ -105,6 +105,14 @@ nav ul {
 
   &.broadcast-raid-count { padding-right: 36px; }
   &.broadcast-highlight-count { padding-left: 36px; }
+
+  .count-label {
+    display: block;
+
+    color: rgba(#fff ,0.5);
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 16px; }
   .ss-icon { position: relative; top: 2px; }
 }
 
@@ -138,14 +146,15 @@ nav ul {
 
 
 
-
+.broadcast-listing {
+  padding: 12px;
+}
 
 .broadcast {
   // display: flex;
   margin-bottom: 12px;
   overflow: hidden;
   position: relative;
-  width: 100vw;
   background-color: #fff;
   color: #000;
 }
