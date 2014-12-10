@@ -29,15 +29,14 @@ header {
   h1 {
     margin: 0;
     font-family: $idlewild;
-    font-weight: 800;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 14px;
   }
 }
 
 nav { flex: 1; }
 nav ul {
   display: inline-flex;
-  margin-left: 12px;
 
   font-size: 13px;
   list-style: none;
@@ -94,26 +93,33 @@ nav ul {
 }
 .broadcast-count {
   flex: 1;
+
   font-family: $gotham;
+  font-size: 24px;
   font-weight: 700;
+  line-height: 28px;
   text-align: center;
 
-  &.broadcast-raid-count { padding-right: 24px; }
-  &.broadcast-highlight-count { padding-left: 24px; }
+  &.broadcast-raid-count { padding-right: 36px; }
+  &.broadcast-highlight-count { padding-left: 36px; }
+  .ss-icon { display: block; }
 }
 
-// .broadcast-airdate {
-//   display: block;
-//   padding: 6px;
-//   background-color: #111;
-//   color: #ddd;
-//   font-weight: 700;
-//   font-family: $gotham;
-// }
-.broadcast-status {
+.broadcast-airdate {
+  display: block;
+  padding: 12px;
+  background-color: #111;
+  color: #ddd;
   font-weight: 100;
+  text-align: center;
+  font-family: $gotham;
+}
+.broadcast-status {
+  font-family: $gotham;
   font-size: 24px;
+  font-weight: 100;
   line-height: 24px;
+  letter-spacing: -1px;
   margin: 0;
 
   a { color: #444; }
