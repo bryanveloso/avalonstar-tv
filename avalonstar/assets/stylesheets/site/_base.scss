@@ -103,8 +103,8 @@ nav ul {
   line-height: 28px;
   text-align: center;
 
-  // &.broadcast-raid-count { padding-right: 36px; }
-  // &.broadcast-highlight-count { padding-left: 36px; }
+  &.broadcast-raid-count { padding-right: 36px; }
+  &.broadcast-highlight-count { padding-left: 36px; }
   .ss-icon { position: relative; top: 2px; }
 }
 
