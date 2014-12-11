@@ -2,11 +2,9 @@
 
 {% block container %}
 <div class="broadcast-listing">
-  <div class="listing-header">
+  <div class="listing-masthead">
     <h1>Broadcasts</h1>
-    {{ object_list.count }} episodes
-    {{ highlights.count }} highlights
-    {{ raids.count }} raids since episode 51.
+    <p>Broadcasting has been a wild ride (for the last {{ first.airdate|timesince }}). Since April 26, 2014, {{ object_list.count }} episodes have aired encompassing {{ games.count }} games and producing {{ highlights.count }} highlights. {{ raids.count }} raids invaded the channel (unfortunately raids weren't recorded until episode 51).</p>
   </div>
   <ul class="broadcast-list">
   {% for broadcast in object_list %}

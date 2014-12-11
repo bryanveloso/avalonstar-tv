@@ -149,6 +149,13 @@ nav ul {
 .broadcast-listing {
   padding: 12px;
 }
+.listing-masthead {
+  font-family: $gotham;
+  height: calc(100vh - 56px);
+  line-height: 20px;
+
+  h1 { font-weight: 100; }
+}
 
 .broadcast {
   // display: flex;
