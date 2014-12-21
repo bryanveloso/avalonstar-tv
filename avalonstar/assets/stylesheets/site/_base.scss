@@ -128,27 +128,6 @@ nav ul {
 }
 
 
-.broadcast-list {
-  padding: 6px;
-
-  @include breakpoint($laptop) {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-.broadcast {
-  margin: 6px;
-  margin-bottom: 12px;
-  overflow: hidden;
-  position: relative;
-  background-color: #fff;
-  color: #000;
-
-  @include breakpoint($laptop) {
-      margin-bottom: 6px;
-      width: calc(50vw - 18px); }
-  @include breakpoint($desktop) { width: calc(33vw - 12px); }
-}
 
 .broadcast-link {
   // background: #768EA4;
