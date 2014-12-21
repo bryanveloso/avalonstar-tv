@@ -23,7 +23,7 @@ header {
   flex-direction: column;
   padding: 12px;
 
-  background-color: #F4FCFD;
+  background-color: #FFF;
   color: #000;
 
   a { color: #000; }
@@ -146,24 +146,33 @@ nav ul {
 
 
 
-.broadcast-listing {
-  padding: 12px;
-}
+.broadcast-listing {}
 .listing-masthead {
   font-family: $gotham;
-  height: calc(100vh - 56px);
+  // height: calc(100vh - 56px);
   line-height: 20px;
 
   h1 { font-weight: 100; }
 }
 
+
+.broadcast-list {
+  padding: 6px;
+
+  @include breakpoint($laptop) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 .broadcast {
-  // display: flex;
-  margin-bottom: 12px;
+  margin: 6px;
   overflow: hidden;
   position: relative;
   background-color: #fff;
   color: #000;
+
+  @include breakpoint($laptop) { width: calc(50vw - 18px); }
+  @include breakpoint($desktop) { width: calc(33vw - 12px); }
 }
 
 .broadcast-link {

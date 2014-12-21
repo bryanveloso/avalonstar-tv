@@ -5,6 +5,11 @@ $gotham: 'Gotham SSm A', 'Gotham SSm B', 'Gotham HTF', sans-serif;
 $idlewild: 'Idlewild SSm A', 'Idlewild SSm B', 'Halogen', sans-serif;
 $tungsten: 'Tungsten A', 'Tungsten B', sans-serif;
 
+// Media query variables.
+$tablet: 768px;
+$laptop: 992px;
+$desktop: 1200px;
+
 // Force the box model to use the saner border-box calculation.
 *, *:before, *:after {
   box-sizing: border-box;
