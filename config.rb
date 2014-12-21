@@ -1,4 +1,5 @@
 require 'autoprefixer-rails'
+require 'breakpoint'
 
 http_path = "/"
 css_dir = "avalonstar/static/stylesheets"
