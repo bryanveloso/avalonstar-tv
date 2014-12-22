@@ -49,8 +49,11 @@
 
 // .broadcast-statistics
 .broadcast-statistics {
-  display: flex;
   padding: 6px;
+
+  @include breakpoint($laptop) {
+    display: flex;
+  }
 }
 .broadcast-statistic {
   flex: 1;
