@@ -23,7 +23,9 @@ class BroadcastListView(ListView):
         return round((highlights / episodes), 2)
 
     def calculate_raids_per_episode(self, **kwargs):
-        episodes = Broadcast.objects.count()
+        # Subtract 50 from the total number of episodes, since we only started
+        # recording raids at episode 51.
+        episodes = Broadcast.objects.count() - 50
         raids = Raid.objects.count()
         return round((raids / episodes), 2)
 
