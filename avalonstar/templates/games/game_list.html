@@ -5,15 +5,22 @@
   <ul class="game-list">
   {% for game in object_list reversed %}
     {% if game.appears_on.count > 0 %}
-    <li class="game">
-      {{ game }}
-      ({{ game.platform }})
-      {{ game.appears_on.count }}
-      {% for broadcast in game.appears_on.all reversed %}
-        <a href="{{ broadcast.get_absolute_url }}">{{ broadcast.number }}</a>
-      {% endfor %}
+    <li class="game" style="background-image: url('{{ MEDIA_URL }}{{ game.image_art }}');">
+      <h2 class="game-name">{{ game }} <span class="game-platform">({{ game.platform }})</span></h2>
+
       {% if game.is_abandoned %}Abandoned{% endif %}
       {% if game.is_completed %}Completed{% endif %}
+
+      <div class="game-appearances">
+        <h3 class="appearance-header">Appears on <strong>{{ game.appears_on.count }} episode{{ game.appears_on.count|pluralize }}</strong></h3>
+        <ul class="episode-appearances">
+        {% for broadcast in game.appears_on.all reversed %}
+          <li class="episode-appearance">
+            <a href="{{ broadcast.get_absolute_url }}">{{ broadcast.number }}</a>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
     </li>
     {% endif %}
   {% endfor %}

@@ -1,0 +1,51 @@
+.game-list {
+  padding: 6px;
+  font-family: $gotham;
+}
+.game {
+  margin: 6px;
+  margin-bottom: 12px;
+  position: relative;
+
+  background-size: cover;
+  background-position: center center;
+}
+.game-name {
+  text-align: center;
+}
+.game-platform {
+  display: block;
+  font-weight: normal;
+  font-size: 12px;
+}
+.game-image {
+  img { width: 100%; }
+}
+
+.game-appearances {
+  background: white;
+  text-align: center;
+}
+.appearance-header {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  display: block;
+  padding: 18px 0 0;
+  color: #444;
+  font-weight: 100;
+  text-align: center;
+  text-transform: uppercase;
+}
+.episode-appearances {
+  display: flex;
+  padding-bottom: 18px;
+}
+.episode-appearance {
+  flex: 1;
+  font-family: $tungsten;
+  font-size: 36px;
+  font-weight: 400;
+}
