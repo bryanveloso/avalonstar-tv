@@ -77,7 +77,7 @@
         <span class="broadcast-airdate">Aired <strong>{{ broadcast.airdate | date:"F j, Y" }}</strong></span>
         <h2 class="broadcast-status">
           <a href="{{ broadcast.get_absolute_url }}">{% firstof broadcast.status 'Untitled broadcast.' %}</a>
-          {% if broadcast.series %}<span class="broadcast-series" data-series="{{ broadcast.series|slugify }}"><span class="ss-icon ss-info"></span> {{ broadcast.series }}</span>{% endif %}
+          {% if broadcast.series %}<span class="broadcast-series" data-series="{{ broadcast.series|slugify }}"><span class="ss-icon ss-flag"></span> {{ broadcast.series }}</span>{% endif %}
         </h2>
       </div>
       <aside class="broadcast-aside">
