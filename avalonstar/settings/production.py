@@ -50,10 +50,8 @@ class Production(Settings):
     # ...
     CDN_DOMAIN = 'http://avalonstar-tv.s3.amazonaws.com'
     MEDIA_URL = '%s/' % (CDN_DOMAIN)
-    STATIC_URL = '%s/static/' % (CDN_DOMAIN)
-
     STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
-    STATIC_URL = STATIC_HOST + '/static/'
+    STATIC_URL = '%s/static/' % (STATIC_HOST)
 
     # Database Configuration.
     # --------------------------------------------------------------------------
