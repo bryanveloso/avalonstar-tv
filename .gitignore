@@ -47,7 +47,6 @@ nosetests.xml
 avalonstar/build
 avalonstar/javascripts
 avalonstar/media
-avalonstar/static
 backups
 htmlcov
 
