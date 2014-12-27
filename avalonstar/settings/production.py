@@ -52,6 +52,9 @@ class Production(Settings):
     MEDIA_URL = '%s/' % (CDN_DOMAIN)
     STATIC_URL = '%s/static/' % (CDN_DOMAIN)
 
+    STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
+    STATIC_URL = STATIC_HOST + '/static/'
+
     # Database Configuration.
     # --------------------------------------------------------------------------
     DATABASES = postgresify()
