@@ -3,14 +3,7 @@
 {# Common Assets #}
 <link rel="stylesheet" href="//cloud.typography.com/7547452/693684/css/fonts.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-{% if not debug %}
-{# Development Assets #}
+{# The Good Stuff #}
 <link rel="stylesheet" href="{% static 'stylesheets/live.css' %}">
 <script src="{% static 'javascripts/components/jquery.adaptive-backgrounds.min.js' %}"></script>
 <script src="{% static 'javascripts/application/live.js' %}"></script>
-{% else %}
-{# Production Assets #}
-<link rel="stylesheet" href="{% static 'stylesheets/live.min.css' %}">
-<script src="{% static 'javascripts/components.min.js' %}"></script>
-<script src="{% static 'javascripts/live.js' %}"></script>
-{% endif %}
