@@ -8,7 +8,7 @@
 <div class="overlay overlay-prologue">
   <div class="section section-chat"></div>
   <div class="section section-main">
-    <span class="episode-number"><span class="episode-text">Episode</span> {{ broadcast.number }}</span>
+    <span class="episode-number">{{ broadcast.number }}</span>
     <div class="episode-metadata">
       <div class="games">
         <ul class="game-list">
@@ -25,9 +25,9 @@
         </ul>
       </div>
       <div class="status">
-        <span class="episode-status">{{ broadcast.status }}</span>
         <span class="episode-pill episode-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
         {% if broadcast.series %}<span class="episode-pill episode-series">{{ broadcast.series }}{% endif %}
+        <span class="episode-status">{{ broadcast.status }}</span>
       </div>
     </div>
   </div>

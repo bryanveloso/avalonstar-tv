@@ -9,17 +9,17 @@
     });
     return particlesJS("particles-js", {
       particles: {
-        color: "#090d12",
+        color: "#29384D",
         shape: "circle",
-        opacity: 1,
+        opacity: 0.5,
         size: 3,
         size_random: true,
-        nb: 200,
+        nb: 175,
         line_linked: {
           enable_auto: true,
-          distance: 75,
-          color: "#090d12",
-          opacity: 1,
+          distance: 100,
+          color: "#29384D",
+          opacity: 0.9,
           width: 1,
           condensed_mode: {
             enable: true,
@@ -29,7 +29,7 @@
         },
         anim: {
           enable: true,
-          speed: 1
+          speed: 1.75
         }
       },
       interactivity: {
