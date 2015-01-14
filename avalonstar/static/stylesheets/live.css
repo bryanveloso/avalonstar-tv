@@ -363,7 +363,7 @@ ul { padding-left: 0; list-style: none; }
 .overlay-game .embelish-three { left: -160px; }
 .overlay-game .embelish-four { left: -120px; }
 
-.overlay-prologue .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 60px; position: absolute; top: 0; right: 0; width: 960px; height: 720px; }
+.overlay-prologue .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 60px; padding-left: 20px; position: absolute; top: 0; right: 0; width: 960px; height: 720px; z-index: 1; -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); -webkit-transform-style: flat; transform-style: flat; }
 .overlay-prologue .game-list { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; position: relative; top: 2px; }
 .overlay-prologue .game { position: relative; }
 .overlay-prologue .game:not(:first-of-type) { margin-top: 1px; }

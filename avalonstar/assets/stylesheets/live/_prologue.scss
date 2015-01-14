@@ -1,8 +1,13 @@
 .section-main {
   display: flex; align-items: center;
-  padding: 60px;
+  padding: 60px; padding-left: 20px;
   position: absolute; top: 0; right: 0;
   width: 960px; height: 720px;
+  z-index: 1;
+
+  // 3D Fun Times
+  transform: perspective(1280px) rotateY(-10deg);
+  transform-style: flat;
 }
 
 // .games / .game-list / .game
