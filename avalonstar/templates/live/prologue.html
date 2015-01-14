@@ -25,9 +25,9 @@
         </ul>
       </div>
       <div class="status">
-        <span class="episode-pill episode-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
-        {% if broadcast.series %}<span class="episode-pill episode-series">{{ broadcast.series }}{% endif %}
+        {% if broadcast.series %}<span class="episode-series"><span class="ss-icon ss-flag"></span> {{ broadcast.series }}</span>{% endif %}
         <span class="episode-status">{{ broadcast.status }}</span>
+        <span class="episode-pill episode-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
       </div>
     </div>
   </div>

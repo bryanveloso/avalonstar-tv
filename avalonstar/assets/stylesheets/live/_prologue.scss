@@ -34,7 +34,7 @@
 }
 
 .game-image {
-  height: 114px;
+  height: 110px;
   overflow: hidden;
   position: relative;
   z-index: 2;
@@ -63,6 +63,19 @@
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
+}
+.episode-series {
+  padding-top: 6px;
+  position: relative;
+  z-index: 5;
+
+  border-top: 1px solid rgba(#768EA4, 0.25);
+  color: #768EA4;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+
+  .ss-icon { position: relative; top: 1px; }
 }
 .episode-status {
   display: block;
