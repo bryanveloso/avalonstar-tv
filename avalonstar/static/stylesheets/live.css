@@ -141,21 +141,6 @@ ul { padding-left: 0; list-style: none; }
 .section-chat { width: 320px; height: 720px; background-color: #090d12; }
 .transparent .section-chat { background-color: transparent; }
 
-.spinner { -webkit-animation: rotator 1500ms linear infinite; animation: rotator 1500ms linear infinite; }
-
-.path { stroke: #fff; stroke-dasharray: 187; stroke-dashoffset: 0; -webkit-transform-origin: center; -ms-transform-origin: center; transform-origin: center; -webkit-animation: dash 1500ms ease-in-out infinite; animation: dash 1500ms ease-in-out infinite; }
-
-@-webkit-keyframes rotator { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(270deg); transform: rotate(270deg); } }
-
-@keyframes rotator { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(270deg); transform: rotate(270deg); } }
-@-webkit-keyframes dash { 0% { stroke-dashoffset: 187; }
-  50% { stroke-dashoffset: 46.75; -webkit-transform: rotate(135deg); transform: rotate(135deg); }
-  100% { stroke-dashoffset: 187; -webkit-transform: rotate(450deg); transform: rotate(450deg); } }
-@keyframes dash { 0% { stroke-dashoffset: 187; }
-  50% { stroke-dashoffset: 46.75; -webkit-transform: rotate(135deg); transform: rotate(135deg); }
-  100% { stroke-dashoffset: 187; -webkit-transform: rotate(450deg); transform: rotate(450deg); } }
 .episode-metadata { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; width: 100%; }
 
 .episode-number { display: block; margin-right: 24px; padding-left: 40px; position: relative; font-family: "Tungsten A", "Tungsten B", sans-serif; font-size: 156px; font-weight: 300; letter-spacing: -4px; line-height: 156px; }

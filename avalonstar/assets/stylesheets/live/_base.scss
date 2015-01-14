@@ -35,38 +35,6 @@ ul {
   .transparent & { background-color: transparent; }
 }
 
-// .spinner
-// Base styles for a "material design"-inspired spinner.
-$offset: 187;
-$duration: 1500ms;
-
-.spinner { animation: rotator $duration linear infinite; }
-.path {
-  stroke: #fff;
-  stroke-dasharray: $offset;
-  stroke-dashoffset: 0;
-  transform-origin: center;
-
-  animation: dash $duration ease-in-out infinite,
-}
-
-// .spinner Animations
-@keyframes rotator {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(270deg); }
-}
-@keyframes dash {
-  0% { stroke-dashoffset: $offset; }
-  50% {
-    stroke-dashoffset: $offset / 4;
-    transform: rotate(135deg);
-  }
-  100% {
-    stroke-dashoffset: $offset;
-    transform: rotate(450deg);
-  }
-}
-
 // .episode-metadata
 .episode-metadata {
   flex: 1;
