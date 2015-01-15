@@ -30,6 +30,7 @@ class Base(Configuration):
     COMPONENTS = [
         'apps.broadcasts',
         'apps.games',
+        'apps.live',
     ]
     PLUGINS = []
     ADMINISTRATION = [
