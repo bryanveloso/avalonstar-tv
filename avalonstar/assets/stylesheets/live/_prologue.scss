@@ -1,6 +1,6 @@
 .section-main {
   display: flex; align-items: center;
-  padding: 60px; padding-left: 20px;
+  padding: 60px; padding-left: 0;
   position: absolute; top: 0; right: 0;
   width: 960px; height: 720px;
   z-index: 1;
@@ -149,3 +149,10 @@
 
 // .embelish-one Overrides.
 .embelish-one { box-shadow: 0px 0px 34px 0px rgba(#000, 0.50); }
+
+// .episode-number Overrides.
+.episode-number {
+  min-width: 156px;
+  text-align: right;
+  transform: perspective(640px) rotateY(33deg) scale(1.1);
+}
