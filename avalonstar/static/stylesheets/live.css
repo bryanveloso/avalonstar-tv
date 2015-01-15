@@ -480,6 +480,10 @@ ul { padding-left: 0; list-style: none; }
 .overlay-prologue .game:before { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; background-color: rgba(0, 0, 0, 0.4); content: ''; -webkit-animation-direction: alternate; animation-direction: alternate; -webkit-animation-duration: 1500ms; animation-duration: 1500ms; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: prologue-game-overlay-pulse; animation-name: prologue-game-overlay-pulse; -webkit-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; transform-type: preserve-3d; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
 .overlay-prologue .game-image { height: 110px; overflow: hidden; position: relative; z-index: 2; background-color: #fff; }
 .overlay-prologue .game-image img { position: absolute; top: -50%; width: 100%; }
+.overlay-prologue .episode-messages { padding: 6px; padding-left: 12px; position: absolute; border-left: 1px solid #768EA4; }
+.overlay-prologue .episode-messages .message, .overlay-prologue .episode-messages .submessage { display: block; }
+.overlay-prologue .episode-messages .message { font-size: 13px; font-weight: 700; }
+.overlay-prologue .episode-messages .submessage { margin-top: 3px; color: #768EA4; font-size: 12px; }
 .overlay-prologue .status { position: absolute; width: 40%; bottom: 64px; }
 .overlay-prologue .episode-pill { padding: 4px 8px; position: relative; z-index: 5; background: #fff; color: #12161b; font-size: 12px; font-weight: 800; text-transform: uppercase; }
 .overlay-prologue .episode-series { padding-top: 6px; position: relative; z-index: 5; border-top: 1px solid rgba(118, 142, 164, 0.25); color: #768EA4; font-size: 13px; font-weight: 800; text-transform: uppercase; }

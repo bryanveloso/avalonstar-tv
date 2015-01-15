@@ -61,6 +61,26 @@
   }
 }
 
+// .episode-messages
+.episode-messages {
+  padding: 6px;
+  padding-left: 12px;
+  position: absolute;
+
+  border-left: 1px solid #768EA4;
+
+  .message, .submessage { display: block; }
+  .message {
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .submessage {
+    margin-top: 3px;
+    color: #768EA4;
+    font-size: 12px;
+  }
+}
+
 // .status
 .status {
   position: absolute;
