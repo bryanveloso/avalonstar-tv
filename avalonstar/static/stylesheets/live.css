@@ -358,7 +358,7 @@ ul { padding-left: 0; list-style: none; }
 .overlay-game .indicator { position: relative; top: -2px; padding: 2px 6px; margin-left: 2px; background: #29384D; border-radius: 4px; color: #12161b; font-size: 12px; }
 .overlay-game .phoenix { top: 420px; left: 0; height: 75%; }
 .overlay-game .embelish { position: absolute; }
-.overlay-game .embelish-one { top: 480px; left: -240px; width: 480px; height: 480px; background-color: #12161b; }
+.overlay-game .embelish-one { top: 480px; left: -240px; width: 480px; height: 480px; }
 .overlay-game .embelish-two { left: -180px; }
 .overlay-game .embelish-three { left: -160px; }
 .overlay-game .embelish-four { left: -120px; }
