@@ -2,12 +2,14 @@
 from django.views.generic import TemplateView
 
 from apps.broadcasts.models import Broadcast
+from apps.live.models import Message
 
 
 class BroadcastContextMixin(object):
     def get_context_data(self, **kwargs):
         context = super(BroadcastContextMixin, self).get_context_data(**kwargs)
         context['broadcast'] = Broadcast.objects.latest()
+        context['message_list'] = Message.objects.order_by('?')
         return context
 
 

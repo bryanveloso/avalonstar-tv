@@ -4,7 +4,6 @@
 
 {% block title %}Prologue{% endblock %}
 {% block overlay %}
-{# Particles for great justice. #}
 <div class="overlay overlay-prologue">
   <div class="section section-chat"></div>
   <div class="section section-main">
@@ -30,6 +29,12 @@
               <span class="message">Welcome to Avalonstar.tv!</span>
               <span class="submessage">Episode {{ broadcast.number }} will be starting soon!</span>
             </div>
+            {% for message in message_list %}
+            <div class="item">
+              <span class="message">{{ message.text }}</span>
+              <span class="submessage">{{ message.subtext }}</span>
+            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -41,6 +46,7 @@
     </div>
   </div>
 
+  {# Particles for great justice. #}
   <div id="particles-js"></div>
   <div class="embelishments">
     <img class="phoenix" src="{% static 'images/phoenix_large.png' %}">
