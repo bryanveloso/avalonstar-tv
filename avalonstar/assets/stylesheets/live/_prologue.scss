@@ -35,6 +35,7 @@
     z-index: 3;
 
     background-color: rgba(#000, 0.4);
+    background-blend-mode: overlay;
     content: '';
 
     animation-direction: alternate;
@@ -72,13 +73,13 @@
 
   .message, .submessage { display: block; }
   .message {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
   }
   .submessage {
     margin-top: 3px;
     color: #768EA4;
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -152,17 +153,17 @@
   min-width: 200px;
   padding: 10px 12px;
 
-  background: rgba(#000, 0.75);
+  background: #12161b;
   border-bottom: 1px solid rgba(#000, 0.25);
   font-weight: bold;
 }
 .game-appearances {
   display: block;
   margin: 0 12px;
-  position: absolute; left: 0; bottom: 0px; right: 0;
+  position: absolute; left: 0; bottom: -1px; right: 0;
 
-  color: rgba(#FFF, 0.75);
-  font-size: 11px;
+  color: #FFF;
+  font-size: 12px;
   text-shadow: 0 1px 0 rgba(#000, 0.25);
 }
 .game-platform {

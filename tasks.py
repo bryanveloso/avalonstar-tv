@@ -50,7 +50,7 @@ def server(**kwargs):
 
 
 @task
-def migrate(app='', **kwargs):
+def migrate(verbose=False, app='', **kwargs):
     out = functools.partial(_out, 'project.deploy')
     hide = 'out' if not verbose else None
 

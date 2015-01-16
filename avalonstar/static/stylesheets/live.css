@@ -477,13 +477,13 @@ ul { padding-left: 0; list-style: none; }
 .overlay-prologue .game-list { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; position: relative; top: 2px; }
 .overlay-prologue .game { position: relative; }
 .overlay-prologue .game:not(:first-of-type) { margin-top: 1px; }
-.overlay-prologue .game:before { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; background-color: rgba(0, 0, 0, 0.4); content: ''; -webkit-animation-direction: alternate; animation-direction: alternate; -webkit-animation-duration: 1500ms; animation-duration: 1500ms; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: prologue-game-overlay-pulse; animation-name: prologue-game-overlay-pulse; -webkit-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; transform-type: preserve-3d; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.overlay-prologue .game:before { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; background-color: rgba(0, 0, 0, 0.4); background-blend-mode: overlay; content: ''; -webkit-animation-direction: alternate; animation-direction: alternate; -webkit-animation-duration: 1500ms; animation-duration: 1500ms; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: prologue-game-overlay-pulse; animation-name: prologue-game-overlay-pulse; -webkit-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; transform-type: preserve-3d; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
 .overlay-prologue .game-image { height: 110px; overflow: hidden; position: relative; z-index: 2; background-color: #fff; }
 .overlay-prologue .game-image img { position: absolute; top: -50%; width: 100%; }
 .overlay-prologue .episode-messages { padding: 6px; padding-left: 12px; position: absolute; width: 100%; border-left: 1px solid #768EA4; }
 .overlay-prologue .episode-messages .message, .overlay-prologue .episode-messages .submessage { display: block; }
-.overlay-prologue .episode-messages .message { font-size: 13px; font-weight: 700; }
-.overlay-prologue .episode-messages .submessage { margin-top: 3px; color: #768EA4; font-size: 12px; }
+.overlay-prologue .episode-messages .message { font-size: 14px; font-weight: 700; }
+.overlay-prologue .episode-messages .submessage { margin-top: 3px; color: #768EA4; font-size: 13px; }
 .overlay-prologue .status { position: absolute; width: 40%; bottom: 64px; }
 .overlay-prologue .episode-pill { padding: 4px 8px; position: relative; z-index: 5; background: #fff; color: #12161b; font-size: 12px; font-weight: 800; text-transform: uppercase; }
 .overlay-prologue .episode-series { padding-top: 6px; position: relative; z-index: 5; border-top: 1px solid rgba(118, 142, 164, 0.25); color: #768EA4; font-size: 13px; font-weight: 800; text-transform: uppercase; }
@@ -495,8 +495,8 @@ ul { padding-left: 0; list-style: none; }
   100% { background-color: rgba(0, 0, 0, 0.2); } }
 .overlay-prologue .game-metadata { position: absolute; top: 12px; left: 12px; height: 60px; z-index: 5; font-weight: 500; font-size: 16px; text-transform: uppercase; }
 .overlay-prologue .game-metadata-marker { width: 80%; height: 4px; position: absolute; top: 37px; left: 12px; background-color: rgba(0, 0, 0, 0.1); -webkit-transition: background-color 250ms ease-in-out; transition: background-color 250ms ease-in-out; }
-.overlay-prologue .game-name { display: block; min-width: 200px; padding: 10px 12px; background: rgba(0, 0, 0, 0.75); border-bottom: 1px solid rgba(0, 0, 0, 0.25); font-weight: bold; }
-.overlay-prologue .game-appearances { display: block; margin: 0 12px; position: absolute; left: 0; bottom: 0px; right: 0; color: rgba(255, 255, 255, 0.75); font-size: 11px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+.overlay-prologue .game-name { display: block; min-width: 200px; padding: 10px 12px; background: #12161b; border-bottom: 1px solid rgba(0, 0, 0, 0.25); font-weight: bold; }
+.overlay-prologue .game-appearances { display: block; margin: 0 12px; position: absolute; left: 0; bottom: -1px; right: 0; color: #FFF; font-size: 12px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
 .overlay-prologue .game-platform { font-size: 11px; font-weight: 400; }
 .overlay-prologue .spinner { position: absolute; top: 50%; right: 24px; margin-left: -33px; margin-top: -33px; z-index: 5; }
 .overlay-prologue .embelish-one { box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.5); }
