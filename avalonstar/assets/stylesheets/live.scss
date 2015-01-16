@@ -3,6 +3,7 @@
 @import "components/looper";
 
 @import "live/base";
+@import "live/webcam";
 .overlay-away { @import "live/away"; }
 .overlay-discussion { @import "live/discussion"; }
 .overlay-epilogue { @import "live/epilogue"; }

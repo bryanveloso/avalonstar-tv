@@ -1,285 +1,189 @@
-// .overlay-webcam
-.overlay-webcam {
-  position: absolute; top: 538px; left: 28px;
-  width: 264px; height: 149px;
-
-  @extend %animated;
-  animation-name: section-background-appear;
-  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-}
-
-// .section-main
 .section-main {
   display: flex; align-items: center;
-  padding: 60px;
+  padding: 60px; padding-left: 0;
   position: absolute; top: 0; right: 0;
   width: 960px; height: 720px;
+  z-index: 1;
 
-  @extend %animated;
-  animation-name: section-background-appear;
-  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  // Animations.
+  animation-duration: 10000ms;
+  animation-iteration-count: infinite;
+  animation-name: section-perspective-change;
+  animation-timing-function: ease-in-out;
 }
 
 // .section-main Animations
-@keyframes section-background-appear {
-  0% { background-color: rgba(#000, 0); }
-  100% { background-color: rgba(#000, 0.8); }
+@keyframes section-perspective-change {
+    0% { transform: perspective(1280px) rotateY(-10deg); }
+   50% { transform: perspective(1280px) rotateY(2deg); }
+  100% { transform: perspective(1280px) rotateY(-10deg); }
 }
 
-// .episode-number Overrides.
-.episode-text {
-  @extend %animated;
-  position: absolute;
-  animation-name: episode-text-appear;
-  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+// .games / .game-list / .game
+.game-list {
+  display: flex;
+  flex-direction: column;
+  position: relative; top: 2px;
 }
-.episode-number {
-  @extend %animated;
+.game {
   position: relative;
-  animation-name: episode-number-appear;
-  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+  &:not(:first-of-type) { margin-top: 1px; }
+  &:before {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 3;
+
+    background-color: rgba(#000, 0.4);
+    background-blend-mode: overlay;
+    content: '';
+
+    animation-direction: alternate;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-name: prologue-game-overlay-pulse;
+    animation-timing-function: ease-in-out;
+    transform-type: preserve-3d;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-// .episode-number Animations
-@keyframes episode-text-appear {
-    0% { opacity: 0; transform: translate3d(0, 24px, 0) rotate(90deg); }
-  100% { opacity: 0.99; transform: translate3d(0, 0, 0) rotate(90deg); }
-}
-@keyframes episode-number-appear {
-    0% { opacity: 0; transform: translate3d(0, 24px, 0); }
-  100% { opacity: 0.99; transform: translate3d(0, 0, 0); }
-}
-
-// .overlay-message
-// .message-primary / .message-secondary
-.overlay-message { flex: 1; }
-.message-primary {
-  display: block;
-  height: 68px;
+.game-image {
+  height: 110px;
   overflow: hidden;
-  padding: 18px 24px;
   position: relative;
+  z-index: 2;
+
+  background-color: #fff;
+
+  img {
+    position: absolute; top: -50%;
+    width: 100%;
+  }
+}
+
+// .episode-messages
+.episode-messages {
+  padding: 6px;
+  padding-left: 12px;
+  position: absolute;
+  width: 100%;
+
+  border-left: 1px solid #768EA4;
+
+  .message, .submessage { display: block; }
+  .message {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .submessage {
+    margin-top: 3px;
+    color: #768EA4;
+    font-size: 13px;
+  }
+}
+
+// .status
+.status {
+  position: absolute;
+  width: 40%;
+  bottom: 64px;
+}
+.episode-pill {
+  padding: 4px 8px;
+  position: relative;
+  z-index: 5;
 
   background: #fff;
-  color: #090d12;
-  font-family: $idlewild;
-  font-size: 28px;
-  font-weight: 500;
-  letter-spacing: -2px;
-
-  @extend %animated;
-  animation-name: message-primary-appear;
-  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  color: #12161b;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
 }
-.message-secondary {
-  height: 40px;
-  overflow: hidden;
-  padding: 12px 24px;
+.episode-series {
+  padding-top: 6px;
   position: relative;
+  z-index: 5;
 
-  background: #090d12;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
+  border-top: 1px solid rgba(#768EA4, 0.25);
+  color: #768EA4;
+  font-size: 13px;
+  font-weight: 800;
   text-transform: uppercase;
 
-  @extend %animated;
-  animation-name: message-secondary-appear;
-  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  .ss-icon { position: relative; top: 1px; }
 }
-
-// .message-primary / .message-secondary Animations
-@keyframes message-primary-appear {
-  0% {
-    transform: translateX(256px) rotateY(270deg);
-    width: 0; height: 0;
-    background: rgba(#fff, 0);
-  }
-  40% {
-    transform: translateX(0) rotateY(0deg);
-    width: 68px; height: 68px;
-  }
-  100% {
-    width: 674px;
-    background: #fff;
-  }
-}
-@keyframes message-secondary-appear {
-  0% {
-    transform: translateX(256px) rotateY(270deg);
-    width: 0; height: 0;
-    background: rgba(#090d12, 0);
-  }
-  40% {
-    transform: translateX(0) rotateY(0deg);
-    width: 40px; height: 40px;
-  }
-  100% {
-    width: 674px;
-    background: #090d12;
-  }
-}
-
-// .primary-messages / .secondary-messages
-//
-.primary-messages {
-  margin: 0;
+.episode-status {
+  display: block;
+  padding: 12px 0;
   position: relative;
-}
-.primary-message {
-  position: absolute;
-  top: 0;
+  z-index: 5;
 
-  &.message-1 {
-    @extend %animated;
-    position: absolute;
-    animation-name: primary-message-appear;
-    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  }
+  color: #fff;
+  font-family: $idlewild;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -2px;
 }
 
-.secondary-messages {
-  margin: 0;
-  position: relative;
-}
-.secondary-message {
-  position: absolute;
-  top: 0;
-
-  &.message-1 {
-    @extend %animated;
-    position: absolute;
-    animation-iteration-count: 1, infinite;
-    animation-name: secondary-message-appear, secondary-message-cycle-one;
-    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  }
-  &.message-2 {
-    @extend %animated;
-    position: absolute;
-    animation-iteration-count: infinite;
-    animation-name: secondary-message-cycle-two;
-    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  }
-  &.message-3 {
-    @extend %animated;
-    position: absolute;
-    animation-iteration-count: infinite;
-    animation-name: secondary-message-cycle-three;
-    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  }
-  &.message-4 {
-    @extend %animated;
-    position: absolute;
-    animation-iteration-count: infinite;
-    animation-name: secondary-message-cycle-four;
-    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  }
-  &.message-5 {
-    @extend %animated;
-    position: absolute;
-    animation-iteration-count: infinite;
-    animation-name: secondary-message-cycle-five;
-    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  }
+// .games / .game-list / .game Animations
+@keyframes prologue-game-overlay-pulse {
+  0% { background-color: rgba(#000, 0.4); }
+  100% { background-color: rgba(#000, 0.2); }
 }
 
-// .primary-message Animations
-@keyframes primary-message-appear {
-    0% { transform: translateX(-128px); color: rgba(#090d12, 0); }
-  100% { transform: translateX(0px); opacity: #090d12; }
+.game-metadata {
+  position: absolute; top: 12px; left: 12px;
+  height: 60px;
+  z-index: 5;
+
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.game-metadata-marker {
+  width: 80%; height: 4px;
+  position: absolute; top: 37px; left: 12px;
+
+  background-color: rgba(#000, 0.1);
+  transition: background-color 250ms ease-in-out;
+}
+.game-name {
+  display: block;
+  min-width: 200px;
+  padding: 10px 12px;
+
+  background: #12161b;
+  border-bottom: 1px solid rgba(#000, 0.25);
+  font-weight: bold;
+}
+.game-appearances {
+  display: block;
+  margin: 0 12px;
+  position: absolute; left: 0; bottom: -1px; right: 0;
+
+  color: #FFF;
+  font-size: 12px;
+  text-shadow: 0 1px 0 rgba(#000, 0.25);
+}
+.game-platform {
+  font-size: 11px;
+  font-weight: 400;
 }
 
-// .secondary-message Animations
-@keyframes secondary-message-appear {
-    0% { transform: translateX(-128px); color: rgba(#fff, 0); }
-  100% { transform: translateX(0px); color: #fff; }
-}
-@keyframes secondary-message-cycle-one {
-    0% { top: 0px; }  /* When you start the slide, the first image is already visible */
-    4% { top: 0px; }  /* Original Position */
-   16% { top: 0px; opacity: 1; z-index:0; }  /* From 4% to 16 % = for 3 seconds the image is visible */
-   20% { top: 40px; opacity: 0; z-index: 0; }  /* From 16% to 20% = for 1 second exit image */
-   21% { top: -40px; opacity: 0; z-index: -1; } /* Return to Original Position */
-   92% { top: -40px; opacity: 0; z-index: 0; }
-   96% { top: -40px; opacity: 0; }  /* From 96% to 100% = for 1 second enter image*/
-  100% { top: 0px; opacity: 1; }
-}
-@keyframes secondary-message-cycle-two {
-    0% { top: -40px; opacity: 0; }  /* Original Position */
-   16% { top: -40px; opacity: 0; }  /* Starts moving after 16% to this position */
-   20% { top: 0px; opacity: 1; }
-   24% { top: 0px; opacity: 1; }
-   36% { top: 0px; opacity: 1; z-index: 0; }  /* From 24% to 36 % = for 3 seconds the image is visible */
-   40% { top: 40px; opacity: 0; z-index: 0; }  /* From 36% to 40% = for 1 second exit image */
-   41% { top: -40px; opacity: 0; z-index: -1; }  /* Return to Original Position */
-  100% { top: -40px; opacity: 0; z-index: -1; }
-}
-@keyframes secondary-message-cycle-three {
-    0% { top: -40px; opacity: 0; }
-   36% { top: -40px; opacity: 0; }
-   40% { top: 0px; opacity: 1; }
-   44% { top: 0px; opacity: 1; }
-   56% { top: 0px; opacity: 1; }
-   60% { top: 40px; opacity: 0; z-index: 0; }
-   61% { top: -40px; opacity: 0; z-index: -1; }
-  100% { top: -40px; opacity: 0; z-index: -1; }
-}
-@keyframes secondary-message-cycle-four {
-    0% { top: -40px; opacity: 0; }
-   56% { top: -40px; opacity: 0; }
-   60% { top: 0px; opacity: 1; }
-   64% { top: 0px; opacity: 1; }
-   76% { top: 0px; opacity: 1; z-index: 0; }
-   80% { top: 40px; opacity: 0; z-index: 0; }
-   81% { top: -40px; opacity: 0; z-index: -1; }
-  100% { top: -40px; opacity: 0; z-index: -1; }
-}
-@keyframes secondary-message-cycle-five {
-    0% { top: -40px; opacity: 0; }
-   76% { top: -40px; opacity: 0; }
-   80% { top: 0px; opacity: 1; }
-   84% { top: 0px; opacity: 1; }
-   96% { top: 0px; opacity: 1; z-index: 0; }
-  100% { top: 40px; opacity: 0; z-index: 0; }
+// .spinner Positioning Overrides.
+.spinner {
+  position: absolute; top: 50%; right: 24px;
+  margin-left: -33px; margin-top: -33px;
+  z-index: 5;
 }
 
-// Animation Delays and Durations.
-// (In order of appearance.)
-.section-main, .overlay-webcam {
-  animation-delay: 250ms;               // start:   250ms
-  animation-duration: 500ms;            // end:     750ms
-}
+// .embelish-one Overrides.
+.embelish-one { box-shadow: 0px 0px 34px 0px rgba(#000, 0.50); }
+
+// .episode-number Overrides.
 .episode-number {
-  animation-delay: 500ms;               // start:   500ms
-  animation-duration: 600ms;            // end:    1100ms
-}
-.episode-text {
-  animation-delay: 600ms;               // start:   600ms
-  animation-duration: 500ms;            // end:    1100ms
-}
-
-.message-primary {
-  animation-delay: 900ms;               // start:   900ms
-  animation-duration: 1000ms;           // end:    1900ms
-}
-.message-secondary {
-  animation-delay: 1000ms;              // start:  1000ms
-  animation-duration: 1000ms;           // end:    2000ms
-}
-
-.primary-message {
-  &.message-1 {
-    animation-delay: 1500ms;
-    animation-duration: 1000ms;
-  }
-}
-.secondary-message {
-  &.message-1 {
-    animation-delay: 1600ms, 2000ms;
-    animation-duration: 1000ms, 25000ms;
-  }
-  &.message-2, &.message-3, &.message-4, &.message-5 {
-    animation-delay: 2000ms;
-    animation-duration: 25000ms;
-  }
+  min-width: 156px;
+  text-align: right;
+  transform: perspective(640px) rotateY(33deg) scale(1.1);
 }

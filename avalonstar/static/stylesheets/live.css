@@ -240,8 +240,6 @@ ul { padding-left: 0; list-style: none; }
 
 .overlay.transparent { background-color: transparent; }
 
-.overlay-away .overlay-webcam, .overlay-away .section-main, .overlay-away .episode-text, .overlay-away .episode-number, .overlay-away .message-primary, .overlay-away .message-secondary, .overlay-away .primary-message.message-1, .overlay-away .secondary-message.message-1, .overlay-away .secondary-message.message-2, .overlay-away .secondary-message.message-3, .overlay-away .secondary-message.message-4, .overlay-away .secondary-message.message-5 { -webkit-animation-fill-mode: both; animation-fill-mode: both; position: relative; transform-type: preserve-3d; }
-
 .section-chat { width: 320px; height: 720px; }
 .transparent .section-chat { background-color: transparent; }
 
@@ -266,161 +264,59 @@ ul { padding-left: 0; list-style: none; }
 #particles-js { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; background-color: transparent; }
 #particles-js canvas { display: block; vertical-align: bottom; }
 
-.overlay-away .overlay-webcam { position: absolute; top: 538px; left: 28px; width: 264px; height: 149px; -webkit-animation-name: section-background-appear; animation-name: section-background-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-.overlay-away .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 60px; position: absolute; top: 0; right: 0; width: 960px; height: 720px; -webkit-animation-name: section-background-appear; animation-name: section-background-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-@-webkit-keyframes section-background-appear { 0% { background-color: transparent; }
-  100% { background-color: rgba(0, 0, 0, 0.8); } }
-@keyframes section-background-appear { 0% { background-color: transparent; }
-  100% { background-color: rgba(0, 0, 0, 0.8); } }
-.overlay-away .episode-text { position: absolute; -webkit-animation-name: episode-text-appear; animation-name: episode-text-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-.overlay-away .episode-number { position: relative; -webkit-animation-name: episode-number-appear; animation-name: episode-number-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-@-webkit-keyframes episode-text-appear { 0% { opacity: 0; -webkit-transform: translate3d(0, 24px, 0) rotate(90deg); transform: translate3d(0, 24px, 0) rotate(90deg); }
-  100% { opacity: 0.99; -webkit-transform: translate3d(0, 0, 0) rotate(90deg); transform: translate3d(0, 0, 0) rotate(90deg); } }
-@keyframes episode-text-appear { 0% { opacity: 0; -webkit-transform: translate3d(0, 24px, 0) rotate(90deg); transform: translate3d(0, 24px, 0) rotate(90deg); }
-  100% { opacity: 0.99; -webkit-transform: translate3d(0, 0, 0) rotate(90deg); transform: translate3d(0, 0, 0) rotate(90deg); } }
-@-webkit-keyframes episode-number-appear { 0% { opacity: 0; -webkit-transform: translate3d(0, 24px, 0); transform: translate3d(0, 24px, 0); }
-  100% { opacity: 0.99; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); } }
-@keyframes episode-number-appear { 0% { opacity: 0; -webkit-transform: translate3d(0, 24px, 0); transform: translate3d(0, 24px, 0); }
-  100% { opacity: 0.99; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); } }
-.overlay-away .overlay-message { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; }
-.overlay-away .message-primary { display: block; height: 68px; overflow: hidden; padding: 18px 24px; position: relative; background: #fff; color: #090d12; font-family: "Idlewild SSm A", "Idlewild SSm B", "Halogen", sans-serif; font-size: 28px; font-weight: 500; letter-spacing: -2px; -webkit-animation-name: message-primary-appear; animation-name: message-primary-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-.overlay-away .message-secondary { height: 40px; overflow: hidden; padding: 12px 24px; position: relative; background: #090d12; color: #fff; font-size: 14px; font-weight: 700; text-transform: uppercase; -webkit-animation-name: message-secondary-appear; animation-name: message-secondary-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-@-webkit-keyframes message-primary-appear { 0% { -webkit-transform: translateX(256px) rotateY(270deg); transform: translateX(256px) rotateY(270deg); width: 0; height: 0; background: rgba(255, 255, 255, 0); }
-  40% { -webkit-transform: translateX(0) rotateY(0deg); transform: translateX(0) rotateY(0deg); width: 68px; height: 68px; }
-  100% { width: 674px; background: #fff; } }
-@keyframes message-primary-appear { 0% { -webkit-transform: translateX(256px) rotateY(270deg); transform: translateX(256px) rotateY(270deg); width: 0; height: 0; background: rgba(255, 255, 255, 0); }
-  40% { -webkit-transform: translateX(0) rotateY(0deg); transform: translateX(0) rotateY(0deg); width: 68px; height: 68px; }
-  100% { width: 674px; background: #fff; } }
-@-webkit-keyframes message-secondary-appear { 0% { -webkit-transform: translateX(256px) rotateY(270deg); transform: translateX(256px) rotateY(270deg); width: 0; height: 0; background: rgba(9, 13, 18, 0); }
-  40% { -webkit-transform: translateX(0) rotateY(0deg); transform: translateX(0) rotateY(0deg); width: 40px; height: 40px; }
-  100% { width: 674px; background: #090d12; } }
-@keyframes message-secondary-appear { 0% { -webkit-transform: translateX(256px) rotateY(270deg); transform: translateX(256px) rotateY(270deg); width: 0; height: 0; background: rgba(9, 13, 18, 0); }
-  40% { -webkit-transform: translateX(0) rotateY(0deg); transform: translateX(0) rotateY(0deg); width: 40px; height: 40px; }
-  100% { width: 674px; background: #090d12; } }
-.overlay-away .primary-messages { margin: 0; position: relative; }
-.overlay-away .primary-message { position: absolute; top: 0; }
-.overlay-away .primary-message.message-1 { position: absolute; -webkit-animation-name: primary-message-appear; animation-name: primary-message-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-.overlay-away .secondary-messages { margin: 0; position: relative; }
-.overlay-away .secondary-message { position: absolute; top: 0; }
-.overlay-away .secondary-message.message-1 { position: absolute; -webkit-animation-iteration-count: 1, infinite; animation-iteration-count: 1, infinite; -webkit-animation-name: secondary-message-appear, secondary-message-cycle-one; animation-name: secondary-message-appear, secondary-message-cycle-one; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-.overlay-away .secondary-message.message-2 { position: absolute; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: secondary-message-cycle-two; animation-name: secondary-message-cycle-two; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-.overlay-away .secondary-message.message-3 { position: absolute; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: secondary-message-cycle-three; animation-name: secondary-message-cycle-three; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-.overlay-away .secondary-message.message-4 { position: absolute; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: secondary-message-cycle-four; animation-name: secondary-message-cycle-four; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-.overlay-away .secondary-message.message-5 { position: absolute; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: secondary-message-cycle-five; animation-name: secondary-message-cycle-five; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-@-webkit-keyframes primary-message-appear { 0% { -webkit-transform: translateX(-128px); transform: translateX(-128px); color: rgba(9, 13, 18, 0); }
-  100% { -webkit-transform: translateX(0px); transform: translateX(0px); opacity: #090d12; } }
-@keyframes primary-message-appear { 0% { -webkit-transform: translateX(-128px); transform: translateX(-128px); color: rgba(9, 13, 18, 0); }
-  100% { -webkit-transform: translateX(0px); transform: translateX(0px); opacity: #090d12; } }
-@-webkit-keyframes secondary-message-appear { 0% { -webkit-transform: translateX(-128px); transform: translateX(-128px); color: rgba(255, 255, 255, 0); }
-  100% { -webkit-transform: translateX(0px); transform: translateX(0px); color: #fff; } }
-@keyframes secondary-message-appear { 0% { -webkit-transform: translateX(-128px); transform: translateX(-128px); color: rgba(255, 255, 255, 0); }
-  100% { -webkit-transform: translateX(0px); transform: translateX(0px); color: #fff; } }
-@-webkit-keyframes secondary-message-cycle-one { 0% { top: 0px; }
-  /* When you start the slide, the first image is already visible */
-  4% { top: 0px; }
-  /* Original Position */
-  16% { top: 0px; opacity: 1; z-index: 0; }
-  /* From 4% to 16 % = for 3 seconds the image is visible */
-  20% { top: 40px; opacity: 0; z-index: 0; }
-  /* From 16% to 20% = for 1 second exit image */
-  21% { top: -40px; opacity: 0; z-index: -1; }
-  /* Return to Original Position */
-  92% { top: -40px; opacity: 0; z-index: 0; }
-  96% { top: -40px; opacity: 0; }
-  /* From 96% to 100% = for 1 second enter image*/
-  100% { top: 0px; opacity: 1; } }
-@keyframes secondary-message-cycle-one { 0% { top: 0px; }
-  /* When you start the slide, the first image is already visible */
-  4% { top: 0px; }
-  /* Original Position */
-  16% { top: 0px; opacity: 1; z-index: 0; }
-  /* From 4% to 16 % = for 3 seconds the image is visible */
-  20% { top: 40px; opacity: 0; z-index: 0; }
-  /* From 16% to 20% = for 1 second exit image */
-  21% { top: -40px; opacity: 0; z-index: -1; }
-  /* Return to Original Position */
-  92% { top: -40px; opacity: 0; z-index: 0; }
-  96% { top: -40px; opacity: 0; }
-  /* From 96% to 100% = for 1 second enter image*/
-  100% { top: 0px; opacity: 1; } }
-@-webkit-keyframes secondary-message-cycle-two { 0% { top: -40px; opacity: 0; }
-  /* Original Position */
-  16% { top: -40px; opacity: 0; }
-  /* Starts moving after 16% to this position */
-  20% { top: 0px; opacity: 1; }
-  24% { top: 0px; opacity: 1; }
-  36% { top: 0px; opacity: 1; z-index: 0; }
-  /* From 24% to 36 % = for 3 seconds the image is visible */
-  40% { top: 40px; opacity: 0; z-index: 0; }
-  /* From 36% to 40% = for 1 second exit image */
-  41% { top: -40px; opacity: 0; z-index: -1; }
-  /* Return to Original Position */
-  100% { top: -40px; opacity: 0; z-index: -1; } }
-@keyframes secondary-message-cycle-two { 0% { top: -40px; opacity: 0; }
-  /* Original Position */
-  16% { top: -40px; opacity: 0; }
-  /* Starts moving after 16% to this position */
-  20% { top: 0px; opacity: 1; }
-  24% { top: 0px; opacity: 1; }
-  36% { top: 0px; opacity: 1; z-index: 0; }
-  /* From 24% to 36 % = for 3 seconds the image is visible */
-  40% { top: 40px; opacity: 0; z-index: 0; }
-  /* From 36% to 40% = for 1 second exit image */
-  41% { top: -40px; opacity: 0; z-index: -1; }
-  /* Return to Original Position */
-  100% { top: -40px; opacity: 0; z-index: -1; } }
-@-webkit-keyframes secondary-message-cycle-three { 0% { top: -40px; opacity: 0; }
-  36% { top: -40px; opacity: 0; }
-  40% { top: 0px; opacity: 1; }
-  44% { top: 0px; opacity: 1; }
-  56% { top: 0px; opacity: 1; }
-  60% { top: 40px; opacity: 0; z-index: 0; }
-  61% { top: -40px; opacity: 0; z-index: -1; }
-  100% { top: -40px; opacity: 0; z-index: -1; } }
-@keyframes secondary-message-cycle-three { 0% { top: -40px; opacity: 0; }
-  36% { top: -40px; opacity: 0; }
-  40% { top: 0px; opacity: 1; }
-  44% { top: 0px; opacity: 1; }
-  56% { top: 0px; opacity: 1; }
-  60% { top: 40px; opacity: 0; z-index: 0; }
-  61% { top: -40px; opacity: 0; z-index: -1; }
-  100% { top: -40px; opacity: 0; z-index: -1; } }
-@-webkit-keyframes secondary-message-cycle-four { 0% { top: -40px; opacity: 0; }
-  56% { top: -40px; opacity: 0; }
-  60% { top: 0px; opacity: 1; }
-  64% { top: 0px; opacity: 1; }
-  76% { top: 0px; opacity: 1; z-index: 0; }
-  80% { top: 40px; opacity: 0; z-index: 0; }
-  81% { top: -40px; opacity: 0; z-index: -1; }
-  100% { top: -40px; opacity: 0; z-index: -1; } }
-@keyframes secondary-message-cycle-four { 0% { top: -40px; opacity: 0; }
-  56% { top: -40px; opacity: 0; }
-  60% { top: 0px; opacity: 1; }
-  64% { top: 0px; opacity: 1; }
-  76% { top: 0px; opacity: 1; z-index: 0; }
-  80% { top: 40px; opacity: 0; z-index: 0; }
-  81% { top: -40px; opacity: 0; z-index: -1; }
-  100% { top: -40px; opacity: 0; z-index: -1; } }
-@-webkit-keyframes secondary-message-cycle-five { 0% { top: -40px; opacity: 0; }
-  76% { top: -40px; opacity: 0; }
-  80% { top: 0px; opacity: 1; }
-  84% { top: 0px; opacity: 1; }
-  96% { top: 0px; opacity: 1; z-index: 0; }
-  100% { top: 40px; opacity: 0; z-index: 0; } }
-@keyframes secondary-message-cycle-five { 0% { top: -40px; opacity: 0; }
-  76% { top: -40px; opacity: 0; }
-  80% { top: 0px; opacity: 1; }
-  84% { top: 0px; opacity: 1; }
-  96% { top: 0px; opacity: 1; z-index: 0; }
-  100% { top: 40px; opacity: 0; z-index: 0; } }
-.overlay-away .section-main, .overlay-away .overlay-webcam { -webkit-animation-delay: 250ms; animation-delay: 250ms; -webkit-animation-duration: 500ms; animation-duration: 500ms; }
-.overlay-away .episode-number { -webkit-animation-delay: 500ms; animation-delay: 500ms; -webkit-animation-duration: 600ms; animation-duration: 600ms; }
-.overlay-away .episode-text { -webkit-animation-delay: 600ms; animation-delay: 600ms; -webkit-animation-duration: 500ms; animation-duration: 500ms; }
-.overlay-away .message-primary { -webkit-animation-delay: 900ms; animation-delay: 900ms; -webkit-animation-duration: 1000ms; animation-duration: 1000ms; }
-.overlay-away .message-secondary { -webkit-animation-delay: 1000ms; animation-delay: 1000ms; -webkit-animation-duration: 1000ms; animation-duration: 1000ms; }
-.overlay-away .primary-message.message-1 { -webkit-animation-delay: 1500ms; animation-delay: 1500ms; -webkit-animation-duration: 1000ms; animation-duration: 1000ms; }
-.overlay-away .secondary-message.message-1 { -webkit-animation-delay: 1600ms, 2000ms; animation-delay: 1600ms, 2000ms; -webkit-animation-duration: 1000ms, 25000ms; animation-duration: 1000ms, 25000ms; }
-.overlay-away .secondary-message.message-2, .overlay-away .secondary-message.message-3, .overlay-away .secondary-message.message-4, .overlay-away .secondary-message.message-5 { -webkit-animation-delay: 2000ms; animation-delay: 2000ms; -webkit-animation-duration: 25000ms; animation-duration: 25000ms; }
+.element-webcam { width: 320px; height: 240px; padding: 50px 20px; position: absolute; bottom: 0; z-index: 1000; }
+
+.element-tv { width: 280px; height: 172px; position: relative; background: #fff; border-radius: 4px; box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05); }
+.element-tv:before { display: block; position: absolute; bottom: 4px; right: 8px; width: 7px; height: 7px; background-color: #b8e986; border-radius: 7px; content: ''; }
+
+.element-tv-stand { margin-left: -35px; position: absolute; bottom: 0px; left: 50%; width: 70px; height: 0; z-index: -1; border-bottom: 100px solid #eee; border-left: 25px solid transparent; border-right: 25px solid transparent; }
+
+.placeholder-webcam { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: absolute; top: 8px; right: 8px; left: 8px; width: 264px; height: 149px; background-color: #000; }
+
+.placeholder-image { position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0.3; z-index: 1; background-image: url("https://scontent-a-lhr.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10433088_10101611272783645_8875673993172060583_n.jpg?oh=4eb45c22550fc8c87db65842b55c0b35&oe=5514CFDC"); background-position: center center; background-size: 100%; }
+
+.empty-webcam { padding: 8px 0; position: relative; width: 100%; z-index: 2; background: rgba(0, 0, 0, 0.5); border-width: 1px 0; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
+
+.empty-webcam-message { display: block; font-weight: 800; text-transform: uppercase; }
+
+.empty-webcam-message-one, .empty-webcam-message-two { color: rgba(255, 255, 255, 0.5); }
+
+.empty-webcam-message-three { color: rgba(255, 255, 255, 0.75); font-size: 19px; line-height: 19px; }
+
+.overlay-away .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 60px; padding-left: 0; position: absolute; top: 0; right: 0; width: 960px; height: 720px; z-index: 1; -webkit-animation-duration: 10000ms; animation-duration: 10000ms; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: section-perspective-change; animation-name: section-perspective-change; -webkit-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; }
+@-webkit-keyframes section-perspective-change { 0% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); }
+  50% { -webkit-transform: perspective(1280px) rotateY(2deg); transform: perspective(1280px) rotateY(2deg); }
+  100% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); } }
+@keyframes section-perspective-change { 0% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); }
+  50% { -webkit-transform: perspective(1280px) rotateY(2deg); transform: perspective(1280px) rotateY(2deg); }
+  100% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); } }
+.overlay-away .game-list { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; position: relative; top: 2px; }
+.overlay-away .game { position: relative; }
+.overlay-away .game:not(:first-of-type) { margin-top: 1px; }
+.overlay-away .game:before { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; background-color: rgba(0, 0, 0, 0.4); background-blend-mode: overlay; content: ''; -webkit-animation-direction: alternate; animation-direction: alternate; -webkit-animation-duration: 1500ms; animation-duration: 1500ms; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: prologue-game-overlay-pulse; animation-name: prologue-game-overlay-pulse; -webkit-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; transform-type: preserve-3d; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.overlay-away .game-image { height: 110px; overflow: hidden; position: relative; z-index: 2; background-color: #fff; }
+.overlay-away .game-image img { position: absolute; top: -50%; width: 100%; }
+.overlay-away .episode-messages { padding: 6px; padding-left: 12px; position: absolute; width: 100%; border-left: 1px solid #768EA4; }
+.overlay-away .episode-messages .message, .overlay-away .episode-messages .submessage { display: block; }
+.overlay-away .episode-messages .message { font-size: 14px; font-weight: 700; }
+.overlay-away .episode-messages .submessage { margin-top: 3px; color: #768EA4; font-size: 13px; }
+.overlay-away .status { position: absolute; width: 40%; bottom: 64px; }
+.overlay-away .episode-pill { padding: 4px 8px; position: relative; z-index: 5; background: #fff; color: #12161b; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+.overlay-away .episode-series { padding-top: 6px; position: relative; z-index: 5; border-top: 1px solid rgba(118, 142, 164, 0.25); color: #768EA4; font-size: 13px; font-weight: 800; text-transform: uppercase; }
+.overlay-away .episode-series .ss-icon { position: relative; top: 1px; }
+.overlay-away .episode-status { display: block; padding: 12px 0; position: relative; z-index: 5; color: #fff; font-family: "Idlewild SSm A", "Idlewild SSm B", "Halogen", sans-serif; font-size: 20px; font-weight: 500; letter-spacing: -2px; }
+@-webkit-keyframes prologue-game-overlay-pulse { 0% { background-color: rgba(0, 0, 0, 0.4); }
+  100% { background-color: rgba(0, 0, 0, 0.2); } }
+@keyframes prologue-game-overlay-pulse { 0% { background-color: rgba(0, 0, 0, 0.4); }
+  100% { background-color: rgba(0, 0, 0, 0.2); } }
+.overlay-away .game-metadata { position: absolute; top: 12px; left: 12px; height: 60px; z-index: 5; font-weight: 500; font-size: 16px; text-transform: uppercase; }
+.overlay-away .game-metadata-marker { width: 80%; height: 4px; position: absolute; top: 37px; left: 12px; background-color: rgba(0, 0, 0, 0.1); -webkit-transition: background-color 250ms ease-in-out; transition: background-color 250ms ease-in-out; }
+.overlay-away .game-name { display: block; min-width: 200px; padding: 10px 12px; background: #12161b; border-bottom: 1px solid rgba(0, 0, 0, 0.25); font-weight: bold; }
+.overlay-away .game-appearances { display: block; margin: 0 12px; position: absolute; left: 0; bottom: -1px; right: 0; color: #FFF; font-size: 12px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+.overlay-away .game-platform { font-size: 11px; font-weight: 400; }
+.overlay-away .spinner { position: absolute; top: 50%; right: 24px; margin-left: -33px; margin-top: -33px; z-index: 5; }
+.overlay-away .embelish-one { box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.5); }
+.overlay-away .episode-number { min-width: 156px; text-align: right; -webkit-transform: perspective(640px) rotateY(33deg) scale(1.1); transform: perspective(640px) rotateY(33deg) scale(1.1); }
 
 .overlay-discussion .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 60px; position: absolute; top: 0; right: 0; width: 960px; height: 720px; }
 .overlay-discussion .element-webcam { width: 676px; height: 538px; padding: 70px 0; position: absolute; bottom: 0; right: 58px; z-index: 1000; }
@@ -446,16 +342,6 @@ ul { padding-left: 0; list-style: none; }
 .overlay-epilogue .episode-status { display: block; padding: 12px 0; color: #768EA4; font-family: "Idlewild SSm A", "Idlewild SSm B", "Halogen", sans-serif; font-size: 20px; font-weight: 500; letter-spacing: -2px; }
 
 .overlay-game .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; position: absolute; top: 0; right: 0; width: 960px; height: 720px; background: #000; }
-.overlay-game .element-webcam { width: 320px; height: 240px; padding: 50px 20px; position: absolute; bottom: 0; z-index: 1000; }
-.overlay-game .element-tv { width: 280px; height: 172px; position: relative; background: #fff; border-radius: 4px; box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05); }
-.overlay-game .element-tv:before { display: block; position: absolute; bottom: 4px; right: 8px; width: 7px; height: 7px; background-color: #b8e986; border-radius: 7px; content: ''; }
-.overlay-game .element-tv-stand { margin-left: -35px; position: absolute; bottom: 0px; left: 50%; width: 70px; height: 0; z-index: -1; border-bottom: 100px solid #eee; border-left: 25px solid transparent; border-right: 25px solid transparent; }
-.overlay-game .placeholder-webcam { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: absolute; top: 8px; right: 8px; left: 8px; width: 264px; height: 149px; background-color: #000; }
-.overlay-game .placeholder-image { position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0.3; z-index: 1; background-image: url("https://scontent-a-lhr.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10433088_10101611272783645_8875673993172060583_n.jpg?oh=4eb45c22550fc8c87db65842b55c0b35&oe=5514CFDC"); background-position: center center; background-size: 100%; }
-.overlay-game .empty-webcam { padding: 8px 0; position: relative; width: 100%; z-index: 2; background: rgba(0, 0, 0, 0.5); border-width: 1px 0; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
-.overlay-game .empty-webcam-message { display: block; font-weight: 800; text-transform: uppercase; }
-.overlay-game .empty-webcam-message-one, .overlay-game .empty-webcam-message-two { color: rgba(255, 255, 255, 0.5); }
-.overlay-game .empty-webcam-message-three { color: rgba(255, 255, 255, 0.75); font-size: 19px; line-height: 19px; }
 .overlay-game .placeholder-16x9 { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; width: 960px; height: 540px; text-transform: uppercase; background: #080808; color: #181818; font-weight: 800; font-size: 32px; line-height: 32px; }
 .overlay-game .placeholder-special { position: absolute; right: 35px; bottom: 36px; color: rgba(255, 255, 255, 0.1); font-size: 18px; font-weight: 800; text-transform: uppercase; }
 .overlay-game .special-type { color: rgba(41, 56, 77, 0.9); font-weight: 400; }
@@ -468,9 +354,6 @@ ul { padding-left: 0; list-style: none; }
 .overlay-game .embelish-four { left: -120px; }
 
 .overlay-prologue .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 60px; padding-left: 0; position: absolute; top: 0; right: 0; width: 960px; height: 720px; z-index: 1; -webkit-animation-duration: 10000ms; animation-duration: 10000ms; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: section-perspective-change; animation-name: section-perspective-change; -webkit-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; }
-@-webkit-keyframes section-perspective-change { 0% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); }
-  50% { -webkit-transform: perspective(1280px) rotateY(2deg); transform: perspective(1280px) rotateY(2deg); }
-  100% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); } }
 @keyframes section-perspective-change { 0% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); }
   50% { -webkit-transform: perspective(1280px) rotateY(2deg); transform: perspective(1280px) rotateY(2deg); }
   100% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); } }
@@ -489,8 +372,6 @@ ul { padding-left: 0; list-style: none; }
 .overlay-prologue .episode-series { padding-top: 6px; position: relative; z-index: 5; border-top: 1px solid rgba(118, 142, 164, 0.25); color: #768EA4; font-size: 13px; font-weight: 800; text-transform: uppercase; }
 .overlay-prologue .episode-series .ss-icon { position: relative; top: 1px; }
 .overlay-prologue .episode-status { display: block; padding: 12px 0; position: relative; z-index: 5; color: #fff; font-family: "Idlewild SSm A", "Idlewild SSm B", "Halogen", sans-serif; font-size: 20px; font-weight: 500; letter-spacing: -2px; }
-@-webkit-keyframes prologue-game-overlay-pulse { 0% { background-color: rgba(0, 0, 0, 0.4); }
-  100% { background-color: rgba(0, 0, 0, 0.2); } }
 @keyframes prologue-game-overlay-pulse { 0% { background-color: rgba(0, 0, 0, 0.4); }
   100% { background-color: rgba(0, 0, 0, 0.2); } }
 .overlay-prologue .game-metadata { position: absolute; top: 12px; left: 12px; height: 60px; z-index: 5; font-weight: 500; font-size: 16px; text-transform: uppercase; }

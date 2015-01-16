@@ -4,28 +4,68 @@
 
 {% block title %}Away{% endblock %}
 {% block overlay %}
-<div class="overlay transparent overlay-away">
+<div class="overlay overlay-away">
   <div class="section section-chat">
-    <div class="overlay-webcam"></div>
+    <div class="element element-webcam">
+      <div class="element-tv">
+        <div class="placeholder-webcam"></div>
+      </div>
+      <div class="element-tv-stand"></div>
+    </div>
   </div>
   <div class="section section-main">
     <span class="episode-number">{{ broadcast.number }}</span>
-    <div class="overlay-message">
-      <div class="message-primary">
-        <ul class="primary-messages">
-          <li class="primary-message message-1">Be back in a few!</li>
+    <div class="episode-metadata">
+      <div class="games">
+        <ul class="game-list">
+        {% for game in broadcast.games.all %}
+          <li class="game">
+            <div class="game-image"><img src="{{ MEDIA_URL }}{{ game.image_art }}" cross-origin="anonymous" data-adaptive-background="1"></div>
+            <div class="game-metadata">
+              <div class="game-metadata-marker"></div>
+              <span class="game-name">{{ game.name }} <span class="game-platform">({{ game.platform }})</span></span>
+              <span class="game-appearances"><b>{{ game.appears_on.count|ordinal }}</b> appearance</span>
+            </div>
+          </li>
+        {% endfor %}
         </ul>
+        {# This is sort of a positioning hack. I always want this to be at the bottom of the game list. #}
+        <div class="episode-messages looper slide" data-looper="go" data-interval="10000">
+          <div class="looper-inner">
+            <div class="item">
+              <span class="message">Don't go anywhere!</span>
+              <span class="submessage"><strong>Episode {{ broadcast.number }}</strong> will be back in a few minutes!</span>
+            </div>
+            <div class="item">
+              <span class="message">You're watching Avalonstar!</span>
+              <span class="submessage">Get a drink, use the restroom, stretch a bit. If you must. :)</span>
+            </div>
+            {% for message in message_list %}
+            <div class="item">
+              <span class="message">{{ message.text }}</span>
+              <span class="submessage">{{ message.subtext }}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
       </div>
-      <div class="message-secondary">
-        <ul class="secondary-messages">
-          <li class="secondary-message message-1">You're watching Avalonstar.tv!</li>
-          <li class="secondary-message message-2">Click that follow button if you like what you see.</li>
-          <li class="secondary-message message-3">Follow me on Twitter (@bryanveloso) for great justice.</li>
-          <li class="secondary-message message-4">Proud Member of the Hidden Gems since August 13th.</li>
-          <li class="secondary-message message-5">Get a drink, use the restroom, stretch a bit.</li>
-        </ul>
+      <div class="status">
+        {% if broadcast.series %}<span class="episode-series"><span class="ss-icon ss-flag"></span> {{ broadcast.series }}</span>{% endif %}
+        <span class="episode-status">{{ broadcast.status }}</span>
+        <span class="episode-pill episode-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
       </div>
     </div>
   </div>
+
+  {# Particles for great justice. #}
+  <div id="particles-js"></div>
+  <div class="embelishments">
+    <img class="phoenix" src="{% static 'images/phoenix_large.png' %}">
+    <div class="embelish embelish-one"></div>
+    <div class="embelish embelish-two"></div>
+    <div class="embelish embelish-three"></div>
+    <div class="embelish embelish-four"></div>
+  </div>
+
 </div>
 {% endblock overlay %}
