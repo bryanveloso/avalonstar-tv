@@ -2,29 +2,53 @@
 {% load humanize %}
 {% load static from staticfiles %}
 
-{% block title %}Epilogue{% endblock %}
+{% block title %}Prologue{% endblock %}
 {% block overlay %}
-<div class="overlay overlay-epilogue">
+<div class="overlay overlay-prologue">
   <div class="section section-chat"></div>
   <div class="section section-main">
-    <span class="episode-number"><span class="episode-text">Episode</span> {{ broadcast.number }}</span>
+    <span class="episode-number">{{ broadcast.number }}</span>
     <div class="episode-metadata">
-      <div class="message-container">
-        <span class="message"><strong>Thanks for watching!</strong> (It was great seeing you! &lt;3)</span>
-        <img src="http://photos-b.ak.instagram.com/hphotos-ak-xap1/10616811_1470501676538233_2053648740_n.jpg" cross-origin="anonymous" data-adaptive-background="1">
+      <div class="games">
+        <ul class="game-list">
+        {% for game in broadcast.games.all %}
+          <li class="game">
+            <div class="game-image"><img src="{{ MEDIA_URL }}{{ game.image_art }}" cross-origin="anonymous" data-adaptive-background="1"></div>
+            <div class="game-metadata">
+              <div class="game-metadata-marker"></div>
+              <span class="game-name">{{ game.name }} <span class="game-platform">({{ game.platform }})</span></span>
+              <span class="game-appearances"><b>{{ game.appears_on.count|ordinal }}</b> appearance</span>
+            </div>
+          </li>
+        {% endfor %}
+        </ul>
+        {# This is sort of a positioning hack. I always want this to be at the bottom of the game list. #}
+        <div class="episode-messages looper slide" data-looper="go" data-interval="10000">
+          <div class="looper-inner">
+            <div class="item">
+              <span class="message">Thanks for watching!</span>
+              <span class="submessage">It was an honor having the pleasure of your company.</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="status">
+        {% if broadcast.series %}<span class="episode-series"><span class="ss-icon ss-flag"></span> {{ broadcast.series }}</span>{% endif %}
         <span class="episode-status">{{ broadcast.status }}</span>
         <span class="episode-pill episode-airdate">{{ broadcast.airdate | date:"F j, Y" }}</span>
-        {% if broadcast.series %}<span class="episode-pill episode-series">{{ broadcast.series }}{% endif %}
       </div>
     </div>
   </div>
 
-  <img class="phoenix" src="{% static 'images/phoenix_large.png' %}">
-  <div class="embelish embelish-one"></div>
-  <div class="embelish embelish-two"></div>
-  <div class="embelish embelish-three"></div>
-  <div class="embelish embelish-four"></div>
+  {# Particles for great justice. #}
+  <div id="particles-js"></div>
+  <div class="embelishments">
+    <img class="phoenix" src="{% static 'images/phoenix_large.png' %}">
+    <div class="embelish embelish-one"></div>
+    <div class="embelish embelish-two"></div>
+    <div class="embelish embelish-three"></div>
+    <div class="embelish embelish-four"></div>
+  </div>
+
 </div>
 {% endblock overlay %}
