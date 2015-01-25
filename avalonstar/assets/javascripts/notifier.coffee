@@ -9,18 +9,21 @@ poolDonating = 0        # How many users are in the donation pool?
 poolHosting = 0         # How many users are in the hosting pool?
 poolSubscribing = 0     # How many users are in the subscription pool?
 
-subscribed = (data, added)->
+# Sounds.
+soundSubscription = new Audio('/static/audio/subscription.ogg')
+soundSubscription.volume = 0.7
+
+subscribed = (data, added) ->
   if not running
-    console.log "#{data.username} has subscribed!"
     running = true
+    console.log "#{data.username} has subscribed!"
+
+    # Play the subscription beat!
+    soundSubscription.play()
 
     # Add the .visible class to .js-subscribed to kick off the animation set.
     # It's a self-contained animation, so there's no need to do much else.
-    if poolSubscribing >= 1
-      ($ '.js-type').text('Subscription Streak')
-    else
-      ($ '.js-type').text('Subscription')
-
+    ($ '.js-type').text('Subscription')
     ($ '.js-username').text(data.username)
     ($ '.js-subscribed').addClass('visible')
 
@@ -31,7 +34,7 @@ subscribed = (data, added)->
       if poolSubscribing >= 1
         poolSubscribing--
         console.log "There are #{poolSubscribing} subs left in the pool."
-    ), 6000
+    ), 7000
   else
     if not added
       poolSubscribing++
@@ -42,10 +45,7 @@ subscribed = (data, added)->
     ), (delay * 1000)
 
 
-Pusher.log = (message) ->
-  window.console.log message  if window.console and window.console.log
-  return
-
+# Pusher actions.
 pusher = new Pusher('207f2c96da3bdb9301f8')
 channel = pusher.subscribe('live')
 

@@ -19,41 +19,21 @@ $brand-blue: #768EA4;
 
 // ..
 .notifications { margin-right: 36px; }
-.notification {
-  // opacity: 0;
-}
-.notification.visible {
-  position: relative;
-  opacity: 1;
-
-  animation-fill-mode: both;
-  animation-name: notification-primary-appear;
-  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-}
-
-// .notification.visible Animations.
-@keyframes notification-primary-appear {
-    0% { opacity: 0; transform: translate3d(100%, 0, 0); }
-    1% { opacity: 1; }
-   10% { transform: translate3d(0, 0, 0); }
-   20% { }
-   80% { transform: translate3d(0, 0, 0); }
-   90% { opacity: 1; }
-  100% { opacity: 0; transform: translate3d(100%, 0, 0); }
-}
+.notification { opacity: 0; }
 
 // .bar
 .bar {
   display: inline-block;
   margin-right: 36px;
 
-  font-size: 14px;
+  font-size: 15px;
   line-height: 36px;
   text-transform: uppercase;
 }
 .type {
   display: inline-block; vertical-align: bottom;
   height: 36px;
+  overflow: hidden;
   padding: 0 24px 0 12px;
 
   border-left: 4px solid;
@@ -61,10 +41,13 @@ $brand-blue: #768EA4;
   font-weight: 900;
   line-height: 36px; }
 .subscribing .type { color: #3498db; }
+.type-inner { display: block; }
 
 .welcome-text {
   display: inline-block; vertical-align: bottom;
+  overflow: hidden;
   padding: 0 24px 0 12px;
+
   border-left: 1px solid;
   color: rgba(#fff, 0.75);
 
@@ -72,11 +55,59 @@ $brand-blue: #768EA4;
     color: #fff;
     font-weight: 900; }
 }
+.welcome-text-inner { display: block; }
 
+.notification.visible {
+  position: relative;
+  opacity: 1;
+
+  animation-name: notification-container-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+  .type-inner {
+    animation-name: type-text-appear;
+    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  }
+  .welcome-text-inner {
+    animation-name: welcome-text-appear;
+    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  }
+}
+
+// .notification.visible Animations.
+@keyframes notification-container-appear {
+    0% { opacity: 0; transform: translate3d(0, -100%, 0); }
+    1% { opacity: 1; }
+   20% { transform: translate3d(0, 0, 0); }
+   80% { opacity: 1; transform: translate3d(0, 0, 0); }
+  100% { opacity: 0; transform: translate3d(100%, 0, 0); }
+}
+
+// .type-inner and .welcome-text-inner Animations.
+@keyframes type-text-appear {
+    0% { opacity: 0; transform: translate3d(-110%, 0, 0); }
+   20% { opacity: 0; transform: translate3d(-110%, 0, 0); }
+   30% { opacity: 1; transform: translate3d(0, 0, 0); }
+   95% { opacity: 1; }
+  100% { opacity: 0; transform: translate3d(0, 0, 0); }
+}
+@keyframes welcome-text-appear {
+    0% { opacity: 0; transform: translate3d(-110%, 0, 0); }
+   20% { opacity: 0; transform: translate3d(-110%, 0, 0); }
+   30% { opacity: 1; transform: translate3d(0, 0, 0); }
+   95% { opacity: 1; }
+  100% { opacity: 0; transform: translate3d(0, 0, 0); }
+}
 
 // Animation Delays and Durations.
 // (In order of appearance.)
 .notification.visible {
   animation-delay: 0ms;             // start:    0ms
-  // animation-duration: 7000ms;       // end:   6000ms
+  animation-duration: 7000ms;       // end:   7000ms
+}
+
+.notification.visible .type-inner,
+.notification.visible .welcome-text-inner {
+  animation-delay: 0ms;             // start:    0ms
+  animation-duration: 7000ms;       // end:   7000ms
 }
