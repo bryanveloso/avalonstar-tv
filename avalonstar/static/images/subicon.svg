@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>subicon 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0.0122070312" y="0" width="36.0274658" height="36.0274658"></rect>
+        <linearGradient x1="89.5103718%" y1="10.3347252%" x2="48.164736%" y2="51.9926926%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.500396286" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.21 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path id="path-5" d="M13.0221252,35.0267029 L42.0442505,6.00457764 L42.0442505,64.0488281 L-16,64.0488281 L13.0221252,35.0267029 Z"></path>
+        <linearGradient x1="79.6603733%" y1="50%" x2="35.3895399%" y2="87.9503038%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <path id="path-7" d="M28.0335693,28.0213623 L46.0473022,10.0076294 L46.0473022,46.0350952 L10.0198364,46.0350952 L28.0335693,28.0213623 Z"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="subicon-2" sketch:type="MSArtboardGroup">
+            <mask id="mask-2" sketch:name="Base" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Base" fill="#29384D" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+            <polygon id="Star" fill="#FFFFFF" sketch:type="MSShapeGroup" mask="url(#mask-2)" points="21.0282288 30.6733841 11.0282559 36.7813294 13.7470956 25.3833312 4.84793281 17.7602508 16.528241 16.8238458 21.0282288 6.00457764 25.5282165 16.8238458 37.2085247 17.7602508 28.3093619 25.3833312 31.0282016 36.7813294 "></polygon>
+            <g id="Triangle-(Back)" filter="url(#filter-4)">
+                <use fill="#3B5577" sketch:type="MSShapeGroup" mask="url(#mask-2)" xlink:href="#path-5"></use>
+                <use fill-opacity="0.75" fill="url(#linearGradient-3)" xlink:href="#path-5"></use>
+            </g>
+            <g id="Triangle-(Front)">
+                <use fill="#768EA4" sketch:type="MSShapeGroup" mask="url(#mask-2)" xlink:href="#path-7"></use>
+                <use fill-opacity="0.75" fill="url(#linearGradient-6)" xlink:href="#path-7"></use>
+            </g>
+        </g>
+    </g>
+</svg>

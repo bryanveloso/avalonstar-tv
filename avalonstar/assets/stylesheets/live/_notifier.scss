@@ -1,0 +1,82 @@
+$brand-background-blue: #12161b;
+$brand-darkest-blue: #090D12;
+$brand-darker-blue: #29384D;
+$brand-dark-blue: #3B5577;
+$brand-blue: #768EA4;
+
+// ...
+.widget {
+  overflow: hidden;
+  position: relative;
+}
+.square {
+  position: absolute; right: 0;
+  background-color: $brand-darker-blue;
+  background-image: url('/static/images/subicon.svg');
+  width: 36px; height: 36px;
+  z-index: 100;
+}
+
+// ..
+.notifications { margin-right: 36px; }
+.notification {
+  // opacity: 0;
+}
+.notification.visible {
+  position: relative;
+  opacity: 1;
+
+  animation-fill-mode: both;
+  animation-name: notification-primary-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+// .notification.visible Animations.
+@keyframes notification-primary-appear {
+    0% { opacity: 0; transform: translate3d(100%, 0, 0); }
+    1% { opacity: 1; }
+   10% { transform: translate3d(0, 0, 0); }
+   20% { }
+   80% { transform: translate3d(0, 0, 0); }
+   90% { opacity: 1; }
+  100% { opacity: 0; transform: translate3d(100%, 0, 0); }
+}
+
+// .bar
+.bar {
+  display: inline-block;
+  margin-right: 36px;
+
+  font-size: 14px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+.type {
+  display: inline-block; vertical-align: bottom;
+  height: 36px;
+  padding: 0 24px 0 12px;
+
+  border-left: 4px solid;
+  color: #fff;
+  font-weight: 900;
+  line-height: 36px; }
+.subscribing .type { color: #3498db; }
+
+.welcome-text {
+  display: inline-block; vertical-align: bottom;
+  padding: 0 24px 0 12px;
+  border-left: 1px solid;
+  color: rgba(#fff, 0.75);
+
+  .username {
+    color: #fff;
+    font-weight: 900; }
+}
+
+
+// Animation Delays and Durations.
+// (In order of appearance.)
+.notification.visible {
+  animation-delay: 0ms;             // start:    0ms
+  // animation-duration: 7000ms;       // end:   6000ms
+}
