@@ -49,6 +49,29 @@ subscribed = (data, added) ->
       subscribed(data, true)
     ), (delay * 1000)
 
+hosted = (data) ->
+  if not running and poolSubscribing is 0 and poolDonating is 0
+    running = true
+    console.log "#{data.username} has hosted the channel!"
+
+    ($ '.js-type').text('Host')
+    ($ '.js-username').text(data.username)
+    ($ '.js-hosted').addClass('visible')
+    ($ '.js-square-flipper').addClass('toggle')
+    ($ '.js-square-hosted').addClass('visible')
+
+    # Set a timeout (6000ms) equal to that of the entire reveal animation.
+    setTimeout (->
+      ($ '.js-hosted').removeClass('visible')
+      ($ '.js-square-flipper').removeClass('toggle')
+      ($ '.js-square-hosted').removeClass('visible')
+
+      running = false
+    ), 6900
+  else
+    setTimeout (->
+      hosted(data)
+    ), (delay * 1000)
 
 # Pusher actions.
 pusher = new Pusher('207f2c96da3bdb9301f8')
@@ -56,3 +79,6 @@ channel = pusher.subscribe('live')
 
 channel.bind 'subscribed', (data) ->
   subscribed(data, false)
+
+channel.bind 'hosted', (data) ->
+  hosted(data, false)

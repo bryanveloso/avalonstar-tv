@@ -91,6 +91,8 @@ $brand-blue: #768EA4;
   font-weight: 900;
   line-height: 36px; }
 .subscribing .type { color: #3498db; }
+.donating .type { color: #2ecc71; }
+.hosting .type { color: #9b59b6; }
 .type-inner { display: block; }
 
 .message-text {
@@ -128,7 +130,7 @@ $brand-blue: #768EA4;
 @keyframes notification-container-appear {
     0% { opacity: 0; transform: translate3d(0, -100%, 0); }
     1% { opacity: 1; }
-   20% { transform: translate3d(0, 0, 0); }
+   15% { transform: translate3d(0, 0, 0); }
    80% { opacity: 1; transform: translate3d(0, 0, 0); }
   100% { opacity: 0; transform: translate3d(100%, 0, 0); }
 }
