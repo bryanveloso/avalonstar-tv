@@ -4,29 +4,79 @@ $brand-darker-blue: #29384D;
 $brand-dark-blue: #3B5577;
 $brand-blue: #768EA4;
 
-// ...
-.widget {
-  overflow: hidden;
-  position: relative;
-}
-.square {
+// Widget container class for great justice.
+.widget { position: relative; }
+
+// The little square nub sub-icon thing.
+.square-container {
+  perspective: 1000;
   position: absolute; right: 0;
+  z-index: 100; }
+.square-container, .square-status { width: 36px; height: 36px; }
+
+// Flip the pane when the .toggle class is added.
+// (And only when the toggle class is added.)
+.square-flipper.toggle {
+  position: relative;
+  transform-style: preserve-3d;
+
+  animation-name: flip-square;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+// .square-flipper Animations.
+@keyframes flip-square {
+    0% { transform: scale(1.0) rotateY(0deg); }
+    5% { transform: scale(1.3) rotateY(0deg); }
+   10% { transform: scale(1.0) rotateY(180deg); }
+
+   90% { transform: scale(1.0) rotateY(180deg); }
+   95% { transform: scale(1.3) rotateY(180deg); }
+  100% { transform: scale(1.0) rotateY(0deg); }
+}
+
+.square {
+  backface-visibility: hidden;
   background-color: $brand-darker-blue;
   background-image: url('/static/images/subicon.svg');
   width: 36px; height: 36px;
-  z-index: 100;
+  transform: rotateY(0deg);
 }
+.square-status {
+  backface-visibility: hidden;
+  position: absolute; top: 0; left: 0;
+  transform: rotateY(180deg);
+  text-align: center;
+  visibility: hidden;
 
-// ..
+  &.visible { visibility: visible; }
+  .ss-gizmo {
+    font-size: 24px;
+    position: relative;
+    top: 3px; }
+}
+.square-subscribed { background-color: #3498db; }
+.square-donated { background-color: #2ecc71; }
+.square-hosted { background-color: #9b59b6; }
+
+// .notifications
 .notifications { margin-right: 36px; }
-.notification { opacity: 0; }
+.notification-container {
+  position: relative;
+  overflow: hidden;
+  height: 36px;
+}
+.notification {
+  position: absolute; top: 0; left: 0;
+  opacity: 0;
+}
 
 // .bar
 .bar {
   display: inline-block;
   margin-right: 36px;
 
-  font-size: 15px;
+  font-size: 16px;
   line-height: 36px;
   text-transform: uppercase;
 }
@@ -43,7 +93,7 @@ $brand-blue: #768EA4;
 .subscribing .type { color: #3498db; }
 .type-inner { display: block; }
 
-.welcome-text {
+.message-text {
   display: inline-block; vertical-align: bottom;
   overflow: hidden;
   padding: 0 24px 0 12px;
@@ -55,21 +105,21 @@ $brand-blue: #768EA4;
     color: #fff;
     font-weight: 900; }
 }
-.welcome-text-inner { display: block; }
+.message-text-inner { display: block; }
 
 .notification.visible {
   position: relative;
   opacity: 1;
 
   animation-name: notification-container-appear;
-  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  animation-timing-function: easeOutQuad;
 
   .type-inner {
     animation-name: type-text-appear;
     animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
   }
-  .welcome-text-inner {
-    animation-name: welcome-text-appear;
+  .message-text-inner {
+    animation-name: message-text-appear;
     animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
   }
 }
@@ -83,31 +133,34 @@ $brand-blue: #768EA4;
   100% { opacity: 0; transform: translate3d(100%, 0, 0); }
 }
 
-// .type-inner and .welcome-text-inner Animations.
+// .type-inner and .message-text-inner Animations.
 @keyframes type-text-appear {
     0% { opacity: 0; transform: translate3d(-110%, 0, 0); }
-   20% { opacity: 0; transform: translate3d(-110%, 0, 0); }
-   30% { opacity: 1; transform: translate3d(0, 0, 0); }
-   95% { opacity: 1; }
-  100% { opacity: 0; transform: translate3d(0, 0, 0); }
+   20% { opacity: 0; transform: scale(1.8) translate3d(-110%, 0, 0); }
+   30% { opacity: 1; transform: scale(1.0) translate3d(0, 0, 0); }
+   95% { opacity: 1; transform: translate3d(0, 0, 0) }
+  100% { opacity: 0; transform: translate3d(10%, 0, 0); }
 }
-@keyframes welcome-text-appear {
+@keyframes message-text-appear {
     0% { opacity: 0; transform: translate3d(-110%, 0, 0); }
-   20% { opacity: 0; transform: translate3d(-110%, 0, 0); }
-   30% { opacity: 1; transform: translate3d(0, 0, 0); }
-   95% { opacity: 1; }
-  100% { opacity: 0; transform: translate3d(0, 0, 0); }
+   40% { opacity: 0; transform: scale(1.8) translate3d(-110%, 0, 0); }
+   50% { opacity: 1; transform: scale(1.0) translate3d(0, 0, 0); }
+   95% { opacity: 1; transform: translate3d(0, 0, 0) }
+  100% { opacity: 0; transform: translate3d(10%, 0, 0); }
 }
 
 // Animation Delays and Durations.
 // (In order of appearance.)
+.square-flipper.toggle {
+  animation-delay: 0ms;             // start:    0ms
+  animation-duration: 7000ms;       // end:   7000ms
+}
 .notification.visible {
   animation-delay: 0ms;             // start:    0ms
   animation-duration: 7000ms;       // end:   7000ms
 }
-
 .notification.visible .type-inner,
-.notification.visible .welcome-text-inner {
+.notification.visible .message-text-inner {
   animation-delay: 0ms;             // start:    0ms
   animation-duration: 7000ms;       // end:   7000ms
 }

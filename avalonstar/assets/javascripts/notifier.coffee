@@ -26,15 +26,20 @@ subscribed = (data, added) ->
     ($ '.js-type').text('Subscription')
     ($ '.js-username').text(data.username)
     ($ '.js-subscribed').addClass('visible')
+    ($ '.js-square-flipper').addClass('toggle')
+    ($ '.js-square-subscribed').addClass('visible')
 
     # Set a timeout (6000ms) equal to that of the entire reveal animation.
     setTimeout (->
       ($ '.js-subscribed').removeClass('visible')
+      ($ '.js-square-flipper').removeClass('toggle')
+      ($ '.js-square-subscribed').removeClass('visible')
+
       running = false
       if poolSubscribing >= 1
         poolSubscribing--
         console.log "There are #{poolSubscribing} subs left in the pool."
-    ), 7000
+    ), 6900
   else
     if not added
       poolSubscribing++

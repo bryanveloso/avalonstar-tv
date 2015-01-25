@@ -24,14 +24,18 @@
       ($('.js-type')).text('Subscription');
       ($('.js-username')).text(data.username);
       ($('.js-subscribed')).addClass('visible');
+      ($('.js-square-flipper')).addClass('toggle');
+      ($('.js-square-subscribed')).addClass('visible');
       return setTimeout((function() {
         ($('.js-subscribed')).removeClass('visible');
+        ($('.js-square-flipper')).removeClass('toggle');
+        ($('.js-square-subscribed')).removeClass('visible');
         running = false;
         if (poolSubscribing >= 1) {
           poolSubscribing--;
           return console.log("There are " + poolSubscribing + " subs left in the pool.");
         }
-      }), 7000);
+      }), 6900);
     } else {
       if (!added) {
         poolSubscribing++;

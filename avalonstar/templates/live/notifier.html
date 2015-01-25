@@ -1,23 +1,40 @@
 <div class="notifier">
   <div class="widget">
-    <div class="square"></div>
-    {# Subscription Notifications #}
-    <div class="notification subscribing js-subscribed">
-      <div class="bar">
-        <span class="type"><span class="type-inner js-type">Subscription</span></span><span class="welcome-text">
-          <span class="welcome-text-inner"><strong class="username js-username">iceymoon</strong>, welcome to the Crusaders!</span>
-        </span>
+    <div class="square-container">
+      <div class="square-flipper js-square-flipper">
+        <div class="square-status square-subscribed js-square-subscribed"><span class="ss-gizmo ss-flag"></span></div>
+        <div class="square-status square-donated js-square-donated"><span class="ss-gizmo ss-tornado"></span></div>
+        <div class="square-status square-hosted js-square-hosted"><span class="ss-gizmo ss-share"></span></div>
+        <div class="square"></div>
       </div>
     </div>
+    {# Subscription Notifications #}
+    <div class="notification-container">
+      <div class="notification subscribing js-subscribed">
+        <div class="bar">
+          <span class="type"><span class="type-inner js-type">Subscription</span></span><span class="message-text">
+            <span class="message-text-inner"><strong class="username js-username">iceymoon</strong>, welcome to the Crusaders!</span>
+          </span>
+        </div>
+      </div>
 
-    {# Hosting Notifications #}
-    <div class="notification hosting js-hosted">
+      {# Hosting Notifications #}
+      <div class="notification hosting js-hosted">
+        <div class="bar">
+          <span class="type"><span class="type-inner js-type">Host</span></span><span class="message-text">
+            <span class="message-text-inner"><strong class="username js-username">iceymoon</strong>, thanks for the host!</span>
+          </span>
+        </div>
+      </div>
 
-    </div>
-
-    {# Donation Notifications #}
-    <div class="notification donating js-donated">
-
+      {# Donation Notifications #}
+      <div class="notification donating js-donated">
+        <div class="bar">
+          <span class="type"><span class="type-inner js-type">Donation</span></span><span class="message-text">
+            <span class="message-text-inner"><strong class="username js-username">iceymoon</strong>, thank you for the donation!</span>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
