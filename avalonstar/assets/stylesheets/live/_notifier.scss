@@ -50,10 +50,10 @@ $brand-blue: #768EA4;
   visibility: hidden;
 
   &.visible { visibility: visible; }
-  .ss-gizmo {
+  .ss-air {
     font-size: 24px;
     position: relative;
-    top: 3px; }
+    top: 4px; }
 }
 .square-subscribed { background-color: #3498db; }
 .square-donated { background-color: #2ecc71; }
@@ -101,7 +101,8 @@ $brand-blue: #768EA4;
   padding: 0 24px 0 12px;
 
   border-left: 1px solid;
-  color: rgba(#fff, 0.75);
+  color: #fff;
+  font-weight: 600;
 
   .username {
     color: #fff;

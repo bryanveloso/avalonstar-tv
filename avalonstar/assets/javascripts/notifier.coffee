@@ -10,6 +10,8 @@ poolHosting = 0         # How many users are in the hosting pool?
 poolSubscribing = 0     # How many users are in the subscription pool?
 
 # Sounds.
+soundDonation = new Audio('/static/audio/donation.ogg')
+soundDonation.volume = 0.7
 soundSubscription = new Audio('/static/audio/subscription.ogg')
 soundSubscription.volume = 0.7
 
@@ -49,6 +51,42 @@ subscribed = (data, added) ->
       subscribed(data, true)
     ), (delay * 1000)
 
+donated = (data, added) ->
+  if not running and poolSubscribing is 0
+    running = true
+    console.log "#{data.nickname} has donated #{data.amount}!"
+
+    # Play the donation beat!
+    soundDonation.play()
+
+    # Add the .visible class to .js-subscribed to kick off the animation set.
+    # It's a self-contained animation, so there's no need to do much else.
+    ($ '.js-type').text('Donation')
+    ($ '.js-username').text(data.nickname)
+    ($ '.js-donated').addClass('visible')
+    ($ '.js-square-flipper').addClass('toggle')
+    ($ '.js-square-donated').addClass('visible')
+
+    # Set a timeout (6000ms) equal to that of the entire reveal animation.
+    setTimeout (->
+      ($ '.js-donated').removeClass('visible')
+      ($ '.js-square-flipper').removeClass('toggle')
+      ($ '.js-square-donated').removeClass('visible')
+
+      running = false
+      if poolDonating >= 1
+        poolDonating--
+        console.log "There are #{poolDonating} donators left in the pool."
+    ), 6900
+  else
+    if not added
+      poolDonating++
+      console.log "There are #{poolDonating} donators left in the pool."
+    setTimeout (->
+      console.log "Running the pool donation for, #{data.nickname}."
+      donated(data, true)
+    ), (delay * 1000)
+
 hosted = (data) ->
   if not running and poolSubscribing is 0 and poolDonating is 0
     running = true
@@ -82,3 +120,9 @@ channel.bind 'subscribed', (data) ->
 
 channel.bind 'hosted', (data) ->
   hosted(data, false)
+
+# imraising.tv connections.
+source = new EventSource("https://imraising.tv/api/v1/listen?apikey=nuZOkYmLF37yQJdzNLWLRA")
+
+source.addEventListener 'donation.add', (data) ->
+  donated(data, false)

@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.views.generic import RedirectView
 
 from .views import (AwayView, DiscussionView, EpilogueView, GameView,
-    PrologueView)
+    NotifierView, PrologueView)
 
 
 urlpatterns = patterns('',
@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     url(r'^epilogue/$', name='live-epilogue', view=EpilogueView.as_view()),
     url(r'^game/$', name='live-game', view=GameView.as_view()),
     url(r'^prologue/$', name='live-prologue', view=PrologueView.as_view()),
+    url(r'^notifier/$', name='live-notifier', view=NotifierView.as_view()),
 )

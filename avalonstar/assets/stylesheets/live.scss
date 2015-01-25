@@ -9,14 +9,13 @@
 .overlay-epilogue { @import "live/epilogue"; }
 .overlay-game { @import "live/game"; }
 .overlay-prologue { @import "live/prologue"; }
+
 .notifier {
   position: absolute;
-  bottom: 0; right: 0;
+  top: 0; right: 0;
   display: flex; align-items: center; justify-content: flex-end;
   margin-right: 30px;
   height: 90px;
   z-index: 1000;
-
-  background-color: black;
 
   @import "live/notifier"; }

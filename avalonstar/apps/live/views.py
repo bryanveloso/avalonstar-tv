@@ -29,5 +29,9 @@ class GameView(BroadcastContextMixin, TemplateView):
     template_name = 'live/game.html'
 
 
+class NotifierView(BroadcastContextMixin, TemplateView):
+    template_name = 'live/notifier.html'
+
+
 class PrologueView(BroadcastContextMixin, TemplateView):
     template_name = 'live/prologue.html'

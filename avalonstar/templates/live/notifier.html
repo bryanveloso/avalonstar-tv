@@ -1,10 +1,13 @@
+{% extends "live.html" %}
+
+{% block body %}
 <div class="notifier">
   <div class="widget">
     <div class="square-container">
       <div class="square-flipper js-square-flipper">
-        <div class="square-status square-subscribed js-square-subscribed"><span class="ss-gizmo ss-flag"></span></div>
-        <div class="square-status square-donated js-square-donated"><span class="ss-gizmo ss-tornado"></span></div>
-        <div class="square-status square-hosted js-square-hosted"><span class="ss-gizmo ss-share"></span></div>
+        <div class="square-status square-subscribed js-square-subscribed"><span class="ss-air ss-flag"></span></div>
+        <div class="square-status square-donated js-square-donated"><span class="ss-air ss-coffee"></span></div>
+        <div class="square-status square-hosted js-square-hosted"><span class="ss-air ss-airplay"></span></div>
         <div class="square"></div>
       </div>
     </div>
@@ -38,3 +41,4 @@
     </div>
   </div>
 </div>
+{% endblock body %}
