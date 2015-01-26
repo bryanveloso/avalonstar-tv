@@ -2,23 +2,23 @@
 (function() {
   $(function() {
     $.adaptiveBackground.run({
-      parent: ".game"
+      parent: '.game'
     });
-    $(".game-image img").on("ab-color-found", function(ev, payload) {
+    ($('.game-image img')).on('ab-color-found', function(ev, payload) {
       return $(this).closest('.game').find('.game-metadata-marker').css('background-color', payload.color);
     });
-    return particlesJS("particles-js", {
+    return particlesJS('particles-js', {
       particles: {
-        color: "#29384D",
-        shape: "circle",
+        color: '#29384D',
+        shape: 'circle',
         opacity: 0.5,
         size: 3,
         size_random: true,
-        nb: 175,
+        nb: 125,
         line_linked: {
           enable_auto: true,
           distance: 100,
-          color: "#29384D",
+          color: '#29384D',
           opacity: 0.9,
           width: 1,
           condensed_mode: {
@@ -37,6 +37,13 @@
       },
       retina_detect: true
     });
+  });
+
+  $(window).load(function() {
+    console.log('loaded');
+    return ($('.loading-screen')).animate({
+      opacity: 0.25
+    }, 1500);
   });
 
 }).call(this);
