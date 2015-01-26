@@ -5,7 +5,16 @@ $brand-dark-blue: #3B5577;
 $brand-blue: #768EA4;
 
 // Widget container class for great justice.
-.widget { position: relative; }
+.widget {
+  position: relative;
+  animation-name: reveal-widget;
+  animation-timing-function: ease;
+}
+
+@keyframes reveal-widget {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 // The little square nub sub-icon thing.
 .square-container {
@@ -24,7 +33,6 @@ $brand-blue: #768EA4;
   animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 
-// .square-flipper Animations.
 @keyframes flip-square {
     0% { transform: scale(1.0) rotateY(0deg); }
     5% { transform: scale(1.3) rotateY(0deg); }
@@ -154,6 +162,10 @@ $brand-blue: #768EA4;
 
 // Animation Delays and Durations.
 // (In order of appearance.)
+.widget {
+  animation-delay: 0ms;             // start:    0ms
+  animation-duration: 1000ms;       // end:   1000ms
+}
 .square-flipper.toggle {
   animation-delay: 0ms;             // start:    0ms
   animation-duration: 7000ms;       // end:   7000ms

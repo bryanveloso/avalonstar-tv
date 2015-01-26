@@ -384,7 +384,11 @@ ul { padding-left: 0; list-style: none; }
 .overlay-prologue .episode-number { min-width: 156px; text-align: right; -webkit-transform: perspective(640px) rotateY(33deg) scale(1.1); transform: perspective(640px) rotateY(33deg) scale(1.1); }
 
 .notifier { position: absolute; top: 0; right: 0; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -webkit-justify-content: flex-end; -ms-flex-pack: end; justify-content: flex-end; margin-right: 30px; height: 90px; z-index: 1000; }
-.notifier .widget { position: relative; }
+.notifier .widget { position: relative; -webkit-animation-name: reveal-widget; animation-name: reveal-widget; -webkit-animation-timing-function: ease; animation-timing-function: ease; }
+@-webkit-keyframes reveal-widget { 0% { opacity: 0; }
+  100% { opacity: 1; } }
+@keyframes reveal-widget { 0% { opacity: 0; }
+  100% { opacity: 1; } }
 .notifier .square-container { -webkit-perspective: 1000; perspective: 1000; position: absolute; right: 0; z-index: 100; }
 .notifier .square-container, .notifier .square-status { width: 36px; height: 36px; }
 .notifier .square-flipper.toggle { position: relative; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; -webkit-animation-name: flip-square; animation-name: flip-square; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
@@ -452,6 +456,7 @@ ul { padding-left: 0; list-style: none; }
   50% { opacity: 1; -webkit-transform: scale(1) translate3d(0, 0, 0); transform: scale(1) translate3d(0, 0, 0); }
   95% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
   100% { opacity: 0; -webkit-transform: translate3d(10%, 0, 0); transform: translate3d(10%, 0, 0); } }
+.notifier .widget { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 1000ms; animation-duration: 1000ms; }
 .notifier .square-flipper.toggle { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 7000ms; animation-duration: 7000ms; }
 .notifier .notification.visible { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 7000ms; animation-duration: 7000ms; }
 .notifier .notification.visible .type-inner, .notifier .notification.visible .message-text-inner { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 7000ms; animation-duration: 7000ms; }
