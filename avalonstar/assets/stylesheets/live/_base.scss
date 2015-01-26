@@ -115,3 +115,10 @@ ul {
     vertical-align: bottom;
   }
 }
+
+// .loading-screen
+.loading-screen {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  background-color: #090D12;
+  z-index: 6;
+}

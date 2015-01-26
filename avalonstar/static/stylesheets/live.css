@@ -264,6 +264,8 @@ ul { padding-left: 0; list-style: none; }
 #particles-js { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; background-color: transparent; }
 #particles-js canvas { display: block; vertical-align: bottom; }
 
+.loading-screen { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: #090D12; z-index: 6; }
+
 .element-webcam { width: 320px; height: 240px; padding: 50px 20px; position: absolute; bottom: 0; z-index: 1000; }
 
 .element-tv { width: 280px; height: 172px; position: relative; background: #fff; border-radius: 4px; box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05); }
