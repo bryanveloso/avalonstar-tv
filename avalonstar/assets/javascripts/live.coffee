@@ -16,7 +16,7 @@ $ ->
       opacity: 0.5
       size: 3
       size_random: true
-      nb: 125
+      nb: 100
       line_linked:
         enable_auto: true
         distance: 100
