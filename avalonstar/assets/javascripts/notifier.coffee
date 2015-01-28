@@ -124,5 +124,5 @@ channel.bind 'hosted', (data) ->
 # imraising.tv connections.
 source = new EventSource("https://imraising.tv/api/v1/listen?apikey=nuZOkYmLF37yQJdzNLWLRA")
 
-source.addEventListener 'donation.add', (data) ->
-  donated(data, false)
+source.addEventListener 'donation.add', (e) ->
+  donated(JSON.parse(e.data), false)
