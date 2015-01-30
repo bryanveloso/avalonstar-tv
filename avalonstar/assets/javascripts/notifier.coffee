@@ -19,7 +19,7 @@ subscribed = (data, added) ->
     console.log "#{data.username} has subscribed!"
 
     # Play the subscription beat!
-    soundSubscription.volume = 0
+    soundSubscription.volume = 0.4
     soundSubscription.play()
 
     # Add the .visible class to .js-subscribed to kick off the animation set.
@@ -56,7 +56,7 @@ donated = (data, added) ->
     console.log "#{data.nickname} has donated #{data.amount}!"
 
     # Play the donation beat!
-    soundDonation.volume = 0
+    soundDonation.volume = 0.4
     soundDonation.play()
 
     # Add the .visible class to .js-subscribed to kick off the animation set.

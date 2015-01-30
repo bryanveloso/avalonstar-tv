@@ -14,16 +14,13 @@
 
   soundDonation = new Audio('/static/audio/donation.ogg');
 
-  soundDonation.volume = 0.7;
-
   soundSubscription = new Audio('/static/audio/subscription.ogg');
-
-  soundSubscription.volume = 0.7;
 
   subscribed = function(data, added) {
     if (!running) {
       running = true;
       console.log("" + data.username + " has subscribed!");
+      soundSubscription.volume = 0.4;
       soundSubscription.play();
       ($('.js-type')).text('Subscription');
       ($('.js-username')).text(data.username);
@@ -56,6 +53,7 @@
     if (!running && poolSubscribing === 0) {
       running = true;
       console.log("" + data.nickname + " has donated " + data.amount + "!");
+      soundDonation.volume = 0.4;
       soundDonation.play();
       ($('.js-type')).text('Donation');
       ($('.js-username')).text(data.nickname);
@@ -120,8 +118,8 @@
 
   source = new EventSource("https://imraising.tv/api/v1/listen?apikey=nuZOkYmLF37yQJdzNLWLRA");
 
-  source.addEventListener('donation.add', function(data) {
-    return donated(data, false);
+  source.addEventListener('donation.add', function(e) {
+    return donated(JSON.parse(e.data), false);
   });
 
 }).call(this);
