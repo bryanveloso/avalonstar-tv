@@ -11,9 +11,9 @@ poolSubscribing = 0     # How many users are in the subscription pool?
 
 # Sounds.
 soundDonation = new Audio('/static/audio/donation.ogg')
-soundDonation.volume = 0.4
+soundDonation.volume = 0.25
 soundSubscription = new Audio('/static/audio/subscription.ogg')
-soundSubscription.volume = 0.4
+soundSubscription.volume = 0.25
 
 subscribed = (data, added) ->
   if not running
