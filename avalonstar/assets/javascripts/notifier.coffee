@@ -11,9 +11,7 @@ poolSubscribing = 0     # How many users are in the subscription pool?
 
 # Sounds.
 soundDonation = new Audio('/static/audio/donation.ogg')
-soundDonation.volume = 0.25
 soundSubscription = new Audio('/static/audio/subscription.ogg')
-soundSubscription.volume = 0.25
 
 subscribed = (data, added) ->
   if not running
@@ -21,6 +19,7 @@ subscribed = (data, added) ->
     console.log "#{data.username} has subscribed!"
 
     # Play the subscription beat!
+    soundSubscription.volume = 0.25
     soundSubscription.play()
 
     # Add the .visible class to .js-subscribed to kick off the animation set.
@@ -57,6 +56,7 @@ donated = (data, added) ->
     console.log "#{data.nickname} has donated #{data.amount}!"
 
     # Play the donation beat!
+    soundDonation.volume = 0.25
     soundDonation.play()
 
     # Add the .visible class to .js-subscribed to kick off the animation set.
