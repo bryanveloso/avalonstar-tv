@@ -14,9 +14,9 @@
 
 // .section-main Animations
 @keyframes section-perspective-change {
-    0% { transform: perspective(1280px) rotateY(-10deg); }
-   50% { transform: perspective(1280px) rotateY(2deg); }
-  100% { transform: perspective(1280px) rotateY(-10deg); }
+    0% { transform: perspective(1280) rotateY(-10deg); }
+   50% { transform: perspective(1280) rotateY(2deg); }
+  100% { transform: perspective(1280) rotateY(-10deg); }
 }
 
 // .games / .game-list / .game

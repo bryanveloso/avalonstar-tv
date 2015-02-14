@@ -41,9 +41,11 @@
 
   $(window).load(function() {
     console.log('loaded');
-    return ($('.loading-screen')).animate({
-      opacity: 0.25
-    }, 1500);
+    return ($('.loading-screen')).velocity({
+      opacity: 0.01
+    }, {
+      duration: 1500
+    });
   });
 
 }).call(this);

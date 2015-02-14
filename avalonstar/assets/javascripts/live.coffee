@@ -44,6 +44,5 @@ $ ->
 # Hopefully this'll allow us to not have to use global sources.
 $(window).load ->
   console.log 'loaded'
-  ($ '.loading-screen').animate
-    opacity: 0.25
-  , 1500
+  ($ '.loading-screen').velocity { opacity: 0.01 },
+    duration: 1500
