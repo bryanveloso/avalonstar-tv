@@ -16,9 +16,9 @@ $ ->
       opacity: 0.5
       size: 3
       size_random: true
-      nb: 100
+      nb: 500
       line_linked:
-        enable_auto: true
+        enable_auto: false
         distance: 100
         color: '#29384D'
         opacity: 0.9
@@ -30,7 +30,7 @@ $ ->
 
       anim:
         enable: true
-        speed: 1.75
+        speed: 1
 
     # We can't even click this thing inside of the browser
     # plogin, so turn this off.
