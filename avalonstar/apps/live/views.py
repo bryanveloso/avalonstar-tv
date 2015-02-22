@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
+
+from braces.views import JSONResponseMixin
 
 from apps.broadcasts.models import Broadcast
 from apps.live.models import Message
+
+from .utils import fetch_stream, is_episodic
 
 
 class BroadcastContextMixin(object):
@@ -35,3 +39,13 @@ class NotifierView(BroadcastContextMixin, TemplateView):
 
 class PrologueView(BroadcastContextMixin, TemplateView):
     template_name = 'live/prologue.html'
+
+
+class StatusView(JSONResponseMixin, View):
+    def get(self, request, *args, **kwargs):
+        broadcast = Broadcast.objects.latest()
+        context = {
+            'is_episodic': is_episodic(),
+            'is_live': bool(fetch_stream()),
+            'number': broadcast.number }
+        return self.render_json_response(context)
