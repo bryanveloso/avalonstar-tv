@@ -5,7 +5,7 @@ from braces.views import JSONResponseMixin
 from apps.broadcasts.models import Broadcast
 from apps.live.models import Message
 
-from .utils import fetch_status
+from .utils import fetch_status, is_episodic
 
 
 class BroadcastContextMixin(object):
@@ -42,5 +42,5 @@ class PrologueView(BroadcastContextMixin, TemplateView):
 
 class StatusView(JSONResponseMixin, View):
     def get(self, request, *args, **kwargs):
-        context = {'a': fetch_status()}
+        context = {'is_live': is_episodic()}
         return self.render_json_response(context)
