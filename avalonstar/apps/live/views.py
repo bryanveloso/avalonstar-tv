@@ -1,10 +1,11 @@
-# -*- coding: utf-8 -*-
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
 
 from braces.views import JSONResponseMixin
 
 from apps.broadcasts.models import Broadcast
 from apps.live.models import Message
+
+from .utils import fetch_status
 
 
 class BroadcastContextMixin(object):
