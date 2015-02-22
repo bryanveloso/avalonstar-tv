@@ -37,3 +37,9 @@ class NotifierView(BroadcastContextMixin, TemplateView):
 
 class PrologueView(BroadcastContextMixin, TemplateView):
     template_name = 'live/prologue.html'
+
+
+class StatusView(JSONResponseMixin, View):
+    def get(self, request, *args, **kwargs):
+        context = {'a': fetch_status()}
+        return self.render_json_response(context)

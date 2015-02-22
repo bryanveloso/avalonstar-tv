@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.views.generic import RedirectView
 
 from .views import (AwayView, DiscussionView, EpilogueView, GameView,
-    NotifierView, PrologueView)
+    NotifierView, PrologueView, StatusView)
 
 
 urlpatterns = patterns('',
@@ -18,4 +18,7 @@ urlpatterns = patterns('',
     url(r'^game/$', name='live-game', view=GameView.as_view()),
     url(r'^prologue/$', name='live-prologue', view=PrologueView.as_view()),
     url(r'^notifier/$', name='live-notifier', view=NotifierView.as_view()),
+
+    # Status (for bots).
+    url(r'^status/$', name='live-status', view=StatusView.as_view()),
 )
