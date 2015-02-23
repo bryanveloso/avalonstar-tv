@@ -3,6 +3,7 @@ from rest_framework import viewsets
 
 from apps.broadcasts.models import Broadcast, Raid, Series
 from apps.games.models import Game
+from apps.subscribers.models import Ticket
 
 from .serializers import (BroadcastSerializer, GameSerializer, RaidSerializer,
     SeriesSerializer, TicketSerializer)
