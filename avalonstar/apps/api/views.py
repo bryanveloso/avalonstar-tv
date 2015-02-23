@@ -5,7 +5,7 @@ from apps.broadcasts.models import Broadcast, Raid, Series
 from apps.games.models import Game
 
 from .serializers import (BroadcastSerializer, GameSerializer, RaidSerializer,
-    SeriesSerializer)
+    SeriesSerializer, TicketSerializer)
 
 
 class BroadcastViewSet(viewsets.ModelViewSet):
@@ -16,3 +16,8 @@ class BroadcastViewSet(viewsets.ModelViewSet):
 class RaidViewSet(viewsets.ModelViewSet):
     queryset = Raid.objects.all()
     serializer_class = RaidSerializer
+
+
+class TicketViewSet(viewsets.ModelViewSet):
+    queryset = Ticket.objects.all()
+    serializer_class = TicketSerializer
