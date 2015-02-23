@@ -2,7 +2,7 @@
 from django.db import models
 
 
-class Subscriber(models.Model):
+class Ticket(models.Model):
     twid = models.IntegerField()
     name = models.CharField(max_length=200)
     display_name = models.CharField(max_length=200)
