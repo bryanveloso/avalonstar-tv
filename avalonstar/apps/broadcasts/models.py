@@ -104,6 +104,7 @@ class Raid(models.Model):
 
     class Meta:
         order_with_respect_to = u'broadcast'
+        unique_together = ('broadcast', 'raider')
 
     def __unicode__(self):
         return u'%s' % self.raider
