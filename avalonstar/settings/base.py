@@ -31,6 +31,7 @@ class Base(Configuration):
         'apps.broadcasts',
         'apps.games',
         'apps.live',
+        'apps.subscribers',
     ]
     PLUGINS = []
     ADMINISTRATION = [
