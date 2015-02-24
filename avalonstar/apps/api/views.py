@@ -12,7 +12,7 @@ from .serializers import (BroadcastSerializer, GameSerializer, RaidSerializer,
     SeriesSerializer, TicketSerializer)
 
 
-class BroadcastViewSet(viewsets.ModelViewSet):
+class BroadcastViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Broadcast.objects.all()
     serializer_class = BroadcastSerializer
 
@@ -22,7 +22,7 @@ class RaidViewSet(viewsets.ModelViewSet):
     serializer_class = RaidSerializer
 
 
-class TicketViewSet(viewsets.ReadOnlyModelViewSet):
+class TicketViewSet(viewsets.ModelViewSet):
     queryset = Ticket.objects.all()
     serializer_class = TicketSerializer
 
