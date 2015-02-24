@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.utils import timezone
 
 
 class Ticket(models.Model):
-    twid = models.CharField(max_length=40)
+    twid = models.CharField(blank=True, max_length=40)
     name = models.CharField(max_length=200)
-    display_name = models.CharField(max_length=200)
-    subscribed = models.DateTimeField(help_text=u'When did the user subscribe?')
+    display_name = models.CharField(blank=True, max_length=200)
+    subscribed = models.DateTimeField(default=timezone.now,
+        help_text=u'When did the user subscribe?')
 
     # Is this subscription active?
     # TODO: Run a script that deactivates subs after XX days.
