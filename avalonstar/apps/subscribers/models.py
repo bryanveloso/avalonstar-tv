@@ -10,7 +10,10 @@ class Ticket(models.Model):
 
     # Is this subscription active?
     # TODO: Run a script that deactivates subs after XX days.
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True,
+        help_text=u'Is this subscription active?')
+    is_paid = models.BooleanField(default=True,
+        help_text=u'Is this a paid subscription? (e.g., Not a bot.)')
 
     class Meta:
         ordering = ['subscribed']
