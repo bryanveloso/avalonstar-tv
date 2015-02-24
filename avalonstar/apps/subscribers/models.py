@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Ticket(models.Model):
-    twid = models.IntegerField()
+    twid = models.CharField(max_length=40)
     name = models.CharField(max_length=200)
     display_name = models.CharField(max_length=200)
     subscribed = models.DateTimeField(help_text=u'When did the user subscribe?')
