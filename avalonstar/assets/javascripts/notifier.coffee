@@ -60,7 +60,34 @@ subscribed = (payload, resub, queued) ->
       subscribed(payload, resub, true)
     ), (delay * 1000)
 
-donated = (payload, added) ->
+substreaked = (payload, queued) ->
+  if not running
+    running = true
+
+    # Play the subscription beat!
+    soundSubscription.volume = 0.4
+    soundSubscription.play()
+
+    ($ '.js-substreaking .js-months').text(payload.length)
+
+    setUp(payload)
+    setTimeout (->
+      tearDown(payload)
+      running = false
+      if poolSubscribing >= 1
+        poolSubscribing--
+        console.log "There are #{poolSubscribing} subs left in the pool."
+    ), 6900
+  else
+    if not queued
+      poolSubscribing++
+      console.log "There are #{poolSubscribing} subs left in the pool."
+    setTimeout (->
+      console.log "Running the pool subscription for, #{payload.username}."
+      substreaked(payload, true)
+    ), (delay * 1000)
+
+donated = (payload, queued) ->
   if not running and poolSubscribing is 0
     running = true
 
@@ -118,7 +145,7 @@ channel.bind 'resubscribed', (data) ->
 
 channel.bind 'substreak', (data) ->
   payload =
-    'action': 'resubscribing'
+    'action': 'substreaking'
     'username': data.username
     'length': data.length
   substreaked(payload, false)
