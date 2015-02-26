@@ -3,28 +3,40 @@
 
 {% block title %}Notifier{% endblock %}
 {% block body %}
-<div class="notifier">
+<div class="notifier js-notifier"><!-- modifier here? -->
+  {# Square "Core" widget. #}
   <div class="widget">
     <div class="square-container">
       <div class="square-flipper js-square-flipper">
-        <div class="square-status square-subscribed js-square-subscribed"><span class="ss-air ss-flag"></span></div>
-        <div class="square-status square-donated js-square-donated"><span class="ss-air ss-coffee"></span></div>
-        <div class="square-status square-hosted js-square-hosted"><span class="ss-air ss-airplay"></span></div>
+        <div class="square-status square-subscribing js-square-subscribing"><span class="ss-air ss-flag"></span></div>
+        <div class="square-status square-substreak js-square-substreaking"><span class="ss-air ss-coffee"></span></div>
+        <div class="square-status square-donating js-square-donating"><span class="ss-air ss-coffee"></span></div>
+        <div class="square-status square-hosting js-square-hosting"><span class="ss-air ss-airplay"></span></div>
         <div class="square"></div>
       </div>
     </div>
-    {# Subscription Notifications #}
+
     <div class="notification-container">
-      <div class="notification subscribing js-subscribed">
+      {# Subscription notifications. #}
+      <div class="notification notification-subscribing js-subscribing">
         <div class="bar">
           <span class="type"><span class="type-inner js-type">Subscription</span></span><span class="message-text">
-            <span class="message-text-inner"><strong class="username js-username">iceymoon</strong>, welcome to the Crusaders!</span>
+            <span class="message-text-inner"><strong class="username js-username">iceymoon</strong>, <span class="message js-message">welcome to the Crusaders!</span></span>
           </span>
         </div>
       </div>
 
-      {# Hosting Notifications #}
-      <div class="notification hosting js-hosted">
+      {# Resubscription notifications. #}
+      <div class="notification notification-substreaking js-substreaking">
+        <div class="bar">
+          <span class="type"><span class="type-inner js-type">Substreak</span></span><span class="message-text">
+            <span class="message-text-inner"><strong class="username js-username">iceymoon</strong>, <span class="months js-months">x</span> months as a Crusader!</span>
+          </span>
+        </div>
+      </div>
+
+      {# Hosting notifications. #}
+      <div class="notification notification-hosting js-hosting">
         <div class="bar">
           <span class="type"><span class="type-inner js-type">Host</span></span><span class="message-text">
             <span class="message-text-inner"><strong class="username js-username">iceymoon</strong>, thanks for the host!</span>
@@ -32,8 +44,8 @@
         </div>
       </div>
 
-      {# Donation Notifications #}
-      <div class="notification donating js-donated">
+      {# Donation notifications. #}
+      <div class="notification notification-donating js-donating">
         <div class="bar">
           <span class="type"><span class="type-inner js-type">Donation</span></span><span class="message-text">
             <span class="message-text-inner"><strong class="username js-username">iceymoon</strong>, thank you for the donation!</span>
