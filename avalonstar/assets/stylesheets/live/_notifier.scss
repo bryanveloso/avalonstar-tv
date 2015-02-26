@@ -63,9 +63,10 @@ $brand-blue: #768EA4;
     position: relative;
     top: 4px; }
 }
-.square-subscribed { background-color: #3498db; }
-.square-donated { background-color: #2ecc71; }
-.square-hosted { background-color: #9b59b6; }
+.square-subscribing { background-color: #3498db; }
+.square-donating { background-color: #2ecc71; }
+.square-substreaking { background-color: #e67e22; }
+.square-hosting { background-color: #9b59b6; }
 
 // .notifications
 .notifications { margin-right: 36px; }
@@ -84,7 +85,7 @@ $brand-blue: #768EA4;
   display: inline-block;
   margin-right: 36px;
 
-  font-size: 16px;
+  font-size: 15px;
   line-height: 36px;
   text-transform: uppercase;
 }
@@ -98,9 +99,10 @@ $brand-blue: #768EA4;
   color: #fff;
   font-weight: 900;
   line-height: 36px; }
-.subscribing .type { color: #3498db; }
-.donating .type { color: #2ecc71; }
-.hosting .type { color: #9b59b6; }
+.notification-subscribing .type { color: #3498db; }
+.notification-substreaking .type { color: #e67e22; }
+.notification-donating .type { color: #2ecc71; }
+.notification-hosting .type { color: #9b59b6; }
 .type-inner { display: block; }
 
 .message-text {
@@ -118,7 +120,7 @@ $brand-blue: #768EA4;
 }
 .message-text-inner { display: block; }
 
-.notification.visible {
+.notification.active {
   position: relative;
   opacity: 1;
 
@@ -170,12 +172,12 @@ $brand-blue: #768EA4;
   animation-delay: 0ms;             // start:    0ms
   animation-duration: 7000ms;       // end:   7000ms
 }
-.notification.visible {
+.notification.active {
   animation-delay: 0ms;             // start:    0ms
   animation-duration: 7000ms;       // end:   7000ms
 }
-.notification.visible .type-inner,
-.notification.visible .message-text-inner {
+.notification.active .type-inner,
+.notification.active .message-text-inner {
   animation-delay: 0ms;             // start:    0ms
   animation-duration: 7000ms;       // end:   7000ms
 }

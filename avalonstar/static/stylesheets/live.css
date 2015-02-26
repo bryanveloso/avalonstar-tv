@@ -410,24 +410,26 @@ ul { padding-left: 0; list-style: none; }
 .notifier .square-status { -webkit-backface-visibility: hidden; backface-visibility: hidden; position: absolute; top: 0; left: 0; -webkit-transform: rotateY(180deg); transform: rotateY(180deg); text-align: center; visibility: hidden; }
 .notifier .square-status.visible { visibility: visible; }
 .notifier .square-status .ss-air { font-size: 24px; position: relative; top: 4px; }
-.notifier .square-subscribed { background-color: #3498db; }
-.notifier .square-donated { background-color: #2ecc71; }
-.notifier .square-hosted { background-color: #9b59b6; }
+.notifier .square-subscribing { background-color: #3498db; }
+.notifier .square-donating { background-color: #2ecc71; }
+.notifier .square-substreaking { background-color: #e67e22; }
+.notifier .square-hosting { background-color: #9b59b6; }
 .notifier .notifications { margin-right: 36px; }
 .notifier .notification-container { position: relative; overflow: hidden; height: 36px; }
 .notifier .notification { position: absolute; top: 0; left: 0; opacity: 0; }
-.notifier .bar { display: inline-block; margin-right: 36px; font-size: 16px; line-height: 36px; text-transform: uppercase; }
+.notifier .bar { display: inline-block; margin-right: 36px; font-size: 15px; line-height: 36px; text-transform: uppercase; }
 .notifier .type { display: inline-block; vertical-align: bottom; height: 36px; overflow: hidden; padding: 0 24px 0 12px; border-left: 4px solid; color: #fff; font-weight: 900; line-height: 36px; }
-.notifier .subscribing .type { color: #3498db; }
-.notifier .donating .type { color: #2ecc71; }
-.notifier .hosting .type { color: #9b59b6; }
+.notifier .notification-subscribing .type { color: #3498db; }
+.notifier .notification-substreaking .type { color: #e67e22; }
+.notifier .notification-donating .type { color: #2ecc71; }
+.notifier .notification-hosting .type { color: #9b59b6; }
 .notifier .type-inner { display: block; }
 .notifier .message-text { display: inline-block; vertical-align: bottom; overflow: hidden; padding: 0 24px 0 12px; border-left: 1px solid; color: #fff; font-weight: 600; }
 .notifier .message-text .username { color: #fff; font-weight: 900; }
 .notifier .message-text-inner { display: block; }
-.notifier .notification.visible { position: relative; opacity: 1; -webkit-animation-name: notification-container-appear; animation-name: notification-container-appear; -webkit-animation-timing-function: easeOutQuad; animation-timing-function: easeOutQuad; }
-.notifier .notification.visible .type-inner { -webkit-animation-name: type-text-appear; animation-name: type-text-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-.notifier .notification.visible .message-text-inner { -webkit-animation-name: message-text-appear; animation-name: message-text-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
+.notifier .notification.active { position: relative; opacity: 1; -webkit-animation-name: notification-container-appear; animation-name: notification-container-appear; -webkit-animation-timing-function: easeOutQuad; animation-timing-function: easeOutQuad; }
+.notifier .notification.active .type-inner { -webkit-animation-name: type-text-appear; animation-name: type-text-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
+.notifier .notification.active .message-text-inner { -webkit-animation-name: message-text-appear; animation-name: message-text-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
 @-webkit-keyframes notification-container-appear { 0% { opacity: 0; -webkit-transform: translate3d(0, -100%, 0); transform: translate3d(0, -100%, 0); }
   1% { opacity: 1; }
   15% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
@@ -460,5 +462,5 @@ ul { padding-left: 0; list-style: none; }
   100% { opacity: 0; -webkit-transform: translate3d(10%, 0, 0); transform: translate3d(10%, 0, 0); } }
 .notifier .widget { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 1000ms; animation-duration: 1000ms; }
 .notifier .square-flipper.toggle { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 7000ms; animation-duration: 7000ms; }
-.notifier .notification.visible { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 7000ms; animation-duration: 7000ms; }
-.notifier .notification.visible .type-inner, .notifier .notification.visible .message-text-inner { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 7000ms; animation-duration: 7000ms; }
+.notifier .notification.active { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 7000ms; animation-duration: 7000ms; }
+.notifier .notification.active .type-inner, .notifier .notification.active .message-text-inner { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 7000ms; animation-duration: 7000ms; }
