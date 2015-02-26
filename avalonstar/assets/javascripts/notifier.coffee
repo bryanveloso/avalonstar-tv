@@ -3,7 +3,7 @@
 # working in its very rigid structure. So here it is.
 
 # Variables.
-delay = 5               # Delay before looping.
+delay = 5               # Delay before looping, in seconds.
 running = false         # Are we running any alerts?
 poolDonating = 0        # How many users are in the donation pool?
 poolHosting = 0         # How many users are in the hosting pool?
@@ -13,29 +13,39 @@ poolSubscribing = 0     # How many users are in the subscription pool?
 soundDonation = new Audio('/static/audio/donation.ogg')
 soundSubscription = new Audio('/static/audio/subscription.ogg')
 
-subscribed = (data, added) ->
+# Convenience functions.
+setUp = (payload) ->
+  console.log "#{payload.username} is #{payload.action}! Triggering setUp()."
+
+  ($ ".js-#{payload.action} .js-username").text(payload.username)
+  ($ ".js-#{payload.action}").addClass('active')
+  ($ ".js-square-#{payload.action}").addClass('visible')
+  ($ '.js-square-flipper').addClass('toggle')
+
+tearDown = (payload) ->
+  console.log 'Triggering tearDown().'
+
+  ($ ".js-#{payload.action}").removeClass('active')
+  ($ ".js-square-#{payload.action}").removeClass('visible')
+  ($ '.js-square-flipper').removeClass('toggle')
+
+subscribed = (payload, resub, added) ->
   if not running
     running = true
-    console.log "#{data.username} has subscribed!"
 
     # Play the subscription beat!
     soundSubscription.volume = 0.4
     soundSubscription.play()
 
-    # Add the .visible class to .js-subscribed to kick off the animation set.
-    # It's a self-contained animation, so there's no need to do much else.
-    ($ '.js-type').text('Subscription')
-    ($ '.js-username').text(data.username)
-    ($ '.js-subscribed').addClass('visible')
-    ($ '.js-square-flipper').addClass('toggle')
-    ($ '.js-square-subscribed').addClass('visible')
+    # If the user has subscribed at least once before, they're considered a
+    # resubscriber. We use the same rail to greet them, but the text is
+    # changed slightly to welcome them back.
+    ($ '.js-subscribing .js-type').text(payload.title)
+    ($ '.js-subscribing .js-message').text('Welcome back to the Crusaders!') if resub
 
-    # Set a timeout (6000ms) equal to that of the entire reveal animation.
+    setUp(payload)
     setTimeout (->
-      ($ '.js-subscribed').removeClass('visible')
-      ($ '.js-square-flipper').removeClass('toggle')
-      ($ '.js-square-subscribed').removeClass('visible')
-
+      tearDown(payload)
       running = false
       if poolSubscribing >= 1
         poolSubscribing--
@@ -46,33 +56,21 @@ subscribed = (data, added) ->
       poolSubscribing++
       console.log "There are #{poolSubscribing} subs left in the pool."
     setTimeout (->
-      console.log "Running the pool subscription for, #{data.username}."
-      subscribed(data, true)
+      console.log "Running the pool subscription for, #{payload.username}."
+      subscribed(payload, resub, true)
     ), (delay * 1000)
 
-donated = (data, added) ->
+donated = (payload, added) ->
   if not running and poolSubscribing is 0
     running = true
-    console.log "#{data.nickname} has donated #{data.amount}!"
 
     # Play the donation beat!
     soundDonation.volume = 0.4
     soundDonation.play()
 
-    # Add the .visible class to .js-subscribed to kick off the animation set.
-    # It's a self-contained animation, so there's no need to do much else.
-    ($ '.js-type').text('Donation')
-    ($ '.js-username').text(data.nickname)
-    ($ '.js-donated').addClass('visible')
-    ($ '.js-square-flipper').addClass('toggle')
-    ($ '.js-square-donated').addClass('visible')
-
-    # Set a timeout (6000ms) equal to that of the entire reveal animation.
+    setUp(payload)
     setTimeout (->
-      ($ '.js-donated').removeClass('visible')
-      ($ '.js-square-flipper').removeClass('toggle')
-      ($ '.js-square-donated').removeClass('visible')
-
+      tearDown(payload)
       running = false
       if poolDonating >= 1
         poolDonating--
@@ -83,32 +81,21 @@ donated = (data, added) ->
       poolDonating++
       console.log "There are #{poolDonating} donators left in the pool."
     setTimeout (->
-      console.log "Running the pool donation for, #{data.nickname}."
+      console.log "Running the pool donation for, #{payload.username}."
       donated(data, true)
     ), (delay * 1000)
 
-hosted = (data) ->
+hosted = (payload) ->
   if not running and poolSubscribing is 0 and poolDonating is 0
     running = true
-    console.log "#{data.username} has hosted the channel!"
-
-    ($ '.js-type').text('Host')
-    ($ '.js-username').text(data.username)
-    ($ '.js-hosted').addClass('visible')
-    ($ '.js-square-flipper').addClass('toggle')
-    ($ '.js-square-hosted').addClass('visible')
-
-    # Set a timeout (6000ms) equal to that of the entire reveal animation.
+    setUp(payload)
     setTimeout (->
-      ($ '.js-hosted').removeClass('visible')
-      ($ '.js-square-flipper').removeClass('toggle')
-      ($ '.js-square-hosted').removeClass('visible')
-
+      tearDown(payload)
       running = false
     ), 6900
   else
     setTimeout (->
-      hosted(data)
+      hosted(payload)
     ), (delay * 1000)
 
 # Pusher actions.
@@ -116,13 +103,38 @@ pusher = new Pusher('207f2c96da3bdb9301f8')
 channel = pusher.subscribe('live')
 
 channel.bind 'subscribed', (data) ->
-  subscribed(data, false)
+  payload =
+    'action': 'subscribing'
+    'title': 'Subscription'
+    'username': data.username
+  subscribed(payload, false, false)
+
+channel.bind 'resubscribed', (data) ->
+  payload =
+    'action': 'subscribing'
+    'title': 'Resubscription'
+    'username': data.username
+  subscribed(payload, true, false)
+
+channel.bind 'substreak', (data) ->
+  payload =
+    'action': 'resubscribing'
+    'username': data.username
+    'length': data.length
+  substreaked(payload, false)
 
 channel.bind 'hosted', (data) ->
-  hosted(data, false)
+  payload =
+    'action': 'hosting'
+    'username': data.username
+  hosted(payload)
 
-# imraising.tv connections.
+# imraising.tv actions.
 source = new EventSource("https://imraising.tv/api/v1/listen?apikey=nuZOkYmLF37yQJdzNLWLRA")
-
 source.addEventListener 'donation.add', (e) ->
-  donated(JSON.parse(e.data), false)
+  data = JSON.parse(e.data)
+  payload =
+    'action': 'donating'
+    'amount': data.amount
+    'username': data.nickname
+  donated(payload, false)
