@@ -29,7 +29,7 @@ tearDown = (payload) ->
   ($ ".js-square-#{payload.action}").removeClass('visible')
   ($ '.js-square-flipper').removeClass('toggle')
 
-subscribed = (payload, resub, added) ->
+subscribed = (payload, resub, queued) ->
   if not running
     running = true
 
@@ -52,7 +52,7 @@ subscribed = (payload, resub, added) ->
         console.log "There are #{poolSubscribing} subs left in the pool."
     ), 6900
   else
-    if not added
+    if not queued
       poolSubscribing++
       console.log "There are #{poolSubscribing} subs left in the pool."
     setTimeout (->
@@ -77,7 +77,7 @@ donated = (payload, added) ->
         console.log "There are #{poolDonating} donators left in the pool."
     ), 6900
   else
-    if not added
+    if not queued
       poolDonating++
       console.log "There are #{poolDonating} donators left in the pool."
     setTimeout (->
