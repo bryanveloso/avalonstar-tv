@@ -11,7 +11,9 @@ from .base import Base as Settings
 class Production(Settings):
     # Installed Applications (featuring Production).
     # --------------------------------------------------------------------------
-    INSTALLED_APPS = Settings.INSTALLED_APPS + []
+    INSTALLED_APPS = Settings.INSTALLED_APPS + [
+        'raven.contrib.django',
+    ]
 
     # Debug Settings.
     # --------------------------------------------------------------------------
@@ -58,6 +60,53 @@ class Production(Settings):
     DATABASES = postgresify()
     if 'default' in DATABASES:  # pragma: no branch
         DATABASES['default']['CONN_MAX_AGE'] = 600
+
+    # Logging Configuration.
+    # --------------------------------------------------------------------------
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'filters': {
+            'require_debug_false': {
+                '()': 'django.utils.log.RequireDebugFalse'
+            }
+        },
+        'formatters': {
+            'verbose': {
+                'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s',
+                'datefmt': '%d/%b/%Y %H:%M:%S'
+            },
+            'simple': {
+                'format': '%(levelname)s %(message)s'
+            },
+        },
+        'handlers': {
+            'console': {
+                'level': 'DEBUG',
+                'class': 'logging.StreamHandler',
+                'formatter': 'verbose',
+                'stream': sys.stdout
+            },
+            'sentry': {
+                'level': 'ERROR',
+                'class': 'raven.contrib.django.handlers.SentryHandler',
+                'filters': ['require_debug_false'],
+            },
+        },
+        'loggers': {
+            # This is a "catch all" logger.
+            '': {
+                'level': 'DEBUG',
+                'handlers': ['console', 'sentry'],
+                'propagate': False,
+            },
+            'boto': {
+                'level': 'WARNING',
+                'handlers': ['sentry'],
+                'propagate': False,
+            },
+        }
+    }
 
     # django-staticbuilder.
     # --------------------------------------------------------------------------
