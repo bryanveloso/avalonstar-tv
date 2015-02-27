@@ -37,7 +37,11 @@ class Command(NoArgsCommand):
             # We have tickets. Let's check each ticket and mark if that person
             # as active if their ticket still exists in Twitch's API.
             for ticket in tickets:
-                print ticket['user']['name']
+                print username
+                username = ticket['user']['name']
+                t = Ticket.objects.get(username=username)
+                t.is_active = True
+                t.save()
 
             # Done. Grab `next` and keep looping.
             url = data['_links']['next']
