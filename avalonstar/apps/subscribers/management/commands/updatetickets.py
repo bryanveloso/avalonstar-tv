@@ -25,7 +25,14 @@ class Command(NoArgsCommand):
         limit = 100  # Maximum number of tickets we can fetch at once.
 
         while url:
-            response = requests.get(url, headers=headers, params={'limit': limit}, timeout=1)
+            # To keep our dyno-hour usage down, we have to make sure that
+            # requests aren't hung up. So try the request and if a `Timeout`
+            # is thrown, bail.
+            try:
+                response = requests.get(url, headers=headers, params={'limit': limit}, timeout=1)
+            except requests.exceptions.Timeout:
+                break
+
             data = response.json()
             tickets = data['subscriptions']
 
