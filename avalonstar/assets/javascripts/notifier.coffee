@@ -64,11 +64,9 @@ substreaked = (payload, queued) ->
   if not running
     running = true
 
-    # Play the subscription beat!
-    soundSubscription.volume = 0.4
-    soundSubscription.play()
-
-    ($ '.js-substreaking .js-months').text(payload.length)
+    # ...
+    length = if payload.length is 1 then 'month' else 'months'
+    ($ '.js-substreaking .js-months').text("#{payload.length} #{length}")
 
     setUp(payload)
     setTimeout (->
@@ -143,7 +141,7 @@ channel.bind 'resubscribed', (data) ->
     'username': data.username
   subscribed(payload, true, false)
 
-channel.bind 'substreak', (data) ->
+channel.bind 'substreaked', (data) ->
   payload =
     'action': 'substreaking'
     'username': data.username

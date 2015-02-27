@@ -62,11 +62,11 @@
   };
 
   substreaked = function(payload, queued) {
+    var length;
     if (!running) {
       running = true;
-      soundSubscription.volume = 0.4;
-      soundSubscription.play();
-      ($('.js-substreaking .js-months')).text(payload.length);
+      length = payload.length === 1 ? 'month' : 'months';
+      ($('.js-substreaking .js-months')).text("" + payload.length + " " + length);
       setUp(payload);
       return setTimeout((function() {
         tearDown(payload);
@@ -153,7 +153,7 @@
     return subscribed(payload, true, false);
   });
 
-  channel.bind('substreak', function(data) {
+  channel.bind('substreaked', function(data) {
     var payload;
     payload = {
       'action': 'substreaking',
