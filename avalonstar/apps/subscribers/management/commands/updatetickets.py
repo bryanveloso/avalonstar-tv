@@ -25,7 +25,7 @@ class Command(NoArgsCommand):
         limit = 100  # Maximum number of tickets we can fetch at once.
 
         while url:
-            response = requests.get(url, headers=headers, params={'limit': limit})
+            response = requests.get(url, headers=headers, params={'limit': limit}, timeout=1)
             data = response.json()
             tickets = data['subscriptions']
 
