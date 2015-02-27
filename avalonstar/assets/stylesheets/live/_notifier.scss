@@ -30,7 +30,7 @@ $brand-blue: #768EA4;
   transform-style: preserve-3d;
 
   animation-name: flip-square;
-  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1.0);
 }
 
 @keyframes flip-square {
@@ -125,15 +125,15 @@ $brand-blue: #768EA4;
   opacity: 1;
 
   animation-name: notification-container-appear;
-  animation-timing-function: easeOutQuad;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1.0);
 
   .type-inner {
     animation-name: type-text-appear;
-    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1.0);
   }
   .message-text-inner {
     animation-name: message-text-appear;
-    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1.0);
   }
 }
 

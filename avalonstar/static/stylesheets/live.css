@@ -393,7 +393,7 @@ ul { padding-left: 0; list-style: none; }
   100% { opacity: 1; } }
 .notifier .square-container { -webkit-perspective: 1000; perspective: 1000; position: absolute; right: 0; z-index: 100; }
 .notifier .square-container, .notifier .square-status { width: 36px; height: 36px; }
-.notifier .square-flipper.toggle { position: relative; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; -webkit-animation-name: flip-square; animation-name: flip-square; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
+.notifier .square-flipper.toggle { position: relative; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; -webkit-animation-name: flip-square; animation-name: flip-square; -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 @-webkit-keyframes flip-square { 0% { -webkit-transform: scale(1) rotateY(0deg); transform: scale(1) rotateY(0deg); }
   5% { -webkit-transform: scale(1.3) rotateY(0deg); transform: scale(1.3) rotateY(0deg); }
   10% { -webkit-transform: scale(1) rotateY(180deg); transform: scale(1) rotateY(180deg); }
@@ -427,9 +427,9 @@ ul { padding-left: 0; list-style: none; }
 .notifier .message-text { display: inline-block; vertical-align: bottom; overflow: hidden; padding: 0 24px 0 12px; border-left: 1px solid; color: #fff; font-weight: 600; }
 .notifier .message-text .username { color: #fff; font-weight: 900; }
 .notifier .message-text-inner { display: block; }
-.notifier .notification.active { position: relative; opacity: 1; -webkit-animation-name: notification-container-appear; animation-name: notification-container-appear; -webkit-animation-timing-function: easeOutQuad; animation-timing-function: easeOutQuad; }
-.notifier .notification.active .type-inner { -webkit-animation-name: type-text-appear; animation-name: type-text-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-.notifier .notification.active .message-text-inner { -webkit-animation-name: message-text-appear; animation-name: message-text-appear; -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
+.notifier .notification.active { position: relative; opacity: 1; -webkit-animation-name: notification-container-appear; animation-name: notification-container-appear; -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+.notifier .notification.active .type-inner { -webkit-animation-name: type-text-appear; animation-name: type-text-appear; -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+.notifier .notification.active .message-text-inner { -webkit-animation-name: message-text-appear; animation-name: message-text-appear; -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 @-webkit-keyframes notification-container-appear { 0% { opacity: 0; -webkit-transform: translate3d(0, -100%, 0); transform: translate3d(0, -100%, 0); }
   1% { opacity: 1; }
   15% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
