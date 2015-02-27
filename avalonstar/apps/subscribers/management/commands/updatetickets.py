@@ -41,6 +41,13 @@ class Command(NoArgsCommand):
                 username = ticket['user']['name']
                 t = Ticket.objects.get(username=username)
                 t.is_active = True
+
+                # Set some other things while we're here.
+                t.display_name = ticket['user']['display_name']
+                t.subscribed = ticket['created_at']
+                t.twid = ticket['_id']
+
+                # Save it all.
                 t.save()
 
             # Done. Grab `next` and keep looping.
