@@ -20,7 +20,7 @@ class Count(models.Model):
         ordering = ['timestamp']
 
     def __unicode__(self):
-        return u'%s' % self.timestamp
+        return u'%s on %s' % (self.total, self.timestamp)
 
 
 class Ticket(models.Model):
