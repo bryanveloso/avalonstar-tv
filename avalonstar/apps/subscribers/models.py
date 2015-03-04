@@ -7,6 +7,7 @@ class CountManager(models.Manager):
     def create_count(self):
         total = Ticket.objects.count()
         count = Count(total=total, timestamp=timezone.now())
+        count.save()
         return count
 
 class Count(models.Model):
