@@ -10,6 +10,7 @@ class CountManager(models.Manager):
         count.save()
         return count
 
+
 class Count(models.Model):
     total = models.IntegerField()
     timestamp = models.DateTimeField(default=timezone.now())
@@ -22,6 +23,11 @@ class Count(models.Model):
 
     def __unicode__(self):
         return u'%s on %s' % (self.total, self.timestamp)
+
+
+class TicketManager(models.Manager):
+    def invalidate_tickets(self):
+        self.update(is_active=False)
 
 
 class Ticket(models.Model):
@@ -38,8 +44,18 @@ class Ticket(models.Model):
     is_paid = models.BooleanField(default=True,
         help_text=u'Is this a paid subscription? (e.g., Not a bot.)')
 
+    # Custom manager.
+    objects = TicketManager()
+
     class Meta:
         ordering = ['subscribed']
 
     def __unicode__(self):
         return u'%s' % self.name
+
+    def update(self, **kwargs):
+        allowed_attributes = {'twid', 'display_name', 'subscribed', 'is_active'}
+        for name, value in kwargs.items():
+            assert name in allowed_attributes
+            setattr(self, name, value)
+        self.save()

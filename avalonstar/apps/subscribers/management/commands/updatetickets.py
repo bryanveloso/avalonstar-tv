@@ -2,7 +2,7 @@
 import requests
 import os
 
-from django.core.management.base import NoArgsCommand, CommandError
+from django.core.management.base import NoArgsCommand
 
 from apps.subscribers.models import Ticket
 
@@ -13,7 +13,7 @@ class Command(NoArgsCommand):
     def handle_noargs(self, **options):
         # Rather than mark active tickets as inactive, mark all tickets as
         # inactive. As we loop through the Twitch API, we'll mark
-        tickets = Ticket.objects.update(is_active=False)
+        Ticket.objects.invalidate_tickets()
 
         # Prepare our request.
         headers = {
@@ -47,15 +47,12 @@ class Command(NoArgsCommand):
                 name = ticket['user']['name']
                 print name
                 t = Ticket.objects.get(name=name)
-                t.is_active = True
-
-                # Set some other things while we're here.
-                t.display_name = ticket['user']['display_name']
-                t.subscribed = ticket['created_at']
-                t.twid = ticket['_id']
-
-                # Save it all.
-                t.save()
+                updates = {
+                    'display_name': ticket['user']['display_name'],
+                    'is_active': True,
+                    'subscribed': ticket['created_at'],
+                    'twid': ticket['_id'] }
+                t.update(**updates)
 
             # Done. Grab `next` and keep looping.
             url = data['_links']['next']
