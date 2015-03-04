@@ -3,9 +3,18 @@ from django.db import models
 from django.utils import timezone
 
 
+class CountManager(models.Manager):
+    def create_count(self):
+        total = Ticket.objects.count()
+        count = Count(total=total, timestamp=timezone.now())
+        return count
+
 class Count(models.Model):
     total = models.IntegerField()
     timestamp = models.DateTimeField(default=timezone.now())
+
+    # Custom manager.
+    objects = CountManager()
 
     class Meta:
         ordering = ['timestamp']
