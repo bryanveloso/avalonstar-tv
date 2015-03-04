@@ -24,7 +24,7 @@ class Command(NoArgsCommand):
         try:
             r = requests.get(url, headers=headers)
         except requests.exceptions.RequestException as e:
-            logger.error(e)
+            logger.exception(e)
             pass
 
         # Rather than mark active tickets as inactive, mark all tickets as
@@ -40,7 +40,7 @@ class Command(NoArgsCommand):
             try:
                 response = requests.get(url, headers=headers, params={'limit': limit}, timeout=1)
             except requests.exceptions.RequestException as e:
-                logger.error(e)
+                logger.exception(e)
                 break
 
             data = response.json()
