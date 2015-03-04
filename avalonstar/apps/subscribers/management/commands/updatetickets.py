@@ -11,16 +11,22 @@ class Command(NoArgsCommand):
     help = u'Loops through all subscribers and marks each ticket appropriately.'
 
     def handle_noargs(self, **options):
-        # Rather than mark active tickets as inactive, mark all tickets as
-        # inactive. As we loop through the Twitch API, we'll mark
-        Ticket.objects.invalidate_tickets()
-
         # Prepare our request.
         headers = {
             'Authorization': 'OAuth %s' % os.environ.get('TWITCH_OAUTH_TOKEN'),
             'Accept': 'application/vnd.twitchtv.v3+json' }
         url = 'https://api.twitch.tv/kraken/channels/avalonstar/subscriptions'
-        r = requests.get(url, headers=headers)
+
+        # Let's not invalidate anything unnecessarily. If we hit an exception
+        # with the first request, then bail.
+        try:
+            r = requests.get(url, headers=headers)
+        except requests.exceptions.RequestException:
+            pass
+
+        # Rather than mark active tickets as inactive, mark all tickets as
+        # inactive. As we loop through the Twitch API, we'll mark
+        Ticket.objects.invalidate_tickets()
         count = r.json()['_total']  # Total number of tickets.
         limit = 100  # Maximum number of tickets we can fetch at once.
 
