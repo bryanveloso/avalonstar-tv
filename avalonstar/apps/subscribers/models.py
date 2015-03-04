@@ -24,7 +24,7 @@ class Count(models.Model):
         ordering = ['timestamp']
 
     def __unicode__(self):
-        return u'%s on %s' % (self.total, self.timestamp)
+        return u'%s/%s on %s' % (self.active, self.total, self.timestamp)
 
 
 class TicketManager(models.Manager):
