@@ -5,13 +5,15 @@ from django.utils import timezone
 
 class CountManager(models.Manager):
     def create_count(self):
-        total = Ticket.objects.filter(is_active=True, is_paid=True).count()
-        count = Count(total=total, timestamp=timezone.now())
+        active = Ticket.objects.filter(is_active=True, is_paid=True).count()
+        total = Ticket.objects.count()
+        count = Count(active=active, total=total, timestamp=timezone.now())
         count.save()
         return count
 
 
 class Count(models.Model):
+    active = models.IntegerField()
     total = models.IntegerField()
     timestamp = models.DateTimeField(default=timezone.now())
 
