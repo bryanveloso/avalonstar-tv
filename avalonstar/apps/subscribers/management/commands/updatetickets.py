@@ -46,7 +46,7 @@ class Command(NoArgsCommand):
             for ticket in tickets:
                 name = ticket['user']['name']
                 print name
-                t = Ticket.objects.get(name=name)
+                t = Ticket.objects.get(name__iexact=name)
                 updates = {
                     'display_name': ticket['user']['display_name'],
                     'is_active': True,
