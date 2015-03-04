@@ -3,6 +3,17 @@ from django.db import models
 from django.utils import timezone
 
 
+class Count(models.Model):
+    total = models.IntegerField()
+    timestamp = models.DateTimeField(default=timezone.now())
+
+    class Meta:
+        ordering = ['timestamp']
+
+    def __unicode__(self):
+        return u'%s' % self.timestamp
+
+
 class Ticket(models.Model):
     twid = models.CharField(blank=True, max_length=40)
     name = models.CharField(max_length=200)
