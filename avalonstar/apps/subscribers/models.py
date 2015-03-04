@@ -3,6 +3,27 @@ from django.db import models
 from django.utils import timezone
 
 
+class CountManager(models.Manager):
+    def create_count(self):
+        total = Ticket.objects.filter(is_active=True, is_paid=True).count()
+        count = Count(total=total, timestamp=timezone.now())
+        count.save()
+        return count
+
+class Count(models.Model):
+    total = models.IntegerField()
+    timestamp = models.DateTimeField(default=timezone.now())
+
+    # Custom manager.
+    objects = CountManager()
+
+    class Meta:
+        ordering = ['timestamp']
+
+    def __unicode__(self):
+        return u'%s on %s' % (self.total, self.timestamp)
+
+
 class Ticket(models.Model):
     twid = models.CharField(blank=True, max_length=40)
     name = models.CharField(max_length=200)
