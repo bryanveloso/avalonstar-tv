@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import logging
 import requests
 import os
 
@@ -8,6 +9,7 @@ from apps.subscribers.models import Ticket
 
 
 class Command(NoArgsCommand):
+    logger = logging.getLogger(__name__)
     help = u'Loops through all subscribers and marks each ticket appropriately.'
 
     def handle_noargs(self, **options):
@@ -21,7 +23,8 @@ class Command(NoArgsCommand):
         # with the first request, then bail.
         try:
             r = requests.get(url, headers=headers)
-        except requests.exceptions.RequestException:
+        except requests.exceptions.RequestException as e:
+            logger.error(e)
             pass
 
         # Rather than mark active tickets as inactive, mark all tickets as
@@ -36,7 +39,8 @@ class Command(NoArgsCommand):
             # is thrown, bail.
             try:
                 response = requests.get(url, headers=headers, params={'limit': limit}, timeout=1)
-            except requests.exceptions.Timeout:
+            except requests.exceptions.RequestException as e:
+                logger.error(e)
                 break
 
             data = response.json()
