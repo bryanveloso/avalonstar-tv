@@ -92,6 +92,20 @@ class Highlight(models.Model):
         return self.title
 
 
+class Host(models.Model):
+    broadcast = models.ForeignKey(Broadcast, related_name='hosts')
+    timestamp = models.DateTimeField(default=timezone.now,
+        help_text=u'When did it happen?')
+    hoster = models.CharField(blank=True, max_length=200)
+
+    class Meta:
+        order_with_respect_to = u'broadcast'
+        ordering = ['timestamp']
+
+    def __unicode__(self):
+        return u'%s' % self.hoster
+
+
 class Raid(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='raids')
     timestamp = models.DateTimeField(default=timezone.now,
