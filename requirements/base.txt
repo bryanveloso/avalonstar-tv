@@ -9,7 +9,7 @@ django-heroku-postgresify == 0.3
 django-model-utils == 2.2
 django-staticbuilder == 0.6.1
 djangorestframework == 3.0.5
-requests == 2.5.0
+requests == 2.5.3
 Pillow == 2.7.0
 psycopg2 == 2.5.4
 whitenoise == 1.0.6
