@@ -21,6 +21,7 @@ class Count(models.Model):
     objects = CountManager()
 
     class Meta:
+        get_latest_by = 'timestamp'
         ordering = ['timestamp']
 
     def __unicode__(self):
