@@ -30,7 +30,7 @@ class Command(NoArgsCommand):
         # Rather than mark active tickets as inactive, mark all tickets as
         # inactive. As we loop through the Twitch API, we'll mark
         Ticket.objects.invalidate_tickets()
-        count = r.json()['_total']  # Total number of tickets.
+        count = r.json().get('_total')  # Total number of tickets.
         limit = 100  # Maximum number of tickets we can fetch at once.
 
         while url:
@@ -55,14 +55,19 @@ class Command(NoArgsCommand):
             # as active if their ticket still exists in Twitch's API.
             for ticket in tickets:
                 name = ticket['user']['name']
-                print name
-                t = Ticket.objects.get(name__iexact=name)
-                updates = {
-                    'display_name': ticket['user']['display_name'],
-                    'is_active': True,
-                    'subscribed': ticket['created_at'],
-                    'twid': ticket['_id'] }
-                t.update(**updates)
+
+                try:
+                    t = Ticket.objects.get(name__iexact=name)
+                except Ticket.DoesNotExist as e:
+                    logger.exception(e)
+                    continue
+                else:
+                    updates = {
+                            'display_name': ticket['user']['display_name'],
+                            'is_active': True,
+                            'subscribed': ticket['created_at'],
+                            'twid': ticket['_id'] }
+                    t.update(**updates)
 
             # Done. Grab `next` and keep looping.
             url = data['_links']['next']
