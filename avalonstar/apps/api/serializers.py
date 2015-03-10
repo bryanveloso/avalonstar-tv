@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from rest_framework import serializers
 
-from apps.broadcasts.models import Broadcast, Raid, Series
+from apps.broadcasts.models import Broadcast, Host, Raid, Series
 from apps.games.models import Game
 from apps.subscribers.models import Ticket
 
@@ -9,6 +9,11 @@ from apps.subscribers.models import Ticket
 class BroadcastSerializer(serializers.ModelSerializer):
     class Meta:
         model = Broadcast
+
+
+class HostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Host
 
 
 class RaidSerializer(serializers.ModelSerializer):
