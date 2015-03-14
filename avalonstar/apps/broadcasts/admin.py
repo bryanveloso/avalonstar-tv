@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
-from .models import Broadcast, Highlight, Raid, Series
+from .models import Broadcast, Highlight, Host, Raid, Series
 
 
 class HighlightInline(admin.StackedInline):
     extra = 1
     model = Highlight
+
+
+class HostInline(admin.TabularInline):
+    extra = 1
+    model = Host
 
 
 class RaidInline(admin.TabularInline):
@@ -42,6 +47,11 @@ class HighlightAdmin(admin.ModelAdmin):
     raw_id_fields = ['broadcast', 'game']
     autocomplete_lookup_fields = {'fk': ['game']}
 admin.site.register(Highlight, HighlightAdmin)
+
+
+class HostAdmin(admin.ModelAdmin):
+    list_display = ['timestamp', 'hoster', 'broadcast']
+admin.site.register(Host, HostAdmin)
 
 
 class RaidAdmin(admin.ModelAdmin):
