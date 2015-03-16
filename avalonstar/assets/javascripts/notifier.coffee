@@ -41,7 +41,10 @@ subscribed = (payload, resub, queued) ->
     # resubscriber. We use the same rail to greet them, but the text is
     # changed slightly to welcome them back.
     ($ '.js-subscribing .js-type').text(payload.title)
-    ($ '.js-subscribing .js-message').text('Welcome back to the Crusaders!') if resub
+    if resub
+      ($ '.js-subscribing .js-message').text('Welcome back to the Crusaders!')
+    else
+      ($ '.js-subscribing .js-message').text('Welcome to the Crusaders!')
 
     setUp(payload)
     setTimeout (->
