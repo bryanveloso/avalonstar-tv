@@ -20,7 +20,7 @@ class RaidInline(admin.TabularInline):
 
 
 class BroadcastAdmin(admin.ModelAdmin):
-    inlines = [RaidInline, HighlightInline]
+    inlines = [RaidInline, HostInline, HighlightInline]
     list_display = ['number', 'airdate', 'status', 'series', 'game_list']
     list_editable = ['airdate', 'status', 'series']
     list_display_links = ['number']
