@@ -17,7 +17,7 @@ class Production(Settings):
 
     # Debug Settings.
     # --------------------------------------------------------------------------
-    DEBUG = values.BooleanValue(True)
+    DEBUG = values.BooleanValue(False)
 
     # Secret Key Configuration.
     # --------------------------------------------------------------------------
