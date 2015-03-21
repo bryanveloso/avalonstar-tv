@@ -7,7 +7,6 @@ django-dotenv == 1.3.0
 django-grappelli == 2.6.3
 django-heroku-postgresify == 0.3
 django-model-utils == 2.2
-django-staticbuilder == 0.6.1
 djangorestframework == 3.0.5
 requests == 2.5.3
 Pillow == 2.7.0

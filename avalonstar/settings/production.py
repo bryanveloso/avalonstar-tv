@@ -107,7 +107,3 @@ class Production(Settings):
             },
         }
     }
-
-    # django-staticbuilder.
-    # --------------------------------------------------------------------------
-    STATICBUILDER_BUILD_COMMANDS = ['inv compile']

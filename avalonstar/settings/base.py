@@ -97,7 +97,6 @@ class Base(Configuration):
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [normpath(join(DJANGO_ROOT, 'static'))]
     STATICFILES_FINDERS = (
-        'staticbuilder.finders.BuiltFileFinder',
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     )
@@ -111,13 +110,6 @@ class Base(Configuration):
     # --------------------------------------------------------------------------
     ROOT_URLCONF = '%s.urls' % SITE_NAME
     WSGI_APPLICATION = 'wsgi.application'
-
-    # django-staticbuilder.
-    # --------------------------------------------------------------------------
-    INSTALLED_APPS += [
-        'staticbuilder',
-    ]
-    STATICBUILDER_BUILD_ROOT = join(DJANGO_ROOT, 'build')
 
     # django-rest-framework.
     # --------------------------------------------------------------------------
