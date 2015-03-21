@@ -39,6 +39,8 @@
       ($('.js-subscribing .js-type')).text(payload.title);
       if (resub) {
         ($('.js-subscribing .js-message')).text('Welcome back to the Crusaders!');
+      } else {
+        ($('.js-subscribing .js-message')).text('Welcome to the Crusaders!');
       }
       setUp(payload);
       return setTimeout((function() {
