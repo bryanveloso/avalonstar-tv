@@ -55,19 +55,12 @@ class Command(NoArgsCommand):
             # as active if their ticket still exists in Twitch's API.
             for ticket in tickets:
                 name = ticket['user']['name']
-
-                try:
-                    t = Ticket.objects.get(name__iexact=name)
-                except Ticket.DoesNotExist as e:
-                    logger.exception(e)
-                    continue
-                else:
-                    updates = {
-                            'display_name': ticket['user']['display_name'],
-                            'is_active': True,
-                            'subscribed': ticket['created_at'],
-                            'twid': ticket['_id'] }
-                    t.update(**updates)
+                updates = {
+                        'display_name': ticket['user']['display_name'],
+                        'is_active': True,
+                        'subscribed': ticket['created_at'],
+                        'twid': ticket['_id'] }
+                t, created = Ticket.objects.update_or_create(name=name, defaults=updates)
 
             # Done. Grab `next` and keep looping.
             url = data['_links']['next']
