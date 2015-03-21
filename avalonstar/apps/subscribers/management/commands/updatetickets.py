@@ -58,7 +58,7 @@ class Command(NoArgsCommand):
                 updates = {
                         'display_name': ticket['user']['display_name'],
                         'is_active': True,
-                        'subscribed': ticket['created_at'],
+                        'updated': ticket['created_at'],
                         'twid': ticket['_id'] }
                 t, created = Ticket.objects.update_or_create(name=name, defaults=updates)
 
