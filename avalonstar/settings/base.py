@@ -93,6 +93,7 @@ class Base(Configuration):
 
     # Static File Configuration.
     # --------------------------------------------------------------------------
+    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
     STATIC_ROOT = 'staticfiles'
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [normpath(join(DJANGO_ROOT, 'static'))]

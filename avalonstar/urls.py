@@ -25,4 +25,4 @@ urlpatterns = patterns('',
     # Sitemaps, Favicons, Robots, and Humans.
     url(r'^favicon.ico$', name='favicon', view=RedirectView.as_view(url=settings.STATIC_URL + 'images/favicon.ico')),
     url(r'^robots.txt$', name='robots', view=PlainTextView.as_view(template_name='robots.txt'))
-) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+)

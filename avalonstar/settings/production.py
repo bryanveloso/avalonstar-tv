@@ -34,7 +34,6 @@ class Production(Settings):
     # --------------------------------------------------------------------------
     INSTALLED_APPS += ['storages']
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
     # Amazon Web Services.
     AWS_ACCESS_KEY_ID = values.SecretValue(environ_prefix='')
@@ -52,8 +51,6 @@ class Production(Settings):
     # ...
     CDN_DOMAIN = 'http://avalonstar-tv.s3.amazonaws.com'
     MEDIA_URL = '%s/' % (CDN_DOMAIN)
-    STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
-    STATIC_URL = '%s/static/' % (STATIC_HOST)
 
     # Database Configuration.
     # --------------------------------------------------------------------------
