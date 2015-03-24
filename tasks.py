@@ -1,6 +1,8 @@
  # -*- coding: utf-8 -*-
+import datetime
 import functools
 import os
+import requests
 
 from invoke import task, run
 
@@ -55,3 +57,14 @@ def migrate(verbose=False, app='', **kwargs):
     hide = 'out' if not verbose else None
 
     run('heroku run python manage.py migrate %s' % app, hide=hide)
+
+
+@task
+def resetchat(verbose=False, **kwargs):
+    out = functools.partial(_out, 'project.deploy')
+    hide = 'out' if not verbose else None
+
+    # Use requests to save out, then clear out Firebase chat.
+    today = datetime.today()
+    url = 'https://avalonstar.firebaseio.com/messages/.json?print=pretty'
+    run('curl -o messages-%s%s%s.json %s' % (today.year, today.month, today.day, url), hide=hide)
