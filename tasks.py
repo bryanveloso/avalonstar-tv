@@ -1,5 +1,5 @@
  # -*- coding: utf-8 -*-
-import datetime
+import time
 import functools
 import os
 import requests
@@ -60,11 +60,15 @@ def migrate(verbose=False, app='', **kwargs):
 
 
 @task
-def resetchat(verbose=False, **kwargs):
+def resetmessages(verbose=False, **kwargs):
     out = functools.partial(_out, 'project.deploy')
     hide = 'out' if not verbose else None
 
     # Use requests to save out, then clear out Firebase chat.
-    today = datetime.today()
+    timestamp = time.strftime('%Y%m%d')
     url = 'https://avalonstar.firebaseio.com/messages/.json?print=pretty'
-    run('curl -o messages-%s%s%s.json %s' % (today.year, today.month, today.day, url), hide=hide)
+    out('Saving snapshot of Firebase `messages` endpoint to "messages-%s.json."' % timestamp)
+    run('curl -o messages-%s.json %s' % (timestamp, url), hide=hide)
+
+    out('Clearing Firebase `messages` endpoint.')
+    requests.delete('https://avalonstar.firebaseio.com/messages.json')
