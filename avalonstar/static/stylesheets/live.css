@@ -266,18 +266,16 @@ ul { padding-left: 0; list-style: none; }
 
 .loading-screen { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: #090D12; z-index: 6; }
 
-.element-webcam { width: 320px; height: 240px; padding: 50px 20px; position: absolute; bottom: 0; z-index: 1000; }
+.element-webcam { width: 320px; height: 185px; padding: 0 15px; position: absolute; bottom: 0; z-index: 1000; }
 
-.element-tv { width: 280px; height: 172px; position: relative; background: #fff; border-radius: 4px; box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05); }
-.element-tv:before { display: block; position: absolute; bottom: 4px; right: 8px; width: 7px; height: 7px; background-color: #b8e986; border-radius: 7px; content: ''; }
+.element-tv { width: 290px; height: 168px; position: relative; background: #fff; border-radius: 3px; box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1), 0 1px 25px 0 rgba(0, 0, 0, 0.2); }
+.element-tv:before { display: block; position: absolute; bottom: 0; right: 6px; width: 12px; height: 2px; background-color: #b8e986; border-radius: 7px; content: ''; }
 
-.element-tv-stand { margin-left: -35px; position: absolute; bottom: 0px; left: 50%; width: 70px; height: 0; z-index: -1; border-bottom: 100px solid #eee; border-left: 25px solid transparent; border-right: 25px solid transparent; }
-
-.placeholder-webcam { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: absolute; top: 8px; right: 8px; left: 8px; width: 264px; height: 149px; background-color: #000; }
+.placeholder-webcam { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: absolute; top: 6px; right: 6px; left: 6px; width: 278px; height: 156px; background-color: #000; }
 
 .placeholder-image { position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0.3; z-index: 1; background-image: url("https://scontent-a-lhr.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10433088_10101611272783645_8875673993172060583_n.jpg?oh=4eb45c22550fc8c87db65842b55c0b35&oe=5514CFDC"); background-position: center center; background-size: 100%; }
 
-.empty-webcam { padding: 8px 0; position: relative; width: 100%; z-index: 2; background: rgba(0, 0, 0, 0.5); border-width: 1px 0; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
+.empty-webcam { padding: 8px 0; position: relative; width: 100%; z-index: 2; background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-width: 1px 0; text-align: center; }
 
 .empty-webcam-message { display: block; font-weight: 800; text-transform: uppercase; }
 
