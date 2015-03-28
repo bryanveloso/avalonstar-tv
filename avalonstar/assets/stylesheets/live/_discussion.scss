@@ -1,49 +1,49 @@
 // .section-main
 .section-main {
   display: flex; align-items: center;
-  padding: 60px;
+  padding: 40px;
   position: absolute; top: 0; right: 0;
   width: 960px; height: 720px;
 }
 // .section-chat { width: 480px; }
 
 .element-webcam {
-  width: 676px; height: 538px;
-  padding: 70px 0;
-  position: absolute; bottom: 0; right: 58px;
+  width: 526px; height: 304px;
+  padding: 40px 0;
+  position: absolute; right: 200px;
   z-index: 1000;
+
 }
 .element-tv {
-  width: 674px; height: 408px;
-  position: relative;
+  width: 526px; height: 304px;
+  position: absolute;
   background: #fff;
   border-radius: 4px;
-  box-shadow: 0 6px 0 rgba(#000, 0.05);
 
   &:before {
     display: block;
-    position: absolute; bottom: 10px; right: 14px;
-    width: 13px; height: 13px;
+    position: absolute; bottom: 0px; right: 8px;
+    width: 28px; height: 4px;
 
     background-color: #b8e986;
-    border-radius: 13px;
     content: '';
   }
 }
-.element-tv-stand {
-  margin-left: -80px;
-  position: absolute; bottom: 0px; left: 50%;
-  width: 160px; height: 0;
-  z-index: -1;
-
-  border-bottom: 100px solid #eee;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
+.webcam-top { top: 0;
+  .element-tv { top: 40px; }
 }
+.webcam-bottom { bottom: 0;
+  .element-tv { bottom: 40px; }
+}
+
 .placeholder-webcam {
-  position: absolute; top: 14px; right: 14px; left: 14px;
-  width: 646px; height: 363px;
+  position: absolute; top: 8px; right: 8px; left: 8px;
+  width: 510px; height: 287px;
   background-color: #000;
+}
+
+.status {
+  display: block;
 }
 
 .games {
@@ -85,4 +85,11 @@
   background-color: #fff;
 
   img { width: 100%; }
+}
+
+// .episode-number Overrides.
+.episode-number {
+  min-width: 156px;
+  text-align: right;
+  // transform: perspective(640px) rotateY(33deg) scale(1.1);
 }
