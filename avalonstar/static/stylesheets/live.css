@@ -336,7 +336,8 @@ ul { padding-left: 0; list-style: none; }
 .overlay-discussion .game-appearances { display: block; color: rgba(255, 255, 255, 0.25); font-size: 12px; }
 .overlay-discussion .game-image { margin-right: 12px; width: 128px; height: 72px; background-color: #fff; }
 .overlay-discussion .game-image img { width: 100%; }
-.overlay-discussion .episode-number { min-width: 156px; text-align: right; }
+.overlay-discussion .episode-number { min-width: 156px; text-align: right; -webkit-transform: perspective(640px) rotateY(33deg) scale(1.1); transform: perspective(640px) rotateY(33deg) scale(1.1); }
+.overlay-discussion .episode-number .status { padding-top: 16px; width: 156px; border-top: 1px solid rgba(118, 142, 164, 0.25); color: #768EA4; font-family: "Idlewild SSm A", "Idlewild SSm B", "Halogen", sans-serif; font-size: 13px; font-weight: bold; letter-spacing: -1px; line-height: 16px; }
 
 .overlay-epilogue .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 60px; position: absolute; top: 0; right: 0; width: 960px; height: 720px; }
 .overlay-epilogue .message-container { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; height: 114px; overflow: hidden; position: relative; background-color: rgba(0, 0, 0, 0.5); font-size: 16px; text-transform: uppercase; }

@@ -91,5 +91,20 @@
 .episode-number {
   min-width: 156px;
   text-align: right;
-  // transform: perspective(640px) rotateY(33deg) scale(1.1);
+  transform: perspective(640px) rotateY(33deg) scale(1.1);
+}
+
+// @TODO: This is a hack inside of the .episode-number class to force
+//        the status to appear -under- the number. Needs more exploration.
+.episode-number .status {
+  padding-top: 16px;
+  width: 156px;
+
+  border-top: 1px solid rgba(#768EA4, 0.25);
+  color: #768EA4;
+  font-family: $idlewild;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 16px;
 }
