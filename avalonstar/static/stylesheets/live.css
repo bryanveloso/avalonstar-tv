@@ -268,7 +268,7 @@ ul { padding-left: 0; list-style: none; }
 
 .element-webcam { width: 320px; height: 185px; padding: 0 15px; position: absolute; bottom: 0; z-index: 1000; }
 
-.element-tv { width: 290px; height: 168px; position: relative; background: #fff; border-radius: 3px; box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2); }
+.element-tv { width: 290px; height: 169px; position: relative; background: #fff; border-radius: 3px; box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2); }
 .element-tv:before { display: block; position: absolute; bottom: 0; right: 6px; width: 12px; height: 2px; background-color: #b8e986; border-radius: 7px; content: ''; }
 
 .placeholder-webcam { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: absolute; top: 6px; right: 6px; left: 6px; width: 278px; height: 156px; background-color: #000; }
