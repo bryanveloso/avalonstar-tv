@@ -39,8 +39,8 @@ class Ticket(models.Model):
     twid = models.CharField(blank=True, max_length=40)
     name = models.CharField(max_length=200)
     display_name = models.CharField(blank=True, max_length=200)
-    subscribed = models.DateTimeField(default=timezone.now,
-        help_text=u'When did the user subscribe?')
+    created = models.DateTimeField(default=timezone.now)
+    updated = models.DateTimeField(default=timezone.now)
 
     # Is this subscription active?
     # TODO: Run a script that deactivates subs after XX days.
@@ -53,13 +53,13 @@ class Ticket(models.Model):
     objects = TicketManager()
 
     class Meta:
-        ordering = ['subscribed']
+        ordering = ['updated']
 
     def __unicode__(self):
         return u'%s' % self.name
 
     def update(self, **kwargs):
-        allowed_attributes = {'twid', 'display_name', 'subscribed', 'is_active'}
+        allowed_attributes = {'twid', 'display_name', 'updated', 'is_active'}
         for name, value in kwargs.items():
             assert name in allowed_attributes
             setattr(self, name, value)
