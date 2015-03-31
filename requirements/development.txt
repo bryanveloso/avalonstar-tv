@@ -1,3 +1,4 @@
 # Package Requirements for Development
+bpython == 0.14.1
 django-devserver == 0.8.0
 invoke == 0.9.0
