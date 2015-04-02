@@ -40,12 +40,19 @@
   });
 
   $(window).load(function() {
-    console.log('loaded');
-    return ($('.loading-screen')).velocity({
+    ($('.loading-screen')).velocity({
       opacity: 0.01
     }, {
       duration: 1500
     });
+    return setInterval((function() {
+      return $.getJSON('http://atv.dev/api/tickets/', function(data) {
+        var username;
+        username = data[0].display_name;
+        ($('.message-text.js-subscriber')).text(username);
+        return console.log(username);
+      });
+    }), 5000);
   });
 
 }).call(this);

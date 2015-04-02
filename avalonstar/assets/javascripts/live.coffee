@@ -40,9 +40,17 @@ $ ->
     # Retina Display Support.
     retina_detect: true
 
-# Fade the loading screen once the window is loaded.
-# Hopefully this'll allow us to not have to use global sources.
 $(window).load ->
-  console.log 'loaded'
+  # Fade the loading screen once the window is loaded.
+  # Hopefully this'll allow us to not have to use global sources.
   ($ '.loading-screen').velocity { opacity: 0.01 },
     duration: 1500
+
+  # Fetch the latest subscriber every 5 seconds and put their name into the
+  # cooresponding .js-subscriber element.
+  setInterval (->
+    $.getJSON 'http://atv.dev/api/tickets/', (data) ->
+      username = data[0].display_name
+      ($ '.message-text.js-subscriber').text(username)
+      console.log username
+  ), 5000
