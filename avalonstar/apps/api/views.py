@@ -28,7 +28,7 @@ class RaidViewSet(viewsets.ModelViewSet):
 
 
 class TicketViewSet(viewsets.ModelViewSet):
-    queryset = Ticket.objects.all()
+    queryset = Ticket.objects.order_by('-updated')
     serializer_class = TicketSerializer
 
     def retrieve(self, request, pk=None):
