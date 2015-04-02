@@ -54,6 +54,7 @@ class Ticket(models.Model):
 
     class Meta:
         ordering = ['updated']
+        get_latest_by = 'updated'
 
     def __unicode__(self):
         return u'%s' % self.name

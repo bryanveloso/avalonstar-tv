@@ -19,29 +19,6 @@
   font-size: 32px;
   line-height: 32px;
 }
-.placeholder-special {
-  position: absolute;
-  right: 35px; bottom: 36px;
-
-  color: rgba(#fff, 0.10);
-  font-size: 18px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-.special-type {
-  color: rgba(#29384D, 0.9);
-  font-weight: 400;
-}
-.indicator {
-  position: relative; top: -2px;
-  padding: 2px 6px;
-  margin-left: 2px;
-
-  background: #29384D;
-  border-radius: 4px;
-  color: #12161b;
-  font-size: 12px;
-}
 
 // .phoenix / .embelish (-one through -four).
 // All are overridden since the phoenix goes on the left of the in-game screen.
@@ -58,3 +35,55 @@
 .embelish-two { left: -180px; }
 .embelish-three { left: -160px; }
 .embelish-four { left: -120px; }
+
+//
+.episode-messages {
+  position: absolute; right: 0; bottom: 36px;
+  padding: 0 36px;
+  width: 960px;
+
+  color: rgba(#fff, 0.10);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: right;
+}
+.episode-messages.looper {
+  .looper-inner {
+    height: 22px;
+  }
+}
+.message-text {
+  position: relative; top: 3px;
+  color: rgba(#354c6c, 0.9);
+  font-weight: 400;
+}
+.message-indicator {
+  margin-left: 2px;
+  color: #000;
+  font-size: 11px;
+
+  .indicator-icon, .indicator-text {
+    display: inline-block;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+  .indicator-text {
+    padding: 0 6px 0 7px;
+
+    background: #354c6c;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  .indicator-icon {
+    background: #12161b;
+    padding: 0 6px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  .ss-icon {
+    color: #fff;
+    position: relative; top: 1px;
+    font-size: 11px;
+  }
+}

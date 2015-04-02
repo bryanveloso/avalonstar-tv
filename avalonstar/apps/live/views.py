@@ -5,6 +5,7 @@ from braces.views import JSONResponseMixin
 
 from apps.broadcasts.models import Broadcast
 from apps.live.models import Message
+from apps.subscribers.models import Ticket
 
 from .utils import fetch_stream, is_episodic
 
@@ -14,6 +15,7 @@ class BroadcastContextMixin(object):
         context = super(BroadcastContextMixin, self).get_context_data(**kwargs)
         context['broadcast'] = Broadcast.objects.latest()
         context['message_list'] = Message.objects.order_by('?')
+        context['ticket'] = Ticket.objects.latest()
         return context
 
 

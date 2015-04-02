@@ -20,16 +20,29 @@
   </div>
   <div class="section section-main">
     <div class="placeholder-16x9">Avalonstar.tv</div>
-    <div class="placeholder-special">
-    {% if broadcast.series %}
-      <span class="special-type">{{ broadcast.series }}</span>
-      <span class="indicator">Series</span>
-    {% endif %}
-    {% if broadcast.is_marathon %}
-      {# This is hacky until I specify a special display field. #}
-      <span class="special-type">{{ broadcast.status }}</span>
-      <span class="indicator">Marathon</span>
-    {% endif %}
+    <div class="episode-messages looper xfade slide up" data-looper="go" data-interval="300000">
+      <div class="looper-inner">
+        <div class="item">
+          <span class="message-text">{{ broadcast.number }}: {{ broadcast.status }}</span>
+          <span class="message-indicator">
+            <div class="indicator-text">Episode</div><div class="indicator-icon"><span class="ss-icon ss-video"></span></div>
+          </span>
+        </div>
+        {% if broadcast.series %}
+        <div class="item">
+          <span class="message-text">{{ broadcast.series }}</span>
+          <span class="message-indicator">
+            <div class="indicator-text">Series</div><div class="indicator-icon"><span class="ss-icon ss-flag"></span></div>
+          </span>
+        </div>
+        {% endif %}
+        <div class="item">
+          <span class="message-text">{{ ticket.display_name }}</span>
+          <span class="message-indicator">
+            <div class="indicator-text">Newly Knighted</div><div class="indicator-icon"><span class="ss-icon ss-heart"></span></div>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 
