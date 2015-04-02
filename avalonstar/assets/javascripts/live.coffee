@@ -50,7 +50,7 @@ $(window).load ->
   # cooresponding .js-subscriber element.
   setInterval (->
     $.getJSON "#{window.location.origin}/api/tickets/", (data) ->
-      username = data[0].display_name
+      username = data[0].name
       ($ '.message-text.js-subscriber').text(username)
       console.log username
   ), 5000
