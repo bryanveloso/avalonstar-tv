@@ -46,7 +46,7 @@
       duration: 1500
     });
     return setInterval((function() {
-      return $.getJSON('http://atv.dev/api/tickets/', function(data) {
+      return $.getJSON("" + window.location.origin + "/api/tickets/", function(data) {
         var username;
         username = data[0].display_name;
         ($('.message-text.js-subscriber')).text(username);
