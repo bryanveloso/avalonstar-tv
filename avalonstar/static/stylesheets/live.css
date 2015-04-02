@@ -357,7 +357,7 @@ ul { padding-left: 0; list-style: none; }
 .overlay-game .embelish-four { left: -120px; }
 .overlay-game .episode-messages { position: absolute; right: 0; bottom: 36px; padding: 0 36px; width: 960px; color: rgba(255, 255, 255, 0.1); font-size: 18px; font-weight: 700; text-transform: uppercase; text-align: right; }
 .overlay-game .episode-messages.looper .looper-inner { height: 22px; }
-.overlay-game .message-text { position: relative; top: 3px; color: rgba(53, 76, 108, 0.9); font-weight: 600; }
+.overlay-game .message-text { position: relative; top: 3px; color: #354c6c; font-weight: 600; }
 .overlay-game .message-indicator { margin-left: 2px; color: #000; font-size: 11px; }
 .overlay-game .message-indicator .indicator-icon, .overlay-game .message-indicator .indicator-text { display: inline-block; line-height: 20px; vertical-align: middle; }
 .overlay-game .message-indicator .indicator-text { padding: 0 6px 0 7px; background: #354c6c; border-top-left-radius: 2px; border-bottom-left-radius: 2px; }

@@ -52,5 +52,7 @@ $(window).load ->
     $.getJSON "#{window.location.origin}/api/tickets/", (data) ->
       username = data[0].name
       ($ '.message-text.js-subscriber').text(username)
-      console.log username
+    $.getJSON "https://api.twitch.tv/kraken/channels/avalonstar?callback=?", (data) ->
+      game = data.game
+      ($ '.message-text.js-game').text(game)
   ), 5000

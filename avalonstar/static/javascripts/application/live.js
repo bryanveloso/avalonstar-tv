@@ -46,11 +46,15 @@
       duration: 1500
     });
     return setInterval((function() {
-      return $.getJSON("" + window.location.origin + "/api/tickets/", function(data) {
+      $.getJSON("" + window.location.origin + "/api/tickets/", function(data) {
         var username;
         username = data[0].name;
-        ($('.message-text.js-subscriber')).text(username);
-        return console.log(username);
+        return ($('.message-text.js-subscriber')).text(username);
+      });
+      return $.getJSON("https://api.twitch.tv/kraken/channels/avalonstar?callback=?", function(data) {
+        var game;
+        game = data.game;
+        return ($('.message-text.js-game')).text(game);
       });
     }), 5000);
   });
