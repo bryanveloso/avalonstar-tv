@@ -49,7 +49,7 @@ $(window).load ->
   # Fetch the latest subscriber every 5 seconds and put their name into the
   # cooresponding .js-subscriber element.
   setInterval (->
-    $.getJSON 'http://atv.dev/api/tickets/', (data) ->
+    $.getJSON "#{window.location.origin}/api/tickets/", (data) ->
       username = data[0].display_name
       ($ '.message-text.js-subscriber').text(username)
       console.log username
