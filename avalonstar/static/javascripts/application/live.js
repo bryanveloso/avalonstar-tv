@@ -48,7 +48,7 @@
     return setInterval((function() {
       return $.getJSON("" + window.location.origin + "/api/tickets/", function(data) {
         var username;
-        username = data[0].display_name;
+        username = data[0].name;
         ($('.message-text.js-subscriber')).text(username);
         return console.log(username);
       });
