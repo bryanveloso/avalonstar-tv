@@ -42,8 +42,10 @@ class Ticket(models.Model):
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(default=timezone.now)
 
+    # Store the months if there's a substreak (defaults to 1 month).
+    streak = models.IntegerField(default=1)
+
     # Is this subscription active?
-    # TODO: Run a script that deactivates subs after XX days.
     is_active = models.BooleanField(default=True,
         help_text=u'Is this subscription active?')
     is_paid = models.BooleanField(default=True,
