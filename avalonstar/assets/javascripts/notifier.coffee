@@ -12,6 +12,7 @@ poolSubscribing = 0     # How many users are in the subscription pool?
 # Sounds.
 soundDonation = new Audio('/static/audio/donation.ogg')
 soundSubscription = new Audio('/static/audio/subscription.ogg')
+soundSubStreak = new Audio('/static/audio/substreak.ogg')
 
 # Convenience functions.
 setUp = (payload) ->
@@ -66,6 +67,10 @@ subscribed = (payload, resub, queued) ->
 substreaked = (payload, queued) ->
   if not running
     running = true
+
+    # Play the substreak beat!
+    soundSubStreak.volume = 0.4
+    soundSubStreak.play()
 
     # ...
     length = if payload.length is 1 then 'month' else 'months'
