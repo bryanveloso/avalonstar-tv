@@ -14,7 +14,7 @@ module.exports = (grunt) ->
     sass:
       dist:
         options:
-          style: 'compressed'
+          style: 'compact'
         files:
           './avalonstar/static/stylesheets/live.css': './avalonstar/assets/stylesheets/live.scss',
           './avalonstar/static/stylesheets/site.css': './avalonstar/assets/stylesheets/site.scss'
@@ -37,8 +37,8 @@ module.exports = (grunt) ->
   # Imports.
   grunt.loadNpmTasks 'grunt-autoprefixer'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks 'grunt-sass'
 
   # Task registration.
   grunt.registerTask 'default', [
