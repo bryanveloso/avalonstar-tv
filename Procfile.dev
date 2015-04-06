@@ -1,3 +1,1 @@
-coffee:    coffee -o avalonstar/static/javascripts/application -cw avalonstar/assets/javascripts
-compass:   compass watch
 web:       python ./manage.py runserver 4200

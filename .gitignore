@@ -49,5 +49,6 @@ avalonstar/javascripts
 avalonstar/media
 backups
 htmlcov
+node_modules
 
 latest.dump
