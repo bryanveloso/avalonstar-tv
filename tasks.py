@@ -47,8 +47,9 @@ def deploy(verbose=False, migrate=False, **kwargs):
 
 @task
 def server(**kwargs):
-    # Use Foreman to start all the development processes.
-    run('foreman start -f Procfile.dev', pty=True)
+    # Use `python manage.py runserver` wrapped around Grunt to start all
+    # the development processes.
+    run('python manage.py gruntserver', pty=True)
 
 
 @task

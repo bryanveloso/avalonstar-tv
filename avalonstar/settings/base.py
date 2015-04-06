@@ -29,6 +29,7 @@ class Base(Configuration):
     ]
     COMPONENTS = [
         'apps.broadcasts',
+        'apps.core',
         'apps.games',
         'apps.live',
         'apps.subscribers',
