@@ -1,475 +1,1838 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-/** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
-html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
-
-/** Remove default margin. */
-body { margin: 0; }
-
-/* HTML5 display definitions ========================================================================== */
-/** Correct `block` display not defined for any HTML5 element in IE 8/9. Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox. Correct `block` display not defined for `main` in IE 11. */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
-
-/** 1. Correct `inline-block` display not defined in IE 8/9. 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera. */
-audio, canvas, progress, video { display: inline-block; /* 1 */ vertical-align: baseline; /* 2 */ }
-
-/** Prevent modern browsers from displaying `audio` without controls. Remove excess height in iOS 5 devices. */
-audio:not([controls]) { display: none; height: 0; }
-
-/** Address `[hidden]` styling not present in IE 8/9/10. Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22. */
-[hidden], template { display: none; }
-
-/* Links ========================================================================== */
-/** Remove the gray background color from active links in IE 10. */
-a { background-color: transparent; }
-
-/** Improve readability when focused and also mouse hovered in all browsers. */
-a:active, a:hover { outline: 0; }
-
-/* Text-level semantics ========================================================================== */
-/** Address styling not present in IE 8/9/10/11, Safari, and Chrome. */
-abbr[title] { border-bottom: 1px dotted; }
-
-/** Address style set to `bolder` in Firefox 4+, Safari, and Chrome. */
-b, strong { font-weight: bold; }
-
-/** Address styling not present in Safari and Chrome. */
-dfn { font-style: italic; }
-
-/** Address variable `h1` font-size and margin within `section` and `article` contexts in Firefox 4+, Safari, and Chrome. */
-h1 { font-size: 2em; margin: 0.67em 0; }
-
-/** Address styling not present in IE 8/9. */
-mark { background: #ff0; color: #000; }
-
-/** Address inconsistent and variable font size in all browsers. */
-small { font-size: 80%; }
-
-/** Prevent `sub` and `sup` affecting `line-height` in all browsers. */
-sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
-
-sup { top: -0.5em; }
-
-sub { bottom: -0.25em; }
-
-/* Embedded content ========================================================================== */
-/** Remove border when inside `a` element in IE 8/9/10. */
-img { border: 0; }
-
-/** Correct overflow not hidden in IE 9/10/11. */
-svg:not(:root) { overflow: hidden; }
-
-/* Grouping content ========================================================================== */
-/** Address margin not present in IE 8/9 and Safari. */
-figure { margin: 1em 40px; }
-
-/** Address differences between Firefox and other browsers. */
-hr { box-sizing: content-box; height: 0; }
-
-/** Contain overflow in all browsers. */
-pre { overflow: auto; }
-
-/** Address odd `em`-unit font size rendering in all browsers. */
-code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
-
-/* Forms ========================================================================== */
-/** Known limitation: by default, Chrome and Safari on OS X allow very limited styling of `select`, unless a `border` property is set. */
-/** 1. Correct color not being inherited. Known issue: affects color of disabled elements. 2. Correct font properties not being inherited. 3. Address margins set differently in Firefox 4+, Safari, and Chrome. */
-button, input, optgroup, select, textarea { color: inherit; /* 1 */ font: inherit; /* 2 */ margin: 0; /* 3 */ }
-
-/** Address `overflow` set to `hidden` in IE 8/9/10/11. */
-button { overflow: visible; }
-
-/** Address inconsistent `text-transform` inheritance for `button` and `select`. All other form control elements do not inherit `text-transform` values. Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera. Correct `select` style inheritance in Firefox. */
-button, select { text-transform: none; }
-
-/** 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls. 2. Correct inability to style clickable `input` types in iOS. 3. Improve usability and consistency of cursor style between image-type `input` and others. */
-button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; /* 2 */ cursor: pointer; /* 3 */ }
-
-/** Re-set default cursor for disabled elements. */
-button[disabled], html input[disabled] { cursor: default; }
-
-/** Remove inner padding and border in Firefox 4+. */
-button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
-
-/** Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet. */
-input { line-height: normal; }
-
-/** It's recommended that you don't attempt to style these elements. Firefox's implementation doesn't respect box-sizing, padding, or width.  1. Address box sizing set to `content-box` in IE 8/9/10. 2. Remove excess padding in IE 8/9/10. */
-input[type="checkbox"], input[type="radio"] { box-sizing: border-box; /* 1 */ padding: 0; /* 2 */ }
-
-/** Fix the cursor style for Chrome's increment/decrement buttons. For certain `font-size` values of the `input`, it causes the cursor style of the decrement button to change from `default` to `text`. */
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto; }
-
-/** 1. Address `appearance` set to `searchfield` in Safari and Chrome. 2. Address `box-sizing` set to `border-box` in Safari and Chrome (include `-moz` to future-proof). */
-input[type="search"] { -webkit-appearance: textfield; /* 1 */ /* 2 */ box-sizing: content-box; }
-
-/** Remove inner padding and search cancel button in Safari and Chrome on OS X. Safari (but not Chrome) clips the cancel button when the search input has padding (and `textfield` appearance). */
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
-
-/** Define consistent border, margin, and padding. */
-fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
-
-/** 1. Correct `color` not being inherited in IE 8/9/10/11. 2. Remove padding so people aren't caught out if they zero out fieldsets. */
-legend { border: 0; /* 1 */ padding: 0; /* 2 */ }
-
-/** Remove default vertical scrollbar in IE 8/9/10/11. */
-textarea { overflow: auto; }
-
-/** Don't inherit the `font-weight` (applied by a rule above). NOTE: the default cannot safely be changed in Chrome and Safari on OS X. */
-optgroup { font-weight: bold; }
-
-/* Tables ========================================================================== */
-/** Remove most spacing between table cells. */
-table { border-collapse: collapse; border-spacing: 0; }
-
-td, th { padding: 0; }
-
-*, *:before, *:after { box-sizing: border-box; text-rendering: optimizeLegibility; }
-
-.looper { position: relative; z-index: 1; line-height: 1; width: auto; height: auto; }
-
-.looper:focus { outline: 0; }
-
-.looper .looper-inner { overflow: hidden; width: 100%; height: auto; position: relative; z-index: 2; }
-
-.looper .item { display: none; position: relative; z-index: 3; }
-
-.looper .item.active, .looper .item.next, .looper .item.prev { display: block; }
-
-.looper .item.active { top: 0; left: 0; z-index: 4; }
-
-.looper .item > img { display: block; line-height: 1; }
-
-.looper.xfade .looper-inner { height: 100%; }
-
-.looper.xfade .item { -webkit-transition: 0.5s ease-in opacity; transition: 0.5s ease-in opacity; position: absolute; width: 100%; opacity: 0; }
-
-.looper.xfade .item.go { opacity: 1; }
-
-.looper.xfade .item.active { opacity: 1; }
-
-.looper.xfade .item.active.go { opacity: 0; }
-
-.looper.slide.xfade .item { -webkit-transition: 0.5s ease-in-out left, 0.5s ease-in opacity; transition: 0.5s ease-in-out left, 0.5s ease-in opacity; }
-
-.looper.slide .item { -webkit-transition: 0.5s ease-in-out left; transition: 0.5s ease-in-out left; }
-
-.looper.slide .item.next, .looper.slide .item.prev { position: absolute; top: 0; left: 0; width: 100%; }
-
-.looper.slide .item.next { left: 100%; }
-
-.looper.slide .item.prev { left: -100%; }
-
-.looper.slide .item.active.prev, .looper.slide .item.active.next { position: relative; left: 0; }
-
-.looper.slide .item.go { left: 0; }
-
-.looper.slide .item.go.active { left: -100%; }
-
-.looper.slide .item.go.active.prev { left: 100%; }
-
-.looper.slide.right .item.next { left: -100%; }
-
-.looper.slide.right .item.prev { left: 100%; }
-
-.looper.slide.right .item.go { left: 0; }
-
-.looper.slide.right .item.go.active { left: 100%; }
-
-.looper.slide.right .item.go.active.prev { left: -100%; }
-
-.looper.slide.down .looper-inner { height: 100%; }
-
-.looper.slide.down .item { -webkit-transition: 0.5s ease-in-out top; transition: 0.5s ease-in-out top; }
-
-.looper.slide.down .item.next, .looper.slide.down .item.prev { left: 0; }
-
-.looper.slide.down .item.next { top: -100%; }
-
-.looper.slide.down .item.prev { top: 100%; }
-
-.looper.slide.down .item.go { top: 0; }
-
-.looper.slide.down .item.go.active { top: 100%; left: 0; }
-
-.looper.slide.down .item.go.active.prev { top: -100%; }
-
-.looper.slide.down.xfade .item { -webkit-transition: 0.5s ease-in-out top, 0.5s ease-in opacity; transition: 0.5s ease-in-out top, 0.5s ease-in opacity; }
-
-.looper.slide.up .looper-inner { height: 100%; }
-
-.looper.slide.up .item { -webkit-transition: 0.5s ease-in-out top; transition: 0.5s ease-in-out top; }
-
-.looper.slide.up .item.next, .looper.slide.up .item.prev { left: 0; }
-
-.looper.slide.up .item.next { top: 100%; }
-
-.looper.slide.up .item.prev { top: -100%; }
-
-.looper.slide.up .item.go { top: 0; }
-
-.looper.slide.up .item.go.active { top: -100%; left: 0; }
-
-.looper.slide.up .item.go.active.prev { top: 100%; }
-
-.looper.slide.up.xfade .item { -webkit-transition: 0.5s ease-in-out top, 0.5s ease-in opacity; transition: 0.5s ease-in-out top, 0.5s ease-in opacity; }
-
-.looper-control { position: absolute; z-index: 5; top: 50%; left: -20px; width: 40px; height: 40px; margin-top: -20px; font-size: 30px; line-height: 40px; color: #ffffff; text-align: center; cursor: pointer; background: #333333; border: 3px solid #ffffff; border-radius: 23px; opacity: 0.5; filter: alpha(opacity=50); -webkit-transition: none; transition: none; }
-
-.looper-control.right { left: auto; right: -20px; }
-
-.looper-control:hover { color: #ffffff; text-decoration: none; text-shadow: none; opacity: 0.9; filter: alpha(opacity=90); }
-
-.looper-nav { background: transparent; text-align: center; list-style-type: none; margin: 0; }
-
-.looper-nav > li { display: inline-block; font-size: 36px; }
-
-.looper-nav > li a { color: #049cdb; }
-
-.looper-nav > li a:hover { color: #036690; }
-
-.looper-nav > li.active a, .looper-nav > li.active a:hover { color: #036690; }
-
-body { color: #fff; font-family: "Gotham SSm A", "Gotham SSm B", "Gotham HTF", sans-serif; }
-
-ul { padding-left: 0; list-style: none; }
-
-.overlay-container { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; overflow: hidden; position: relative; width: 1280px; height: 720px; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-
-.overlay { background-color: #12161b; }
-
-.overlay.transparent { background-color: transparent; }
-
-.section-chat { width: 320px; height: 720px; }
-.transparent .section-chat { background-color: transparent; }
-
-.episode-metadata { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; width: 100%; }
-
-.episode-number { display: block; margin-right: 24px; position: relative; z-index: 5; font-family: "Tungsten A", "Tungsten B", sans-serif; font-size: 156px; font-weight: 100; letter-spacing: -4px; line-height: 156px; }
-
-.episode-text { display: block; position: absolute; top: 1px; left: -28px; font-family: "Gotham SSm A", "Gotham SSm B", "Gotham HTF", sans-serif; font-size: 23px; font-weight: 800; letter-spacing: 0.01em; line-height: 156px; text-transform: uppercase; -webkit-transform: rotate(90deg); }
-
-.phoenix { position: absolute; top: 300px; right: 0; z-index: 100; }
-
-.embelish { position: absolute; }
-
-.embelish-one { top: 400px; right: -320px; width: 640px; height: 640px; -webkit-transform: rotate(315deg); -ms-transform: rotate(315deg); transform: rotate(315deg); background: #090D12; z-index: 5; }
-
-.embelish-two { top: 540px; right: -180px; width: 360px; height: 360px; -webkit-transform: rotate(315deg); -ms-transform: rotate(315deg); transform: rotate(315deg); background: #29384D; z-index: 6; }
-
-.embelish-three { top: 560px; right: -160px; width: 320px; height: 320px; -webkit-transform: rotate(315deg); -ms-transform: rotate(315deg); transform: rotate(315deg); background: #3B5577; z-index: 7; }
-
-.embelish-four { top: 600px; right: -120px; width: 240px; height: 240px; -webkit-transform: rotate(315deg); -ms-transform: rotate(315deg); transform: rotate(315deg); z-index: 110; background: #D4F6FF; box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.5); }
-
-#particles-js { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; background-color: transparent; }
-#particles-js canvas { display: block; vertical-align: bottom; }
-
-.loading-screen { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: #090D12; z-index: 6; }
-
-.element-webcam { width: 320px; height: 185px; padding: 0 15px; position: absolute; bottom: 0; z-index: 1000; }
-
-.element-tv { width: 290px; height: 169px; position: relative; background: #fff; border-radius: 3px; box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2); }
-.element-tv:before { display: block; position: absolute; bottom: 0; right: 6px; width: 12px; height: 2px; background-color: #b8e986; border-radius: 7px; content: ''; }
-
-.placeholder-webcam { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: absolute; top: 6px; right: 6px; left: 6px; width: 278px; height: 156px; background-color: #000; }
-
-.placeholder-image { position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0.3; z-index: 1; background-image: url("https://scontent-a-lhr.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10433088_10101611272783645_8875673993172060583_n.jpg?oh=4eb45c22550fc8c87db65842b55c0b35&oe=5514CFDC"); background-position: center center; background-size: 100%; }
-
-.empty-webcam { padding: 8px 0; position: relative; width: 100%; z-index: 2; background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-width: 1px 0; text-align: center; }
-
-.empty-webcam-message { display: block; font-weight: 800; text-transform: uppercase; }
-
-.empty-webcam-message-one, .empty-webcam-message-two { color: rgba(255, 255, 255, 0.5); }
-
-.empty-webcam-message-three { color: rgba(255, 255, 255, 0.75); font-size: 19px; line-height: 19px; }
-
-.overlay-away .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 60px; padding-left: 0; position: absolute; top: 0; right: 0; width: 960px; height: 720px; z-index: 1; -webkit-animation-duration: 10000ms; animation-duration: 10000ms; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: section-perspective-change; animation-name: section-perspective-change; -webkit-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; }
-@-webkit-keyframes section-perspective-change { 0% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); }
-  50% { -webkit-transform: perspective(1280px) rotateY(2deg); transform: perspective(1280px) rotateY(2deg); }
-  100% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); } }
-@keyframes section-perspective-change { 0% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); }
-  50% { -webkit-transform: perspective(1280px) rotateY(2deg); transform: perspective(1280px) rotateY(2deg); }
-  100% { -webkit-transform: perspective(1280px) rotateY(-10deg); transform: perspective(1280px) rotateY(-10deg); } }
-.overlay-away .game-list { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; position: relative; top: 2px; }
-.overlay-away .game { position: relative; }
-.overlay-away .game:not(:first-of-type) { margin-top: 1px; }
-.overlay-away .game:before { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; background-color: rgba(0, 0, 0, 0.4); background-blend-mode: overlay; content: ''; -webkit-animation-direction: alternate; animation-direction: alternate; -webkit-animation-duration: 1500ms; animation-duration: 1500ms; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: prologue-game-overlay-pulse; animation-name: prologue-game-overlay-pulse; -webkit-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; transform-type: preserve-3d; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-.overlay-away .game-image { height: 110px; overflow: hidden; position: relative; z-index: 2; background-color: #fff; }
-.overlay-away .game-image img { position: absolute; top: -50%; width: 100%; }
-.overlay-away .episode-messages { padding: 6px; padding-left: 12px; position: absolute; width: 100%; border-left: 1px solid #768EA4; }
-.overlay-away .episode-messages .message, .overlay-away .episode-messages .submessage { display: block; }
-.overlay-away .episode-messages .message { font-size: 14px; font-weight: 700; }
-.overlay-away .episode-messages .submessage { margin-top: 3px; color: #768EA4; font-size: 13px; }
-.overlay-away .status { position: absolute; width: 40%; bottom: 64px; }
-.overlay-away .episode-pill { padding: 4px 8px; position: relative; z-index: 5; background: #fff; color: #12161b; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-.overlay-away .episode-series { padding-top: 6px; position: relative; z-index: 5; border-top: 1px solid rgba(118, 142, 164, 0.25); color: #768EA4; font-size: 13px; font-weight: 800; text-transform: uppercase; }
-.overlay-away .episode-series .ss-icon { position: relative; top: 1px; }
-.overlay-away .episode-status { display: block; padding: 12px 0; position: relative; z-index: 5; color: #fff; font-family: "Idlewild SSm A", "Idlewild SSm B", "Halogen", sans-serif; font-size: 20px; font-weight: 500; letter-spacing: -2px; }
-@-webkit-keyframes prologue-game-overlay-pulse { 0% { background-color: rgba(0, 0, 0, 0.4); }
-  100% { background-color: rgba(0, 0, 0, 0.2); } }
-@keyframes prologue-game-overlay-pulse { 0% { background-color: rgba(0, 0, 0, 0.4); }
-  100% { background-color: rgba(0, 0, 0, 0.2); } }
-.overlay-away .game-metadata { position: absolute; top: 12px; left: 12px; height: 60px; z-index: 5; font-weight: 500; font-size: 16px; text-transform: uppercase; }
-.overlay-away .game-metadata-marker { width: 80%; height: 4px; position: absolute; top: 37px; left: 12px; background-color: rgba(0, 0, 0, 0.1); -webkit-transition: background-color 250ms ease-in-out; transition: background-color 250ms ease-in-out; }
-.overlay-away .game-name { display: block; min-width: 200px; padding: 10px 12px; background: #12161b; border-bottom: 1px solid rgba(0, 0, 0, 0.25); font-weight: bold; }
-.overlay-away .game-appearances { display: block; margin: 0 12px; position: absolute; left: 0; bottom: -1px; right: 0; color: #FFF; font-size: 12px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
-.overlay-away .game-platform { font-size: 11px; font-weight: 400; }
-.overlay-away .spinner { position: absolute; top: 50%; right: 24px; margin-left: -33px; margin-top: -33px; z-index: 5; }
-.overlay-away .embelish-one { box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.5); }
-.overlay-away .episode-number { min-width: 156px; text-align: right; -webkit-transform: perspective(640px) rotateY(33deg) scale(1.1); transform: perspective(640px) rotateY(33deg) scale(1.1); }
-
-.overlay-discussion .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 40px; position: absolute; top: 0; right: 0; width: 960px; height: 720px; }
-.overlay-discussion .element-webcam { width: 526px; height: 304px; padding: 40px 0; position: absolute; right: 200px; z-index: 1000; }
-.overlay-discussion .element-tv { width: 526px; height: 304px; position: absolute; background: #fff; border-radius: 4px; }
-.overlay-discussion .element-tv:before { display: block; position: absolute; bottom: 0px; right: 8px; width: 28px; height: 4px; background-color: #b8e986; content: ''; }
-.overlay-discussion .webcam-top { top: 0; }
-.overlay-discussion .webcam-top .element-tv { top: 40px; }
-.overlay-discussion .webcam-bottom { bottom: 0; }
-.overlay-discussion .webcam-bottom .element-tv { bottom: 40px; }
-.overlay-discussion .placeholder-webcam { position: absolute; top: 8px; right: 8px; left: 8px; width: 510px; height: 287px; background-color: #000; }
-.overlay-discussion .status { display: block; }
-.overlay-discussion .games { position: absolute; bottom: 480px; left: 226px; }
-.overlay-discussion .game-menu { display: block; padding: 4px 0; width: 128px; background-color: #090d12; font-weight: bold; font-size: 12px; text-align: center; text-transform: uppercase; }
-.overlay-discussion .game { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; margin-bottom: 2px; }
-.overlay-discussion .game-metadata { border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 6px; text-transform: uppercase; }
-.overlay-discussion .game-name { display: block; margin-top: -2px; font-size: 14px; }
-.overlay-discussion .game-appearances { display: block; color: rgba(255, 255, 255, 0.25); font-size: 12px; }
-.overlay-discussion .game-image { margin-right: 12px; width: 128px; height: 72px; background-color: #fff; }
-.overlay-discussion .game-image img { width: 100%; }
-.overlay-discussion .episode-number { min-width: 156px; text-align: right; -webkit-transform: perspective(640px) rotateY(33deg) scale(1.1); transform: perspective(640px) rotateY(33deg) scale(1.1); }
-.overlay-discussion .episode-number .status { padding-top: 16px; width: 156px; border-top: 1px solid rgba(118, 142, 164, 0.25); color: #768EA4; font-family: "Idlewild SSm A", "Idlewild SSm B", "Halogen", sans-serif; font-size: 13px; font-weight: bold; letter-spacing: -1px; line-height: 16px; }
-
-.overlay-epilogue .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 60px; position: absolute; top: 0; right: 0; width: 960px; height: 720px; }
-.overlay-epilogue .message-container { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; height: 114px; overflow: hidden; position: relative; background-color: rgba(0, 0, 0, 0.5); font-size: 16px; text-transform: uppercase; }
-.overlay-epilogue .message-container img { position: absolute; left: 0; top: -100%; width: 100%; }
-.overlay-epilogue .message { position: relative; z-index: 1; margin-left: 12px; padding: 10px 12px; background-color: rgba(0, 0, 0, 0.5); }
-.overlay-epilogue .status { position: absolute; width: 40%; bottom: 64px; }
-.overlay-epilogue .episode-pill { padding: 4px 8px; background: #3B5577; color: #12161b; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-.overlay-epilogue .episode-status { display: block; padding: 12px 0; color: #768EA4; font-family: "Idlewild SSm A", "Idlewild SSm B", "Halogen", sans-serif; font-size: 20px; font-weight: 500; letter-spacing: -2px; }
-
-.overlay-game .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; position: absolute; top: 0; right: 0; width: 960px; height: 720px; background: #000; }
-.overlay-game .placeholder-16x9 { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; width: 960px; height: 540px; text-transform: uppercase; background: #080808; color: #181818; font-weight: 800; font-size: 32px; line-height: 32px; }
-.overlay-game .phoenix { top: 420px; left: 0; height: 75%; }
-.overlay-game .embelish { position: absolute; }
-.overlay-game .embelish-one { top: 480px; left: -240px; width: 480px; height: 480px; }
-.overlay-game .embelish-two { left: -180px; }
-.overlay-game .embelish-three { left: -160px; }
-.overlay-game .embelish-four { left: -120px; }
-.overlay-game .episode-messages { position: absolute; right: 0; bottom: 36px; padding: 0 36px; width: 960px; color: rgba(255, 255, 255, 0.1); font-size: 18px; font-weight: 700; text-transform: uppercase; text-align: right; }
-.overlay-game .episode-messages.looper .looper-inner { height: 22px; }
-.overlay-game .message-text { position: relative; top: 3px; color: #354c6c; font-weight: 600; }
-.overlay-game .message-indicator { margin-left: 2px; color: #000; font-size: 11px; }
-.overlay-game .message-indicator .indicator-icon, .overlay-game .message-indicator .indicator-text { display: inline-block; line-height: 20px; vertical-align: middle; }
-.overlay-game .message-indicator .indicator-text { padding: 0 6px 0 7px; background: #354c6c; border-top-left-radius: 2px; border-bottom-left-radius: 2px; }
-.overlay-game .message-indicator .indicator-icon { background: #12161b; padding: 0 6px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; }
-.overlay-game .message-indicator .ss-icon { color: #fff; position: relative; top: 1px; font-size: 11px; }
-
-.overlay-prologue .section-main { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; padding: 60px; padding-left: 0; position: absolute; top: 0; right: 0; width: 960px; height: 720px; z-index: 1; -webkit-animation-duration: 10000ms; animation-duration: 10000ms; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: section-perspective-change; animation-name: section-perspective-change; -webkit-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; }
-@keyframes section-perspective-change { 0% { -webkit-transform: perspective(1280) rotateY(-10deg); transform: perspective(1280) rotateY(-10deg); }
-  50% { -webkit-transform: perspective(1280) rotateY(2deg); transform: perspective(1280) rotateY(2deg); }
-  100% { -webkit-transform: perspective(1280) rotateY(-10deg); transform: perspective(1280) rotateY(-10deg); } }
-.overlay-prologue .game-list { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; position: relative; top: 2px; }
-.overlay-prologue .game { position: relative; }
-.overlay-prologue .game:not(:first-of-type) { margin-top: 1px; }
-.overlay-prologue .game:before { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; background-color: rgba(0, 0, 0, 0.4); background-blend-mode: overlay; content: ''; -webkit-animation-direction: alternate; animation-direction: alternate; -webkit-animation-duration: 1500ms; animation-duration: 1500ms; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: prologue-game-overlay-pulse; animation-name: prologue-game-overlay-pulse; -webkit-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; transform-type: preserve-3d; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-.overlay-prologue .game-image { height: 110px; overflow: hidden; position: relative; z-index: 2; background-color: #fff; }
-.overlay-prologue .game-image img { position: absolute; top: -50%; width: 100%; }
-.overlay-prologue .episode-messages { padding: 6px; padding-left: 12px; position: absolute; width: 100%; border-left: 1px solid #768EA4; }
-.overlay-prologue .episode-messages .message, .overlay-prologue .episode-messages .submessage { display: block; }
-.overlay-prologue .episode-messages .message { font-size: 14px; font-weight: 700; }
-.overlay-prologue .episode-messages .submessage { margin-top: 3px; color: #768EA4; font-size: 13px; }
-.overlay-prologue .status { position: absolute; width: 40%; bottom: 64px; }
-.overlay-prologue .episode-pill { padding: 4px 8px; position: relative; z-index: 5; background: #fff; color: #12161b; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-.overlay-prologue .episode-series { padding-top: 6px; position: relative; z-index: 5; border-top: 1px solid rgba(118, 142, 164, 0.25); color: #768EA4; font-size: 13px; font-weight: 800; text-transform: uppercase; }
-.overlay-prologue .episode-series .ss-icon { position: relative; top: 1px; }
-.overlay-prologue .episode-status { display: block; padding: 12px 0; position: relative; z-index: 5; color: #fff; font-family: "Idlewild SSm A", "Idlewild SSm B", "Halogen", sans-serif; font-size: 20px; font-weight: 500; letter-spacing: -2px; }
-@keyframes prologue-game-overlay-pulse { 0% { background-color: rgba(0, 0, 0, 0.4); }
-  100% { background-color: rgba(0, 0, 0, 0.2); } }
-.overlay-prologue .game-metadata { position: absolute; top: 12px; left: 12px; height: 60px; z-index: 5; font-weight: 500; font-size: 16px; text-transform: uppercase; }
-.overlay-prologue .game-metadata-marker { width: 80%; height: 4px; position: absolute; top: 37px; left: 12px; background-color: rgba(0, 0, 0, 0.1); -webkit-transition: background-color 250ms ease-in-out; transition: background-color 250ms ease-in-out; }
-.overlay-prologue .game-name { display: block; min-width: 200px; padding: 10px 12px; background: #12161b; border-bottom: 1px solid rgba(0, 0, 0, 0.25); font-weight: bold; }
-.overlay-prologue .game-appearances { display: block; margin: 0 12px; position: absolute; left: 0; bottom: -1px; right: 0; color: #FFF; font-size: 12px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
-.overlay-prologue .game-platform { font-size: 11px; font-weight: 400; }
-.overlay-prologue .spinner { position: absolute; top: 50%; right: 24px; margin-left: -33px; margin-top: -33px; z-index: 5; }
-.overlay-prologue .embelish-one { box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.5); }
-.overlay-prologue .episode-number { min-width: 156px; text-align: right; -webkit-transform: perspective(640px) rotateY(33deg) scale(1.1); transform: perspective(640px) rotateY(33deg) scale(1.1); }
-
-.notifier { position: absolute; top: 0; right: 0; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -webkit-justify-content: flex-end; -ms-flex-pack: end; justify-content: flex-end; margin-right: 30px; height: 90px; z-index: 1000; }
-.notifier .widget { position: relative; -webkit-animation-name: reveal-widget; animation-name: reveal-widget; -webkit-animation-timing-function: ease; animation-timing-function: ease; }
-@-webkit-keyframes reveal-widget { 0% { opacity: 0; }
-  100% { opacity: 1; } }
-@keyframes reveal-widget { 0% { opacity: 0; }
-  100% { opacity: 1; } }
-.notifier .square-container { -webkit-perspective: 1000; perspective: 1000; position: absolute; right: 0; z-index: 100; }
-.notifier .square-container, .notifier .square-status { width: 36px; height: 36px; }
-.notifier .square-flipper.toggle { position: relative; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; -webkit-animation-name: flip-square; animation-name: flip-square; -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
-@-webkit-keyframes flip-square { 0% { -webkit-transform: scale(1) rotateY(0deg); transform: scale(1) rotateY(0deg); }
-  5% { -webkit-transform: scale(1.3) rotateY(0deg); transform: scale(1.3) rotateY(0deg); }
-  10% { -webkit-transform: scale(1) rotateY(180deg); transform: scale(1) rotateY(180deg); }
-  90% { -webkit-transform: scale(1) rotateY(180deg); transform: scale(1) rotateY(180deg); }
-  95% { -webkit-transform: scale(1.3) rotateY(180deg); transform: scale(1.3) rotateY(180deg); }
-  100% { -webkit-transform: scale(1) rotateY(0deg); transform: scale(1) rotateY(0deg); } }
-@keyframes flip-square { 0% { -webkit-transform: scale(1) rotateY(0deg); transform: scale(1) rotateY(0deg); }
-  5% { -webkit-transform: scale(1.3) rotateY(0deg); transform: scale(1.3) rotateY(0deg); }
-  10% { -webkit-transform: scale(1) rotateY(180deg); transform: scale(1) rotateY(180deg); }
-  90% { -webkit-transform: scale(1) rotateY(180deg); transform: scale(1) rotateY(180deg); }
-  95% { -webkit-transform: scale(1.3) rotateY(180deg); transform: scale(1.3) rotateY(180deg); }
-  100% { -webkit-transform: scale(1) rotateY(0deg); transform: scale(1) rotateY(0deg); } }
-.notifier .square { -webkit-backface-visibility: hidden; backface-visibility: hidden; background-color: #29384D; background-image: url("/static/images/subicon.svg"); width: 36px; height: 36px; -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
-.notifier .square-status { -webkit-backface-visibility: hidden; backface-visibility: hidden; position: absolute; top: 0; left: 0; -webkit-transform: rotateY(180deg); transform: rotateY(180deg); text-align: center; visibility: hidden; }
-.notifier .square-status.visible { visibility: visible; }
-.notifier .square-status .ss-air { font-size: 24px; position: relative; top: 4px; }
-.notifier .square-subscribing { background-color: #3498db; }
-.notifier .square-donating { background-color: #2ecc71; }
-.notifier .square-substreaking { background-color: #e67e22; }
-.notifier .square-hosting { background-color: #9b59b6; }
-.notifier .notifications { margin-right: 36px; }
-.notifier .notification-container { position: relative; overflow: hidden; height: 36px; }
-.notifier .notification { position: absolute; top: 0; left: 0; opacity: 0; }
-.notifier .bar { display: inline-block; margin-right: 36px; font-size: 15px; line-height: 36px; text-transform: uppercase; }
-.notifier .type { display: inline-block; vertical-align: bottom; height: 36px; overflow: hidden; padding: 0 24px 0 12px; border-left: 4px solid; color: #fff; font-weight: 900; line-height: 36px; }
-.notifier .notification-subscribing .type { color: #3498db; }
-.notifier .notification-substreaking .type { color: #e67e22; }
-.notifier .notification-donating .type { color: #2ecc71; }
-.notifier .notification-hosting .type { color: #9b59b6; }
-.notifier .type-inner { display: block; }
-.notifier .message-text { display: inline-block; vertical-align: bottom; overflow: hidden; padding: 0 24px 0 12px; border-left: 1px solid; color: #fff; font-weight: 600; }
-.notifier .message-text .username { color: #fff; font-weight: 900; }
-.notifier .message-text-inner { display: block; }
-.notifier .notification.active { position: relative; opacity: 1; -webkit-animation-name: notification-container-appear; animation-name: notification-container-appear; -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
-.notifier .notification.active .type-inner { -webkit-animation-name: type-text-appear; animation-name: type-text-appear; -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
-.notifier .notification.active .message-text-inner { -webkit-animation-name: message-text-appear; animation-name: message-text-appear; -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
-@-webkit-keyframes notification-container-appear { 0% { opacity: 0; -webkit-transform: translate3d(0, -100%, 0); transform: translate3d(0, -100%, 0); }
-  1% { opacity: 1; }
-  15% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-  80% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-  100% { opacity: 0; -webkit-transform: translate3d(100%, 0, 0); transform: translate3d(100%, 0, 0); } }
-@keyframes notification-container-appear { 0% { opacity: 0; -webkit-transform: translate3d(0, -100%, 0); transform: translate3d(0, -100%, 0); }
-  1% { opacity: 1; }
-  15% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-  80% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-  100% { opacity: 0; -webkit-transform: translate3d(100%, 0, 0); transform: translate3d(100%, 0, 0); } }
-@-webkit-keyframes type-text-appear { 0% { opacity: 0; -webkit-transform: translate3d(-110%, 0, 0); transform: translate3d(-110%, 0, 0); }
-  20% { opacity: 0; -webkit-transform: scale(1.8) translate3d(-110%, 0, 0); transform: scale(1.8) translate3d(-110%, 0, 0); }
-  30% { opacity: 1; -webkit-transform: scale(1) translate3d(0, 0, 0); transform: scale(1) translate3d(0, 0, 0); }
-  95% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-  100% { opacity: 0; -webkit-transform: translate3d(10%, 0, 0); transform: translate3d(10%, 0, 0); } }
-@keyframes type-text-appear { 0% { opacity: 0; -webkit-transform: translate3d(-110%, 0, 0); transform: translate3d(-110%, 0, 0); }
-  20% { opacity: 0; -webkit-transform: scale(1.8) translate3d(-110%, 0, 0); transform: scale(1.8) translate3d(-110%, 0, 0); }
-  30% { opacity: 1; -webkit-transform: scale(1) translate3d(0, 0, 0); transform: scale(1) translate3d(0, 0, 0); }
-  95% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-  100% { opacity: 0; -webkit-transform: translate3d(10%, 0, 0); transform: translate3d(10%, 0, 0); } }
-@-webkit-keyframes message-text-appear { 0% { opacity: 0; -webkit-transform: translate3d(-110%, 0, 0); transform: translate3d(-110%, 0, 0); }
-  40% { opacity: 0; -webkit-transform: scale(1.8) translate3d(-110%, 0, 0); transform: scale(1.8) translate3d(-110%, 0, 0); }
-  50% { opacity: 1; -webkit-transform: scale(1) translate3d(0, 0, 0); transform: scale(1) translate3d(0, 0, 0); }
-  95% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-  100% { opacity: 0; -webkit-transform: translate3d(10%, 0, 0); transform: translate3d(10%, 0, 0); } }
-@keyframes message-text-appear { 0% { opacity: 0; -webkit-transform: translate3d(-110%, 0, 0); transform: translate3d(-110%, 0, 0); }
-  40% { opacity: 0; -webkit-transform: scale(1.8) translate3d(-110%, 0, 0); transform: scale(1.8) translate3d(-110%, 0, 0); }
-  50% { opacity: 1; -webkit-transform: scale(1) translate3d(0, 0, 0); transform: scale(1) translate3d(0, 0, 0); }
-  95% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-  100% { opacity: 0; -webkit-transform: translate3d(10%, 0, 0); transform: translate3d(10%, 0, 0); } }
-.notifier .widget { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 1000ms; animation-duration: 1000ms; }
-.notifier .square-flipper.toggle { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 7000ms; animation-duration: 7000ms; }
-.notifier .notification.active { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 7000ms; animation-duration: 7000ms; }
-.notifier .notification.active .type-inner, .notifier .notification.active .message-text-inner { -webkit-animation-delay: 0ms; animation-delay: 0ms; -webkit-animation-duration: 7000ms; animation-duration: 7000ms; }
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio, canvas, progress, video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden], template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active, a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0; }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility; }
+
+.looper {
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+  width: auto;
+  height: auto; }
+
+.looper:focus {
+  outline: 0; }
+
+.looper .looper-inner {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2; }
+
+.looper .item {
+  display: none;
+  position: relative;
+  z-index: 3; }
+
+.looper .item.active, .looper .item.next, .looper .item.prev {
+  display: block; }
+
+.looper .item.active {
+  top: 0;
+  left: 0;
+  z-index: 4; }
+
+.looper .item > img {
+  display: block;
+  line-height: 1; }
+
+.looper.xfade .looper-inner {
+  height: 100%; }
+
+.looper.xfade .item {
+  -webkit-transition: 0.5s ease-in opacity;
+  transition: 0.5s ease-in opacity;
+  position: absolute;
+  width: 100%;
+  opacity: 0; }
+
+.looper.xfade .item.go {
+  opacity: 1; }
+
+.looper.xfade .item.active {
+  opacity: 1; }
+
+.looper.xfade .item.active.go {
+  opacity: 0; }
+
+.looper.slide.xfade .item {
+  -webkit-transition: 0.5s ease-in-out left, 0.5s ease-in opacity;
+  transition: 0.5s ease-in-out left, 0.5s ease-in opacity; }
+
+.looper.slide .item {
+  -webkit-transition: 0.5s ease-in-out left;
+  transition: 0.5s ease-in-out left; }
+
+.looper.slide .item.next, .looper.slide .item.prev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+.looper.slide .item.next {
+  left: 100%; }
+
+.looper.slide .item.prev {
+  left: -100%; }
+
+.looper.slide .item.active.prev, .looper.slide .item.active.next {
+  position: relative;
+  left: 0; }
+
+.looper.slide .item.go {
+  left: 0; }
+
+.looper.slide .item.go.active {
+  left: -100%; }
+
+.looper.slide .item.go.active.prev {
+  left: 100%; }
+
+.looper.slide.right .item.next {
+  left: -100%; }
+
+.looper.slide.right .item.prev {
+  left: 100%; }
+
+.looper.slide.right .item.go {
+  left: 0; }
+
+.looper.slide.right .item.go.active {
+  left: 100%; }
+
+.looper.slide.right .item.go.active.prev {
+  left: -100%; }
+
+.looper.slide.down .looper-inner {
+  height: 100%; }
+
+.looper.slide.down .item {
+  -webkit-transition: 0.5s ease-in-out top;
+  transition: 0.5s ease-in-out top; }
+
+.looper.slide.down .item.next, .looper.slide.down .item.prev {
+  left: 0; }
+
+.looper.slide.down .item.next {
+  top: -100%; }
+
+.looper.slide.down .item.prev {
+  top: 100%; }
+
+.looper.slide.down .item.go {
+  top: 0; }
+
+.looper.slide.down .item.go.active {
+  top: 100%;
+  left: 0; }
+
+.looper.slide.down .item.go.active.prev {
+  top: -100%; }
+
+.looper.slide.down.xfade .item {
+  -webkit-transition: 0.5s ease-in-out top, 0.5s ease-in opacity;
+  transition: 0.5s ease-in-out top, 0.5s ease-in opacity; }
+
+.looper.slide.up .looper-inner {
+  height: 100%; }
+
+.looper.slide.up .item {
+  -webkit-transition: 0.5s ease-in-out top;
+  transition: 0.5s ease-in-out top; }
+
+.looper.slide.up .item.next, .looper.slide.up .item.prev {
+  left: 0; }
+
+.looper.slide.up .item.next {
+  top: 100%; }
+
+.looper.slide.up .item.prev {
+  top: -100%; }
+
+.looper.slide.up .item.go {
+  top: 0; }
+
+.looper.slide.up .item.go.active {
+  top: -100%;
+  left: 0; }
+
+.looper.slide.up .item.go.active.prev {
+  top: 100%; }
+
+.looper.slide.up.xfade .item {
+  -webkit-transition: 0.5s ease-in-out top, 0.5s ease-in opacity;
+  transition: 0.5s ease-in-out top, 0.5s ease-in opacity; }
+
+.looper-control {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  font-size: 30px;
+  line-height: 40px;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  background: #333333;
+  border: 3px solid #ffffff;
+  border-radius: 23px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  -webkit-transition: none;
+  transition: none; }
+
+.looper-control.right {
+  left: auto;
+  right: -20px; }
+
+.looper-control:hover {
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90); }
+
+.looper-nav {
+  background: transparent;
+  text-align: center;
+  list-style-type: none;
+  margin: 0; }
+
+.looper-nav > li {
+  display: inline-block;
+  font-size: 36px; }
+
+.looper-nav > li a {
+  color: #049cdb; }
+
+.looper-nav > li a:hover {
+  color: #036690; }
+
+.looper-nav > li.active a, .looper-nav > li.active a:hover {
+  color: #036690; }
+
+body {
+  color: #fff;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', 'Gotham HTF', sans-serif; }
+
+ul {
+  padding-left: 0;
+  list-style: none; }
+
+.overlay-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
+
+.overlay {
+  background-color: #12161b; }
+
+.overlay.transparent {
+  background-color: transparent; }
+
+.section-chat {
+  width: 320px;
+  height: 720px; }
+  .transparent .section-chat {
+    background-color: transparent; }
+
+.episode-metadata {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%; }
+
+.episode-number {
+  display: block;
+  margin-right: 24px;
+  position: relative;
+  z-index: 5;
+  font-family: 'Tungsten A', 'Tungsten B', sans-serif;
+  font-size: 156px;
+  font-weight: 100;
+  letter-spacing: -4px;
+  line-height: 156px; }
+
+.episode-text {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: -28px;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', 'Gotham HTF', sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 156px;
+  text-transform: uppercase;
+  -webkit-transform: rotate(90deg); }
+
+.phoenix {
+  position: absolute;
+  top: 300px;
+  right: 0;
+  z-index: 100; }
+
+.embelish {
+  position: absolute; }
+
+.embelish-one {
+  top: 400px;
+  right: -320px;
+  width: 640px;
+  height: 640px;
+  -webkit-transform: rotate(315deg);
+      -ms-transform: rotate(315deg);
+          transform: rotate(315deg);
+  background: #090D12;
+  z-index: 5; }
+
+.embelish-two {
+  top: 540px;
+  right: -180px;
+  width: 360px;
+  height: 360px;
+  -webkit-transform: rotate(315deg);
+      -ms-transform: rotate(315deg);
+          transform: rotate(315deg);
+  background: #29384D;
+  z-index: 6; }
+
+.embelish-three {
+  top: 560px;
+  right: -160px;
+  width: 320px;
+  height: 320px;
+  -webkit-transform: rotate(315deg);
+      -ms-transform: rotate(315deg);
+          transform: rotate(315deg);
+  background: #3B5577;
+  z-index: 7; }
+
+.embelish-four {
+  top: 600px;
+  right: -120px;
+  width: 240px;
+  height: 240px;
+  -webkit-transform: rotate(315deg);
+      -ms-transform: rotate(315deg);
+          transform: rotate(315deg);
+  z-index: 110;
+  background: #D4F6FF;
+  box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.5); }
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-color: transparent; }
+  #particles-js canvas {
+    display: block;
+    vertical-align: bottom; }
+
+.loading-screen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #090D12;
+  z-index: 6; }
+
+.element-webcam {
+  width: 320px;
+  height: 185px;
+  padding: 0 15px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1000; }
+
+.element-tv {
+  width: 290px;
+  height: 169px;
+  position: relative;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2); }
+  .element-tv:before {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 6px;
+    width: 12px;
+    height: 2px;
+    background-color: #b8e986;
+    border-radius: 7px;
+    content: ''; }
+
+.placeholder-webcam {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  left: 6px;
+  width: 278px;
+  height: 156px;
+  background-color: #000; }
+
+.placeholder-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.3;
+  z-index: 1;
+  background-image: url('https://scontent-a-lhr.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10433088_10101611272783645_8875673993172060583_n.jpg?oh=4eb45c22550fc8c87db65842b55c0b35&oe=5514CFDC');
+  background-position: center center;
+  background-size: 100%; }
+
+.empty-webcam {
+  padding: 8px 0;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-width: 1px 0;
+  text-align: center; }
+
+.empty-webcam-message {
+  display: block;
+  font-weight: 800;
+  text-transform: uppercase; }
+
+.empty-webcam-message-one, .empty-webcam-message-two {
+  color: rgba(255, 255, 255, 0.5); }
+
+.empty-webcam-message-three {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 19px;
+  line-height: 19px; }
+
+.overlay-away {
+  @-webkit-keyframes section-perspective-change {
+    0% {
+      -webkit-transform: perspective(1280px) rotateY(-10deg);
+              transform: perspective(1280px) rotateY(-10deg); }
+
+    50% {
+      -webkit-transform: perspective(1280px) rotateY(2deg);
+              transform: perspective(1280px) rotateY(2deg); }
+
+    100% {
+      -webkit-transform: perspective(1280px) rotateY(-10deg);
+              transform: perspective(1280px) rotateY(-10deg); } }
+  @keyframes section-perspective-change {
+    0% {
+      -webkit-transform: perspective(1280px) rotateY(-10deg);
+              transform: perspective(1280px) rotateY(-10deg); }
+
+    50% {
+      -webkit-transform: perspective(1280px) rotateY(2deg);
+              transform: perspective(1280px) rotateY(2deg); }
+
+    100% {
+      -webkit-transform: perspective(1280px) rotateY(-10deg);
+              transform: perspective(1280px) rotateY(-10deg); } }
+
+  @-webkit-keyframes prologue-game-overlay-pulse {
+    0% {
+      background-color: rgba(0, 0, 0, 0.4); }
+
+    100% {
+      background-color: rgba(0, 0, 0, 0.2); } }
+
+  @keyframes prologue-game-overlay-pulse {
+    0% {
+      background-color: rgba(0, 0, 0, 0.4); }
+
+    100% {
+      background-color: rgba(0, 0, 0, 0.2); } }
+ }
+  .overlay-away .section-main {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 60px;
+    padding-left: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 960px;
+    height: 720px;
+    z-index: 1;
+    -webkit-animation-duration: 10000ms;
+            animation-duration: 10000ms;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-name: section-perspective-change;
+            animation-name: section-perspective-change;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out; }
+  .overlay-away .game-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    top: 2px; }
+  .overlay-away .game {
+    position: relative; }
+    .overlay-away .game:not(:first-of-type) {
+      margin-top: 1px; }
+    .overlay-away .game:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      background-color: rgba(0, 0, 0, 0.4);
+      background-blend-mode: overlay;
+      content: '';
+      -webkit-animation-direction: alternate;
+              animation-direction: alternate;
+      -webkit-animation-duration: 1500ms;
+              animation-duration: 1500ms;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-name: prologue-game-overlay-pulse;
+              animation-name: prologue-game-overlay-pulse;
+      -webkit-animation-timing-function: ease-in-out;
+              animation-timing-function: ease-in-out;
+      transform-type: preserve-3d;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+  .overlay-away .game-image {
+    height: 110px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background-color: #fff; }
+    .overlay-away .game-image img {
+      position: absolute;
+      top: -50%;
+      width: 100%; }
+  .overlay-away .episode-messages {
+    padding: 6px;
+    padding-left: 12px;
+    position: absolute;
+    width: 100%;
+    border-left: 1px solid #768EA4; }
+    .overlay-away .episode-messages .message, .overlay-away .episode-messages .submessage {
+      display: block; }
+    .overlay-away .episode-messages .message {
+      font-size: 14px;
+      font-weight: 700; }
+    .overlay-away .episode-messages .submessage {
+      margin-top: 3px;
+      color: #768EA4;
+      font-size: 13px; }
+  .overlay-away .status {
+    position: absolute;
+    width: 40%;
+    bottom: 64px; }
+  .overlay-away .episode-pill {
+    padding: 4px 8px;
+    position: relative;
+    z-index: 5;
+    background: #fff;
+    color: #12161b;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase; }
+  .overlay-away .episode-series {
+    padding-top: 6px;
+    position: relative;
+    z-index: 5;
+    border-top: 1px solid rgba(118, 142, 164, 0.25);
+    color: #768EA4;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase; }
+    .overlay-away .episode-series .ss-icon {
+      position: relative;
+      top: 1px; }
+  .overlay-away .episode-status {
+    display: block;
+    padding: 12px 0;
+    position: relative;
+    z-index: 5;
+    color: #fff;
+    font-family: 'Idlewild SSm A', 'Idlewild SSm B', 'Halogen', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -2px; }
+  .overlay-away .game-metadata {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    height: 60px;
+    z-index: 5;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase; }
+  .overlay-away .game-metadata-marker {
+    width: 80%;
+    height: 4px;
+    position: absolute;
+    top: 37px;
+    left: 12px;
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-transition: background-color 250ms ease-in-out;
+            transition: background-color 250ms ease-in-out; }
+  .overlay-away .game-name {
+    display: block;
+    min-width: 200px;
+    padding: 10px 12px;
+    background: #12161b;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    font-weight: bold; }
+  .overlay-away .game-appearances {
+    display: block;
+    margin: 0 12px;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    right: 0;
+    color: #FFF;
+    font-size: 12px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+  .overlay-away .game-platform {
+    font-size: 11px;
+    font-weight: 400; }
+  .overlay-away .spinner {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    margin-left: -33px;
+    margin-top: -33px;
+    z-index: 5; }
+  .overlay-away .embelish-one {
+    box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.5); }
+  .overlay-away .episode-number {
+    min-width: 156px;
+    text-align: right;
+    -webkit-transform: perspective(640px) rotateY(33deg) scale(1.1);
+            transform: perspective(640px) rotateY(33deg) scale(1.1); }
+
+.overlay-discussion .section-main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 960px;
+  height: 720px; }
+.overlay-discussion .element-webcam {
+  width: 526px;
+  height: 304px;
+  padding: 40px 0;
+  position: absolute;
+  right: 200px;
+  z-index: 1000; }
+.overlay-discussion .element-tv {
+  width: 526px;
+  height: 304px;
+  position: absolute;
+  background: #fff;
+  border-radius: 4px; }
+  .overlay-discussion .element-tv:before {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 8px;
+    width: 28px;
+    height: 4px;
+    background-color: #b8e986;
+    content: ''; }
+.overlay-discussion .webcam-top {
+  top: 0; }
+  .overlay-discussion .webcam-top .element-tv {
+    top: 40px; }
+.overlay-discussion .webcam-bottom {
+  bottom: 0; }
+  .overlay-discussion .webcam-bottom .element-tv {
+    bottom: 40px; }
+.overlay-discussion .placeholder-webcam {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  left: 8px;
+  width: 510px;
+  height: 287px;
+  background-color: #000; }
+.overlay-discussion .status {
+  display: block; }
+.overlay-discussion .games {
+  position: absolute;
+  bottom: 480px;
+  left: 226px; }
+.overlay-discussion .game-menu {
+  display: block;
+  padding: 4px 0;
+  width: 128px;
+  background-color: #090d12;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase; }
+.overlay-discussion .game {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2px; }
+.overlay-discussion .game-metadata {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 6px;
+  text-transform: uppercase; }
+.overlay-discussion .game-name {
+  display: block;
+  margin-top: -2px;
+  font-size: 14px; }
+.overlay-discussion .game-appearances {
+  display: block;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 12px; }
+.overlay-discussion .game-image {
+  margin-right: 12px;
+  width: 128px;
+  height: 72px;
+  background-color: #fff; }
+  .overlay-discussion .game-image img {
+    width: 100%; }
+.overlay-discussion .episode-number {
+  min-width: 156px;
+  text-align: right;
+  -webkit-transform: perspective(640px) rotateY(33deg) scale(1.1);
+          transform: perspective(640px) rotateY(33deg) scale(1.1); }
+.overlay-discussion .episode-number .status {
+  padding-top: 16px;
+  width: 156px;
+  border-top: 1px solid rgba(118, 142, 164, 0.25);
+  color: #768EA4;
+  font-family: 'Idlewild SSm A', 'Idlewild SSm B', 'Halogen', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 16px; }
+
+.overlay-epilogue .section-main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 960px;
+  height: 720px; }
+.overlay-epilogue .message-container {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 114px;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  text-transform: uppercase; }
+  .overlay-epilogue .message-container img {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    width: 100%; }
+.overlay-epilogue .message {
+  position: relative;
+  z-index: 1;
+  margin-left: 12px;
+  padding: 10px 12px;
+  background-color: rgba(0, 0, 0, 0.5); }
+.overlay-epilogue .status {
+  position: absolute;
+  width: 40%;
+  bottom: 64px; }
+.overlay-epilogue .episode-pill {
+  padding: 4px 8px;
+  background: #3B5577;
+  color: #12161b;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase; }
+.overlay-epilogue .episode-status {
+  display: block;
+  padding: 12px 0;
+  color: #768EA4;
+  font-family: 'Idlewild SSm A', 'Idlewild SSm B', 'Halogen', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -2px; }
+
+.overlay-game .section-main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 960px;
+  height: 720px;
+  background: #000; }
+.overlay-game .placeholder-16x9 {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 960px;
+  height: 540px;
+  text-transform: uppercase;
+  background: #080808;
+  color: #181818;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 32px; }
+.overlay-game .phoenix {
+  top: 420px;
+  left: 0;
+  height: 75%; }
+.overlay-game .embelish {
+  position: absolute; }
+.overlay-game .embelish-one {
+  top: 480px;
+  left: -240px;
+  width: 480px;
+  height: 480px; }
+.overlay-game .embelish-two {
+  left: -180px; }
+.overlay-game .embelish-three {
+  left: -160px; }
+.overlay-game .embelish-four {
+  left: -120px; }
+.overlay-game .episode-messages {
+  position: absolute;
+  right: 0;
+  bottom: 36px;
+  padding: 0 36px;
+  width: 960px;
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: right; }
+.overlay-game .episode-messages.looper .looper-inner {
+  height: 22px; }
+.overlay-game .message-text {
+  position: relative;
+  top: 3px;
+  color: #354c6c;
+  font-weight: 600; }
+.overlay-game .message-indicator {
+  margin-left: 2px;
+  color: #000;
+  font-size: 11px; }
+  .overlay-game .message-indicator .indicator-icon, .overlay-game .message-indicator .indicator-text {
+    display: inline-block;
+    line-height: 20px;
+    vertical-align: middle; }
+  .overlay-game .message-indicator .indicator-text {
+    padding: 0 6px 0 7px;
+    background: #354c6c;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px; }
+  .overlay-game .message-indicator .indicator-icon {
+    background: #12161b;
+    padding: 0 6px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px; }
+  .overlay-game .message-indicator .ss-icon {
+    color: #fff;
+    position: relative;
+    top: 1px;
+    font-size: 11px; }
+
+.overlay-prologue {
+  @-webkit-keyframes section-perspective-change {
+    0% {
+      -webkit-transform: perspective(1280) rotateY(-10deg);
+              transform: perspective(1280) rotateY(-10deg); }
+
+    50% {
+      -webkit-transform: perspective(1280) rotateY(2deg);
+              transform: perspective(1280) rotateY(2deg); }
+
+    100% {
+      -webkit-transform: perspective(1280) rotateY(-10deg);
+              transform: perspective(1280) rotateY(-10deg); } }
+  @keyframes section-perspective-change {
+    0% {
+      -webkit-transform: perspective(1280) rotateY(-10deg);
+              transform: perspective(1280) rotateY(-10deg); }
+
+    50% {
+      -webkit-transform: perspective(1280) rotateY(2deg);
+              transform: perspective(1280) rotateY(2deg); }
+
+    100% {
+      -webkit-transform: perspective(1280) rotateY(-10deg);
+              transform: perspective(1280) rotateY(-10deg); } }
+
+  @-webkit-keyframes prologue-game-overlay-pulse {
+    0% {
+      background-color: rgba(0, 0, 0, 0.4); }
+
+    100% {
+      background-color: rgba(0, 0, 0, 0.2); } }
+
+  @keyframes prologue-game-overlay-pulse {
+    0% {
+      background-color: rgba(0, 0, 0, 0.4); }
+
+    100% {
+      background-color: rgba(0, 0, 0, 0.2); } }
+ }
+  .overlay-prologue .section-main {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 60px;
+    padding-left: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 960px;
+    height: 720px;
+    z-index: 1;
+    -webkit-animation-duration: 10000ms;
+            animation-duration: 10000ms;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-name: section-perspective-change;
+            animation-name: section-perspective-change;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out; }
+  .overlay-prologue .game-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    top: 2px; }
+  .overlay-prologue .game {
+    position: relative; }
+    .overlay-prologue .game:not(:first-of-type) {
+      margin-top: 1px; }
+    .overlay-prologue .game:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      background-color: rgba(0, 0, 0, 0.4);
+      background-blend-mode: overlay;
+      content: '';
+      -webkit-animation-direction: alternate;
+              animation-direction: alternate;
+      -webkit-animation-duration: 1500ms;
+              animation-duration: 1500ms;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-name: prologue-game-overlay-pulse;
+              animation-name: prologue-game-overlay-pulse;
+      -webkit-animation-timing-function: ease-in-out;
+              animation-timing-function: ease-in-out;
+      transform-type: preserve-3d;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+  .overlay-prologue .game-image {
+    height: 110px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background-color: #fff; }
+    .overlay-prologue .game-image img {
+      position: absolute;
+      top: -50%;
+      width: 100%; }
+  .overlay-prologue .episode-messages {
+    padding: 6px;
+    padding-left: 12px;
+    position: absolute;
+    width: 100%;
+    border-left: 1px solid #768EA4; }
+    .overlay-prologue .episode-messages .message, .overlay-prologue .episode-messages .submessage {
+      display: block; }
+    .overlay-prologue .episode-messages .message {
+      font-size: 14px;
+      font-weight: 700; }
+    .overlay-prologue .episode-messages .submessage {
+      margin-top: 3px;
+      color: #768EA4;
+      font-size: 13px; }
+  .overlay-prologue .status {
+    position: absolute;
+    width: 40%;
+    bottom: 64px; }
+  .overlay-prologue .episode-pill {
+    padding: 4px 8px;
+    position: relative;
+    z-index: 5;
+    background: #fff;
+    color: #12161b;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase; }
+  .overlay-prologue .episode-series {
+    padding-top: 6px;
+    position: relative;
+    z-index: 5;
+    border-top: 1px solid rgba(118, 142, 164, 0.25);
+    color: #768EA4;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase; }
+    .overlay-prologue .episode-series .ss-icon {
+      position: relative;
+      top: 1px; }
+  .overlay-prologue .episode-status {
+    display: block;
+    padding: 12px 0;
+    position: relative;
+    z-index: 5;
+    color: #fff;
+    font-family: 'Idlewild SSm A', 'Idlewild SSm B', 'Halogen', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -2px; }
+  .overlay-prologue .game-metadata {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    height: 60px;
+    z-index: 5;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase; }
+  .overlay-prologue .game-metadata-marker {
+    width: 80%;
+    height: 4px;
+    position: absolute;
+    top: 37px;
+    left: 12px;
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-transition: background-color 250ms ease-in-out;
+            transition: background-color 250ms ease-in-out; }
+  .overlay-prologue .game-name {
+    display: block;
+    min-width: 200px;
+    padding: 10px 12px;
+    background: #12161b;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    font-weight: bold; }
+  .overlay-prologue .game-appearances {
+    display: block;
+    margin: 0 12px;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    right: 0;
+    color: #FFF;
+    font-size: 12px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+  .overlay-prologue .game-platform {
+    font-size: 11px;
+    font-weight: 400; }
+  .overlay-prologue .spinner {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    margin-left: -33px;
+    margin-top: -33px;
+    z-index: 5; }
+  .overlay-prologue .embelish-one {
+    box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.5); }
+  .overlay-prologue .episode-number {
+    min-width: 156px;
+    text-align: right;
+    -webkit-transform: perspective(640px) rotateY(33deg) scale(1.1);
+            transform: perspective(640px) rotateY(33deg) scale(1.1); }
+
+.notifier {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 30px;
+  height: 90px;
+  z-index: 1000;
+  @-webkit-keyframes reveal-widget {
+    0% {
+      opacity: 0; }
+
+    100% {
+      opacity: 1; } }
+  @keyframes reveal-widget {
+    0% {
+      opacity: 0; }
+
+    100% {
+      opacity: 1; } }
+
+  @-webkit-keyframes flip-square {
+    0% {
+      -webkit-transform: scale(1) rotateY(0deg);
+              transform: scale(1) rotateY(0deg); }
+
+    5% {
+      -webkit-transform: scale(1.3) rotateY(0deg);
+              transform: scale(1.3) rotateY(0deg); }
+
+    10% {
+      -webkit-transform: scale(1) rotateY(180deg);
+              transform: scale(1) rotateY(180deg); }
+
+    90% {
+      -webkit-transform: scale(1) rotateY(180deg);
+              transform: scale(1) rotateY(180deg); }
+
+    95% {
+      -webkit-transform: scale(1.3) rotateY(180deg);
+              transform: scale(1.3) rotateY(180deg); }
+
+    100% {
+      -webkit-transform: scale(1) rotateY(0deg);
+              transform: scale(1) rotateY(0deg); } }
+
+  @keyframes flip-square {
+    0% {
+      -webkit-transform: scale(1) rotateY(0deg);
+              transform: scale(1) rotateY(0deg); }
+
+    5% {
+      -webkit-transform: scale(1.3) rotateY(0deg);
+              transform: scale(1.3) rotateY(0deg); }
+
+    10% {
+      -webkit-transform: scale(1) rotateY(180deg);
+              transform: scale(1) rotateY(180deg); }
+
+    90% {
+      -webkit-transform: scale(1) rotateY(180deg);
+              transform: scale(1) rotateY(180deg); }
+
+    95% {
+      -webkit-transform: scale(1.3) rotateY(180deg);
+              transform: scale(1.3) rotateY(180deg); }
+
+    100% {
+      -webkit-transform: scale(1) rotateY(0deg);
+              transform: scale(1) rotateY(0deg); } }
+
+  @-webkit-keyframes notification-container-appear {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+              transform: translate3d(0, -100%, 0); }
+
+    1% {
+      opacity: 1; }
+
+    15% {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+
+    80% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+              transform: translate3d(100%, 0, 0); } }
+
+  @keyframes notification-container-appear {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+              transform: translate3d(0, -100%, 0); }
+
+    1% {
+      opacity: 1; }
+
+    15% {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+
+    80% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+              transform: translate3d(100%, 0, 0); } }
+
+  @-webkit-keyframes type-text-appear {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-110%, 0, 0);
+              transform: translate3d(-110%, 0, 0); }
+
+    20% {
+      opacity: 0;
+      -webkit-transform: scale(1.8) translate3d(-110%, 0, 0);
+              transform: scale(1.8) translate3d(-110%, 0, 0); }
+
+    30% {
+      opacity: 1;
+      -webkit-transform: scale(1) translate3d(0, 0, 0);
+              transform: scale(1) translate3d(0, 0, 0); }
+
+    95% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(10%, 0, 0);
+              transform: translate3d(10%, 0, 0); } }
+
+  @keyframes type-text-appear {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-110%, 0, 0);
+              transform: translate3d(-110%, 0, 0); }
+
+    20% {
+      opacity: 0;
+      -webkit-transform: scale(1.8) translate3d(-110%, 0, 0);
+              transform: scale(1.8) translate3d(-110%, 0, 0); }
+
+    30% {
+      opacity: 1;
+      -webkit-transform: scale(1) translate3d(0, 0, 0);
+              transform: scale(1) translate3d(0, 0, 0); }
+
+    95% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(10%, 0, 0);
+              transform: translate3d(10%, 0, 0); } }
+
+  @-webkit-keyframes message-text-appear {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-110%, 0, 0);
+              transform: translate3d(-110%, 0, 0); }
+
+    40% {
+      opacity: 0;
+      -webkit-transform: scale(1.8) translate3d(-110%, 0, 0);
+              transform: scale(1.8) translate3d(-110%, 0, 0); }
+
+    50% {
+      opacity: 1;
+      -webkit-transform: scale(1) translate3d(0, 0, 0);
+              transform: scale(1) translate3d(0, 0, 0); }
+
+    95% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(10%, 0, 0);
+              transform: translate3d(10%, 0, 0); } }
+
+  @keyframes message-text-appear {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-110%, 0, 0);
+              transform: translate3d(-110%, 0, 0); }
+
+    40% {
+      opacity: 0;
+      -webkit-transform: scale(1.8) translate3d(-110%, 0, 0);
+              transform: scale(1.8) translate3d(-110%, 0, 0); }
+
+    50% {
+      opacity: 1;
+      -webkit-transform: scale(1) translate3d(0, 0, 0);
+              transform: scale(1) translate3d(0, 0, 0); }
+
+    95% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(10%, 0, 0);
+              transform: translate3d(10%, 0, 0); } }
+ }
+  .notifier .widget {
+    position: relative;
+    -webkit-animation-name: reveal-widget;
+            animation-name: reveal-widget;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease; }
+  .notifier .square-container {
+    -webkit-perspective: 1000;
+            perspective: 1000;
+    position: absolute;
+    right: 0;
+    z-index: 100; }
+  .notifier .square-container, .notifier .square-status {
+    width: 36px;
+    height: 36px; }
+  .notifier .square-flipper.toggle {
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-animation-name: flip-square;
+            animation-name: flip-square;
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+            animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+  .notifier .square {
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    background-color: #29384D;
+    background-image: url('/static/images/subicon.svg');
+    width: 36px;
+    height: 36px;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg); }
+  .notifier .square-status {
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    text-align: center;
+    visibility: hidden; }
+    .notifier .square-status.visible {
+      visibility: visible; }
+    .notifier .square-status .ss-air {
+      font-size: 24px;
+      position: relative;
+      top: 4px; }
+  .notifier .square-subscribing {
+    background-color: #3498db; }
+  .notifier .square-donating {
+    background-color: #2ecc71; }
+  .notifier .square-substreaking {
+    background-color: #e67e22; }
+  .notifier .square-hosting {
+    background-color: #9b59b6; }
+  .notifier .notifications {
+    margin-right: 36px; }
+  .notifier .notification-container {
+    position: relative;
+    overflow: hidden;
+    height: 36px; }
+  .notifier .notification {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; }
+  .notifier .bar {
+    display: inline-block;
+    margin-right: 36px;
+    font-size: 15px;
+    line-height: 36px;
+    text-transform: uppercase; }
+  .notifier .type {
+    display: inline-block;
+    vertical-align: bottom;
+    height: 36px;
+    overflow: hidden;
+    padding: 0 24px 0 12px;
+    border-left: 4px solid;
+    color: #fff;
+    font-weight: 900;
+    line-height: 36px; }
+  .notifier .notification-subscribing .type {
+    color: #3498db; }
+  .notifier .notification-substreaking .type {
+    color: #e67e22; }
+  .notifier .notification-donating .type {
+    color: #2ecc71; }
+  .notifier .notification-hosting .type {
+    color: #9b59b6; }
+  .notifier .type-inner {
+    display: block; }
+  .notifier .message-text {
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    padding: 0 24px 0 12px;
+    border-left: 1px solid;
+    color: #fff;
+    font-weight: 600; }
+    .notifier .message-text .username {
+      color: #fff;
+      font-weight: 900; }
+  .notifier .message-text-inner {
+    display: block; }
+  .notifier .notification.active {
+    position: relative;
+    opacity: 1;
+    -webkit-animation-name: notification-container-appear;
+            animation-name: notification-container-appear;
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+            animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+    .notifier .notification.active .type-inner {
+      -webkit-animation-name: type-text-appear;
+              animation-name: type-text-appear;
+      -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+              animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+    .notifier .notification.active .message-text-inner {
+      -webkit-animation-name: message-text-appear;
+              animation-name: message-text-appear;
+      -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+              animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+  .notifier .widget {
+    -webkit-animation-delay: 0ms;
+            animation-delay: 0ms;
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms; }
+  .notifier .square-flipper.toggle {
+    -webkit-animation-delay: 0ms;
+            animation-delay: 0ms;
+    -webkit-animation-duration: 7000ms;
+            animation-duration: 7000ms; }
+  .notifier .notification.active {
+    -webkit-animation-delay: 0ms;
+            animation-delay: 0ms;
+    -webkit-animation-duration: 7000ms;
+            animation-duration: 7000ms; }
+  .notifier .notification.active .type-inner, .notifier .notification.active .message-text-inner {
+    -webkit-animation-delay: 0ms;
+            animation-delay: 0ms;
+    -webkit-animation-duration: 7000ms;
+            animation-duration: 7000ms; }
