@@ -14,6 +14,7 @@ module.exports = (grunt) ->
     sass:
       dist:
         options:
+          sourcemap: 'none'
           style: 'compact'
         files:
           './avalonstar/static/stylesheets/live.css': './avalonstar/assets/stylesheets/live.scss',
