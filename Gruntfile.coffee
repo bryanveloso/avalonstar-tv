@@ -33,7 +33,6 @@ module.exports = (grunt) ->
       sass:
         files: './avalonstar/assets/stylesheets/*.scss'
         tasks: ['sass', 'autoprefixer']
-      options: {livereload: true}
 
   # Imports.
   grunt.loadNpmTasks 'grunt-autoprefixer'
