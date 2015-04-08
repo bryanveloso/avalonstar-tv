@@ -26,3 +26,7 @@ class Development(Settings):
     # --------------------------------------------------------------------------
     CDN_DOMAIN = 'http://avalonstar-tv.s3.amazonaws.com'
     MEDIA_URL = '%s/' % (CDN_DOMAIN)
+
+    # django-cors-headers
+    # --------------------------------------------------------------------------
+    CORS_ORIGIN_ALLOW_ALL = True

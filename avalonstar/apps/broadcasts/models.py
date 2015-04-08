@@ -96,21 +96,21 @@ class Host(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='hosts')
     timestamp = models.DateTimeField(default=timezone.now,
         help_text=u'When did it happen?')
-    hoster = models.CharField(blank=True, max_length=200)
+    username = models.CharField(blank=True, max_length=200)
 
     class Meta:
         order_with_respect_to = u'broadcast'
         ordering = ['timestamp']
 
     def __unicode__(self):
-        return u'%s' % self.hoster
+        return u'%s' % self.username
 
 
 class Raid(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='raids')
     timestamp = models.DateTimeField(default=timezone.now,
         help_text=u'When did it happen?')
-    raider = models.CharField(blank=True, max_length=200)
+    username = models.CharField(blank=True, max_length=200)
 
     # Silly metadata.
     game = models.CharField(blank=True, max_length=200,
@@ -121,4 +121,4 @@ class Raid(models.Model):
         ordering = ['timestamp']
 
     def __unicode__(self):
-        return u'%s' % self.raider
+        return u'%s' % self.username
