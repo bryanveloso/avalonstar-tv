@@ -34,8 +34,8 @@ class TicketSerializer(serializers.ModelSerializer):
 
 
 class BroadcastSerializer(serializers.ModelSerializer):
-    hosts = HostSerializer(many=True, read_only=True)
-    raids = RaidSerializer(many=True, read_only=True)
+    hosts = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    raids = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
         model = Broadcast
