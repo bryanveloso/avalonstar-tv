@@ -8,11 +8,13 @@ from apps.subscribers.models import Ticket
 
 class HostSerializer(serializers.ModelSerializer):
     class Meta:
+        fields = ('timestamp', 'username', 'broadcast')
         model = Host
 
 
 class RaidSerializer(serializers.ModelSerializer):
     class Meta:
+        fields = ('timestamp', 'username', 'broadcast', 'game')
         model = Raid
 
 
