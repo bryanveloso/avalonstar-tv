@@ -50,12 +50,12 @@ admin.site.register(Highlight, HighlightAdmin)
 
 
 class HostAdmin(admin.ModelAdmin):
-    list_display = ['timestamp', 'hoster', 'broadcast']
+    list_display = ['timestamp', 'username', 'broadcast']
 admin.site.register(Host, HostAdmin)
 
 
 class RaidAdmin(admin.ModelAdmin):
-    list_display = ['timestamp', 'broadcast', 'raider', 'game']
+    list_display = ['timestamp', 'broadcast', 'username', 'game']
 admin.site.register(Raid, RaidAdmin)
 
 

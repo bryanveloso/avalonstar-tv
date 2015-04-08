@@ -23,7 +23,7 @@
   <ul class="raid-list">
   {% for raid in object.raids.all %}
     <li class="raid">
-      <a href="http://twitch.tv/{{ raid.raider }}">{{ raid.raider }}</a>
+      <a href="http://twitch.tv/{{ raid.username }}">{{ raid.username }}</a>
       {{ raid.game }}
       {{ raid.timestamp }}
     </li>
