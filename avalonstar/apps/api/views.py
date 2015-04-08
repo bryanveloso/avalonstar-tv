@@ -13,17 +13,17 @@ from .serializers import (BroadcastSerializer, GameSerializer, HostSerializer,
 
 
 class BroadcastViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Broadcast.objects.all()
+    queryset = Broadcast.objects.order_by('-number')
     serializer_class = BroadcastSerializer
 
 
 class HostViewSet(viewsets.ModelViewSet):
-    queryset = Host.objects.all()
+    queryset = Host.objects.order_by('-timestamp')
     serializer_class = HostSerializer
 
 
 class RaidViewSet(viewsets.ModelViewSet):
-    queryset = Raid.objects.all()
+    queryset = Raid.objects.order_by('-timestamp')
     serializer_class = RaidSerializer
 
 

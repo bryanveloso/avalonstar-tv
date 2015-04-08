@@ -6,11 +6,6 @@ from apps.games.models import Game
 from apps.subscribers.models import Ticket
 
 
-class BroadcastSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Broadcast
-
-
 class HostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Host
@@ -34,3 +29,11 @@ class GameSerializer(serializers.ModelSerializer):
 class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
+
+
+class BroadcastSerializer(serializers.ModelSerializer):
+    hosts = HostSerializer(many=True, read_only=True)
+    raids = RaidSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Broadcast
