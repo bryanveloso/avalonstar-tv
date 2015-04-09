@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
+from django.conf import settings
 from django.shortcuts import get_object_or_404
 
-from rest_framework import viewsets
+from rest_framework import views, viewsets
 from rest_framework.response import Response
+from pusher import Config, Pusher
 
 from apps.broadcasts.models import Broadcast, Host, Raid, Series
 from apps.games.models import Game
@@ -36,3 +38,26 @@ class TicketViewSet(viewsets.ModelViewSet):
         ticket = get_object_or_404(queryset, name=pk)
         serializer = TicketSerializer(ticket)
         return Response(serializer.data)
+
+
+# Pusher.
+pusher = Pusher(config=Config(
+    app_id=settings.PUSHER_APP_ID,
+    key=settings.PUSHER_KEY,
+    secret=settings.PUSHER_SECRET))
+
+
+class PusherSubscription(views.APIView):
+    pass
+
+
+class PusherResubscription(views.APIView):
+    pass
+
+
+class PusherSubstreak(views.APIView):
+    pass
+
+
+class PusherDonation(views.APIView):
+    pass
