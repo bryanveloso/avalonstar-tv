@@ -14,6 +14,10 @@ from .serializers import (BroadcastSerializer, GameSerializer, HostSerializer,
     RaidSerializer, SeriesSerializer, TicketSerializer)
 
 
+def notify(event, data):
+    pusher['live'].trigger(event, data)
+
+
 class BroadcastViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Broadcast.objects.order_by('-number')
     serializer_class = BroadcastSerializer
@@ -53,23 +57,23 @@ class PusherDonationView(views.APIView):
 
 class PusherHostView(views.APIView):
     def post(self, request):
-        pusher['live'].trigger('hosted', request.data)
+        notify('hosted', request.data)
         return Response(status=202)
 
 
 class PusherResubscriptionView(views.APIView):
     def post(self, request):
-        pusher['live'].trigger('resubscribed', request.data)
+        notify('resubscribed', request.data)
         return Response(status=202)
 
 
 class PusherSubscriptionView(views.APIView):
     def post(self, request):
-        pusher['live'].trigger('subscribed', request.data)
+        notify('subscribed', request.data)
         return Response(status=202)
 
 
 class PusherSubstreakView(views.APIView):
     def post(self, request):
-        pusher['live'].trigger('substreaked', request.data)
+        notify('substreaked', request.data)
         return Response(status=202)
