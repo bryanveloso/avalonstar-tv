@@ -27,6 +27,10 @@ class HostViewSet(viewsets.ModelViewSet):
     queryset = Host.objects.order_by('-timestamp')
     serializer_class = HostSerializer
 
+    def create(self, request, *args, **kwargs):
+        notify('hosted', {'username': request.data['username']})
+        return super(HostViewSet, self).update(request, *args, **kwargs)
+
 
 class RaidViewSet(viewsets.ModelViewSet):
     queryset = Raid.objects.order_by('-timestamp')
@@ -37,11 +41,23 @@ class TicketViewSet(viewsets.ModelViewSet):
     queryset = Ticket.objects.order_by('-updated')
     serializer_class = TicketSerializer
 
+    def create(self, request, *args, **kwargs):
+        notify('subscribed', {'username': request.data['username']})
+        return super(TicketViewSet, self).update(request, *args, **kwargs)
+
     def retrieve(self, request, pk=None):
         queryset = Ticket.objects.all()
         ticket = get_object_or_404(queryset, name=pk)
         serializer = TicketSerializer(ticket)
         return Response(serializer.data)
+
+    def update(self, request, *args, **kwargs):
+        notify('resubscribed', {'username': request.data['username']})
+
+        notify('substreak', {
+            'length': request.data['length'],
+            'username': request.data['username']})
+        return super(TicketViewSet, self).update(request, *args, **kwargs)
 
 
 # Pusher.
