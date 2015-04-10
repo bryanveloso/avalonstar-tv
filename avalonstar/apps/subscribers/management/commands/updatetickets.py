@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
+logger = logging.getLogger(__name__)
+
 import requests
 import os
 
@@ -9,7 +11,6 @@ from apps.subscribers.models import Ticket
 
 
 class Command(NoArgsCommand):
-    logger = logging.getLogger(__name__)
     help = u'Loops through all subscribers and marks each ticket appropriately.'
 
     def handle_noargs(self, **options):
