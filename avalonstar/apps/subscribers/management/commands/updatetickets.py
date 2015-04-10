@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
+logger = logging.getLogger(__name__)
+
 import requests
 import os
 
@@ -7,9 +9,6 @@ from django.core.management.base import NoArgsCommand
 
 from apps.subscribers.models import Ticket
 
-
-logging.captureWarnings(True)
-logger = logging.getLogger(__name__)
 
 class Command(NoArgsCommand):
     help = u'Loops through all subscribers and marks each ticket appropriately.'
