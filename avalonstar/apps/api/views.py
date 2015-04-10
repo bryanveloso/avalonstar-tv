@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 
 from rest_framework import views, viewsets
 from rest_framework.response import Response
-from pusher import Config, Pusher
+from pusher import Pusher
 
 from apps.broadcasts.models import Broadcast, Host, Raid, Series
 from apps.games.models import Game
@@ -41,23 +41,35 @@ class TicketViewSet(viewsets.ModelViewSet):
 
 
 # Pusher.
-pusher = Pusher(config=Config(
+pusher = Pusher(
     app_id=settings.PUSHER_APP_ID,
     key=settings.PUSHER_KEY,
-    secret=settings.PUSHER_SECRET))
+    secret=settings.PUSHER_SECRET)
 
 
-class PusherSubscription(views.APIView):
+class PusherDonationView(views.APIView):
     pass
 
 
-class PusherResubscription(views.APIView):
-    pass
+class PusherHostView(views.APIView):
+    def post(self, request):
+        pusher['live'].trigger('hosted', request.data)
+        return Response(status=202)
 
 
-class PusherSubstreak(views.APIView):
-    pass
+class PusherResubscriptionView(views.APIView):
+    def post(self, request):
+        pusher['live'].trigger('resubscribed', request.data)
+        return Response(status=202)
 
 
-class PusherDonation(views.APIView):
-    pass
+class PusherSubscriptionView(views.APIView):
+    def post(self, request):
+        pusher['live'].trigger('subscribed', request.data)
+        return Response(status=202)
+
+
+class PusherSubstreakView(views.APIView):
+    def post(self, request):
+        pusher['live'].trigger('substreaked', request.data)
+        return Response(status=202)
