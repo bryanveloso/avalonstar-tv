@@ -43,7 +43,7 @@ class TicketViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         notify('subscribed', {'username': request.data['username']})
-        return super(TicketViewSet, self).update(request, *args, **kwargs)
+        return super(TicketViewSet, self).create(request, *args, **kwargs)
 
     def retrieve(self, request, pk=None):
         queryset = Ticket.objects.all()
