@@ -1,8 +1,9 @@
 # Base Project Requirements
 
-Django == 1.8
+Django == 1.7.7
 django-braces == 1.4.0
 django-cors-headers == 1.0.0
+django-configurations == 0.8.8
 django-dotenv == 1.3.0
 django-grappelli == 2.6.4
 django-heroku-postgresify == 0.3
@@ -13,6 +14,3 @@ psycopg2 == 2.6
 pusher == 0.8
 requests == 2.6.0
 whitenoise == 1.0.6
-
-# Git requirements.
-git+git://github.com/jezdez/django-configurations.git
