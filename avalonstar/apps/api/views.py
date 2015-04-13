@@ -52,16 +52,24 @@ class TicketViewSet(viewsets.ModelViewSet):
         serializer = TicketSerializer(ticket)
         return Response(serializer.data)
 
-    def update(self, request, *args, **kwargs):
-        # If 'length' is included in the payload, then we consider it a
+    def update(self, request, pk=None):
+        queryset = Ticket.objects.all()
+        ticket = get_object_or_404(queryset, name=pk)
+
+        request.data['name'] = ticket.name
+        serializer = TicketSerializer(ticket, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+
+        # If 'streak' is included in the payload, then we consider it a
         # "substreak" and should notify() as such.
-        if 'length' in request.data:
+        if 'streak' in request.data:
             notify('substreaked', {
-                'length': request.data['length'],
-                'username': request.data['username']})
+                'length': request.data['streak'],
+                'username': ticket.name})
         else:
-            notify('resubscribed', {'username': request.data['username']})
-        return super(TicketViewSet, self).update(request, *args, **kwargs)
+            notify('resubscribed', {'username': ticket.name})
+        return Response(serializer.data)
 
 
 # Pusher.
