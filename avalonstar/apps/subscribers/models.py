@@ -17,7 +17,7 @@ class CountManager(models.Manager):
 class Count(models.Model):
     active = models.IntegerField()
     total = models.IntegerField()
-    timestamp = models.DateTimeField(default=timezone.now())
+    timestamp = models.DateTimeField(default=timezone.now)
 
     # Custom manager.
     objects = CountManager()
