@@ -52,11 +52,14 @@ class TicketViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     def update(self, request, *args, **kwargs):
-        notify('resubscribed', {'username': request.data['username']})
-
-        notify('substreak', {
-            'length': request.data['length'],
-            'username': request.data['username']})
+        # If 'length' is included in the payload, then we consider it a
+        # "substreak" and should notify() as such.
+        if 'length' in request.data:
+            notify('substreak', {
+                'length': request.data['length'],
+                'username': request.data['username']})
+        else:
+            notify('resubscribed', {'username': request.data['username']})
         return super(TicketViewSet, self).update(request, *args, **kwargs)
 
 
