@@ -55,7 +55,7 @@ class TicketViewSet(viewsets.ModelViewSet):
         # If 'length' is included in the payload, then we consider it a
         # "substreak" and should notify() as such.
         if 'length' in request.data:
-            notify('substreak', {
+            notify('substreaked', {
                 'length': request.data['length'],
                 'username': request.data['username']})
         else:
