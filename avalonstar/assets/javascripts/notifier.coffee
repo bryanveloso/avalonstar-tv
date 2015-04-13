@@ -162,6 +162,13 @@ channel.bind 'hosted', (data) ->
     'username': data.username
   hosted(payload)
 
+channel.bind 'donated', (data) ->
+  payload =
+    'action': 'donating'
+    'amount': data.amount
+    'username': data.username
+  donated(payload, false)
+
 # imraising.tv actions.
 source = new EventSource("https://imraising.tv/api/v1/listen?apikey=nuZOkYmLF37yQJdzNLWLRA")
 source.addEventListener 'donation.add', (e) ->
@@ -170,11 +177,4 @@ source.addEventListener 'donation.add', (e) ->
     'action': 'donating'
     'amount': data.amount
     'username': data.nickname
-  donated(payload, false)
-
-channel.bind 'donated', (data) ->
-  payload =
-    'action': 'donating'
-    'amount': data.amount
-    'username': data.username
   donated(payload, false)

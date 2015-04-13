@@ -177,6 +177,16 @@
     return hosted(payload);
   });
 
+  channel.bind('donated', function(data) {
+    var payload;
+    payload = {
+      'action': 'donating',
+      'amount': data.amount,
+      'username': data.username
+    };
+    return donated(payload, false);
+  });
+
   source = new EventSource("https://imraising.tv/api/v1/listen?apikey=nuZOkYmLF37yQJdzNLWLRA");
 
   source.addEventListener('donation.add', function(e) {
@@ -186,16 +196,6 @@
       'action': 'donating',
       'amount': data.amount,
       'username': data.nickname
-    };
-    return donated(payload, false);
-  });
-
-  channel.bind('donated', function(data) {
-    var payload;
-    payload = {
-      'action': 'donating',
-      'amount': data.amount,
-      'username': data.username
     };
     return donated(payload, false);
   });
