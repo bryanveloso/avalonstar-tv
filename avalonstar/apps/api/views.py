@@ -42,7 +42,8 @@ class TicketViewSet(viewsets.ModelViewSet):
     serializer_class = TicketSerializer
 
     def create(self, request, *args, **kwargs):
-        notify('subscribed', {'username': request.data['username']})
+        # TODO: Somehow sync the use of "name" and "username" across methods.
+        notify('subscribed', {'username': request.data['name']})
         return super(TicketViewSet, self).create(request, *args, **kwargs)
 
     def retrieve(self, request, pk=None):
