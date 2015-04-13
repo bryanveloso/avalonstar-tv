@@ -10,7 +10,7 @@ from avalonstar.apps.views import PlainTextView
 
 urlpatterns = patterns('',
     # Temporary redirect to Twitch channel.
-    url(r'^$', name='site-home', view=RedirectView.as_view(url='http://twitch.tv/avalonstar')),
+    url(r'^$', name='site-home', view=RedirectView.as_view(url='http://twitch.tv/avalonstar', permanent=False)),
 
     # Core Modules.
     url(r'^', include('apps.broadcasts.urls')),
@@ -23,6 +23,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     # Sitemaps, Favicons, Robots, and Humans.
-    url(r'^favicon.ico$', name='favicon', view=RedirectView.as_view(url=settings.STATIC_URL + 'images/favicon.ico')),
+    url(r'^favicon.ico$', name='favicon', view=RedirectView.as_view(url=settings.STATIC_URL + 'images/favicon.ico', permanent=True)),
     url(r'^robots.txt$', name='robots', view=PlainTextView.as_view(template_name='robots.txt'))
 )
