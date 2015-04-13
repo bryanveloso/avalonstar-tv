@@ -15,4 +15,4 @@ requests == 2.6.0
 whitenoise == 1.0.6
 
 # Git requirements.
-git+https://github.com/jezdez/django-configurations.git
+git+git://github.com/jezdez/django-configurations.git
