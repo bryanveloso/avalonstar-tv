@@ -18,3 +18,9 @@ class Testing(Settings):
             'NAME': ':memory:',
         }
     }
+
+    # pusher.
+    # --------------------------------------------------------------------------
+    PUSHER_APP_ID = ''
+    PUSHER_KEY = ''
+    PUSHER_SECRET = ''
