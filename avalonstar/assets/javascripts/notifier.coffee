@@ -171,3 +171,10 @@ source.addEventListener 'donation.add', (e) ->
     'amount': data.amount
     'username': data.nickname
   donated(payload, false)
+
+channel.bind 'donated', (data) ->
+  payload =
+    'action': 'donating'
+    'amount': data.amount
+    'username': data.username
+  donated(payload, false)

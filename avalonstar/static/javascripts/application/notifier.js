@@ -190,4 +190,14 @@
     return donated(payload, false);
   });
 
+  channel.bind('donated', function(data) {
+    var payload;
+    payload = {
+      'action': 'donating',
+      'amount': data.amount,
+      'username': data.username
+    };
+    return donated(payload, false);
+  });
+
 }).call(this);
