@@ -80,7 +80,9 @@ pusher = Pusher(
 
 
 class PusherDonationView(views.APIView):
-    pass
+    def post(self, request):
+        notify('donated', request.data)
+        return Response(status=202)
 
 
 class PusherHostView(views.APIView):

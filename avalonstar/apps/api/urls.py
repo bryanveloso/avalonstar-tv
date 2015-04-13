@@ -4,8 +4,8 @@ from django.conf.urls import patterns, url, include
 from rest_framework import routers
 
 from .views import (BroadcastViewSet, HostViewSet, RaidViewSet, TicketViewSet,
-    PusherHostView, PusherResubscriptionView, PusherSubscriptionView,
-    PusherSubstreakView)
+    PusherDonationView, PusherHostView, PusherResubscriptionView,
+    PusherSubscriptionView, PusherSubstreakView)
 
 
 router = routers.DefaultRouter()
@@ -16,6 +16,7 @@ router.register(r'tickets', TicketViewSet)
 
 urlpatterns = patterns('',
     # Pusher.
+    url(r'^pusher/donation/$', name='pusher-donation', view=PusherDonationView.as_view()),
     url(r'^pusher/host/$', name='pusher-host', view=PusherHostView.as_view()),
     url(r'^pusher/resubscription/$', name='pusher-resubscription', view=PusherResubscriptionView.as_view()),
     url(r'^pusher/subscription/$', name='pusher-subscription', view=PusherSubscriptionView.as_view()),
