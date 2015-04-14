@@ -29,7 +29,7 @@ class HostViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         notify('hosted', {'username': request.data['username']})
-        return super(HostViewSet, self).update(request, *args, **kwargs)
+        return super(HostViewSet, self).create(request, *args, **kwargs)
 
 
 class RaidViewSet(viewsets.ModelViewSet):
