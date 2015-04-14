@@ -53,11 +53,12 @@ class TicketViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     def update(self, request, pk=None):
+        data = request.data
         queryset = Ticket.objects.all()
         ticket = get_object_or_404(queryset, name=pk)
 
-        request.data['name'] = ticket.name
-        serializer = TicketSerializer(ticket, data=request.data)
+        data['name'] = ticket.name
+        serializer = TicketSerializer(ticket, data=data)
         serializer.is_valid(raise_exception=True)
         self.perform_update(serializer)
 
@@ -65,7 +66,7 @@ class TicketViewSet(viewsets.ModelViewSet):
         # "substreak" and should notify() as such.
         if 'streak' in request.data:
             notify('substreaked', {
-                'length': request.data['streak'],
+                'length': data['streak'],
                 'username': ticket.name})
         else:
             notify('resubscribed', {'username': ticket.name})
