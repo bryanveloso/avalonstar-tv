@@ -28,7 +28,7 @@ class Series(models.Model):
 class Broadcast(models.Model):
     # Metadata.
     number = models.IntegerField(blank=True, null=True)
-    airdate = models.DateField()
+    airdate = models.DateField(default=timezone.now)
     status = models.CharField(blank=True, max_length=200,
         help_text=u'Loosely related to Twitch\'s status field. Does not need to match. Will display on overlays.')
     notes = models.TextField(blank=True)
