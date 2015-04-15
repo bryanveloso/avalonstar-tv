@@ -1,0 +1,6 @@
+language: python
+sudo: false
+install:
+  # Build development/test dependencies.
+  - pip install -r requirements-dev.txt
+script: py.test
