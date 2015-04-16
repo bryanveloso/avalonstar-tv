@@ -53,7 +53,7 @@ class TicketViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     def update(self, request, pk=None):
-        data = request.data
+        data = request.data.copy()
         queryset = Ticket.objects.all()
         ticket = get_object_or_404(queryset, name=pk)
 
