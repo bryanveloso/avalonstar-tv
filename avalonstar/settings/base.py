@@ -13,10 +13,6 @@ class Base(Configuration):
     SITE_ROOT = dirname(DJANGO_ROOT)
     SITE_NAME = basename(DJANGO_ROOT)
 
-    # Add our project to our pythonpath, this way we don't need to
-    # type our project name in our dotted import paths:
-    path.append(DJANGO_ROOT)
-
     # Installed Applications.
     # --------------------------------------------------------------------------
     DJANGO = [
@@ -89,7 +85,7 @@ class Base(Configuration):
         'django.core.context_processors.tz',
         'django.contrib.messages.context_processors.messages',
     )
-    TEMPLATE_DIRS = (normpath(join(DJANGO_ROOT, 'templates')),)
+    TEMPLATE_DIRS = (normpath(join(SITE_ROOT, 'templates')),)
     TEMPLATE_LOADERS = (
         'django.template.loaders.filesystem.Loader',
         'django.template.loaders.app_directories.Loader',
@@ -100,7 +96,7 @@ class Base(Configuration):
     STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
     STATIC_ROOT = 'staticfiles'
     STATIC_URL = '/static/'
-    STATICFILES_DIRS = [normpath(join(DJANGO_ROOT, 'static'))]
+    STATICFILES_DIRS = [normpath(join(SITE_ROOT, 'static'))]
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -114,7 +110,7 @@ class Base(Configuration):
     # URL Configuration.
     # --------------------------------------------------------------------------
     ROOT_URLCONF = '%s.urls' % SITE_NAME
-    WSGI_APPLICATION = 'wsgi.application'
+    WSGI_APPLICATION = 'avalonstar.wsgi.application'
 
     # django-rest-framework.
     # --------------------------------------------------------------------------
