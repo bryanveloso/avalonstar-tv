@@ -110,7 +110,7 @@ class Base(Configuration):
     # URL Configuration.
     # --------------------------------------------------------------------------
     ROOT_URLCONF = '%s.urls' % SITE_NAME
-    WSGI_APPLICATION = 'wsgi.application'
+    WSGI_APPLICATION = 'avalonstar.wsgi.application'
 
     # django-rest-framework.
     # --------------------------------------------------------------------------
