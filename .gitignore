@@ -44,9 +44,7 @@ nosetests.xml
 *.codekit
 *.sublime-*
 
-avalonstar/build
-avalonstar/javascripts
-avalonstar/media
+media
 backups
 htmlcov
 node_modules
