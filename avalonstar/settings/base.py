@@ -85,7 +85,7 @@ class Base(Configuration):
         'django.core.context_processors.tz',
         'django.contrib.messages.context_processors.messages',
     )
-    TEMPLATE_DIRS = (normpath(join(DJANGO_ROOT, 'templates')),)
+    TEMPLATE_DIRS = (normpath(join(SITE_ROOT, 'templates')),)
     TEMPLATE_LOADERS = (
         'django.template.loaders.filesystem.Loader',
         'django.template.loaders.app_directories.Loader',
@@ -96,7 +96,7 @@ class Base(Configuration):
     STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
     STATIC_ROOT = 'staticfiles'
     STATIC_URL = '/static/'
-    STATICFILES_DIRS = [normpath(join(DJANGO_ROOT, 'static'))]
+    STATICFILES_DIRS = [normpath(join(SITE_ROOT, 'static'))]
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
