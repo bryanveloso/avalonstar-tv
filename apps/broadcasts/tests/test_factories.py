@@ -13,11 +13,6 @@ def test_broadcast_factory():
     assert isinstance(factory, Broadcast)
 
 
-def test_highlight_factory():
-    factory = HighlightFactory()
-    assert isinstance(factory, Highlight)
-
-
 def test_host_factory():
     factory = HostFactory()
     assert isinstance(factory, Host)
