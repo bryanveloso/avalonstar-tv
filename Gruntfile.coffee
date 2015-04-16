@@ -8,7 +8,7 @@ module.exports = (grunt) ->
         expand: true,
         cwd: './avalonstar/assets/javascripts',
         src: ['*.coffee'],
-        dest: './avalonstar/static/javascripts/application',
+        dest: './static/javascripts/application',
         ext: '.js'
 
     sass:
@@ -17,14 +17,14 @@ module.exports = (grunt) ->
           sourcemap: 'none'
           style: 'compact'
         files:
-          './avalonstar/static/stylesheets/live.css': './avalonstar/assets/stylesheets/live.scss',
-          './avalonstar/static/stylesheets/site.css': './avalonstar/assets/stylesheets/site.scss'
+          './static/stylesheets/live.css': './avalonstar/assets/stylesheets/live.scss',
+          './static/stylesheets/site.css': './avalonstar/assets/stylesheets/site.scss'
 
     autoprefixer:
       dist:
         files:
-          './avalonstar/static/stylesheets/live.css': './avalonstar/static/stylesheets/live.css',
-          './avalonstar/static/stylesheets/site.css': './avalonstar/static/stylesheets/site.css'
+          './static/stylesheets/live.css': './static/stylesheets/live.css',
+          './static/stylesheets/site.css': './static/stylesheets/site.css'
 
     watch:
       coffee:

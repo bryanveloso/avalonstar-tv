@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
-import wsgi
 
+from avalonstar import wsgi
 from waitress import serve
 
 

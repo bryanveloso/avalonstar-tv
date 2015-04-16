@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import RedirectView
 
-from avalonstar.apps.views import PlainTextView
+from apps.views import PlainTextView
 
 
 urlpatterns = patterns('',
