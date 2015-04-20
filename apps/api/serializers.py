@@ -2,7 +2,7 @@
 from rest_framework import serializers
 
 from apps.broadcasts.models import Broadcast, Host, Raid, Series
-from apps.games.models import Game
+from apps.games.models import Game, Platform
 from apps.subscribers.models import Ticket
 
 
@@ -26,6 +26,11 @@ class SeriesSerializer(serializers.ModelSerializer):
 class GameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
+
+
+class PlatformSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Platform
 
 
 class TicketSerializer(serializers.ModelSerializer):

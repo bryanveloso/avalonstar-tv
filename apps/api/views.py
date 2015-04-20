@@ -7,11 +7,11 @@ from rest_framework.response import Response
 from pusher import Pusher
 
 from apps.broadcasts.models import Broadcast, Host, Raid, Series
-from apps.games.models import Game
+from apps.games.models import Game, Platform
 from apps.subscribers.models import Ticket
 
 from .serializers import (BroadcastSerializer, GameSerializer, HostSerializer,
-    RaidSerializer, SeriesSerializer, TicketSerializer)
+    PlatformSerializer, RaidSerializer, SeriesSerializer, TicketSerializer)
 
 
 def notify(event, data):
@@ -26,6 +26,11 @@ class BroadcastViewSet(viewsets.ReadOnlyModelViewSet):
 class GameViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Game.objects.all()
     serializer_class = GameSerializer
+
+
+class PlatformViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Platform.objects.all()
+    serializer_class = PlatformSerializer
 
 
 class HostViewSet(viewsets.ModelViewSet):
