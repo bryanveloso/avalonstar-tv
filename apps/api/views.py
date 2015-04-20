@@ -23,6 +23,11 @@ class BroadcastViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = BroadcastSerializer
 
 
+class GameViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Game.objects.all()
+    serializer_class = GameSerializer
+
+
 class HostViewSet(viewsets.ModelViewSet):
     queryset = Host.objects.order_by('-timestamp')
     serializer_class = HostSerializer

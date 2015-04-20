@@ -3,13 +3,14 @@ from django.conf.urls import patterns, url, include
 
 from rest_framework import routers
 
-from .views import (BroadcastViewSet, HostViewSet, RaidViewSet, TicketViewSet,
-    PusherDonationView, PusherHostView, PusherResubscriptionView,
+from .views import (BroadcastViewSet, GameViewSet, HostViewSet, RaidViewSet,
+    TicketViewSet, PusherDonationView, PusherHostView, PusherResubscriptionView,
     PusherSubscriptionView, PusherSubstreakView)
 
 
 router = routers.DefaultRouter()
 router.register(r'broadcasts', BroadcastViewSet)
+router.register(r'games', GameViewSet)
 router.register(r'hosts', HostViewSet)
 router.register(r'raids', RaidViewSet)
 router.register(r'tickets', TicketViewSet)
