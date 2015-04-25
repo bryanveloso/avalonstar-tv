@@ -24,6 +24,8 @@ class SeriesSerializer(serializers.ModelSerializer):
 
 
 class GameSerializer(serializers.ModelSerializer):
+    appearances = serializers.IntegerField(source='appears_on.count', read_only=True)
+
     class Meta:
         model = Game
 
