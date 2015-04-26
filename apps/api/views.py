@@ -2,9 +2,10 @@
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 
+from pusher import Pusher
 from rest_framework import views, viewsets
 from rest_framework.response import Response
-from pusher import Pusher
+from socketIO_client import SocketIO
 
 from apps.broadcasts.models import Broadcast, Host, Raid, Series
 from apps.games.models import Game, Platform
@@ -16,6 +17,13 @@ from .serializers import (BroadcastSerializer, GameSerializer, HostSerializer,
 
 def notify(event, data):
     pusher['live'].trigger(event, data)
+
+    data = data.copy()
+    data['event'] = event
+
+    with SocketIO('socket.avalonstar.tv') as socketIO:
+        socketIO.emit('%s sent' % event, data)
+        socketIO.wait(seconds=1)
 
 
 class BroadcastViewSet(viewsets.ReadOnlyModelViewSet):
@@ -92,29 +100,29 @@ pusher = Pusher(
 
 class PusherDonationView(views.APIView):
     def post(self, request):
-        notify('donated', request.data)
+        notify('donation', request.data)
         return Response(status=202)
 
 
 class PusherHostView(views.APIView):
     def post(self, request):
-        notify('hosted', request.data)
+        notify('host', request.data)
         return Response(status=202)
 
 
 class PusherResubscriptionView(views.APIView):
     def post(self, request):
-        notify('resubscribed', request.data)
+        notify('resubscription', request.data)
         return Response(status=202)
 
 
 class PusherSubscriptionView(views.APIView):
     def post(self, request):
-        notify('subscribed', request.data)
+        notify('subscription', request.data)
         return Response(status=202)
 
 
 class PusherSubstreakView(views.APIView):
     def post(self, request):
-        notify('substreaked', request.data)
+        notify('substreak', request.data)
         return Response(status=202)
