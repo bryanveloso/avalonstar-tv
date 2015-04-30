@@ -22,7 +22,7 @@ def notify(event, data):
     data['event'] = event
 
     with SocketIO('socket.avalonstar.tv') as socketIO:
-        socketIO.emit('%s sent' % event, data)
+        socketIO.emit('event sent', data)
         socketIO.wait(seconds=1)
 
 
@@ -46,7 +46,7 @@ class HostViewSet(viewsets.ModelViewSet):
     serializer_class = HostSerializer
 
     def create(self, request, *args, **kwargs):
-        notify('hosted', {'username': request.data['username']})
+        notify('host', {'username': request.data['username']})
         return super(HostViewSet, self).create(request, *args, **kwargs)
 
 
@@ -61,7 +61,7 @@ class TicketViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         # TODO: Somehow sync the use of "name" and "username" across methods.
-        notify('subscribed', {'username': request.data['name']})
+        notify('subscription', {'username': request.data['name']})
         return super(TicketViewSet, self).create(request, *args, **kwargs)
 
     def retrieve(self, request, pk=None):
@@ -83,11 +83,11 @@ class TicketViewSet(viewsets.ModelViewSet):
         # If 'streak' is included in the payload, then we consider it a
         # "substreak" and should notify() as such.
         if 'streak' in request.data:
-            notify('substreaked', {
+            notify('substreak', {
                 'length': data['streak'],
                 'username': ticket.name})
         else:
-            notify('resubscribed', {'username': ticket.name})
+            notify('resubscription', {'username': ticket.name})
         return Response(serializer.data)
 
 
