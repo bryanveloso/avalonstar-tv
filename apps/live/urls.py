@@ -3,8 +3,7 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.views.generic import RedirectView
 
-from .views import (AwayView, DiscussionView, EpilogueView, GameView,
-    NotifierView, PrologueView, StatusView)
+from .views import StatusView
 
 
 urlpatterns = patterns('',
