@@ -4,17 +4,19 @@ from django.conf.urls import patterns, url, include
 from rest_framework import routers
 
 from .views import (BroadcastViewSet, GameViewSet, HostViewSet, RaidViewSet,
-    PlatformViewSet, TicketViewSet, PusherDonationView, PusherHostView,
-    PusherResubscriptionView, PusherSubscriptionView, PusherSubstreakView)
+    PlatformViewSet, QuoteViewSet, TicketViewSet, PusherDonationView,
+    PusherHostView, PusherResubscriptionView, PusherSubscriptionView,
+    PusherSubstreakView)
 
 
 router = routers.DefaultRouter()
 router.register(r'broadcasts', BroadcastViewSet)
 router.register(r'games', GameViewSet)
 router.register(r'hosts', HostViewSet)
+router.register(r'platforms', PlatformViewSet)
+router.register(r'quotes', QuoteViewSet)
 router.register(r'raids', RaidViewSet)
 router.register(r'tickets', TicketViewSet)
-router.register(r'platforms', PlatformViewSet)
 
 urlpatterns = patterns('',
     # Pusher.

@@ -3,6 +3,7 @@ from rest_framework import serializers
 
 from apps.broadcasts.models import Broadcast, Host, Raid, Series
 from apps.games.models import Game, Platform
+from apps.quotes.models import Quote
 from apps.subscribers.models import Ticket
 
 
@@ -33,6 +34,11 @@ class GameSerializer(serializers.ModelSerializer):
 class PlatformSerializer(serializers.ModelSerializer):
     class Meta:
         model = Platform
+
+
+class QuoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Quote
 
 
 class TicketSerializer(serializers.ModelSerializer):
