@@ -5,5 +5,12 @@ from .models import Quote
 
 
 class QuoteAdmin(admin.ModelAdmin):
-    list_display = ['text', 'timestamp', 'creator', 'broadcast', 'game']
+    fieldsets = (
+        (None, {'fields': ('text', ('timestamp', 'subject'),)}),
+        ('Metadata', {'fields': ('creator', 'broadcast', 'game')})
+    )
+    list_display = ['text', 'timestamp', 'subject', 'creator', 'broadcast', 'game']
+
+    raw_id_fields = ['broadcast', 'game']
+    autocomplete_lookup_fields = {'fk': ['game']}
 admin.site.register(Quote, QuoteAdmin)
