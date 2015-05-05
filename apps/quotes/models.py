@@ -9,7 +9,10 @@ from apps.games.models import Game
 class Quote(models.Model):
     text = models.TextField()
     timestamp = models.DateField(default=timezone.now)
-    creator = models.CharField(blank=True, max_length=200)
+    subject = models.CharField(blank=True, max_length=200,
+        help_text=u'The person that was quoted.')
+    creator = models.CharField(blank=True, max_length=200,
+        help_text=u'The person that created the quote.')
     broadcast = models.ForeignKey(Broadcast, blank=True, null=True, related_name='quotes')
     game = models.ForeignKey(Game, blank=True, null=True, related_name='quoted_on')
 
