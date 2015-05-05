@@ -28,6 +28,7 @@ class Base(Configuration):
         'apps.core',
         'apps.games',
         'apps.live',
+        'apps.quotes',
         'apps.subscribers',
     ]
     PLUGINS = [
