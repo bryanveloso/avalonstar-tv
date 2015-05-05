@@ -9,10 +9,12 @@ from socketIO_client import SocketIO
 
 from apps.broadcasts.models import Broadcast, Host, Raid, Series
 from apps.games.models import Game, Platform
+from apps.quotes.models import Quote
 from apps.subscribers.models import Ticket
 
 from .serializers import (BroadcastSerializer, GameSerializer, HostSerializer,
-    PlatformSerializer, RaidSerializer, SeriesSerializer, TicketSerializer)
+    PlatformSerializer, QuoteSerializer, RaidSerializer, SeriesSerializer,
+    TicketSerializer)
 
 
 def notify(event, data):
@@ -39,6 +41,11 @@ class GameViewSet(viewsets.ReadOnlyModelViewSet):
 class PlatformViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Platform.objects.all()
     serializer_class = PlatformSerializer
+
+
+class QuoteViewSet(viewsets.ModelViewSet):
+    queryset = Quote.objects.all()
+    serializer_class = QuoteSerializer
 
 
 class HostViewSet(viewsets.ModelViewSet):
