@@ -2,7 +2,6 @@
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 
-from pusher import Pusher
 from rest_framework import views, viewsets
 from rest_framework.response import Response
 from socketIO_client import SocketIO
@@ -18,8 +17,6 @@ from .serializers import (BroadcastSerializer, GameSerializer, HostSerializer,
 
 
 def notify(event, data):
-    pusher['live'].trigger(event, data)
-
     data = data.copy()
     data['event'] = event
 
@@ -104,13 +101,6 @@ class TicketViewSet(viewsets.ModelViewSet):
         else:
             notify('resubscription', {'username': ticket.name})
         return Response(serializer.data)
-
-
-# Pusher.
-pusher = Pusher(
-    app_id=settings.PUSHER_APP_ID,
-    key=settings.PUSHER_KEY,
-    secret=settings.PUSHER_SECRET)
 
 
 class PusherDonationView(views.APIView):
