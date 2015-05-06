@@ -48,7 +48,7 @@ class QuoteViewSet(viewsets.ModelViewSet):
     serializer_class = QuoteSerializer
 
     def retrieve(self, request, pk=None):
-        if pk is '0':
+        if pk == '0':
             quote = Quote.objects.order_by('?').first()
             serializer = QuoteSerializer(quote)
             return Response(serializer.data)
