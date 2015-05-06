@@ -47,6 +47,14 @@ class QuoteViewSet(viewsets.ModelViewSet):
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializer
 
+    def retrieve(self, request, pk=None):
+        if pk is '0':
+            quote = Quote.objects.order_by('?').first()
+            serializer = QuoteSerializer(quote)
+            return Response(serializer.data)
+        else:
+            return super(QuoteViewSet, self).retrieve(request, pk)
+
 
 class HostViewSet(viewsets.ModelViewSet):
     queryset = Host.objects.order_by('-timestamp')
