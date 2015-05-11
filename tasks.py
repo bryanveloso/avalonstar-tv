@@ -18,10 +18,10 @@ def dbsync(verbose=False, database='avalonstar-tv', **kwargs):
 
     # Take a snapshot.
     out('Snapshotting the production database.')
-    run('heroku pgbackups:capture --expire', hide=hide)
+    run('heroku pg:backups capture DATABASE', hide=hide)
 
     # Fetch the latest database dump.
-    run('curl -o latest.dump `heroku pgbackups:url`', hide=hide)
+    run('curl -o latest.dump `heroku pg:backups public-url -q`', hide=hide)
     out('Latest database dump (latest.dump) grabbed via curl.')
 
     # Restore it.
