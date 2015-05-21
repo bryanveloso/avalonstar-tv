@@ -2,6 +2,6 @@
 -r base.txt
 
 boto == 2.38.0
-django-storages >= 1.1.8, < 2.0.0
+django-storages-redux == 1.2.3
 waitress == 0.8.9
 raven >= 5.2.0, < 6.0.0
