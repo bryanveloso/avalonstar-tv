@@ -69,7 +69,7 @@ def resetmessages(verbose=False, **kwargs):
     timestamp = time.strftime('%Y%m%d')
     url = 'https://avalonstar.firebaseio.com/messages/.json?print=pretty'
     out('Saving snapshot of Firebase `messages` endpoint to "messages-%s.json."' % timestamp)
-    run('curl -o messages-%s.json %s' % (timestamp, url), hide=hide)
+    run('curl -o ./backups/messages-%s.json %s' % (timestamp, url), hide=hide)
 
     out('Clearing Firebase `messages` endpoint.')
     requests.delete('https://avalonstar.firebaseio.com/messages.json')
