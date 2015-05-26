@@ -13,7 +13,7 @@ class Series(models.Model):
 
     class Meta:
         ordering = ['name']
-        verbose_name_plural = u'series'
+        verbose_name_plural = 'series'
 
     def __str__(self):
         return u'%s' % self.name
@@ -28,26 +28,26 @@ class Broadcast(models.Model):
     number = models.IntegerField(blank=True, null=True)
     airdate = models.DateField(default=timezone.now)
     status = models.CharField(blank=True, max_length=200,
-        help_text=u'Loosely related to Twitch\'s status field. Does not need to match. Will display on overlays.')
+        help_text='Loosely related to Twitch\'s status field. Does not need to match. Will display on overlays.')
     notes = models.TextField(blank=True)
 
     # Connections.
     games = models.ManyToManyField(Game, related_name='appears_on')
     series = models.ForeignKey(Series, blank=True, null=True, related_name='broadcasts',
-        help_text=u'Is this episode part of an ongoing series (i.e., "Whatever Wednesdays", etc.)?')
+        help_text='Is this episode part of an ongoing series (i.e., "Whatever Wednesdays", etc.)?')
 
     # Statuses.
     is_charity = models.BooleanField('is for charity?', default=False,
-        help_text=u'Is a charity fundraiser involved in this episode?')
+        help_text='Is a charity fundraiser involved in this episode?')
     is_marathon = models.BooleanField('is a marathon?', default=False,
-        help_text=u'Is this a marathon episode (longer than 12 hours)?')
+        help_text='Is this a marathon episode (longer than 12 hours)?')
 
     class Meta:
         get_latest_by = 'airdate'
         ordering = ['-airdate']
 
     def __str__(self):
-        return u'Episode %s' % self.number
+        return 'Episode %s' % self.number
 
     def get_absolute_url(self):
         return reverse('broadcast-detail', kwargs={'slug': self.number})
@@ -56,7 +56,7 @@ class Broadcast(models.Model):
 class Highlight(models.Model):
     broadcast = models.ForeignKey(Broadcast, blank=True, null=True, related_name='highlights')
     twid = models.CharField('Twitch ID', max_length=200,
-        help_text=u'The highlight\'s ID on Twitch; used for API calls, etc.')
+        help_text='The highlight\'s ID on Twitch; used for API calls, etc.')
 
     # Silly metadata (filled out by an API call).
     title = models.CharField(blank=True, max_length=200)
@@ -66,7 +66,7 @@ class Highlight(models.Model):
 
     class Meta:
         ordering = ['-twid']
-        order_with_respect_to = u'broadcast'
+        order_with_respect_to = 'broadcast'
 
     def save(self, *args, **kwargs):
         # Grab our new highlight ID and run an API call.
@@ -86,18 +86,18 @@ class Highlight(models.Model):
 
     def __str__(self):
         if not self.title:
-            return u'Highlight for %s' % self.broadcast
+            return 'Highlight for %s' % self.broadcast
         return self.title
 
 
 class Host(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='hosts')
     timestamp = models.DateTimeField(default=timezone.now,
-        help_text=u'When did it happen?')
+        help_text='When did it happen?')
     username = models.CharField(blank=True, max_length=200)
 
     class Meta:
-        order_with_respect_to = u'broadcast'
+        order_with_respect_to = 'broadcast'
         ordering = ['timestamp']
 
     def __str__(self):
@@ -107,15 +107,15 @@ class Host(models.Model):
 class Raid(models.Model):
     broadcast = models.ForeignKey(Broadcast, related_name='raids')
     timestamp = models.DateTimeField(default=timezone.now,
-        help_text=u'When did it happen?')
+        help_text='When did it happen?')
     username = models.CharField(blank=True, max_length=200)
 
     # Silly metadata.
     game = models.CharField(blank=True, max_length=200,
-        help_text=u'The game the raider was playing at the time of raiding.')
+        help_text='The game the raider was playing at the time of raiding.')
 
     class Meta:
-        order_with_respect_to = u'broadcast'
+        order_with_respect_to = 'broadcast'
         ordering = ['timestamp']
 
     def __str__(self):

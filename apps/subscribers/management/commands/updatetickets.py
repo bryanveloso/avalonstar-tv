@@ -11,7 +11,7 @@ from apps.subscribers.models import Ticket
 
 
 class Command(NoArgsCommand):
-    help = u'Loops through all subscribers and marks each ticket appropriately.'
+    help = 'Loops through all subscribers and marks each ticket appropriately.'
 
     def handle_noargs(self, **options):
         # Prepare our request.

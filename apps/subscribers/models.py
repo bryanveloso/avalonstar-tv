@@ -47,9 +47,9 @@ class Ticket(models.Model):
 
     # Is this subscription active?
     is_active = models.BooleanField(default=True,
-        help_text=u'Is this subscription active?')
+        help_text='Is this subscription active?')
     is_paid = models.BooleanField(default=True,
-        help_text=u'Is this a paid subscription? (e.g., Not a bot.)')
+        help_text='Is this a paid subscription? (e.g., Not a bot.)')
 
     # Custom manager.
     objects = TicketManager()
