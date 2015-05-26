@@ -1,4 +1,6 @@
 language: python
+python:
+  - "3.4"
 sudo: false
 install:
   # Build development/test dependencies.
