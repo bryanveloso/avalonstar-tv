@@ -9,5 +9,5 @@ class Message(models.Model):
     class Meta:
         ordering = ['text']
 
-    def __unicode__(self):
+    def __str__(self):
         return u'%s' % self.text

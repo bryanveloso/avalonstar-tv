@@ -19,5 +19,5 @@ class Quote(models.Model):
     class Meta:
         ordering = ['-timestamp']
 
-    def __unicode__(self):
+    def __str__(self):
         return u'{}'.format(self.text)

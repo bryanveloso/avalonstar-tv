@@ -15,7 +15,7 @@ class Series(models.Model):
         ordering = ['name']
         verbose_name_plural = u'series'
 
-    def __unicode__(self):
+    def __str__(self):
         return u'%s' % self.name
 
     @staticmethod
@@ -46,7 +46,7 @@ class Broadcast(models.Model):
         get_latest_by = 'airdate'
         ordering = ['-airdate']
 
-    def __unicode__(self):
+    def __str__(self):
         return u'Episode %s' % self.number
 
     def get_absolute_url(self):
@@ -84,7 +84,7 @@ class Highlight(models.Model):
         self.url = json['url']
         super(Highlight, self).save(*args, **kwargs)
 
-    def __unicode__(self):
+    def __str__(self):
         if not self.title:
             return u'Highlight for %s' % self.broadcast
         return self.title
@@ -100,7 +100,7 @@ class Host(models.Model):
         order_with_respect_to = u'broadcast'
         ordering = ['timestamp']
 
-    def __unicode__(self):
+    def __str__(self):
         return u'%s' % self.username
 
 
@@ -118,5 +118,5 @@ class Raid(models.Model):
         order_with_respect_to = u'broadcast'
         ordering = ['timestamp']
 
-    def __unicode__(self):
+    def __str__(self):
         return u'%s' % self.username

@@ -8,7 +8,7 @@ class Platform(models.Model):
     class Meta:
         ordering = ['name']
 
-    def __unicode__(self):
+    def __str__(self):
         return u'%s' % self.name
 
     @staticmethod
@@ -35,7 +35,7 @@ class Game(models.Model):
     is_completed = models.BooleanField('is completed?', default=False,
         help_text=u'Has this game been completed (if applicable).' )
 
-    def __unicode__(self):
+    def __str__(self):
         return u'%s' % self.name
 
     @staticmethod

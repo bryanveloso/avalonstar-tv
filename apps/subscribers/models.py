@@ -26,7 +26,7 @@ class Count(models.Model):
         get_latest_by = 'timestamp'
         ordering = ['timestamp']
 
-    def __unicode__(self):
+    def __str__(self):
         return u'%s/%s on %s' % (self.active, self.total, self.timestamp)
 
 
@@ -58,7 +58,7 @@ class Ticket(models.Model):
         ordering = ['updated']
         get_latest_by = 'updated'
 
-    def __unicode__(self):
+    def __str__(self):
         return u'%s' % self.name
 
     def update(self, **kwargs):
