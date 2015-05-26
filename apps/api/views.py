@@ -50,7 +50,7 @@ class QuoteViewSet(viewsets.ModelViewSet):
             serializer = QuoteSerializer(quote)
             return Response(serializer.data)
         else:
-            return super(QuoteViewSet, self).retrieve(request, pk)
+            return super().retrieve(request, pk)
 
 
 class HostViewSet(viewsets.ModelViewSet):
@@ -59,7 +59,7 @@ class HostViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         notify('host', {'username': request.data['username']})
-        return super(HostViewSet, self).create(request, *args, **kwargs)
+        return super().create(request, *args, **kwargs)
 
 
 class RaidViewSet(viewsets.ModelViewSet):
@@ -74,7 +74,7 @@ class TicketViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         # TODO: Somehow sync the use of "name" and "username" across methods.
         notify('subscription', {'username': request.data['name']})
-        return super(TicketViewSet, self).create(request, *args, **kwargs)
+        return super().create(request, *args, **kwargs)
 
     def retrieve(self, request, pk=None):
         queryset = Ticket.objects.all()

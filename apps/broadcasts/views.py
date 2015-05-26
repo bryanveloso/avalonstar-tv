@@ -30,7 +30,7 @@ class BroadcastListView(ListView):
         return round((raids / episodes), 2)
 
     def get_context_data(self, **kwargs):
-        context = super(BroadcastListView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['first'] = Broadcast.objects.earliest()
         context['games'] = Game.objects.all()
         context['games_completed'] = Game.objects.filter(is_completed=True)

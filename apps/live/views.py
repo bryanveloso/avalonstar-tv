@@ -12,7 +12,7 @@ from .utils import fetch_stream, is_episodic
 
 class BroadcastContextMixin(object):
     def get_context_data(self, **kwargs):
-        context = super(BroadcastContextMixin, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['broadcast'] = Broadcast.objects.latest()
         context['message_list'] = Message.objects.order_by('?')
         context['ticket'] = Ticket.objects.latest()

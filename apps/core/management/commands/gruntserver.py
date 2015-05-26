@@ -12,7 +12,7 @@ from django.contrib.staticfiles.management.commands.runserver import Command\
 class Command(StaticfilesRunserverCommand):
     def inner_run(self, *args, **options):
         self.start_grunt()
-        return super(Command, self).inner_run(*args, **options)
+        return super().inner_run(*args, **options)
 
     def start_grunt(self):
         self.stdout.write('>>> Starting grunt')

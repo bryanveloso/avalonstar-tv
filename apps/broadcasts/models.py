@@ -82,7 +82,7 @@ class Highlight(models.Model):
         self.description = json['description']
         self.title = json['title']
         self.url = json['url']
-        super(Highlight, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         if not self.title:
