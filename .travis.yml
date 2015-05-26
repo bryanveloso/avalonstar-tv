@@ -4,5 +4,6 @@ python:
 sudo: false
 install:
   # Build development/test dependencies.
+  - pip install -U pip
   - pip install -r requirements-dev.txt
 script: py.test
