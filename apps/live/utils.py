@@ -13,7 +13,7 @@ def fetch_status():
     try:
         response = fetch_stream()
         return response.get('channel', {}).get('status', '')
-    except AttributeError, TypeError:
+    except (AttributeError, TypeError) as e:
         return ''
 
 
