@@ -87,21 +87,26 @@ class Production(Settings):
             'sentry': {
                 'level': 'ERROR',
                 'class': 'raven.contrib.django.handlers.SentryHandler',
-                'filters': ['require_debug_false'],
+                'filters': ['require_debug_false']
             },
         },
         'loggers': {
             # This is a "catch all" logger.
             '': {
-                'level': 'DEBUG',
+                'level': 'INFO',
                 'handlers': ['console', 'sentry'],
-                'propagate': False,
+                'propagate': False
             },
             'boto': {
                 'level': 'WARNING',
                 'handlers': ['sentry'],
-                'propagate': False,
+                'propagate': False
             },
+            'urllib3': {
+                'level': 'WARNING',
+                'handlers': ['sentry'],
+                'propagate': False
+            }
         }
     }
 
