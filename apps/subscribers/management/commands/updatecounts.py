@@ -9,4 +9,4 @@ class Command(NoArgsCommand):
 
     def handle_noargs(self, **options):
         count = Count.objects.create_count()
-        print count
+        print(count)
