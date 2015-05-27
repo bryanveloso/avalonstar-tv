@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
+import logging
 import re
 import requests
 
+
+# Set the log level for `urllib3` to "WARNING".
+logging.getLogger('urllib3').setLevel(logging.WARNING)
 
 def fetch_stream():
     endpoint = 'https://api.twitch.tv/kraken/streams/avalonstar'
