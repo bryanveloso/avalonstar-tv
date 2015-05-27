@@ -91,7 +91,7 @@ class Highlight(models.Model):
 
 
 class Host(models.Model):
-    broadcast = models.ForeignKey(Broadcast, related_name='hosts')
+    broadcast = models.ForeignKey(Broadcast, blank=True, null=True, related_name='hosts')
     timestamp = models.DateTimeField(default=timezone.now,
         help_text='When did it happen?')
     username = models.CharField(blank=True, max_length=200)
@@ -105,7 +105,7 @@ class Host(models.Model):
 
 
 class Raid(models.Model):
-    broadcast = models.ForeignKey(Broadcast, related_name='raids')
+    broadcast = models.ForeignKey(Broadcast, blank=True, null=True, related_name='raids')
     timestamp = models.DateTimeField(default=timezone.now,
         help_text='When did it happen?')
     username = models.CharField(blank=True, max_length=200)
