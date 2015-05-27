@@ -4,8 +4,8 @@ import re
 import requests
 
 
-# Set the log level for `connectionpool` to "WARNING".
-logging.getLogger('connectionpool').setLevel(logging.WARNING)
+# Set the log level for `requests` to "WARNING".
+logging.getLogger('requests').setLevel(logging.WARNING)
 
 def fetch_stream():
     endpoint = 'https://api.twitch.tv/kraken/streams/avalonstar'
