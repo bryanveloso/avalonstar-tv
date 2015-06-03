@@ -9,7 +9,7 @@ class Platform(models.Model):
         ordering = ['name']
 
     def __str__(self):
-        return u'%s' % self.name
+        return '%s' % self.name
 
     @staticmethod
     def autocomplete_search_fields():
@@ -36,7 +36,7 @@ class Game(models.Model):
         help_text='Has this game been completed (if applicable).' )
 
     def __str__(self):
-        return u'%s' % self.name
+        return '%s' % self.name
 
     @staticmethod
     def autocomplete_search_fields():

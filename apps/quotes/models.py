@@ -20,4 +20,4 @@ class Quote(models.Model):
         ordering = ['-timestamp']
 
     def __str__(self):
-        return u'{}'.format(self.text)
+        return '{}'.format(self.text)

@@ -10,4 +10,4 @@ class Message(models.Model):
         ordering = ['text']
 
     def __str__(self):
-        return u'%s' % self.text
+        return '%s' % self.text

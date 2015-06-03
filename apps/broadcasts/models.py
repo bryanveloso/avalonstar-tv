@@ -16,7 +16,7 @@ class Series(models.Model):
         verbose_name_plural = 'series'
 
     def __str__(self):
-        return u'%s' % self.name
+        return '%s' % self.name
 
     @staticmethod
     def autocomplete_search_fields():
@@ -101,7 +101,7 @@ class Host(models.Model):
         ordering = ['timestamp']
 
     def __str__(self):
-        return u'%s' % self.username
+        return '%s' % self.username
 
 
 class Raid(models.Model):
@@ -119,4 +119,4 @@ class Raid(models.Model):
         ordering = ['timestamp']
 
     def __str__(self):
-        return u'%s' % self.username
+        return '%s' % self.username

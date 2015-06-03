@@ -27,7 +27,7 @@ class Count(models.Model):
         ordering = ['timestamp']
 
     def __str__(self):
-        return u'%s/%s on %s' % (self.active, self.total, self.timestamp)
+        return '%s/%s on %s' % (self.active, self.total, self.timestamp)
 
 
 class TicketManager(models.Manager):
@@ -59,7 +59,7 @@ class Ticket(models.Model):
         get_latest_by = 'updated'
 
     def __str__(self):
-        return u'%s' % self.name
+        return '%s' % self.name
 
     def update(self, **kwargs):
         allowed_attributes = {'twid', 'display_name', 'updated', 'is_active'}
