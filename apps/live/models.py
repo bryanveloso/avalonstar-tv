@@ -10,4 +10,4 @@ class Message(models.Model):
         ordering = ['text']
 
     def __str__(self):
-        return '%s' % self.text
+        return '{}'.format(self.text)

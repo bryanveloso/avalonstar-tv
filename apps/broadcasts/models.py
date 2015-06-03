@@ -16,7 +16,7 @@ class Series(models.Model):
         verbose_name_plural = 'series'
 
     def __str__(self):
-        return '%s' % self.name
+        return '{}'.format(self.name)
 
     @staticmethod
     def autocomplete_search_fields():
@@ -47,7 +47,7 @@ class Broadcast(models.Model):
         ordering = ['-airdate']
 
     def __str__(self):
-        return 'Episode %s' % self.number
+        return 'Episode {}'.format(self.number)
 
     def get_absolute_url(self):
         return reverse('broadcast-detail', kwargs={'slug': self.number})
@@ -71,7 +71,7 @@ class Highlight(models.Model):
     def save(self, *args, **kwargs):
         # Grab our new highlight ID and run an API call.
         import requests
-        endpoint = 'https://api.twitch.tv/kraken/videos/%s' % self.twid
+        endpoint = 'https://api.twitch.tv/kraken/videos/{}'.format(self.twid)
         json = requests.get(endpoint).json()
 
         # Take the response and save it to the instance.
@@ -86,7 +86,7 @@ class Highlight(models.Model):
 
     def __str__(self):
         if not self.title:
-            return 'Highlight for %s' % self.broadcast
+            return 'Highlight for {}'.format(self.broadcast)
         return self.title
 
 
@@ -101,7 +101,7 @@ class Host(models.Model):
         ordering = ['timestamp']
 
     def __str__(self):
-        return '%s' % self.username
+        return '{}'.format(self.username)
 
 
 class Raid(models.Model):
@@ -119,4 +119,4 @@ class Raid(models.Model):
         ordering = ['timestamp']
 
     def __str__(self):
-        return '%s' % self.username
+        return '{}'.format(self.username)
