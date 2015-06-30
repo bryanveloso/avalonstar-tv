@@ -66,6 +66,10 @@ class RaidViewSet(viewsets.ModelViewSet):
     queryset = Raid.objects.order_by('-timestamp')
     serializer_class = RaidSerializer
 
+    def create(self, request, *args, **kwargs):
+        notify('raid', {'username': request.data['username']})
+        return super().create(request, *args, **kwargs)
+
 
 class TicketViewSet(viewsets.ModelViewSet):
     queryset = Ticket.objects.order_by('-updated')
