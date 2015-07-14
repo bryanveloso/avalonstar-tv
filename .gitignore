@@ -47,6 +47,8 @@ nosetests.xml
 media
 backups
 htmlcov
+
 node_modules
+pip_env
 
 latest.dump
