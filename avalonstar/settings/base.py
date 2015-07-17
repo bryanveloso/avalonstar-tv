@@ -126,9 +126,3 @@ class Base(Configuration):
             'rest_framework.authentication.TokenAuthentication'
         )
     }
-
-    # pusher.
-    # --------------------------------------------------------------------------
-    PUSHER_APP_ID = values.SecretValue(environ_prefix='')
-    PUSHER_KEY = values.SecretValue(environ_prefix='')
-    PUSHER_SECRET = values.SecretValue(environ_prefix='')
