@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
 from .views import GameListView
 
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^games/$', name='game-list', view=GameListView.as_view()),
-)
+]

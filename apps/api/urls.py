@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.conf.urls import patterns, url, include
+from django.conf.urls import url, include
 
 from rest_framework import routers
 
@@ -18,7 +18,7 @@ router.register(r'quotes', QuoteViewSet)
 router.register(r'raids', RaidViewSet)
 router.register(r'tickets', TicketViewSet)
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Pusher.
     url(r'^pusher/donation/$', name='pusher-donation', view=PusherDonationView.as_view()),
     url(r'^pusher/host/$', name='pusher-host', view=PusherHostView.as_view()),
@@ -27,4 +27,4 @@ urlpatterns = patterns('',
     url(r'^pusher/substreak/$', name='pusher-substreak', view=PusherSubstreakView.as_view()),
 
     url(r'^', include(router.urls)),
-)
+]
