@@ -13,7 +13,6 @@ module.exports = (grunt) ->
 
     sass:
       options:
-        sourceMap: 'none'
         style: 'compressed'
       dist:
         files:
