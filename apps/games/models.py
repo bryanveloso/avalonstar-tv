@@ -18,8 +18,6 @@ class Platform(models.Model):
 
 class Game(models.Model):
     # Metadata.
-    gbid = models.CharField('Giant Bomb ID', max_length=10,
-        help_text='Usually in the form "3030-20678", etc.')
     name = models.CharField(max_length=200)
     platform = models.ForeignKey(Platform, null=True, related_name='games')
 

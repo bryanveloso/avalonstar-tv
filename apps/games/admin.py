@@ -5,7 +5,7 @@ from .models import Game, Platform
 
 
 class GameAdmin(admin.ModelAdmin):
-    list_display = ['name', 'platform', 'gbid', 'is_abandoned', 'is_completed']
+    list_display = ['name', 'platform', 'is_abandoned', 'is_completed']
     list_editable = ['is_abandoned', 'is_completed']
     ordering = ['name']
 
