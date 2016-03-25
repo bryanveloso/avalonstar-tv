@@ -7,6 +7,20 @@ from apps.quotes.models import Quote
 from apps.subscribers.models import Ticket
 
 
+class UnixEpochDateField(serializers.DateTimeField):
+    def to_representation(self, value):
+        """ Return epoch time for a datetime object or ``None``"""
+        import time
+        try:
+            return int(time.mktime(value.timetuple()))
+        except (AttributeError, TypeError):
+            return None
+
+    def to_internal_value(self, value):
+        import datetime
+        return datetime.datetime.fromtimestamp(int(value))
+
+
 class HostSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'timestamp', 'username', 'broadcast')
@@ -42,6 +56,9 @@ class QuoteSerializer(serializers.ModelSerializer):
 
 
 class TicketSerializer(serializers.ModelSerializer):
+    created_at = UnixEpochDateField(source='created')
+    updated_at = UnixEpochDateField(source='updated')
+
     class Meta:
         model = Ticket
 
