@@ -60,6 +60,7 @@ class TicketSerializer(serializers.ModelSerializer):
     updated_at = UnixEpochDateField(source='updated')
 
     class Meta:
+        fields = ('created_at', 'updated_at', 'display_name', 'streak', 'is_active')
         model = Ticket
 
 
